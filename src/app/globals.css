@@ -66,7 +66,7 @@ body {
 /* Bottom button styling from original project */
 .bottom-button {
   position: fixed;
-  bottom: max(30px, env(safe-area-inset-bottom, 30px));
+  bottom: max(50px, env(safe-area-inset-bottom, 50px));
   left: 20px;
   right: 20px;
   height: 54px;
@@ -93,11 +93,11 @@ body {
 }
 
 .bottom-button:disabled {
-  background: #e5e7eb;
-  color: #9ca3af;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+  background: #e5e7eb !important;
+  color: #9ca3af !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* Back button styling from original project */

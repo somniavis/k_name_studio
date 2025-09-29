@@ -665,7 +665,7 @@ export const ResultScreen: React.FC = () => {
 
         {/* Footer */}
         <footer className="app-footer">
-          <p>{t('footer') || 'Made with ❤️ for Korean culture enthusiasts'}</p>
+          <p>{t('footer')}</p>
         </footer>
       </div>
     </div>

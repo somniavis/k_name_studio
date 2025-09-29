@@ -23,5 +23,6 @@
   "cta": {
     "button": "Crear Mi Nombre Coreano",
     "description": "Comienza tu viaje para descubrir tu identidad coreana"
-  }
+  },
+  "footer": "Copyright ⓒ K-Name-Studio. All rights reserved"
 }

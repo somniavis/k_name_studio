@@ -77,7 +77,7 @@ export const WelcomeScreen: React.FC = () => {
 
         {/* Footer */}
         <footer className="app-footer">
-          <p>Made with ❤️ for Korean culture enthusiasts</p>
+          <p>{t('footer')}</p>
         </footer>
       </div>
     </div>

@@ -74,9 +74,9 @@ export const NameInputScreen: React.FC = () => {
           ></div>
         </div>
         <div className="progress-steps">
-          <span className={currentStep >= 1 ? 'active' : ''}>name</span>
-          <span className={currentStep >= 2 ? 'active' : ''}>birth</span>
-          <span className={currentStep >= 3 ? 'active' : ''}>gender</span>
+          <span className={currentStep >= 1 ? 'active' : ''}>{t('steps.name')}</span>
+          <span className={currentStep >= 2 ? 'active' : ''}>{t('steps.birth')}</span>
+          <span className={currentStep >= 3 ? 'active' : ''}>{t('steps.gender')}</span>
         </div>
       </div>
 
@@ -190,7 +190,7 @@ export const NameInputScreen: React.FC = () => {
 
         {/* Footer */}
         <footer className="app-footer">
-          <p>Made with ❤️ for Korean culture enthusiasts</p>
+          <p>{t('footer')}</p>
         </footer>
       </div>
     </div>

@@ -1,0 +1,33 @@
+{
+  "steps": {
+    "name": "姓名",
+    "birth": "生日",
+    "gender": "性別"
+  },
+  "step1": {
+    "title": "您叫什麼名字？",
+    "subtitle": "輸入您的名字以創建您的個性化韓國名字",
+    "placeholder": "你的名字",
+    "culturalNote": "您的名字將使用傳統的韓國發音和含義進行轉換"
+  },
+  "step2": {
+    "title": "出生資訊",
+    "subtitle": "您的出生日期和時間將影響您的韓國名字",
+    "birthDate": "出生日期",
+    "birthTime": "出生時間",
+    "culturalNote": "在韓國文化中，出生時間極大地影響著個性和命運"
+  },
+  "step3": {
+    "title": "性別偏好",
+    "subtitle": "選擇您喜歡的韓國名字風格",
+    "options": {
+      "female": "女性",
+      "male": "男性",
+      "any": "中性"
+    },
+    "culturalNote": "韓國名字通常通過其含義帶有微妙的性別內涵"
+  },
+  "continue": "繼續",
+  "generateName": "生成名字",
+  "footer": "Copyright ⓒ K-Name-Studio. All rights reserved"
+}

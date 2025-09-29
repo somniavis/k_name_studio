@@ -1,0 +1,91 @@
+{
+  "title": "Nama Korea Sempurna Anda!",
+  "subtitle": "Berdasarkan nama Anda dan analisis Saju",
+  "generating": {
+    "title": "Menemukan Nama Korea Sempurna Anda",
+    "subtitle": "Menggunakan analisis Saju tradisional untuk membuat nama yang dipersonalisasi",
+    "step1": "Menghitung Empat Pilar",
+    "step2": "Menganalisis Keseimbangan Elemen",
+    "step3": "Menemukan Nama Sempurna"
+  },
+  "meaning": "Arti",
+  "soundMatch": "🎵 Kecocokan Suara",
+  "sajuAnalysis": "Analisis Saju",
+  "fourPillars": "Empat Pilar",
+  "yearPillar": "Tahun",
+  "monthPillar": "Bulan",
+  "dayPillar": "Hari",
+  "timePillar": "Waktu",
+  "nameHarmony": "Harmoni Nama",
+  "harmonyDescription": "Nama ini beresonansi sempurna dengan energi kelahiran dan takdir pribadi Anda.",
+  "culturalStory": "Cerita Budaya",
+  "viewFull": "Lihat Analisis Lengkap",
+  "showLess": "Tampilkan Lebih Sedikit",
+  "premiumNames": {
+    "title": "Nama Premium",
+    "subtitle": "3 nama tambahan dengan cerita budaya yang disempurnakan"
+  },
+  "premiumHarmonyDescription": "Nama premium ini menciptakan resonansi yang kuat dengan cetak biru langit Anda.",
+  "premiumCta": {
+    "title": "Buka Nama Premium",
+    "description": "Dapatkan 3 nama premium + 2 nama pasangan yang kompatibel dengan cerita budaya yang disempurnakan",
+    "features": {
+      "kpop": "✨ Nama K-Pop",
+      "analysis": "📊 Analisis Mendalam",
+      "matching": "🎯 Pencocokan Sempurna"
+    }
+  },
+  "unlockPremium": "Buka Premium",
+  "sharing": {
+    "title": "Bagikan Nama Korea Anda!",
+    "subtitle": "Pamerkan nama Korea baru Anda di media sosial",
+    "copy": "Salin Teks",
+    "copied": "Tersalin!"
+  },
+  "scoreDescriptions": {
+    "excellent": "Kemiripan kuat ⭐",
+    "good": "Koneksi baik 🌟",
+    "fair": "Beberapa kemiripan 💫",
+    "poor": "Koneksi minimal 💫"
+  },
+  "scoreLevels": {
+    "excellent": "Luar Biasa",
+    "good": "Baik",
+    "fair": "Cukup",
+    "poor": "Buruk"
+  },
+  "compatibility": {
+    "excellent": "Sangat Cocok",
+    "good": "Cocok",
+    "fair": "Cukup Cocok",
+    "poor": "Perlu Pertimbangan"
+  },
+  "commonMeanings": {
+    "waterRefined": "Air dan halus",
+    "kindnessExcellence": "Kebaikan dan keunggulan",
+    "quickIron": "Besi cepat",
+    "preciousStone": "Batu berharga",
+    "beautifulSky": "Langit yang indah",
+    "wiseGreat": "Bijaksana dan hebat",
+    "strongExcellent": "Kuat dan luar biasa",
+    "talentedQuick": "Berbakat dan cepat",
+    "quickLearnHandsome": "Cepat belajar dan tampan",
+    "virtuousTalented": "Berbudi luhur dan berbakat",
+    "quickSincere": "Cepat dan tulus",
+    "wiseQuick": "Bijaksana dan cepat",
+    "sincereQuick": "Tulus dan cepat",
+    "talentedProsperous": "Berbakat dan makmur",
+    "quickExcellent": "Cepat dan luar biasa",
+    "prosperousKindness": "Kebaikan yang makmur"
+  },
+  "elementsBalance": "Keseimbangan Lima Elemen",
+  "destinyReading": "Bacaan Takdir Anda",
+  "shareButtons": {
+    "instagram": "📸 Instagram Stories",
+    "tiktok": "🎬 Video TikTok"
+  },
+  "pronounce": "Dengarkan pengucapan",
+  "footer": "Copyright ⓒ K-Name-Studio. All rights reserved",
+  "free": "GRATIS",
+  "premium": "PREMIUM"
+}

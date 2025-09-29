@@ -198,23 +198,27 @@ export function generateKoreanNames(options: NameGenerationOptions): { freeNames
     .slice(0, 2)
     .map(({ name, compatibility }) => convertToNameResult(name, sajuResult, locale));
 
-  // Premium names: 3 names total, with at least 1 K-pop name
+  // Premium names: 3 names total, with exactly 1 K-pop name
   const premiumNames: NameResult[] = [];
 
-  // Add 1 K-pop name if available
+  // Names used in free results to avoid duplicates
+  const usedNames = new Set(freeNames.map(n => n.korean));
+
+  // Add exactly 1 K-pop name if available
   if (kpopNames.length > 0) {
-    premiumNames.push(convertToNameResult(kpopNames[0].name, sajuResult, locale));
+    const kpopName = kpopNames.find(({ name }) => !usedNames.has(name.korean));
+    if (kpopName) {
+      premiumNames.push(convertToNameResult(kpopName.name, sajuResult, locale));
+      usedNames.add(kpopName.name.korean);
+    }
   }
 
-  // Fill remaining premium slots with top non-K-pop names (avoiding duplicates with free names)
-  const usedNames = new Set([
-    ...freeNames.map(n => n.korean),
-    ...premiumNames.map(n => n.korean)
-  ]);
+  // Fill remaining slots with top non-K-pop names (avoiding duplicates)
+  const remainingSlots = 3 - premiumNames.length;
+  const availableNonKpopNames = nonKpopNames.filter(({ name }) => !usedNames.has(name.korean));
 
-  const remainingCandidates = scoredNames.filter(({ name }) => !usedNames.has(name.korean));
-  const additionalPremium = remainingCandidates
-    .slice(0, 2) // Get 2 more to make total 3 premium
+  const additionalPremium = availableNonKpopNames
+    .slice(0, remainingSlots)
     .map(({ name, compatibility }) => convertToNameResult(name, sajuResult, locale));
 
   premiumNames.push(...additionalPremium);

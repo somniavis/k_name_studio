@@ -28,5 +28,6 @@
     "culturalNote": "韓国の名前は、その意味を通じて微妙な性別の含意を持つことが多いです"
   },
   "continue": "続ける",
-  "generateName": "名前を生成"
+  "generateName": "名前を生成",
+  "footer": "Copyright ⓒ K-Name-Studio. All rights reserved"
 }

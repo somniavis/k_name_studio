@@ -68,7 +68,7 @@
 
 .progress-indicator {
   padding: 20px;
-  margin-top: 60px;
+  margin-top: 25px;
 }
 
 .progress-bar {
@@ -297,7 +297,7 @@
 
 .input-screen .bottom-button {
   position: fixed !important;
-  bottom: max(30px, env(safe-area-inset-bottom, 30px)) !important;
+  bottom: max(50px, env(safe-area-inset-bottom, 50px)) !important;
   left: 20px !important;
   right: 20px !important;
   height: 54px !important;
@@ -323,10 +323,10 @@
 }
 
 .bottom-button:disabled {
-  background: #d1d5db;
-  cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
+  background: #d1d5db !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 .bottom-button:not(:disabled):hover {
