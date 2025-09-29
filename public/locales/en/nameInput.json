@@ -1,0 +1,32 @@
+{
+  "steps": {
+    "name": "Name",
+    "birth": "Birth",
+    "gender": "Gender"
+  },
+  "step1": {
+    "title": "What's your English name?",
+    "subtitle": "We'll find Korean names that sound similar and beautiful",
+    "placeholder": "Enter your first name",
+    "culturalNote": "In Korean culture, names carry deep meaning and are chosen to bring good fortune!"
+  },
+  "step2": {
+    "title": "When were you born?",
+    "subtitle": "We need this for traditional Saju fortune reading",
+    "birthDate": "Birth Date",
+    "birthTime": "Birth Time",
+    "culturalNote": "Saju (사주팔자) uses your birth time to determine your life's fortune and perfect name elements"
+  },
+  "step3": {
+    "title": "Gender preference?",
+    "subtitle": "This helps us choose the most suitable Korean name style",
+    "options": {
+      "female": "Feminine",
+      "male": "Masculine",
+      "any": "Any Style"
+    },
+    "culturalNote": "Korean names often reflect different qualities - some are more gentle, others more strong!"
+  },
+  "continue": "Continue",
+  "generateName": "Generate My Name"
+}

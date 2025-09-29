@@ -1,0 +1,32 @@
+{
+  "steps": {
+    "name": "Nome",
+    "birth": "Nascita",
+    "gender": "Genere"
+  },
+  "step1": {
+    "title": "Qual è il tuo nome?",
+    "subtitle": "Inserisci il tuo nome per creare il tuo nome coreano personalizzato",
+    "placeholder": "Il tuo nome",
+    "culturalNote": "Il tuo nome sarà trasformato usando suoni e significati coreani tradizionali"
+  },
+  "step2": {
+    "title": "Informazioni di nascita",
+    "subtitle": "La tua data e ora di nascita influenzeranno il tuo nome coreano",
+    "birthDate": "Data di nascita",
+    "birthTime": "Ora di nascita",
+    "culturalNote": "Nella cultura coreana, il momento della nascita influenza molto la personalità e il destino"
+  },
+  "step3": {
+    "title": "Preferenza di genere",
+    "subtitle": "Scegli lo stile di nome coreano che preferisci",
+    "options": {
+      "female": "Femminile",
+      "male": "Maschile",
+      "any": "Neutro"
+    },
+    "culturalNote": "I nomi coreani spesso hanno sottili connotazioni di genere attraverso i loro significati"
+  },
+  "continue": "Continua",
+  "generateName": "Genera Nome"
+}

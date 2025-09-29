@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "title": "韓国名ジェネレーター",
+    "subtitle": "あなたの性格と好みに基づいて完璧な韓国名を発見しましょう"
+  },
+  "features": {
+    "cultural": {
+      "title": "本格的な文化",
+      "description": "本格的な韓国の伝統と意味に基づいた名前"
+    },
+    "personalized": {
+      "title": "パーソナライズ",
+      "description": "あなたの性格、生年月日、好みに合わせて調整"
+    },
+    "meaningful": {
+      "title": "意味のある",
+      "description": "それぞれの名前には深い意味と文化的背景が込められています"
+    }
+  },
+  "socialProof": {
+    "trusted": "世界中のK-Popファンに信頼されています"
+  },
+  "cta": {
+    "button": "私の韓国名を作成",
+    "description": "韓国のアイデンティティを発見する旅を始めましょう"
+  }
+}

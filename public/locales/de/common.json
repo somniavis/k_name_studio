@@ -1,0 +1,31 @@
+{
+  "months": {
+    "january": "Januar",
+    "february": "Februar",
+    "march": "März",
+    "april": "April",
+    "may": "Mai",
+    "june": "Juni",
+    "july": "Juli",
+    "august": "August",
+    "september": "September",
+    "october": "Oktober",
+    "november": "November",
+    "december": "Dezember"
+  },
+  "days": {
+    "sunday": "So",
+    "monday": "Mo",
+    "tuesday": "Di",
+    "wednesday": "Mi",
+    "thursday": "Do",
+    "friday": "Fr",
+    "saturday": "Sa"
+  },
+  "time": {
+    "selectTime": "Zeit auswählen",
+    "hour": "Stunde",
+    "minute": "Min",
+    "now": "Jetzt"
+  }
+}

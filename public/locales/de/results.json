@@ -1,0 +1,91 @@
+{
+  "title": "Ihr perfekter koreanischer Name!",
+  "subtitle": "Basierend auf Ihrem Namen und der Saju-Analyse",
+  "generating": {
+    "title": "Suche nach Ihrem perfekten koreanischen Namen",
+    "subtitle": "Verwende traditionelle Saju-Analyse zur Erstellung personalisierter Namen",
+    "step1": "Berechne vier Säulen",
+    "step2": "Analysiere Elementbalance",
+    "step3": "Finde perfekte Namen"
+  },
+  "meaning": "Bedeutung",
+  "soundMatch": "🎵 Klang-Übereinstimmung",
+  "sajuAnalysis": "Saju-Analyse",
+  "fourPillars": "Vier Säulen",
+  "yearPillar": "Jahressäule",
+  "monthPillar": "Monatssäule",
+  "dayPillar": "Tagessäule",
+  "timePillar": "Zeitsäule",
+  "nameHarmony": "Namen-Harmonie",
+  "harmonyDescription": "Dieser Name harmoniert perfekt mit Ihrer Geburtsenergie und persönlichen Bestimmung.",
+  "culturalStory": "Kulturelle Geschichte",
+  "viewFull": "Vollständige Analyse anzeigen",
+  "showLess": "Weniger anzeigen",
+  "premiumNames": {
+    "title": "Premium-Namen",
+    "subtitle": "3 zusätzliche Namen mit erweiterten kulturellen Geschichten"
+  },
+  "premiumHarmonyDescription": "Dieser Premium-Name schafft kraftvolle Resonanz mit Ihrem himmlischen Bauplan.",
+  "premiumCta": {
+    "title": "Premium-Namen freischalten",
+    "description": "Erhalten Sie 10 zusätzliche Premium-Namen mit erweiterten kulturellen Geschichten und detaillierter Analyse",
+    "features": {
+      "kpop": "✨ K-Pop Namen",
+      "analysis": "📊 Tiefanalyse",
+      "matching": "🎯 Perfekte Übereinstimmung"
+    }
+  },
+  "unlockPremium": "Premium freischalten",
+  "sharing": {
+    "title": "Teilen Sie Ihren koreanischen Namen!",
+    "subtitle": "Zeigen Sie Ihren neuen koreanischen Namen in sozialen Medien",
+    "copy": "Text kopieren",
+    "copied": "Kopiert!"
+  },
+  "scoreDescriptions": {
+    "excellent": "Starke Ähnlichkeit ⭐",
+    "good": "Gute Verbindung 🌟",
+    "fair": "Einige Ähnlichkeit 💫",
+    "poor": "Minimale Verbindung 💫"
+  },
+  "scoreLevels": {
+    "excellent": "Ausgezeichnet",
+    "good": "Gut",
+    "fair": "Mäßig",
+    "poor": "Schwach"
+  },
+  "compatibility": {
+    "excellent": "Ausgezeichnete Übereinstimmung",
+    "good": "Gute Übereinstimmung",
+    "fair": "Mäßige Übereinstimmung",
+    "poor": "Bedarf Überlegung"
+  },
+  "commonMeanings": {
+    "waterRefined": "Wasser und verfeinert",
+    "kindnessExcellence": "Freundlichkeit und Exzellenz",
+    "quickIron": "Schnelles Eisen",
+    "preciousStone": "Kostbarer Stein",
+    "beautifulSky": "Schöner Himmel",
+    "wiseGreat": "Weise und großartig",
+    "strongExcellent": "Stark und exzellent",
+    "talentedQuick": "Talentiert und schnell",
+    "quickLearnHandsome": "Schnell lernend und hübsch",
+    "virtuousTalented": "Tugendhaft und talentiert",
+    "quickSincere": "Schnell und aufrichtig",
+    "wiseQuick": "Weise und schnell",
+    "sincereQuick": "Aufrichtig und schnell",
+    "talentedProsperous": "Talentiert und erfolgreich",
+    "quickExcellent": "Schnell und exzellent",
+    "prosperousKindness": "Erfolgreiche Freundlichkeit"
+  },
+  "elementsBalance": "Fünf-Elemente-Balance",
+  "destinyReading": "Ihre Schicksalslesung",
+  "shareButtons": {
+    "instagram": "📸 Instagram Stories",
+    "tiktok": "🎬 TikTok Video"
+  },
+  "pronounce": "Aussprache anhören",
+  "footer": "Mit ❤️ für koreanische Kulturbegeisterte gemacht",
+  "free": "KOSTENLOS",
+  "premium": "PREMIUM"
+}

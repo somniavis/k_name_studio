@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "title": "Find Your Korean Name",
+    "subtitle": "Discover your perfect Korean name with traditional Saju astrology and K-Pop aesthetics"
+  },
+  "features": {
+    "personalized": {
+      "title": "Personalized",
+      "description": "Based on your English name pronunciation"
+    },
+    "cultural": {
+      "title": "Saju Reading",
+      "description": "Traditional Korean fortune analysis"
+    },
+    "meaningful": {
+      "title": "Cultural Meaning",
+      "description": "Deep significance and beautiful stories"
+    }
+  },
+  "socialProof": {
+    "trusted": "Trusted by K-Pop fans worldwide"
+  },
+  "cta": {
+    "button": "Get Started",
+    "description": "Start your journey to discover your Korean identity"
+  }
+}

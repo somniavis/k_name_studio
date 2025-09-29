@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "title": "Koreanischer Namengenerator",
+    "subtitle": "Entdecken Sie Ihren perfekten koreanischen Namen basierend auf Ihrer Persönlichkeit und Ihren Vorlieben"
+  },
+  "features": {
+    "cultural": {
+      "title": "Authentisch Kulturell",
+      "description": "Namen basierend auf authentischen koreanischen Traditionen und Bedeutungen"
+    },
+    "personalized": {
+      "title": "Personalisiert",
+      "description": "Angepasst an Ihre Persönlichkeit, Geburtsdatum und Vorlieben"
+    },
+    "meaningful": {
+      "title": "Bedeutungsvoll",
+      "description": "Jeder Name kommt mit seiner tieferen Bedeutung und kulturellem Kontext"
+    }
+  },
+  "socialProof": {
+    "trusted": "Vertraut von K-Pop-Fans weltweit"
+  },
+  "cta": {
+    "button": "Meinen Koreanischen Namen Erstellen",
+    "description": "Beginnen Sie Ihre Reise, um Ihre koreanische Identität zu entdecken"
+  }
+}

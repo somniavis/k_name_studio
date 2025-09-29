@@ -1,0 +1,32 @@
+{
+  "steps": {
+    "name": "Nama",
+    "birth": "Kelahiran",
+    "gender": "Jenis Kelamin"
+  },
+  "step1": {
+    "title": "Siapa nama Anda?",
+    "subtitle": "Masukkan nama depan Anda untuk membuat nama Korea yang dipersonalisasi",
+    "placeholder": "Nama depan Anda",
+    "culturalNote": "Nama Anda akan diubah menggunakan suara dan makna Korea tradisional"
+  },
+  "step2": {
+    "title": "Informasi kelahiran",
+    "subtitle": "Tanggal dan waktu kelahiran Anda akan mempengaruhi nama Korea Anda",
+    "birthDate": "Tanggal lahir",
+    "birthTime": "Waktu lahir",
+    "culturalNote": "Dalam budaya Korea, waktu kelahiran sangat mempengaruhi kepribadian dan takdir"
+  },
+  "step3": {
+    "title": "Preferensi jenis kelamin",
+    "subtitle": "Pilih gaya nama Korea yang Anda sukai",
+    "options": {
+      "female": "Perempuan",
+      "male": "Laki-laki",
+      "any": "Netral"
+    },
+    "culturalNote": "Nama Korea sering memiliki konotasi gender yang halus melalui makna mereka"
+  },
+  "continue": "Lanjutkan",
+  "generateName": "Buat Nama"
+}

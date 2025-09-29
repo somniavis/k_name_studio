@@ -1,0 +1,91 @@
+{
+  "title": "Your Perfect Korean Names!",
+  "subtitle": "Based on your name and Saju analysis",
+  "generating": {
+    "title": "Finding Your Perfect Korean Name",
+    "subtitle": "Using traditional Saju analysis to create personalized names",
+    "step1": "Calculating Four Pillars",
+    "step2": "Analyzing Element Balance",
+    "step3": "Finding Perfect Names"
+  },
+  "meaning": "Meaning",
+  "soundMatch": "🎵 Sound Match",
+  "sajuAnalysis": "Saju Analysis",
+  "fourPillars": "Four Pillars",
+  "yearPillar": "Year",
+  "monthPillar": "Month",
+  "dayPillar": "Day",
+  "timePillar": "Time",
+  "nameHarmony": "Name Harmony",
+  "harmonyDescription": "This name resonates perfectly with your birth energy and personal destiny.",
+  "culturalStory": "Cultural Story",
+  "viewFull": "View Full Analysis",
+  "showLess": "Show Less",
+  "premiumNames": {
+    "title": "Premium Names",
+    "subtitle": "3 additional names with enhanced cultural stories"
+  },
+  "premiumHarmonyDescription": "This premium name creates powerful resonance with your celestial blueprint.",
+  "premiumCta": {
+    "title": "Unlock Premium Names",
+    "description": "Get 3 premium names + 2 compatible partner names with enhanced cultural stories",
+    "features": {
+      "kpop": "✨ K-Pop Names",
+      "analysis": "📊 Deep Analysis",
+      "matching": "🎯 Perfect Matching"
+    }
+  },
+  "unlockPremium": "Unlock Premium",
+  "sharing": {
+    "title": "Share Your Korean Name!",
+    "subtitle": "Show off your new Korean name on social media",
+    "copy": "Copy Text",
+    "copied": "Copied!"
+  },
+  "scoreDescriptions": {
+    "excellent": "Strong similarity ⭐",
+    "good": "Good connection 🌟",
+    "fair": "Some similarity 💫",
+    "poor": "Minimal connection 💫"
+  },
+  "scoreLevels": {
+    "excellent": "Excellent",
+    "good": "Good",
+    "fair": "Fair",
+    "poor": "Poor"
+  },
+  "compatibility": {
+    "excellent": "Excellent Match",
+    "good": "Good Match",
+    "fair": "Fair Match",
+    "poor": "Needs Consideration"
+  },
+  "commonMeanings": {
+    "waterRefined": "Water and refined",
+    "kindnessExcellence": "Kindness and excellence",
+    "quickIron": "Quick iron",
+    "preciousStone": "Precious stone",
+    "beautifulSky": "Beautiful sky",
+    "wiseGreat": "Wise and great",
+    "strongExcellent": "Strong and excellent",
+    "talentedQuick": "Talented and quick",
+    "quickLearnHandsome": "Quick to learn and handsome",
+    "virtuousTalented": "Virtuous and talented",
+    "quickSincere": "Quick and sincere",
+    "wiseQuick": "Wise and quick",
+    "sincereQuick": "Sincere and quick",
+    "talentedProsperous": "Talented and prosperous",
+    "quickExcellent": "Quick and excellent",
+    "prosperousKindness": "Prosperous kindness"
+  },
+  "elementsBalance": "Five Elements Balance",
+  "destinyReading": "Your Destiny Reading",
+  "shareButtons": {
+    "instagram": "📸 Instagram Stories",
+    "tiktok": "🎬 TikTok Video"
+  },
+  "pronounce": "Listen to pronunciation",
+  "footer": "Made with ❤️ for Korean culture enthusiasts",
+  "free": "FREE",
+  "premium": "PREMIUM"
+}

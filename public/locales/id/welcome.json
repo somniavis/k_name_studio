@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "title": "Generator Nama Korea",
+    "subtitle": "Temukan nama Korea sempurna berdasarkan kepribadian dan preferensi Anda"
+  },
+  "features": {
+    "cultural": {
+      "title": "Budaya Autentik",
+      "description": "Nama berdasarkan tradisi Korea asli dan makna"
+    },
+    "personalized": {
+      "title": "Dipersonalisasi",
+      "description": "Disesuaikan dengan kepribadian, tanggal lahir, dan preferensi Anda"
+    },
+    "meaningful": {
+      "title": "Bermakna",
+      "description": "Setiap nama dilengkapi dengan makna mendalam dan konteks budaya"
+    }
+  },
+  "socialProof": {
+    "trusted": "Dipercaya oleh penggemar K-Pop di seluruh dunia"
+  },
+  "cta": {
+    "button": "Buat Nama Korea Saya",
+    "description": "Mulai perjalanan Anda untuk menemukan identitas Korea"
+  }
+}

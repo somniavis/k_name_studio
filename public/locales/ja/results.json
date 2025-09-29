@@ -1,0 +1,91 @@
+{
+  "title": "あなたの完璧な韓国名！",
+  "subtitle": "あなたの名前と四柱推命分析に基づいて",
+  "generating": {
+    "title": "完璧な韓国名を探しています",
+    "subtitle": "伝統的な四柱推命分析を使用して個人化された名前を作成しています",
+    "step1": "四柱を計算中",
+    "step2": "五行バランス分析中",
+    "step3": "完璧な名前を探しています"
+  },
+  "meaning": "意味",
+  "soundMatch": "🎵 音の一致",
+  "sajuAnalysis": "四柱推命分析",
+  "fourPillars": "四柱推命",
+  "yearPillar": "年柱",
+  "monthPillar": "月柱",
+  "dayPillar": "日柱",
+  "timePillar": "時柱",
+  "nameHarmony": "名前の調和",
+  "harmonyDescription": "この名前はあなたの生まれのエネルギーと個人的な運命と完璧に調和します。",
+  "culturalStory": "文化的な物語",
+  "viewFull": "完全分析を見る",
+  "showLess": "簡単に見る",
+  "premiumNames": {
+    "title": "プレミアム名前",
+    "subtitle": "強化された文化的物語を持つ3つの追加名前"
+  },
+  "premiumHarmonyDescription": "このプレミアム名前はあなたの天体設計図と強力な共鳴を作ります。",
+  "premiumCta": {
+    "title": "プレミアム名前のロック解除",
+    "description": "強化された文化的物語と詳細な分析を含む10の追加プレミアム名前を取得",
+    "features": {
+      "kpop": "✨ K-Pop 名前",
+      "analysis": "📊 深層分析",
+      "matching": "🎯 完璧なマッチング"
+    }
+  },
+  "unlockPremium": "プレミアムロック解除",
+  "sharing": {
+    "title": "あなたの韓国名をシェア！",
+    "subtitle": "ソーシャルメディアで新しい韓国名を見せびらかそう",
+    "copy": "テキストをコピー",
+    "copied": "コピーされました！"
+  },
+  "scoreDescriptions": {
+    "excellent": "強い類似性 ⭐",
+    "good": "良いつながり 🌟",
+    "fair": "いくらかの類似性 💫",
+    "poor": "最小限のつながり 💫"
+  },
+  "scoreLevels": {
+    "excellent": "優秀",
+    "good": "良い",
+    "fair": "普通",
+    "poor": "不十分"
+  },
+  "compatibility": {
+    "excellent": "優秀なマッチ",
+    "good": "良いマッチ",
+    "fair": "普通のマッチ",
+    "poor": "慎重に検討"
+  },
+  "commonMeanings": {
+    "waterRefined": "水と洗練",
+    "kindnessExcellence": "優しさと優秀さ",
+    "quickIron": "素早い鉄",
+    "preciousStone": "貴重な石",
+    "beautifulSky": "美しい空",
+    "wiseGreat": "賢く偉大",
+    "strongExcellent": "強く優秀",
+    "talentedQuick": "才能があり素早い",
+    "quickLearnHandsome": "学習が早くハンサム",
+    "virtuousTalented": "徳があり才能がある",
+    "quickSincere": "素早く誠実",
+    "wiseQuick": "賢く素早い",
+    "sincereQuick": "誠実で素早い",
+    "talentedProsperous": "才能があり繁栄",
+    "quickExcellent": "素早く優秀",
+    "prosperousKindness": "繁栄する優しさ"
+  },
+  "elementsBalance": "五元素バランス",
+  "destinyReading": "あなたの運命鑑定",
+  "shareButtons": {
+    "instagram": "📸 Instagramストーリー",
+    "tiktok": "🎬 TikTok動画"
+  },
+  "pronounce": "発音を聞く",
+  "footer": "韓国文化愛好家のために❤️で作られました",
+  "free": "無料",
+  "premium": "プレミアム"
+}

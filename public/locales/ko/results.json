@@ -1,0 +1,91 @@
+{
+  "title": "당신의 완벽한 한국 이름!",
+  "subtitle": "당신의 이름과 사주 분석을 바탕으로",
+  "generating": {
+    "title": "완벽한 한국 이름 찾는 중",
+    "subtitle": "전통 사주 분석을 통해 맞춤형 이름을 생성하고 있습니다",
+    "step1": "사주팔자 계산 중",
+    "step2": "오행 균형 분석 중",
+    "step3": "완벽한 이름 찾는 중"
+  },
+  "meaning": "의미",
+  "soundMatch": "🎵 발음 매치",
+  "sajuAnalysis": "사주 분석",
+  "fourPillars": "사주팔자",
+  "yearPillar": "년주",
+  "monthPillar": "월주",
+  "dayPillar": "일주",
+  "timePillar": "시주",
+  "nameHarmony": "이름 조화",
+  "harmonyDescription": "이 이름은 당신의 출생 에너지와 개인적 운명과 완벽하게 조화를 이룹니다.",
+  "culturalStory": "문화적 이야기",
+  "viewFull": "전체 분석 보기",
+  "showLess": "간단히 보기",
+  "premiumNames": {
+    "title": "프리미엄 이름",
+    "subtitle": "향상된 문화적 이야기가 있는 3개의 추가 이름"
+  },
+  "premiumHarmonyDescription": "이 프리미엄 이름은 당신의 천체 청사진과 강력한 공명을 만들어냅니다.",
+  "premiumCta": {
+    "title": "프리미엄 이름 잠금해제",
+    "description": "향상된 문화적 이야기가 포함된 3개의 프리미엄 이름 + 2개의 궁합 파트너 이름을 받으세요",
+    "features": {
+      "kpop": "✨ K-Pop 이름",
+      "analysis": "📊 심층 분석",
+      "matching": "🎯 완벽한 매칭"
+    }
+  },
+  "unlockPremium": "프리미엄 잠금해제",
+  "sharing": {
+    "title": "한국 이름 공유하기!",
+    "subtitle": "소셜 미디어에서 새로운 한국 이름을 자랑해보세요",
+    "copy": "텍스트 복사",
+    "copied": "복사됨!"
+  },
+  "scoreDescriptions": {
+    "excellent": "매우 유사함 ⭐",
+    "good": "좋은 연결감 🌟",
+    "fair": "어느정도 유사함 💫",
+    "poor": "최소한의 연결감 💫"
+  },
+  "scoreLevels": {
+    "excellent": "우수",
+    "good": "좋음",
+    "fair": "보통",
+    "poor": "미흡"
+  },
+  "compatibility": {
+    "excellent": "최고 궁합",
+    "good": "좋은 궁합",
+    "fair": "보통 궁합",
+    "poor": "신중히 고려"
+  },
+  "commonMeanings": {
+    "waterRefined": "물과 세련됨",
+    "kindnessExcellence": "친절과 우수함",
+    "quickIron": "빠른 철",
+    "preciousStone": "귀한 돌",
+    "beautifulSky": "아름다운 하늘",
+    "wiseGreat": "현명하고 위대한",
+    "strongExcellent": "강하고 우수한",
+    "talentedQuick": "재능있고 빠른",
+    "quickLearnHandsome": "빨리 배우고 잘생긴",
+    "virtuousTalented": "덕이 있고 재능있는",
+    "quickSincere": "빠르고 성실한",
+    "wiseQuick": "현명하고 빠른",
+    "sincereQuick": "성실하고 빠른",
+    "talentedProsperous": "재능있고 번영하는",
+    "quickExcellent": "빠르고 우수한",
+    "prosperousKindness": "번영하는 친절"
+  },
+  "elementsBalance": "오행 균형",
+  "destinyReading": "당신의 운명 해석",
+  "shareButtons": {
+    "instagram": "📸 인스타그램 스토리",
+    "tiktok": "🎬 틱톡 비디오"
+  },
+  "pronounce": "발음 듣기",
+  "footer": "한국 문화 애호가들을 위해 ❤️로 제작",
+  "free": "무료",
+  "premium": "프리미엄"
+}

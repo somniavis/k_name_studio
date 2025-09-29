@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "title": "당신의 한국 이름을 찾아보세요",
+    "subtitle": "전통 사주 운세와 K-Pop 미학으로 완벽한 한국 이름을 발견하세요"
+  },
+  "features": {
+    "personalized": {
+      "title": "개인 맞춤형",
+      "description": "영어 이름 발음을 기반으로 제작"
+    },
+    "cultural": {
+      "title": "사주 운세",
+      "description": "전통적인 한국 운세 분석"
+    },
+    "meaningful": {
+      "title": "문화적 의미",
+      "description": "깊은 의미와 아름다운 이야기"
+    }
+  },
+  "socialProof": {
+    "trusted": "전 세계 K-Pop 팬들의 신뢰"
+  },
+  "cta": {
+    "button": "시작하기",
+    "description": "한국 정체성을 발견하는 여정을 시작하세요"
+  }
+}
