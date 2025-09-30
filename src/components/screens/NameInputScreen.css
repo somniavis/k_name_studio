@@ -280,6 +280,23 @@
   margin: 0;
 }
 
+.name-note {
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+  backdrop-filter: blur(20px);
+}
+
+.name-note p {
+  font-size: 12px;
+  color: #d97706;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 500;
+}
+
 /* Bottom section for button and footer */
 .input-screen .bottom-section {
   position: fixed !important;

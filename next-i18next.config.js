@@ -6,8 +6,6 @@ module.exports = {
       'en',    // English
       'ko',    // Korean
       'ja',    // Japanese
-      'zh-CN', // Simplified Chinese
-      'zh-TW', // Traditional Chinese
       'es',    // Spanish
       'fr',    // French
       'de',    // German
@@ -17,8 +15,6 @@ module.exports = {
     localePath: './public/locales',
     defaultNS: 'common',
     fallbackLng: {
-      'zh-CN': ['zh-TW', 'en'],
-      'zh-TW': ['zh-CN', 'en'],
       default: ['en']
     }
   },

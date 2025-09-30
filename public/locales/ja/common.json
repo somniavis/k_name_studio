@@ -27,5 +27,19 @@
     "hour": "時",
     "minute": "分",
     "now": "現在の時間"
-  }
+  },
+  "premium_unlock_title": "あなたにぴったりの韓国名を見つけましょう",
+  "premium_unlock_description": "四柱推命の深層分析によるプレミアム名3つと、あなたの運命にぴったりのパートナー名2つを手に入れましょう",
+  "premium_feature_kpop_title": "K-POPスターの名前",
+  "premium_feature_kpop_description": "あなたの四柱推命と相性の良い名前",
+  "premium_feature_partner_title": "完璧なパートナーの名前",
+  "premium_feature_partner_description": "あなたの運命のパートナーの名前",
+  "premium_feature_saju_title": "四柱推命の深層分析",
+  "premium_feature_saju_description": "伝統的な運勢占い",
+  "premium_feature_share_title": "15日間共有リンク",
+  "premium_feature_share_description": "友達に結果を見せる",
+  "premium_offer_details": "期間限定オファー • 1回払い",
+  "premium_unlock_button": "プレミアム体験をアンロック",
+  "premium_instant_access": "即時アクセス",
+  "premium_secure_payment": "安全な支払い"
 }

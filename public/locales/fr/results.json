@@ -27,20 +27,41 @@
   },
   "premiumHarmonyDescription": "Ce nom premium crée une puissante résonance avec votre plan céleste.",
   "premiumCta": {
-    "title": "Débloquer les noms premium",
-    "description": "Obtenez 10 noms premium supplémentaires avec des histoires culturelles enrichies et une analyse détaillée",
-    "features": {
-      "kpop": "✨ Noms K-Pop",
-      "analysis": "📊 Analyse approfondie",
-      "matching": "🎯 Correspondance parfaite"
-    }
+    "title": "Débloquez votre nom coréen parfait",
+    "description": "Obtenez 3 noms premium avec une analyse Saju approfondie et 2 noms de partenaires parfaits pour votre destin",
+    "feature1": {
+      "title": "Noms de stars de la K-Pop",
+      "description": "Compatible avec votre Saju"
+    },
+    "feature2": {
+      "title": "Noms de partenaires parfaits",
+      "description": "Le nom de votre partenaire destiné"
+    },
+    "feature3": {
+      "title": "Analyse Saju approfondie",
+      "description": "Lecture de bonne aventure traditionnelle"
+    },
+    "feature4": {
+      "title": "Lien de partage de 15 jours",
+      "description": "Montrez vos résultats à vos amis"
+    },
+    "offerDetails": "Offre à durée limitée • Paiement unique",
+    "instantAccess": "Accès instantané",
+    "securePayment": "Paiement sécurisé"
   },
-  "unlockPremium": "Débloquer premium",
+  "partnerNames": {
+    "title": "Noms de partenaires parfaits",
+    "subtitle": "Noms en parfaite harmonie pour votre partenaire"
+  },
+  "unlockPremium": "Débloquer l'expérience Premium",
   "sharing": {
     "title": "Partagez votre nom coréen !",
     "subtitle": "Montrez votre nouveau nom coréen sur les réseaux sociaux",
     "copy": "Copier le texte",
-    "copied": "Copié !"
+    "copied": "Copié !",
+    "creatingLink": "Création du lien...",
+    "createLink": "Créer un lien partageable",
+    "copyLink": "Copier le lien"
   },
   "scoreDescriptions": {
     "excellent": "Forte similitude ⭐",

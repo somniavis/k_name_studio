@@ -1,0 +1,31 @@
+{
+  "months": {
+    "january": "Январь",
+    "february": "Февраль",
+    "march": "Март",
+    "april": "Апрель",
+    "may": "Май",
+    "june": "Июнь",
+    "july": "Июль",
+    "august": "Август",
+    "september": "Сентябрь",
+    "october": "Октябрь",
+    "november": "Ноябрь",
+    "december": "Декабрь"
+  },
+  "days": {
+    "sunday": "Вс",
+    "monday": "Пн",
+    "tuesday": "Вт",
+    "wednesday": "Ср",
+    "thursday": "Чт",
+    "friday": "Пт",
+    "saturday": "Сб"
+  },
+  "time": {
+    "selectTime": "Выберите время",
+    "hour": "Час",
+    "minute": "Мин",
+    "now": "Сейчас"
+  }
+}

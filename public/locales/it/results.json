@@ -27,20 +27,41 @@
   },
   "premiumHarmonyDescription": "Questo nome premium crea potente risonanza con il tuo progetto celestiale.",
   "premiumCta": {
-    "title": "Sblocca nomi premium",
-    "description": "Ottieni 10 nomi premium aggiuntivi con storie culturali arricchite e analisi dettagliata",
-    "features": {
-      "kpop": "✨ Nomi K-Pop",
-      "analysis": "📊 Analisi profonda",
-      "matching": "🎯 Corrispondenza perfetta"
-    }
+    "title": "Sblocca il tuo nome coreano perfetto",
+    "description": "Ottieni 3 nomi premium con un'analisi Saju approfondita e 2 nomi di partner perfetti per il tuo destino",
+    "feature1": {
+      "title": "Nomi di stelle del K-Pop",
+      "description": "Compatibile con il tuo Saju"
+    },
+    "feature2": {
+      "title": "Nomi di partner perfetti",
+      "description": "Il nome del tuo partner predestinato"
+    },
+    "feature3": {
+      "title": "Analisi Saju approfondita",
+      "description": "Lettura della fortuna tradizionale"
+    },
+    "feature4": {
+      "title": "Link di condivisione di 15 giorni",
+      "description": "Mostra i tuoi risultati agli amici"
+    },
+    "offerDetails": "Offerta a tempo limitato • Pagamento unico",
+    "instantAccess": "Accesso immediato",
+    "securePayment": "Pagamento sicuro"
   },
-  "unlockPremium": "Sblocca premium",
+  "partnerNames": {
+    "title": "Nomi di partner perfetti",
+    "subtitle": "Nomi in perfetta armonia per il tuo partner"
+  },
+  "unlockPremium": "Sblocca l'esperienza Premium",
   "sharing": {
     "title": "Condividi il tuo nome coreano!",
     "subtitle": "Mostra il tuo nuovo nome coreano sui social media",
     "copy": "Copia testo",
-    "copied": "Copiato!"
+    "copied": "Copiato!",
+    "creatingLink": "Creazione del link...",
+    "createLink": "Crea un link condivisibile",
+    "copyLink": "Copia link"
   },
   "scoreDescriptions": {
     "excellent": "Forte somiglianza ⭐",

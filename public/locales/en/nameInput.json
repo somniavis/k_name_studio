@@ -8,7 +8,8 @@
     "title": "What's your English name?",
     "subtitle": "We'll find Korean names that sound similar and beautiful",
     "placeholder": "Enter your first name",
-    "culturalNote": "In Korean culture, names carry deep meaning and are chosen to bring good fortune!"
+    "culturalNote": "In Korean culture, names carry deep meaning and are chosen to bring good fortune!",
+    "nameNote": "⚠️ For best results, please enter names in English spelling"
   },
   "step2": {
     "title": "When were you born?",

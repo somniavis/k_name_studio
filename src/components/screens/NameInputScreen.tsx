@@ -106,6 +106,9 @@ export const NameInputScreen: React.FC = () => {
               <div className="note-icon">💡</div>
               <p>{t('step1.culturalNote')}</p>
             </div>
+            <div className="name-note">
+              <p>{t('step1.nameNote')}</p>
+            </div>
           </div>
         )}
 

@@ -26,6 +26,8 @@ export interface NameResult {
     group: string;
     memberName: string;
   };
+  soundMatch?: number;
+  soundMatchGrade?: string;
 }
 
 export interface UserData {

@@ -27,20 +27,41 @@
   },
   "premiumHarmonyDescription": "이 프리미엄 이름은 당신의 천체 청사진과 강력한 공명을 만들어냅니다.",
   "premiumCta": {
-    "title": "프리미엄 이름 잠금해제",
-    "description": "향상된 문화적 이야기가 포함된 3개의 프리미엄 이름 + 2개의 궁합 파트너 이름을 받으세요",
-    "features": {
-      "kpop": "✨ K-Pop 이름",
-      "analysis": "📊 심층 분석",
-      "matching": "🎯 완벽한 매칭"
-    }
+    "title": "당신에게 꼭 맞는 한국어 이름을 찾아보세요",
+    "description": "사주 심층 분석을 통해 3개의 프리미엄 이름과 당신의 운명을 위한 2개의 완벽한 파트너 이름을 받아보세요",
+    "feature1": {
+      "title": "K-팝 스타 이름",
+      "description": "당신의 사주와 조화로운 이름"
+    },
+    "feature2": {
+      "title": "완벽한 파트너 이름",
+      "description": "당신의 운명의 파트너 이름"
+    },
+    "feature3": {
+      "title": "사주 심층 분석",
+      "description": "전통 운세 풀이"
+    },
+    "feature4": {
+      "title": "15일 공유 링크",
+      "description": "친구에게 결과 보여주기"
+    },
+    "offerDetails": "기간 한정 혜택 • 일회성 결제",
+    "instantAccess": "즉시 이용 가능",
+    "securePayment": "안전한 결제"
   },
-  "unlockPremium": "프리미엄 잠금해제",
+  "partnerNames": {
+    "title": "완벽한 파트너 이름",
+    "subtitle": "당신의 파트너를 위한 완벽한 조화의 이름"
+  },
+  "unlockPremium": "프리미엄 경험 잠금 해제",
   "sharing": {
     "title": "한국 이름 공유하기!",
     "subtitle": "소셜 미디어에서 새로운 한국 이름을 자랑해보세요",
     "copy": "텍스트 복사",
-    "copied": "복사됨!"
+    "copied": "복사됨!",
+    "creatingLink": "링크 생성 중...",
+    "createLink": "공유 링크 만들기",
+    "copyLink": "링크 복사"
   },
   "scoreDescriptions": {
     "excellent": "매우 유사함 ⭐",

@@ -10,7 +10,11 @@ interface NameGenerationOptions {
 }
 
 // Convert KoreanName to NameResult format
-function convertToNameResult(koreanName: KoreanName, sajuResult: SajuResult, locale: string = 'en'): NameResult {
+function convertToNameResult(koreanName: KoreanName, sajuResult: SajuResult, locale: string = 'en', userData?: { firstName: string }): NameResult {
+  // Calculate Sound Match if user data is provided
+  const soundMatch = userData ? calculateSoundMatch(userData.firstName, koreanName.pronunciation) : undefined;
+  const soundMatchGrade = soundMatch ? getSoundMatchGrade(soundMatch) : undefined;
+
   return {
     korean: koreanName.korean,
     hanja: koreanName.hanja,
@@ -32,7 +36,9 @@ function convertToNameResult(koreanName: KoreanName, sajuResult: SajuResult, loc
     } : undefined,
     pronunciationMatch: koreanName.pronunciationMatch,
     harmony: koreanName.harmony?.[locale] || koreanName.harmony?.en,
-    kpopMember: koreanName.kpopMember
+    kpopMember: koreanName.kpopMember,
+    soundMatch: soundMatch,
+    soundMatchGrade: soundMatchGrade
   };
 }
 
@@ -104,33 +110,181 @@ function findSimilarNames(name: KoreanName, count: number): string[] {
     .map(n => n.korean);
 }
 
-// Calculate phonetic similarity score
-function getPhoneticScore(englishName: string, koreanPronunciation: string): number {
-  const english = englishName.toLowerCase();
-  const korean = koreanPronunciation.toLowerCase();
+// Common English names for reverse matching
+const COMMON_ENGLISH_NAMES = [
+  'john', 'jane', 'mike', 'kate', 'alex', 'anna', 'david', 'emma',
+  'chris', 'sara', 'tom', 'lisa', 'ben', 'amy', 'kevin', 'nina',
+  'paul', 'mary', 'james', 'julie', 'mark', 'kim', 'steve', 'linda',
+  'bob', 'sue', 'dan', 'carol', 'joe', 'helen', 'bill', 'nancy',
+  'matt', 'beth', 'rick', 'diane', 'jeff', 'ruth', 'tim', 'joan'
+];
 
-  // Simple similarity scoring
-  let score = 0;
-  const englishSounds = english.replace(/[^a-z]/g, '');
-  const koreanSounds = korean.replace(/[^a-z]/g, '');
+// Enhanced phonetic analysis functions
+function getFirstSound(name: string): string {
+  const cleaned = name.toLowerCase().replace(/[^a-z]/g, '');
+  const phoneticMap: { [key: string]: string } = {
+    'ph': 'f', 'th': 't', 'ch': 'ch', 'sh': 'sh', 'wh': 'w'
+  };
 
-  // Check for similar starting sounds
-  if (englishSounds[0] && koreanSounds[0] && englishSounds[0] === koreanSounds[0]) {
-    score += 2;
+  for (const [pattern, sound] of Object.entries(phoneticMap)) {
+    if (cleaned.startsWith(pattern)) return sound;
+  }
+  return cleaned[0] || '';
+}
+
+function getLastSound(name: string): string {
+  const cleaned = name.toLowerCase().replace(/[^a-z]/g, '');
+  return cleaned[cleaned.length - 1] || '';
+}
+
+function extractVowelPattern(name: string): string[] {
+  const cleaned = name.toLowerCase().replace(/[^a-z]/g, '');
+  const vowelMap: { [key: string]: string } = {
+    'oo': 'u', 'ee': 'i', 'ay': 'e', 'ie': 'i', 'ey': 'e',
+    'ou': 'u', 'ea': 'e', 'ai': 'e', 'oa': 'o'
+  };
+
+  let processed = cleaned;
+  for (const [pattern, vowel] of Object.entries(vowelMap)) {
+    processed = processed.replace(new RegExp(pattern, 'g'), vowel);
   }
 
-  // Check for similar vowel patterns
-  const englishVowels: string[] = englishSounds.match(/[aeiou]/g) || [];
-  const koreanVowels: string[] = koreanSounds.match(/[aeiou]/g) || [];
+  return processed.match(/[aeiou]/g) || [];
+}
 
-  const commonVowels = englishVowels.filter(v => koreanVowels.includes(v));
-  score += commonVowels.length * 0.5;
+function countSyllables(name: string): number {
+  const vowels = extractVowelPattern(name);
+  return Math.max(1, vowels.length);
+}
 
-  // Length similarity
-  const lengthDiff = Math.abs(englishSounds.length - koreanSounds.length);
-  score += Math.max(0, 2 - lengthDiff * 0.5);
+function areVowelsSimilar(v1: string | undefined, v2: string | undefined): boolean {
+  if (!v1 || !v2) return false;
+  if (v1 === v2) return true;
 
-  return score;
+  const similarVowels: { [key: string]: string[] } = {
+    'a': ['a', 'ah'], 'e': ['e', 'eh'], 'i': ['i', 'ee'],
+    'o': ['o', 'oh'], 'u': ['u', 'oo']
+  };
+
+  for (const group of Object.values(similarVowels)) {
+    if (group.includes(v1) && group.includes(v2)) return true;
+  }
+  return false;
+}
+
+function analyzeVowelPattern(english: string, korean: string): number {
+  const englishVowels = extractVowelPattern(english);
+  const koreanVowels = extractVowelPattern(korean);
+
+  let matches = 0;
+  const maxLength = Math.max(englishVowels.length, koreanVowels.length);
+
+  if (maxLength === 0) return 0;
+
+  for (let i = 0; i < maxLength; i++) {
+    if (areVowelsSimilar(englishVowels[i], koreanVowels[i])) {
+      matches++;
+    }
+  }
+
+  return matches / maxLength;
+}
+
+function analyzeConsonantPattern(english: string, korean: string): number {
+  const getConsonants = (name: string) => {
+    return name.toLowerCase().replace(/[^a-z]/g, '').replace(/[aeiou]/g, '');
+  };
+
+  const englishConsonants = getConsonants(english);
+  const koreanConsonants = getConsonants(korean);
+
+  if (!englishConsonants && !koreanConsonants) return 1;
+  if (!englishConsonants || !koreanConsonants) return 0;
+
+  let matches = 0;
+  const maxLength = Math.max(englishConsonants.length, koreanConsonants.length);
+
+  for (let i = 0; i < maxLength; i++) {
+    if (englishConsonants[i] === koreanConsonants[i]) {
+      matches++;
+    }
+  }
+
+  return matches / maxLength;
+}
+
+function analyzeSyllableStructure(english: string, korean: string): number {
+  const englishSyllables = countSyllables(english);
+  const koreanSyllables = countSyllables(korean);
+
+  const difference = Math.abs(englishSyllables - koreanSyllables);
+  return Math.max(0, 1 - (difference * 0.3));
+}
+
+function getPhoneticSimilarity(english: string, korean: string): number {
+  let score = 0;
+
+  // 1. First sound matching (3 points)
+  if (getFirstSound(english) === getFirstSound(korean)) {
+    score += 3;
+  }
+
+  // 2. Vowel pattern analysis (2 points)
+  score += analyzeVowelPattern(english, korean) * 2;
+
+  // 3. Consonant pattern similarity (2 points)
+  score += analyzeConsonantPattern(english, korean) * 2;
+
+  // 4. Syllable structure similarity (2 points)
+  score += analyzeSyllableStructure(english, korean) * 2;
+
+  // 5. Last sound similarity (1 point)
+  if (getLastSound(english) === getLastSound(korean)) {
+    score += 1;
+  }
+
+  return Math.min(score, 10); // 10 points maximum
+}
+
+function getBestEnglishMatch(koreanPronunciation: string): string {
+  const scores = COMMON_ENGLISH_NAMES.map(name => ({
+    name,
+    score: getPhoneticSimilarity(name, koreanPronunciation)
+  }));
+
+  return scores.sort((a, b) => b.score - a.score)[0].name;
+}
+
+function getReverseMatchBonus(userInput: string, koreanPronunciation: string): number {
+  const optimalEnglishName = getBestEnglishMatch(koreanPronunciation);
+  const reverseScore = getPhoneticSimilarity(userInput, optimalEnglishName);
+
+  // Bonus for similarity to optimal English name
+  return reverseScore * 0.3; // Maximum 3 points bonus
+}
+
+// Calculate Sound Match percentage (pure phonetic similarity)
+function calculateSoundMatch(userInput: string, koreanPronunciation: string): number {
+  // 1. Direct similarity (70%)
+  const directScore = getPhoneticSimilarity(userInput, koreanPronunciation);
+
+  // 2. Reverse matching bonus (30%)
+  const reverseBonus = getReverseMatchBonus(userInput, koreanPronunciation);
+
+  // 3. Final score (convert to percentage)
+  const totalScore = (directScore * 0.7) + (reverseBonus * 0.3);
+  const percentage = Math.min((totalScore / 10) * 100, 100);
+
+  return Math.round(percentage);
+}
+
+// Get Sound Match grade description
+function getSoundMatchGrade(percentage: number): string {
+  if (percentage >= 85) return "Perfect Match";
+  if (percentage >= 70) return "Excellent Match";
+  if (percentage >= 55) return "Good Match";
+  if (percentage >= 40) return "Fair Match";
+  return "Distant Match";
 }
 
 // Main name generation function
@@ -155,7 +309,7 @@ export function generateKoreanNames(options: NameGenerationOptions): { freeNames
     }
   });
 
-  // Score and sort candidates
+  // Score and sort candidates with new Sound Match system
   const scoredNames = Array.from(allCandidates.values()).map(name => {
     let totalScore = 0;
 
@@ -169,9 +323,10 @@ export function generateKoreanNames(options: NameGenerationOptions): { freeNames
     }[compatibility];
     totalScore += compatibilityScore * 0.4;
 
-    // Phonetic similarity (30% weight)
-    const phoneticScore = getPhoneticScore(userData.firstName, name.pronunciation);
-    totalScore += Math.min(phoneticScore, 4) * 0.3;
+    // Pure Sound Match (30% weight) - NEW SYSTEM
+    const soundMatchPercentage = calculateSoundMatch(userData.firstName, name.pronunciation);
+    const soundMatchScore = (soundMatchPercentage / 100) * 4;
+    totalScore += soundMatchScore * 0.3;
 
     // Style preference (20% weight)
     const styleScore = name.style === userData.style ? 4 :
@@ -185,7 +340,9 @@ export function generateKoreanNames(options: NameGenerationOptions): { freeNames
     return {
       name,
       score: totalScore,
-      compatibility
+      compatibility,
+      soundMatch: soundMatchPercentage,
+      soundMatchGrade: getSoundMatchGrade(soundMatchPercentage)
     };
   }).sort((a, b) => b.score - a.score);
 
@@ -193,35 +350,43 @@ export function generateKoreanNames(options: NameGenerationOptions): { freeNames
   const kpopNames = scoredNames.filter(({ name }) => name.kpopMember);
   const nonKpopNames = scoredNames.filter(({ name }) => !name.kpopMember);
 
-  // Free names: Top 2 names
-  const freeNames = scoredNames
+  // Free names: Filter for under 70% Sound Match, EXCLUDE K-pop names
+  const freeCandidates = nonKpopNames.filter(({ soundMatch }) => soundMatch < 70);
+  const freeNames = (freeCandidates.length > 0 ? freeCandidates : nonKpopNames)
     .slice(0, 2)
-    .map(({ name, compatibility }) => convertToNameResult(name, sajuResult, locale));
+    .map(({ name }) =>
+      convertToNameResult(name, sajuResult, locale, { firstName: userData.firstName })
+    );
 
-  // Premium names: 3 names total, with exactly 1 K-pop name
+  // Premium names: 3 names total, prioritize 70%+ Sound Match
   const premiumNames: NameResult[] = [];
-
-  // Names used in free results to avoid duplicates
   const usedNames = new Set(freeNames.map(n => n.korean));
 
-  // Add exactly 1 K-pop name if available
-  if (kpopNames.length > 0) {
-    const kpopName = kpopNames.find(({ name }) => !usedNames.has(name.korean));
-    if (kpopName) {
-      premiumNames.push(convertToNameResult(kpopName.name, sajuResult, locale));
-      usedNames.add(kpopName.name.korean);
-    }
+  // Prioritize K-pop names with high sound match
+  const premiumKpop = kpopNames.filter(({ name, soundMatch }) => soundMatch >= 70 && !usedNames.has(name.korean));
+  const otherKpop = kpopNames.filter(({ name, soundMatch }) => soundMatch < 70 && !usedNames.has(name.korean));
+
+  // Prioritize non-K-pop names with high sound match
+  const premiumNonKpop = nonKpopNames.filter(({ name, soundMatch }) => soundMatch >= 70 && !usedNames.has(name.korean));
+  const otherNonKpop = nonKpopNames.filter(({ name, soundMatch }) => soundMatch < 70 && !usedNames.has(name.korean));
+
+  // Build premium list: 1 K-pop if available, then fill with best sound matches
+  const potentialPremium = [];
+  if (premiumKpop.length > 0) {
+    potentialPremium.push(premiumKpop[0]);
+  } else if (otherKpop.length > 0) {
+    potentialPremium.push(otherKpop[0]);
   }
 
-  // Fill remaining slots with top non-K-pop names (avoiding duplicates)
-  const remainingSlots = 3 - premiumNames.length;
-  const availableNonKpopNames = nonKpopNames.filter(({ name }) => !usedNames.has(name.korean));
+  potentialPremium.push(...premiumNonKpop);
+  potentialPremium.push(...otherNonKpop);
 
-  const additionalPremium = availableNonKpopNames
-    .slice(0, remainingSlots)
-    .map(({ name, compatibility }) => convertToNameResult(name, sajuResult, locale));
-
-  premiumNames.push(...additionalPremium);
+  for (const p of potentialPremium) {
+    if (premiumNames.length < 3 && !usedNames.has(p.name.korean)) {
+      premiumNames.push(convertToNameResult(p.name, sajuResult, locale, { firstName: userData.firstName }));
+      usedNames.add(p.name.korean);
+    }
+  }
 
   return {
     freeNames,
@@ -263,8 +428,8 @@ export function generateAdditionalPremiumNames(options: NameGenerationOptions): 
     const compatibilityScore = { excellent: 4, good: 3, fair: 2, poor: 1 }[compatibility];
     totalScore += compatibilityScore * 0.4;
 
-    const phoneticScore = getPhoneticScore(userData.firstName, name.pronunciation);
-    totalScore += Math.min(phoneticScore, 4) * 0.3;
+    const soundMatch = calculateSoundMatch(userData.firstName, name.pronunciation);
+    totalScore += (soundMatch / 100) * 4 * 0.3;
 
     const styleScore = name.style === userData.style ? 4 : (name.style === 'mixed' || userData.style === 'mixed') ? 3 : 2;
     totalScore += styleScore * 0.2;
@@ -304,12 +469,12 @@ export function generateAdditionalPremiumNames(options: NameGenerationOptions): 
   const additionalPremium = scoredSameGender
     .slice(8) // Skip first 8 to avoid duplicates with initial generation
     .slice(0, 3)
-    .map(({ name }) => convertToNameResult(name, sajuResult, locale));
+    .map(({ name }) => convertToNameResult(name, sajuResult, locale, { firstName: userData.firstName }));
 
   // Get 2 compatible opposite gender names
   const oppositeGenderNames = compatibleOppositeNames
     .slice(0, 2)
-    .map(({ name }) => convertToNameResult(name, sajuResult, locale));
+    .map(({ name }) => convertToNameResult(name, sajuResult, locale, { firstName: userData.firstName }));
 
   return {
     additionalPremium,

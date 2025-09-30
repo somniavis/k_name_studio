@@ -27,20 +27,41 @@
   },
   "premiumHarmonyDescription": "Dieser Premium-Name schafft kraftvolle Resonanz mit Ihrem himmlischen Bauplan.",
   "premiumCta": {
-    "title": "Premium-Namen freischalten",
-    "description": "Erhalten Sie 10 zusätzliche Premium-Namen mit erweiterten kulturellen Geschichten und detaillierter Analyse",
-    "features": {
-      "kpop": "✨ K-Pop Namen",
-      "analysis": "📊 Tiefanalyse",
-      "matching": "🎯 Perfekte Übereinstimmung"
-    }
+    "title": "Schalte deinen perfekten koreanischen Namen frei",
+    "description": "Erhalte 3 Premium-Namen mit tiefgehender Saju-Analyse und 2 perfekte Partnernamen für dein Schicksal",
+    "feature1": {
+      "title": "K-Pop-Star-Namen",
+      "description": "Kompatibel mit deinem Saju"
+    },
+    "feature2": {
+      "title": "Perfekte Partnernamen",
+      "description": "Der Name deines vorbestimmten Partners"
+    },
+    "feature3": {
+      "title": "Tiefgehende Saju-Analyse",
+      "description": "Traditionelles Wahrsagen"
+    },
+    "feature4": {
+      "title": "15-Tage-Freigabelink",
+      "description": "Zeige Freunden deine Ergebnisse"
+    },
+    "offerDetails": "Zeitlich begrenztes Angebot • Einmalige Zahlung",
+    "instantAccess": "Sofortiger Zugang",
+    "securePayment": "Sichere Zahlung"
   },
-  "unlockPremium": "Premium freischalten",
+  "partnerNames": {
+    "title": "Perfekte Partnernamen",
+    "subtitle": "Perfekte Harmonie-Namen für Ihren Partner"
+  },
+  "unlockPremium": "Premium-Erlebnis freischalten",
   "sharing": {
     "title": "Teilen Sie Ihren koreanischen Namen!",
     "subtitle": "Zeigen Sie Ihren neuen koreanischen Namen in sozialen Medien",
     "copy": "Text kopieren",
-    "copied": "Kopiert!"
+    "copied": "Kopiert!",
+    "creatingLink": "Link wird erstellt...",
+    "createLink": "Teilbaren Link erstellen",
+    "copyLink": "Link kopieren"
   },
   "scoreDescriptions": {
     "excellent": "Starke Ähnlichkeit ⭐",

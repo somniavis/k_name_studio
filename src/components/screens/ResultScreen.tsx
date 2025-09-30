@@ -36,34 +36,54 @@ export const ResultScreen: React.FC = () => {
   const [shareableLink, setShareableLink] = useState<string | null>(null);
 
   const generateNames = async () => {
-    if (!userData.birthDate || !userData.firstName || !userData.gender) return;
+    console.log('Generate names called with userData:', userData);
+
+    if (!userData.birthDate || !userData.firstName || !userData.gender) {
+      console.log('Missing required userData fields:', {
+        birthDate: !!userData.birthDate,
+        firstName: !!userData.firstName,
+        gender: !!userData.gender
+      });
+      return;
+    }
 
     setIsGenerating(true);
     setLoadingStep(0);
 
     try {
+      console.log('Starting name generation...');
+
       // Simulate loading steps
       setTimeout(() => setLoadingStep(1), 800);
       setTimeout(() => setLoadingStep(2), 1600);
 
       // Generate names
+      console.log('Calling generateKoreanNames...');
       const { freeNames: newFreeNames, premiumNames: newPremiumNames } = generateKoreanNames({
         userData: userData as UserData,
         locale
       });
+      console.log('Generated names:', { freeNames: newFreeNames.length, premiumNames: newPremiumNames.length });
 
       // Get Saju analysis
+      console.log('Getting Saju analysis...');
       const analysis = getSajuAnalysis(userData.birthDate, userData.birthTime, locale);
+      console.log('Saju analysis completed:', analysis);
 
       // Final delay before showing results
+      console.log('Waiting final delay...');
       await new Promise(resolve => setTimeout(resolve, 2000));
 
+      console.log('Setting final results...');
       setFreeNames(newFreeNames);
       setPremiumNames(newPremiumNames);
       setSajuAnalysis(analysis);
+      console.log('Name generation completed successfully!');
     } catch (error) {
       console.error('Name generation failed:', error);
+      console.error('Error stack:', error.stack);
     } finally {
+      console.log('Cleaning up generation state...');
       setIsGenerating(false);
       setLoadingStep(0);
     }
@@ -90,24 +110,26 @@ export const ResultScreen: React.FC = () => {
   }, [isGenerating]);
 
   const handleUnlockPremium = () => {
-    // Simulate payment success and generate opposite gender names
-    setTimeout(() => {
-      if (userData.birthDate && userData.firstName && userData.gender) {
-        // Generate only opposite gender names
-        const { oppositeGenderNames } = generateAdditionalPremiumNames({
-          userData: userData as UserData,
-          locale
-        });
+    // Debug: Check current premium names
+    console.log('Premium names before unlock:', premiumNames);
+    console.log('Premium names length:', premiumNames.length);
 
-        // Unlock premium with only opposite gender names
-        unlockPremium(premiumNames, [], oppositeGenderNames);
-      } else {
-        // Fallback if userData is incomplete
-        unlockPremium(premiumNames);
-      }
-    }, 1000); // Simulate payment processing time
+    // Immediately unlock premium for demo purposes
+    if (userData.birthDate && userData.firstName && userData.gender) {
+      // Generate only opposite gender names
+      const { oppositeGenderNames } = generateAdditionalPremiumNames({
+        userData: userData as UserData,
+        locale
+      });
 
-    setIsPaymentModalOpen(true);
+      console.log('Generated opposite gender names:', oppositeGenderNames);
+
+      // Unlock premium with only opposite gender names
+      unlockPremium(premiumNames, [], oppositeGenderNames);
+    } else {
+      // Fallback if userData is incomplete
+      unlockPremium(premiumNames);
+    }
   };
 
   const handleSelectName = (index: number) => {
@@ -165,7 +187,10 @@ export const ResultScreen: React.FC = () => {
     const compatibilityText = nameData.compatibility === 'excellent' ? 'Perfect Harmony' :
                               nameData.compatibility === 'good' ? 'Good Connection' :
                               nameData.compatibility === 'fair' ? 'Fair Match' : 'Unique Path';
-    const shareText = `🌟 My Korean Name: ${nameData.korean} (${nameData.pronunciation})\n📖 Meaning: ${nameData.meaning}\n🎯 Saju Match: ${compatibilityText}\n✨ Discover your Korean name at ${serviceUrl}`;
+    const shareText = `My Korean Name: ${nameData.korean} (${nameData.pronunciation})
+Meaning: ${nameData.meaning}
+Saju Match: ${compatibilityText}
+Discover your Korean name at ${serviceUrl}`;
 
     if (platform === 'copy') {
       navigator.clipboard.writeText(shareText).then(() => {
@@ -363,18 +388,21 @@ export const ResultScreen: React.FC = () => {
               </div>
 
               <div className="pronunciation-match">
-                <h4>{t('soundMatch')}</h4>
+                <h4>🎵 Sound Match</h4>
                 <div className="match-score">
                   <div className="score-bar">
                     <div
-                      className={`score-fill ${getScoreLevel(nameData.pronunciationMatch || 50)}`}
-                      style={{ width: `${nameData.pronunciationMatch || 50}%` }}
+                      className={`score-fill ${getScoreLevel(nameData.soundMatch || nameData.pronunciationMatch || 50)}`}
+                      style={{ width: `${nameData.soundMatch || nameData.pronunciationMatch || 50}%` }}
                     ></div>
                   </div>
-                  <span className="score-percentage">{nameData.pronunciationMatch || 50}%</span>
+                  <span className="score-percentage">{nameData.soundMatch || nameData.pronunciationMatch || 50}%</span>
                 </div>
                 <div className="score-description">
-                  <span className="score-label">{getScoreLevelText(nameData.pronunciationMatch || 50)} - {getScoreDescription(nameData.pronunciationMatch || 50)}</span>
+                  <span className="score-label">
+                    {nameData.soundMatchGrade || getScoreLevelText(nameData.pronunciationMatch || 50)} -
+                    {nameData.soundMatch ? ' Enhanced phonetic analysis' : getScoreDescription(nameData.pronunciationMatch || 50)}
+                  </span>
                 </div>
               </div>
 
@@ -444,6 +472,8 @@ export const ResultScreen: React.FC = () => {
             </div>
           ))}
         </div>
+
+        
 
         {/* Premium Names Section */}
         {isPremiumUnlocked && premiumNames.length > 0 && (
@@ -522,18 +552,21 @@ export const ResultScreen: React.FC = () => {
                     )}
 
                     <div className="pronunciation-match">
-                      <h4>{t('soundMatch')}</h4>
+                      <h4>🎵 Sound Match</h4>
                       <div className="match-score">
                         <div className="score-bar">
                           <div
-                            className={`score-fill ${getCompatibilityColor(nameData.compatibility || 'fair')}`}
-                            style={{ width: `${Math.floor(Math.random() * 20 + 80)}%` }}
+                            className={`score-fill ${getScoreLevel(nameData.soundMatch || nameData.pronunciationMatch || 85)}`}
+                            style={{ width: `${nameData.soundMatch || nameData.pronunciationMatch || 85}%` }}
                           ></div>
                         </div>
-                        <span className="score-percentage">{Math.floor(Math.random() * 20 + 80)}%</span>
+                        <span className="score-percentage">{nameData.soundMatch || nameData.pronunciationMatch || 85}%</span>
                       </div>
                       <div className="score-description">
-                        <span className="score-label">{getCompatibilityText(nameData.compatibility || 'excellent')}</span>
+                        <span className="score-label">
+                          {nameData.soundMatchGrade || 'Excellent Match'} -
+                          {nameData.soundMatch ? ' Enhanced phonetic analysis' : ' Premium analysis'}
+                        </span>
                       </div>
                     </div>
 
@@ -616,29 +649,29 @@ export const ResultScreen: React.FC = () => {
               <div className="feature-item feature-highlight">
                 <div className="feature-icon">🎤</div>
                 <div className="feature-content">
-                  <h4>K-Pop Star Names</h4>
-                  <p>Compatible with your Saju</p>
+                  <h4>{t('premiumCta.feature1.title')}</h4>
+                  <p>{t('premiumCta.feature1.description')}</p>
                 </div>
               </div>
               <div className="feature-item">
                 <div className="feature-icon">💎</div>
                 <div className="feature-content">
-                  <h4>Perfect Partner Names</h4>
-                  <p>Your destined partner's name</p>
+                  <h4>{t('premiumCta.feature2.title')}</h4>
+                  <p>{t('premiumCta.feature2.description')}</p>
                 </div>
               </div>
               <div className="feature-item">
                 <div className="feature-icon">📊</div>
                 <div className="feature-content">
-                  <h4>Deep Saju Analysis</h4>
-                  <p>Traditional fortune reading</p>
+                  <h4>{t('premiumCta.feature3.title')}</h4>
+                  <p>{t('premiumCta.feature3.description')}</p>
                 </div>
               </div>
               <div className="feature-item">
                 <div className="feature-icon">🔗</div>
                 <div className="feature-content">
-                  <h4>15-Day Share Link</h4>
-                  <p>Show friends your results</p>
+                  <h4>{t('premiumCta.feature4.title')}</h4>
+                  <p>{t('premiumCta.feature4.description')}</p>
                 </div>
               </div>
             </div>
@@ -649,7 +682,7 @@ export const ResultScreen: React.FC = () => {
                 <span className="current-price">$2.99</span>
                 <span className="discount-badge">70% OFF</span>
               </div>
-              <p className="pricing-subtitle">Limited time offer • One-time payment</p>
+              <p className="pricing-subtitle">{t('premiumCta.offerDetails')}</p>
             </div>
 
             <button
@@ -665,8 +698,8 @@ export const ResultScreen: React.FC = () => {
             </button>
 
             <div className="trust-indicators">
-              <span className="trust-item">⚡ Instant Access</span>
-              <span className="trust-item">🔒 Secure Payment</span>
+              <span className="trust-item">⚡ {t('premiumCta.instantAccess')}</span>
+              <span className="trust-item">🔒 {t('premiumCta.securePayment')}</span>
             </div>
           </div>
         )}

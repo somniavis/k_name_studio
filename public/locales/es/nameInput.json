@@ -8,7 +8,8 @@
     "title": "¿Cuál es tu nombre?",
     "subtitle": "Ingresa tu primer nombre para crear tu nombre coreano personalizado",
     "placeholder": "Tu primer nombre",
-    "culturalNote": "Tu nombre será transformado usando sonidos y significados coreanos tradicionales"
+    "culturalNote": "Tu nombre será transformado usando sonidos y significados coreanos tradicionales",
+    "nameNote": "⚠️ Para mejores resultados, por favor ingresa nombres en escritura inglesa"
   },
   "step2": {
     "title": "Información de nacimiento",

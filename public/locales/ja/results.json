@@ -27,20 +27,41 @@
   },
   "premiumHarmonyDescription": "このプレミアム名前はあなたの天体設計図と強力な共鳴を作ります。",
   "premiumCta": {
-    "title": "プレミアム名前のロック解除",
-    "description": "強化された文化的物語と詳細な分析を含む10の追加プレミアム名前を取得",
-    "features": {
-      "kpop": "✨ K-Pop 名前",
-      "analysis": "📊 深層分析",
-      "matching": "🎯 完璧なマッチング"
-    }
+    "title": "あなたにぴったりの韓国名を見つけましょう",
+    "description": "四柱推命の深層分析によるプレミアム名3つと、あなたの運命にぴったりのパートナー名2つを手に入れましょう",
+    "feature1": {
+      "title": "K-POPスターの名前",
+      "description": "あなたの四柱推命と相性の良い名前"
+    },
+    "feature2": {
+      "title": "完璧なパートナーの名前",
+      "description": "あなたの運命のパートナーの名前"
+    },
+    "feature3": {
+      "title": "四柱推命の深層分析",
+      "description": "伝統的な運勢占い"
+    },
+    "feature4": {
+      "title": "15日間共有リンク",
+      "description": "友達に結果を見せる"
+    },
+    "offerDetails": "期間限定オファー • 1回払い",
+    "instantAccess": "即時アクセス",
+    "securePayment": "安全な支払い"
   },
-  "unlockPremium": "プレミアムロック解除",
+  "partnerNames": {
+    "title": "完璧なパートナー名前",
+    "subtitle": "あなたのパートナーのための完璧な調和の名前"
+  },
+  "unlockPremium": "プレミアム体験をアンロック",
   "sharing": {
     "title": "あなたの韓国名をシェア！",
     "subtitle": "ソーシャルメディアで新しい韓国名を見せびらかそう",
     "copy": "テキストをコピー",
-    "copied": "コピーされました！"
+    "copied": "コピーされました！",
+    "creatingLink": "リンクを作成中...",
+    "createLink": "共有可能なリンクを作成",
+    "copyLink": "リンクをコピー"
   },
   "scoreDescriptions": {
     "excellent": "強い類似性 ⭐",

@@ -27,20 +27,41 @@
   },
   "premiumHarmonyDescription": "Nama premium ini menciptakan resonansi yang kuat dengan cetak biru langit Anda.",
   "premiumCta": {
-    "title": "Buka Nama Premium",
-    "description": "Dapatkan 3 nama premium + 2 nama pasangan yang kompatibel dengan cerita budaya yang disempurnakan",
-    "features": {
-      "kpop": "✨ Nama K-Pop",
-      "analysis": "📊 Analisis Mendalam",
-      "matching": "🎯 Pencocokan Sempurna"
-    }
+    "title": "Buka Nama Korea Sempurna Anda",
+    "description": "Dapatkan 3 nama premium dengan analisis Saju mendalam dan 2 nama pasangan sempurna untuk takdir Anda",
+    "feature1": {
+      "title": "Nama Bintang K-Pop",
+      "description": "Kompatibel dengan Saju Anda"
+    },
+    "feature2": {
+      "title": "Nama Pasangan Sempurna",
+      "description": "Nama pasangan yang ditakdirkan untukmu"
+    },
+    "feature3": {
+      "title": "Analisis Saju Mendalam",
+      "description": "Pembacaan nasib tradisional"
+    },
+    "feature4": {
+      "title": "Tautan Berbagi 15 Hari",
+      "description": "Tunjukkan hasil Anda kepada teman-teman"
+    },
+    "offerDetails": "Penawaran waktu terbatas • Pembayaran satu kali",
+    "instantAccess": "Akses Instan",
+    "securePayment": "Pembayaran Aman"
   },
-  "unlockPremium": "Buka Premium",
+  "partnerNames": {
+    "title": "Nama Pasangan Sempurna",
+    "subtitle": "Nama harmoni yang sempurna untuk pasangan Anda"
+  },
+  "unlockPremium": "Buka Pengalaman Premium",
   "sharing": {
     "title": "Bagikan Nama Korea Anda!",
     "subtitle": "Pamerkan nama Korea baru Anda di media sosial",
     "copy": "Salin Teks",
-    "copied": "Tersalin!"
+    "copied": "Tersalin!",
+    "creatingLink": "Membuat Tautan...",
+    "createLink": "Buat Tautan yang Dapat Dibagikan",
+    "copyLink": "Salin Tautan"
   },
   "scoreDescriptions": {
     "excellent": "Kemiripan kuat ⭐",

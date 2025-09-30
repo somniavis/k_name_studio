@@ -8,7 +8,8 @@
     "title": "Siapa nama Anda?",
     "subtitle": "Masukkan nama depan Anda untuk membuat nama Korea yang dipersonalisasi",
     "placeholder": "Nama depan Anda",
-    "culturalNote": "Nama Anda akan diubah menggunakan suara dan makna Korea tradisional"
+    "culturalNote": "Nama Anda akan diubah menggunakan suara dan makna Korea tradisional",
+    "nameNote": "⚠️ Untuk hasil terbaik, silakan masukkan nama dalam ejaan bahasa Inggris"
   },
   "step2": {
     "title": "Informasi kelahiran",

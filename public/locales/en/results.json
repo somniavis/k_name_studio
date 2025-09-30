@@ -29,11 +29,25 @@
   "premiumCta": {
     "title": "Unlock Your Perfect Korean Name",
     "description": "Get 3 premium names with deep Saju analysis and 2 perfect partner names for your destiny",
-    "features": {
-      "kpop": "🎤 K-Pop Star Names",
-      "analysis": "📊 Deep Analysis",
-      "matching": "🎯 Perfect Matching"
-    }
+    "feature1": {
+      "title": "K-Pop Star Names",
+      "description": "Compatible with your Saju"
+    },
+    "feature2": {
+      "title": "Perfect Partner Names",
+      "description": "Your destined partner's name"
+    },
+    "feature3": {
+      "title": "Deep Saju Analysis",
+      "description": "Traditional fortune reading"
+    },
+    "feature4": {
+      "title": "15-Day Share Link",
+      "description": "Show friends your results"
+    },
+    "offerDetails": "Limited time offer • One-time payment",
+    "instantAccess": "Instant Access",
+    "securePayment": "Secure Payment"
   },
   "partnerNames": {
     "title": "Perfect Partner Names",
