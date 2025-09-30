@@ -32,6 +32,8 @@ export const ResultScreen: React.FC = () => {
   const [selectedName, setSelectedName] = useState<number | null>(null);
   const [loadingStep, setLoadingStep] = useState(0);
   const [copiedToClipboard, setCopiedToClipboard] = useState(false);
+  const [isCreatingLink, setIsCreatingLink] = useState(false);
+  const [shareableLink, setShareableLink] = useState<string | null>(null);
 
   const generateNames = async () => {
     if (!userData.birthDate || !userData.firstName || !userData.gender) return;
@@ -147,9 +149,23 @@ export const ResultScreen: React.FC = () => {
     }
   };
 
-  const handleShare = (platform: string, nameData: NameResult) => {
-    const shareText = `My Korean name is ${nameData.korean} (${nameData.pronunciation})! 🇰🇷✨`;
-    const shareUrl = window.location.href;
+  const handleShare = (platform: string, nameData?: NameResult) => {
+    const serviceUrl = window.location.origin;
+
+    if (platform === 'service-link') {
+      navigator.clipboard.writeText(`✨ Discover your perfect Korean name!\n🎯 Traditional Saju analysis meets modern K-pop culture\n\n${serviceUrl}`).then(() => {
+        setCopiedToClipboard(true);
+        setTimeout(() => setCopiedToClipboard(false), 2000);
+      });
+      return;
+    }
+
+    if (!nameData) return;
+
+    const compatibilityText = nameData.compatibility === 'excellent' ? 'Perfect Harmony' :
+                              nameData.compatibility === 'good' ? 'Good Connection' :
+                              nameData.compatibility === 'fair' ? 'Fair Match' : 'Unique Path';
+    const shareText = `🌟 My Korean Name: ${nameData.korean} (${nameData.pronunciation})\n📖 Meaning: ${nameData.meaning}\n🎯 Saju Match: ${compatibilityText}\n✨ Discover your Korean name at ${serviceUrl}`;
 
     if (platform === 'copy') {
       navigator.clipboard.writeText(shareText).then(() => {
@@ -157,13 +173,51 @@ export const ResultScreen: React.FC = () => {
         setTimeout(() => setCopiedToClipboard(false), 2000);
       });
     } else if (platform === 'instagram') {
-      navigator.clipboard.writeText(`${shareText}\n\nGenerate your Korean name: ${shareUrl}`);
+      navigator.clipboard.writeText(`${shareText}\n\nGenerate your Korean name: ${serviceUrl}`);
       window.open('https://www.instagram.com/', '_blank');
       alert('✅ Text copied to clipboard!\n\n📸 Instagram opened in new tab.\nPaste the text in your story or post!');
     } else if (platform === 'tiktok') {
-      navigator.clipboard.writeText(`${shareText}\n\nGenerate your Korean name: ${shareUrl}`);
+      navigator.clipboard.writeText(`${shareText}\n\nGenerate your Korean name: ${serviceUrl}`);
       window.open('https://www.tiktok.com/upload', '_blank');
       alert('✅ Text copied to clipboard!\n\n🎬 TikTok upload page opened.\nPaste the text in your video description!');
+    }
+  };
+
+  const handleCreateShareLink = async () => {
+    setIsCreatingLink(true);
+    setShareableLink(null);
+
+    const dataToShare = {
+      userData,
+      freeNames,
+      premiumNames,
+      sajuAnalysis,
+      isPremiumUnlocked,
+      oppositeGenderNames,
+    };
+
+    try {
+      const response = await fetch('/api/share', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataToShare),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create share link');
+      }
+
+      const { id } = await response.json();
+      const newLink = `${window.location.origin}/share/${id}`;
+      setShareableLink(newLink);
+
+    } catch (error) {
+      console.error(error);
+      alert('Sorry, we could not create a share link. Please try again.');
+    } finally {
+      setIsCreatingLink(false);
     }
   };
 
@@ -234,7 +288,7 @@ export const ResultScreen: React.FC = () => {
 
   return (
     <div className="screen result-screen">
-      <button className="back-button" onClick={() => setCurrentScreen('nameInput')}>
+      <button className="back-button" onClick={() => setCurrentScreen('nameInput')}> 
         ←
       </button>
 
@@ -536,21 +590,84 @@ export const ResultScreen: React.FC = () => {
         {/* Show premium CTA only if not purchased yet */}
         {!isPremiumUnlocked && (
           <div className="premium-cta">
-            <div className="cta-content">
-              <h3>{t('premiumCta.title') || 'Unlock Premium Names'}</h3>
-              <p>{t('premiumCta.description') || 'Get 10 additional premium names with enhanced cultural stories and detailed analysis'}</p>
-              <div className="cta-features">
-                <span>{t('premiumCta.features.kpop') || '✨ K-Pop Names'}</span>
-                <span>{t('premiumCta.features.analysis') || '📊 Deep Analysis'}</span>
-                <span>{t('premiumCta.features.matching') || '🎯 Perfect Matching'}</span>
+            <div className="cta-background-effects">
+              <div className="sparkle-effect">✨</div>
+              <div className="sparkle-effect sparkle-delay-1">💫</div>
+              <div className="sparkle-effect sparkle-delay-2">⭐</div>
+            </div>
+
+            <div className="cta-header">
+              <div className="premium-badge">
+                <span className="badge-text">🏆 PREMIUM</span>
+              </div>
+              <h3 className="cta-title">
+                <span className="gradient-text">{t('premiumCta.title') || 'Unlock Your Perfect Korean Name'}</span>
+              </h3>
+              <p className="cta-subtitle">
+                {t('premiumCta.description') || (
+                  <>
+                    Get <strong className="text-accent">3 premium names</strong> with deep Saju analysis and <strong className="text-accent">2 perfect partner names</strong> for your destiny
+                  </>
+                )}
+              </p>
+            </div>
+
+            <div className="premium-features-grid">
+              <div className="feature-item feature-highlight">
+                <div className="feature-icon">🎤</div>
+                <div className="feature-content">
+                  <h4>K-Pop Star Names</h4>
+                  <p>Compatible with your Saju</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">💎</div>
+                <div className="feature-content">
+                  <h4>Perfect Partner Names</h4>
+                  <p>Your destined partner's name</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">📊</div>
+                <div className="feature-content">
+                  <h4>Deep Saju Analysis</h4>
+                  <p>Traditional fortune reading</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">🔗</div>
+                <div className="feature-content">
+                  <h4>15-Day Share Link</h4>
+                  <p>Show friends your results</p>
+                </div>
               </div>
             </div>
+
+            <div className="cta-pricing">
+              <div className="price-container">
+                <span className="original-price">$9.99</span>
+                <span className="current-price">$2.99</span>
+                <span className="discount-badge">70% OFF</span>
+              </div>
+              <p className="pricing-subtitle">Limited time offer • One-time payment</p>
+            </div>
+
             <button
-              className="premium-button"
+              className="premium-button enhanced"
               onClick={handleUnlockPremium}
             >
-              {t('unlockPremium') || 'Unlock Premium'} - $2.99
+              <span className="button-content">
+                <span className="button-icon">🚀</span>
+                <span className="button-text">{t('unlockPremium') || 'Unlock Premium Experience'}</span>
+                <span className="button-arrow">→</span>
+              </span>
+              <div className="button-glow"></div>
             </button>
+
+            <div className="trust-indicators">
+              <span className="trust-item">⚡ Instant Access</span>
+              <span className="trust-item">🔒 Secure Payment</span>
+            </div>
           </div>
         )}
 
@@ -559,8 +676,8 @@ export const ResultScreen: React.FC = () => {
         {isPremiumUnlocked && oppositeGenderNames.length > 0 && (
           <div className="opposite-gender-section">
             <div className="section-header">
-              <h2>💕 Compatible Partner Names</h2>
-              <p>Perfect harmony names for your {userData.gender === 'male' ? 'female' : 'male'} partner</p>
+              <h2>💕 {t('partnerNames.title') || 'Perfect Partner Names'}</h2>
+              <p>{t('partnerNames.subtitle') || 'Perfect harmony names for your partner'}</p>
             </div>
             <div className="names-grid opposite-gender-grid">
               {oppositeGenderNames.map((nameData, index) => {
@@ -632,32 +749,69 @@ export const ResultScreen: React.FC = () => {
           </div>
         )}
 
-        {/* Show sharing section only after premium purchase or with free names */}
-        {(isPremiumUnlocked && premiumNames.length > 0) || freeNames.length > 0 && (
+        {/* Premium 15-Day Share Link - Show first and prominently */}
+        {isPremiumUnlocked && freeNames.length > 0 && (
+          <div className="premium-share-highlight">
+            <div className="premium-share-header">
+              <div className="premium-badge-large">⭐ PREMIUM</div>
+              <h3 className="premium-share-title">🔗 15-Day Share Link</h3>
+              <p className="premium-share-subtitle">Create a special link that saves your results for 15 days</p>
+            </div>
+
+            {!shareableLink && (
+              <button
+                className="premium-share-btn"
+                onClick={handleCreateShareLink}
+                disabled={isCreatingLink}
+              >
+                {isCreatingLink ? '⏳ Creating Link...' : '🔗 Create a Shareable Link'}
+              </button>
+            )}
+
+            {shareableLink && (
+              <div className="premium-share-result">
+                <div className="link-info">
+                  <span className="link-label">🔗 Your 15-Day Share Link:</span>
+                  <span className="expiry-info">Expires in 15 days</span>
+                </div>
+                <div className="link-container">
+                  <input type="text" readOnly value={shareableLink} className="share-link-input" />
+                  <button
+                    className="copy-link-btn"
+                    onClick={() => {
+                      navigator.clipboard.writeText(shareableLink);
+                      setCopiedToClipboard(true);
+                      setTimeout(() => setCopiedToClipboard(false), 2000);
+                    }}
+                  >
+                    {copiedToClipboard ? '✅ Copied!' : '📋 Copy'}
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Show sharing section always (basic sharing for free, enhanced for premium) */}
+        {freeNames.length > 0 && (
           <div className="share-section">
-            <h3>{t('sharing.title') || 'Share Your Korean Name!'}</h3>
+            <h3>{t('sharing.title') || 'Share Your Results!'}</h3>
             <p className="share-description">
-              {t('sharing.subtitle') || 'Show off your new Korean name on social media'}
+              {t('sharing.subtitle') || 'Save and share your Korean name discovery'}
             </p>
 
             <div className="share-buttons">
               <button
-                className="share-btn instagram"
-                onClick={() => handleShare('instagram', freeNames[0] || premiumNames[0])}
-              >
-                {t('shareButtons.instagram')}
-              </button>
-              <button
-                className="share-btn tiktok"
-                onClick={() => handleShare('tiktok', freeNames[0] || premiumNames[0])}
-              >
-                {t('shareButtons.tiktok')}
-              </button>
-              <button
                 className="share-btn copy"
                 onClick={() => handleShare('copy', freeNames[0] || premiumNames[0])}
               >
-                {copiedToClipboard ? `✅ ${t('sharing.copied') || 'Copied!'}` : `📋 ${t('sharing.copy') || 'Copy Text'}`}
+                {copiedToClipboard ? '✅ Copied!' : '📋 Copy Name & Meaning'}
+              </button>
+              <button
+                className="share-btn share-service"
+                onClick={() => handleShare('service-link')}
+              >
+                🔗 Share Service Link
               </button>
             </div>
           </div>

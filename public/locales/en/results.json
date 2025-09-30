@@ -27,20 +27,29 @@
   },
   "premiumHarmonyDescription": "This premium name creates powerful resonance with your celestial blueprint.",
   "premiumCta": {
-    "title": "Unlock Premium Names",
-    "description": "Get 3 premium names + 2 compatible partner names with enhanced cultural stories",
+    "title": "Unlock Your Perfect Korean Name",
+    "description": "Get 3 premium names with deep Saju analysis and 2 perfect partner names for your destiny",
     "features": {
-      "kpop": "✨ K-Pop Names",
+      "kpop": "🎤 K-Pop Star Names",
       "analysis": "📊 Deep Analysis",
       "matching": "🎯 Perfect Matching"
     }
   },
-  "unlockPremium": "Unlock Premium",
+  "partnerNames": {
+    "title": "Perfect Partner Names",
+    "subtitle": "Perfect harmony names for your partner"
+  },
+  "unlockPremium": "Unlock Premium Experience",
   "sharing": {
-    "title": "Share Your Korean Name!",
-    "subtitle": "Show off your new Korean name on social media",
+    "title": "Share Your Results!",
+    "subtitle": "Save and share your Korean name discovery",
+    "copyNameMeaning": "Copy Name & Meaning",
+    "shareService": "Share Service Link",
     "copy": "Copy Text",
-    "copied": "Copied!"
+    "copied": "Copied!",
+    "creatingLink": "Creating Link...",
+    "createLink": "Create a Shareable Link",
+    "copyLink": "Copy Link"
   },
   "scoreDescriptions": {
     "excellent": "Strong similarity ⭐",
