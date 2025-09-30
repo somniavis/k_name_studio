@@ -54,14 +54,14 @@ createName({
   meaning: {
     en: 'Quick to learn and handsome',
     ko: '민첩하고 준수한',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '賢くてハンサム',
+    zh: '学习能力强且英俊',
+    fr: 'Vif d\'esprit et séduisant',
+    de: 'Lernfähig und gutaussehend',
+    es: 'Rápido para aprender y guapo',
+    ru: 'Быстро обучаемый и красивый',
+    ar: 'سريع التعلم ووسيم',
+    hi: 'सीखने में तेज़ और सुंदर'
   },
   hanjaBreakdown: {
     characters: [
@@ -71,14 +71,14 @@ createName({
         meaning: {
           en: 'quick, agile, clever',
           ko: '빠른, 민첩한, 영리한',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: '素早い、敏捷な、賢い',
+          zh: '快速、敏捷、聪明',
+          fr: 'rapide, agile, intelligent',
+          de: 'schnell, wendig, klug',
+          es: 'rápido, ágil, inteligente',
+          ru: 'быстрый, проворный, умный',
+          ar: 'سريع، رشيق، ذكي',
+          hi: 'तेज़, फुर्तीला, चतुर'
         }
       },
       {
@@ -87,53 +87,53 @@ createName({
         meaning: {
           en: 'handsome, talented',
           ko: '준수한, 재능있는',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: 'ハンサム、才能ある',
+          zh: '英俊、才华横溢',
+          fr: 'beau, talentueux',
+          de: 'gutaussehend, talentiert',
+          es: 'guapo, talentoso',
+          ru: 'красивый, талантливый',
+          ar: 'وسيم، موهوب',
+          hi: 'सुंदर, प्रतिभाशाली'
         }
       }
     ],
     traditionalMeaning: {
-      en: '',
-      ko: '',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      en: 'A name that brings swift learning and handsome appearance',
+      ko: '빠른 학습과 준수한 모습을 가져다주는 이름',
+      ja: '素早い学習とハンサムな容姿をもたらす名前',
+      zh: '带来快速学习和英俊外表的名字',
+      fr: 'Un nom qui apporte un apprentissage rapide et une belle apparence',
+      de: 'Ein Name, der schnelles Lernen und attraktives Aussehen bringt',
+      es: 'Un nombre que trae aprendizaje rápido y apariencia atractiva',
+      ru: 'Имя, которое приносит быстрое обучение и красивую внешность',
+      ar: 'اسم يجلب التعلم السريع والمظهر الجذاب',
+      hi: 'एक नाम जो तेज़ सीखने और सुंदर दिखने का आशीर्वाद देता है'
     }
   },
   story: {
     en: 'This name combines the wisdom of a scholar with natural charm, perfect for someone who grows like a strong tree.',
     ko: '학자의 지혜와 자연스러운 매력을 결합한 이름으로, 강한 나무처럼 자라는 사람에게 완벽합니다.',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: 'この名前は学者の知恵と自然な魅力を組み合わせ、強い木のように成長する人にぴったりです。',
+    zh: '这个名字结合了学者的智慧和自然魅力，非常适合像强壮的树木一样成长的人。',
+    fr: 'Ce nom combine la sagesse d\'un érudit avec un charme naturel, parfait pour quelqu\'un qui grandit comme un arbre solide.',
+    de: 'Dieser Name vereint die Weisheit eines Gelehrten mit natürlichem Charme, perfekt für jemanden, der wie ein starker Baum wächst.',
+    es: 'Este nombre combina la sabiduría de un erudito con encanto natural, perfecto para alguien que crece como un árbol fuerte.',
+    ru: 'Это имя сочетает мудрость учёного с естественным обаянием, идеально для того, кто растёт как сильное дерево.',
+    ar: 'يجمع هذا الاسم بين حكمة العالم والسحر الطبيعي، مثالي لمن ينمو مثل شجرة قوية.',
+    hi: 'यह नाम विद्वान की बुद्धिमत्ता और प्राकृतिक आकर्षण को जोड़ता है, उस व्यक्ति के लिए आदर्श जो एक मजबूत पेड़ की तरह बढ़ता है।'
   },
   harmony: {
     en: 'Your Wood element nature harmonizes perfectly with this name, creating deep roots of learning and growth. The quick-thinking aspect balances your natural patience, while the handsome meaning reflects the inner beauty that comes from cultivated wisdom and genuine character.',
     ko: '당신의 나무 오행은 이 이름과 완벽하게 조화를 이루어 배움과 성장의 깊은 뿌리를 만듭니다. 빠른 사고는 당신의 타고난 인내심과 균형을 이루고, 잘생겼다는 의미는 교양 있는 지혜와 진정한 성품에서 오는 내면의 아름다움을 반영합니다.',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: 'あなたの木の元素の性質はこの名前と完璧に調和し、学びと成長の深い根を作ります。素早い思考の面はあなたの生来の忍耐力とバランスを取り、ハンサムという意味は教養ある知恵と真の人格から来る内面の美しさを反映します。',
+    zh: '您的木元素性质与这个名字完美和谐，创造了深根的学习和成长。快速思考的特质平衡了您天生的耐心，而英俊的含义反映了来自修养的智慧和真正品格的内在美。',
+    fr: 'Votre nature d\'\u00e9l\u00e9ment Bois s\'harmonise parfaitement avec ce nom, cr\u00e9ant des racines profondes d\'apprentissage et de croissance. L\'aspect de pens\u00e9e rapide \u00e9quilibre votre patience naturelle, tandis que la signification belle refl\u00e8te la beaut\u00e9 int\u00e9rieure qui vient de la sagesse cultiv\u00e9e et du caract\u00e8re authentique.',
+    de: 'Ihre Holz-Element-Natur harmoniert perfekt mit diesem Namen und schafft tiefe Wurzeln des Lernens und Wachstums. Der schnelldenkende Aspekt balanciert Ihre nat\u00fcrliche Geduld aus, w\u00e4hrend die sch\u00f6ne Bedeutung die innere Sch\u00f6nheit widerspiegelt, die aus kultivierter Weisheit und echtem Charakter kommt.',
+    es: 'Su naturaleza del elemento Madera armoniza perfectamente con este nombre, creando ra\u00edces profundas de aprendizaje y crecimiento. El aspecto de pensamiento r\u00e1pido equilibra su paciencia natural, mientras que el significado hermoso refleja la belleza interior que proviene de la sabidur\u00eda cultivada y el car\u00e1cter genuino.',
+    ru: '\u0412\u0430\u0448\u0430 \u043f\u0440\u0438\u0440\u043e\u0434\u0430 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430 \u0414\u0435\u0440\u0435\u0432\u043e \u0441\u043e\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u043e \u0433\u0430\u0440\u043c\u043e\u043d\u0438\u0440\u0443\u0435\u0442 \u0441 \u044d\u0442\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c, \u0441\u043e\u0437\u0434\u0430\u0432\u0430\u044f \u0433\u043b\u0443\u0431\u043e\u043a\u0438\u0435 \u043a\u043e\u0440\u043d\u0438 \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u044f \u0438 \u0440\u043e\u0441\u0442\u0430. \u0410\u0441\u043f\u0435\u043a\u0442 \u0431\u044b\u0441\u0442\u0440\u043e\u0433\u043e \u043c\u044b\u0448\u043b\u0435\u043d\u0438\u044f \u0443\u0440\u0430\u0432\u043d\u043e\u0432\u0435\u0448\u0438\u0432\u0430\u0435\u0442 \u0432\u0430\u0448\u0435 \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0435 \u0442\u0435\u0440\u043f\u0435\u043d\u0438\u0435, \u0430 \u043a\u0440\u0430\u0441\u0438\u0432\u043e\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043e\u0442\u0440\u0430\u0436\u0430\u0435\u0442 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u044e\u044e \u043a\u0440\u0430\u0441\u043e\u0442\u0443, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u0440\u0438\u0445\u043e\u0434\u0438\u0442 \u043e\u0442 \u043a\u0443\u043b\u044c\u0442\u0438\u0432\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0439 \u043c\u0443\u0434\u0440\u043e\u0441\u0442\u0438 \u0438 \u043f\u043e\u0434\u043b\u0438\u043d\u043d\u043e\u0433\u043e \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0430.',
+    ar: '\u0637\u0628\u064a\u0639\u062a\u0643 \u0627\u0644\u062e\u0634\u0628\u064a\u0629 \u062a\u062a\u0646\u0627\u063a\u0645 \u0628\u0634\u0643\u0644 \u0645\u062b\u0627\u0644\u064a \u0645\u0639 \u0647\u0630\u0627 \u0627\u0644\u0627\u0633\u0645\u060c \u0645\u0645\u0627 \u064a\u062e\u0644\u0642 \u062c\u0630\u0648\u0631\u0627\u064b \u0639\u0645\u064a\u0642\u0629 \u0644\u0644\u062a\u0639\u0644\u0645 \u0648\u0627\u0644\u0646\u0645\u0648. \u062c\u0627\u0646\u0628 \u0627\u0644\u062a\u0641\u0643\u064a\u0631 \u0627\u0644\u0633\u0631\u064a\u0639 \u064a\u0648\u0627\u0632\u0646 \u0635\u0628\u0631\u0643 \u0627\u0644\u0637\u0628\u064a\u0639\u064a\u060c \u0628\u064a\u0646\u0645\u0627 \u064a\u0639\u0643\u0633 \u0627\u0644\u0645\u0639\u0646\u0649 \u0627\u0644\u062c\u0645\u064a\u0644 \u0627\u0644\u062c\u0645\u0627\u0644 \u0627\u0644\u062f\u0627\u062e\u0644\u064a \u0627\u0644\u0630\u064a \u064a\u0623\u062a\u064a \u0645\u0646 \u0627\u0644\u062d\u0643\u0645\u0629 \u0627\u0644\u0645\u0632\u0631\u0648\u0639\u0629 \u0648\u0627\u0644\u0634\u062e\u0635\u064a\u0629 \u0627\u0644\u0623\u0635\u064a\u0644\u0629.',
+    hi: '\u0906\u092a\u0915\u093e \u0932\u0915\u0921\u093c\u0940 \u0924\u0924\u094d\u0935 \u0915\u093e \u0938\u094d\u0935\u092d\u093e\u0935 \u0907\u0938 \u0928\u093e\u092e \u0915\u0947 \u0938\u093e\u0925 \u092a\u0942\u0930\u094d\u0923 \u0930\u0942\u092a \u0938\u0947 \u0924\u093e\u0932\u092e\u0947\u0932 \u092c\u093f\u0920\u093e\u0924\u093e \u0939\u0948, \u0938\u0940\u0916\u0928\u0947 \u0914\u0930 \u0935\u093f\u0915\u093e\u0938 \u0915\u0940 \u0917\u0939\u0930\u0940 \u091c\u0921\u093c\u0947\u0902 \u092c\u0928\u093e\u0924\u093e \u0939\u0948\u0964 \u0924\u0947\u091c\u093c \u0938\u094b\u091a \u0915\u093e \u092a\u0939\u0932\u0942 \u0906\u092a\u0915\u0947 \u092a\u094d\u0930\u093e\u0915\u0943\u0924\u093f\u0915 \u0927\u0948\u0930\u094d\u092f \u0915\u0947 \u0938\u093e\u0925 \u0938\u0902\u0924\u0941\u0932\u0928 \u092c\u0928\u093e\u0924\u093e \u0939\u0948, \u091c\u092c\u0915\u093f \u0938\u0941\u0902\u0926\u0930 \u0905\u0930\u094d\u0925 \u0909\u0938 \u0906\u0902\u0924\u0930\u093f\u0915 \u0938\u0941\u0902\u0926\u0930\u0924\u093e \u0915\u094b \u0926\u0930\u094d\u0936\u093e\u0924\u093e \u0939\u0948 \u091c\u094b \u0938\u0902\u0938\u094d\u0915\u0943\u0924 \u092c\u0941\u0926\u094d\u0927\u093f\u092e\u0924\u094d\u0924\u093e \u0914\u0930 \u0935\u093e\u0938\u094d\u0924\u0935\u093f\u0915 \u091a\u0930\u093f\u0924\u094d\u0930 \u0938\u0947 \u0906\u0924\u0940 \u0939\u0948\u0964'
   }
 }),
   createName({
@@ -148,14 +148,14 @@ createName({
   meaning: {
     en: 'Strong and excellent',
     ko: '강하고 뛰어난',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '強くて優れた',
+    zh: '强大而优秀',
+    fr: 'Fort et excellent',
+    de: 'Stark und ausgezeichnet',
+    es: 'Fuerte y excelente',
+    ru: 'Сильный и превосходный',
+    ar: 'قوي وممتاز',
+    hi: 'मजबूत और उत्कृष्ट'
   },
   hanjaBreakdown: {
     characters: [
@@ -165,14 +165,14 @@ createName({
         meaning: {
           en: 'healthy, strong, robust',
           ko: '건강한, 강한, 튼튼한',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: '健康的、強い、頑丈な',
+          zh: '健康的、強壯的、結實的',
+          fr: 'sain, fort, robuste',
+          de: 'gesund, stark, robust',
+          es: 'saludable, fuerte, robusto',
+          ru: 'здоровый, сильный, крепкий',
+          ar: 'صحي، قوي، قوي البنية',
+          hi: 'स्वस्थ, मजबूत, दृढ़'
         }
       },
       {
@@ -181,14 +181,14 @@ createName({
         meaning: {
           en: 'friend, friendship',
           ko: '친구, 우정',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: '友達、友情',
+          zh: '朋友、友谊',
+          fr: 'ami, amitié',
+          de: 'Freund, Freundschaft',
+          es: 'amigo, amistad',
+          ru: 'друг, дружба',
+          ar: 'صديق، صداقة',
+          hi: 'मित्र, मित्रता'
         }
       }
     ],
@@ -242,14 +242,14 @@ createName({
   meaning: {
     en: 'Wise and great',
     ko: '지혜롭고 위대한',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '賢くて偉大',
+    zh: '充满智慧和伟大',
+    fr: 'Sage et grand',
+    de: 'Weise und großartig',
+    es: 'Sabio y genial',
+    ru: 'Мудрый и великий',
+    ar: 'حكيم وعظيم',
+    hi: 'बुद्धिमान और महान'
   },
   hanjaBreakdown: {
     characters: [
@@ -259,14 +259,14 @@ createName({
         meaning: {
           en: 'wisdom, intelligence',
           ko: '지혜, 지능',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: '知恵、知性',
+          zh: '智慧、智能',
+          fr: 'sagesse, intelligence',
+          de: 'Weisheit, Intelligenz',
+          es: 'sabiduría, inteligencia',
+          ru: 'мудрость, интеллект',
+          ar: 'حكمة، ذكاء',
+          hi: 'बुद्धि, बुद्धिमत्ता'
         }
       },
       {
@@ -275,14 +275,14 @@ createName({
         meaning: {
           en: 'heroic, great',
           ko: '영웅적인, 위대한',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: '英雄的、偉大な',
+          zh: '英雄的、伟大的',
+          fr: 'héroïque, grand',
+          de: 'heroisch, großartig',
+          es: 'heroico, grandioso',
+          ru: 'героический, великий',
+          ar: 'بطولي، عظيم',
+          hi: 'वीर, महान'
         }
       }
     ],
@@ -336,14 +336,14 @@ createName({
   meaning: {
     en: 'Talented and quick',
     ko: '재능있고 민첩한',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '才能があり素早い',
+    zh: '才华横溢且敏捷',
+    fr: 'Talentueux et rapide',
+    de: 'Talentiert und schnell',
+    es: 'Talentoso y rápido',
+    ru: 'Талантливый и быстрый',
+    ar: 'موهوب وسريع',
+    hi: 'प्रतिभाशाली और तेज'
   },
   hanjaBreakdown: {
     characters: [
@@ -353,14 +353,14 @@ createName({
         meaning: {
           en: 'talent, ability',
           ko: '재주, 재능',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: '才能、能力',
+          zh: '才能、能力',
+          fr: 'talent, capacité',
+          de: 'Talent, Fähigkeit',
+          es: 'talento, habilidad',
+          ru: 'талант, способность',
+          ar: 'موهبة، قدرة',
+          hi: 'प्रतिभा, योग्यता'
         }
       },
       {
@@ -369,14 +369,14 @@ createName({
         meaning: {
           en: 'quick, agile, clever',
           ko: '빠른, 민첩한, 영리한',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: '素早い、敏捷な、賢い',
+          zh: '快速、敏捷、聪明',
+          fr: 'rapide, agile, intelligent',
+          de: 'schnell, wendig, klug',
+          es: 'rápido, ágil, inteligente',
+          ru: 'быстрый, проворный, умный',
+          ar: 'سريع، رشيق، ذكي',
+          hi: 'तेज़, फुर्तीला, चतुर'
         }
       }
     ],
@@ -431,14 +431,14 @@ createName({
   meaning: {
     en: 'Quick and sincere',
     ko: '민첩하고 성실한',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '素早くて誠実',
+    zh: '敏捷而真诚',
+    fr: 'Rapide et sincère',
+    de: 'Schnell und aufrichtig',
+    es: 'Rápido y sincero',
+    ru: 'Быстрый и искренний',
+    ar: 'سريع ومخلص',
+    hi: 'तेज और ईमानदार'
   },
   hanjaBreakdown: {
     characters: [
@@ -448,14 +448,14 @@ createName({
         meaning: {
           en: 'quick, agile, clever',
           ko: '빠른, 민첩한, 영리한',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: '素早い、敏捷な、賢い',
+          zh: '快速、敏捷、聪明',
+          fr: 'rapide, agile, intelligent',
+          de: 'schnell, wendig, klug',
+          es: 'rápido, ágil, inteligente',
+          ru: 'быстрый, проворный, умный',
+          ar: 'سريع، رشيق، ذكي',
+          hi: 'तेज़, फुर्तीला, चतुर'
         }
       },
       {
@@ -464,14 +464,14 @@ createName({
         meaning: {
           en: 'sincere, honest',
           ko: '성실한, 정직한',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: '誠実な、正直な',
+          zh: '誠實的、誠實的',
+          fr: 'sincère, honnête',
+          de: 'aufrichtig, ehrlich',
+          es: 'sincero, honesto',
+          ru: 'искренний, честный',
+          ar: 'مخلص، صادق',
+          hi: 'ईमानदार, सच्चा'
         }
       }
     ],
@@ -526,14 +526,14 @@ createName({
   meaning: {
     en: 'Sincere and quick',
     ko: '성실하고 민첩한',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '誠実で素早い',
+    zh: '真诚敏捷',
+    fr: 'Sincère et rapide',
+    de: 'Aufrichtig und schnell',
+    es: 'Sincero y rápido',
+    ru: 'Искренний и быстрый',
+    ar: 'صادق وسريع',
+    hi: 'ईमानदार और तेज'
   },
   hanjaBreakdown: {
     characters: [
@@ -543,14 +543,14 @@ createName({
         meaning: {
           en: 'sincere, honest',
           ko: '성실한, 정직한',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: '誠実な、正直な',
+          zh: '誠實的、誠實的',
+          fr: 'sincère, honnête',
+          de: 'aufrichtig, ehrlich',
+          es: 'sincero, honesto',
+          ru: 'искренний, честный',
+          ar: 'مخلص، صادق',
+          hi: 'ईमानदार, सच्चा'
         }
       },
       {
@@ -559,14 +559,14 @@ createName({
         meaning: {
           en: 'quick, agile, clever',
           ko: '빠른, 민첩한, 영리한',
-          ja: '',
-          zh: '',
-          fr: '',
-          de: '',
-          es: '',
-          ru: '',
-          ar: '',
-          hi: ''
+          ja: '素早い、敏捷な、賢い',
+          zh: '快速、敏捷、聪明',
+          fr: 'rapide, agile, intelligent',
+          de: 'schnell, wendig, klug',
+          es: 'rápido, ágil, inteligente',
+          ru: 'быстрый, проворный, умный',
+          ar: 'سريع، رشيق، ذكي',
+          hi: 'तेज़, फुर्तीला, चतुर'
         }
       }
     ],
@@ -621,14 +621,14 @@ createName({
   meaning: {
     en: 'Quick and excellent',
     ko: '민첩하고 뛰어난',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '素早く優れた',
+    zh: '敏捷而出色',
+    fr: 'Rapide et excellent',
+    de: 'Schnell und ausgezeichnet',
+    es: 'Rápido y excelente',
+    ru: 'Быстрый и превосходный',
+    ar: 'سريع وممتاز',
+    hi: 'तेज और उत्कृष्ट'
   },
   hanjaBreakdown: {
     characters: [
@@ -715,14 +715,14 @@ createName({
   meaning: {
     en: 'Talented and virtuous',
     ko: '재능있고 덕이 있는',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '才能と徳がある',
+    zh: '才德兼备',
+    fr: 'Talentueux et vertueux',
+    de: 'Talentiert und tugendhaft',
+    es: 'Talentoso y virtuoso',
+    ru: 'Талантливый и добродетельный',
+    ar: 'موهوب وفاضل',
+    hi: 'प्रतिभाशाली और गुणी'
   },
   hanjaBreakdown: {
     characters: [
@@ -809,14 +809,14 @@ createName({
   meaning: {
     en: 'Wise and gentle rain',
     ko: '지혜롭고 부드러운 비',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '賢明で優しい雨',
+    zh: '智慧的甘霖',
+    fr: 'Pluie sage et douce',
+    de: 'Weiser und sanfter Regen',
+    es: 'Lluvia sabia y suave',
+    ru: 'Мудрый и нежный дождь',
+    ar: 'مطر حكيم ولطيف',
+    hi: 'बुद्धिमान और कोमल वर्षा'
   },
   hanjaBreakdown: {
     characters: [
@@ -903,14 +903,14 @@ createName({
   meaning: {
     en: 'Strong and bright',
     ko: '강하고 밝은',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '強くて明るい',
+    zh: '坚强而光明',
+    fr: 'Fort et brillant',
+    de: 'Stark und hell',
+    es: 'Fuerte y brillante',
+    ru: 'Сильный и яркий',
+    ar: 'قوي ومشرق',
+    hi: 'मजबूत और उज्ज्वल'
   },
   hanjaBreakdown: {
     characters: [
@@ -997,14 +997,14 @@ createName({
   meaning: {
     en: 'Quick and talented',
     ko: '민첩하고 재능있는',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '素早く才能のある',
+    zh: '敏捷才华',
+    fr: 'Rapide et talentueux',
+    de: 'Schnell und talentiert',
+    es: 'Rápido y talentoso',
+    ru: 'Быстрый и талантливый',
+    ar: 'سريع وموهوب',
+    hi: 'तेज और प्रतिभाशाली'
   },
   hanjaBreakdown: {
     characters: [
@@ -1092,14 +1092,14 @@ createName({
   meaning: {
     en: 'Virtuous and quick',
     ko: '덕이 있고 민첩한',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '高潔で素早い',
+    zh: '贤德敏捷',
+    fr: 'Vertueux et rapide',
+    de: 'Tugendhaft und schnell',
+    es: 'Virtuoso y rápido',
+    ru: 'Добродетельный и быстрый',
+    ar: 'فاضل وسريع',
+    hi: 'गुणी और तेज'
   },
   hanjaBreakdown: {
     characters: [
@@ -1186,14 +1186,14 @@ createName({
   meaning: {
     en: 'Wise and sincere',
     ko: '지혜롭고 성실한',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '賢くて誠実',
+    zh: '智慧诚实',
+    fr: 'Sage et sincère',
+    de: 'Weise und aufrichtig',
+    es: 'Sabio y sincero',
+    ru: 'Мудрый и искренний',
+    ar: 'حكيم ومخلص',
+    hi: 'बुद्धिमान और ईमानदार'
   },
   hanjaBreakdown: {
     characters: [
@@ -1280,14 +1280,14 @@ createName({
   meaning: {
     en: 'Quick and energetic',
     ko: '민첩하고 활기찬',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '素早くエネルギッシュ',
+    zh: '敏捷而充满活力',
+    fr: 'Rapide et énergique',
+    de: 'Schnell und energisch',
+    es: 'Rápido y enérgico',
+    ru: 'Быстрый и энергичный',
+    ar: 'سريع وحيوي',
+    hi: 'तेज और ऊर्जावान'
   },
   hanjaBreakdown: {
     characters: [
@@ -1374,14 +1374,14 @@ createName({
   meaning: {
     en: 'Talented and excellent',
     ko: '재능있고 뛰어난',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '才能があり優れている',
+    zh: '才华卓越',
+    fr: 'Talentueux et excellent',
+    de: 'Talentiert und ausgezeichnet',
+    es: 'Talentoso y excelente',
+    ru: 'Талантливый и превосходный',
+    ar: 'موهوب وممتاز',
+    hi: 'प्रतिभाशाली और उत्कृष्ट'
   },
   hanjaBreakdown: {
     characters: [
@@ -1470,14 +1470,14 @@ createName({
   meaning: {
     en: 'Great virtue',
     ko: '큰 덕',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '大きな徳',
+    zh: '伟大的美德',
+    fr: 'Grande vertu',
+    de: 'Große Tugend',
+    es: 'Gran virtud',
+    ru: 'Великая добродетель',
+    ar: 'فضيلة عظيمة',
+    hi: 'महान गुण'
   },
   hanjaBreakdown: {
     characters: [
@@ -1565,14 +1565,14 @@ createName({
   meaning: {
     en: 'South talented',
     ko: '남쪽의 재능',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '南の才能',
+    zh: '南方才子',
+    fr: 'Talent du sud',
+    de: 'Südliches Talent',
+    es: 'Talento del sur',
+    ru: 'Южный талант',
+    ar: 'موهبة الجنوب',
+    hi: 'दक्षिण की प्रतिभा'
   },
   hanjaBreakdown: {
     characters: [
@@ -1660,14 +1660,14 @@ createName({
   meaning: {
     en: 'Prosperous foundation',
     ko: '번영하는 기초',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '繁栄の基盤',
+    zh: '繁荣的基础',
+    fr: 'Fondation prospère',
+    de: 'Wohlhabendes Fundament',
+    es: 'Fundación próspera',
+    ru: 'Процветающий фундамент',
+    ar: 'أساس مزدهر',
+    hi: 'समृद्ध नींव'
   },
   hanjaBreakdown: {
     characters: [
@@ -1757,14 +1757,14 @@ createName({
   meaning: {
     en: 'Beautiful lotus from the west',
     ko: '서쪽의 아름다운 연꽃',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '西の美しい蓮',
+    zh: '西方的美丽莲花',
+    fr: 'Beau lotus de l\'ouest',
+    de: 'Schöner Lotus aus dem Westen',
+    es: 'Hermoso loto del oeste',
+    ru: 'Красивый лотос с запада',
+    ar: 'زهرة اللوتس الجميلة من الغرب',
+    hi: 'पश्चिम का सुंदर कमल'
   },
   hanjaBreakdown: {
     characters: [
@@ -1852,14 +1852,14 @@ createName({
   meaning: {
     en: 'Colorful garden',
     ko: '다채로운 정원',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: 'カラフルな庭園',
+    zh: '多彩的花园',
+    fr: 'Jardin coloré',
+    de: 'Bunter Garten',
+    es: 'Jardín colorido',
+    ru: 'Красочный сад',
+    ar: 'حديقة ملونة',
+    hi: 'रंगीन बगीचा'
   },
   hanjaBreakdown: {
     characters: [
@@ -1946,14 +1946,14 @@ createName({
   meaning: {
     en: 'Wise and abundant',
     ko: '지혜롭고 풍부한',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '賢くて豊か',
+    zh: '智慧丰富',
+    fr: 'Sage et abondant',
+    de: 'Weise und reichlich',
+    es: 'Sabia y abundante',
+    ru: 'Мудрый и обильный',
+    ar: 'حكيم وفير',
+    hi: 'बुद्धिमान और प्रचुर'
   },
   hanjaBreakdown: {
     characters: [
@@ -2040,14 +2040,14 @@ createName({
   meaning: {
     en: 'Auspicious rain',
     ko: '길조의 비',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '縁起の良い雨',
+    zh: '吉祥的雨',
+    fr: 'Pluie de bon augure',
+    de: 'Glücksverheißender Regen',
+    es: 'Lluvia auspiciosa',
+    ru: 'Благоприятный дождь',
+    ar: 'مطر ميمون',
+    hi: 'शुभ वर्षा'
   },
   hanjaBreakdown: {
     characters: [
@@ -2138,14 +2138,14 @@ createName({
   meaning: {
     en: 'Auspicious and precious',
     ko: '길조롭고 소중한',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '縁起が良く貴重',
+    zh: '吉祥珍贵',
+    fr: 'Auspécieux et précieux',
+    de: 'Glückverheißend und kostbar',
+    es: 'Auspicioso y precioso',
+    ru: 'Благоприятный и драгоценный',
+    ar: 'ميمون وثمين',
+    hi: 'शुभ और कीमती'
   },
   hanjaBreakdown: {
     characters: [
@@ -2235,14 +2235,14 @@ createName({
   meaning: {
     en: 'Auspicious and prosperous',
     ko: '길조롭고 번영하는',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '縁起が良く繁栄する',
+    zh: '吉祥繁荣',
+    fr: 'Auspécieux et prospère',
+    de: 'Glückverheißend und wohlhabend',
+    es: 'Auspicioso y próspero',
+    ru: 'Благоприятный и процветающий',
+    ar: 'ميمون ومزدهر',
+    hi: 'शुभ और समृद्ध'
   },
   hanjaBreakdown: {
     characters: [
@@ -2331,14 +2331,14 @@ createName({
   meaning: {
     en: 'Wise grace',
     ko: '지혜로운 은혜',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '賢い恵み',
+    zh: '智慧的恩典',
+    fr: 'Grâce sage',
+    de: 'Weise Gnade',
+    es: 'Gracia sabia',
+    ru: 'Мудрая благодать',
+    ar: 'نعمة حكيمة',
+    hi: 'बुद्धिमान अनुग्रह'
   },
   hanjaBreakdown: {
     characters: [
@@ -2426,14 +2426,14 @@ createName({
   meaning: {
     en: 'Colorful wisdom',
     ko: '다채로운 지혜',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: 'カラフルな知恵',
+    zh: '多彩的智慧',
+    fr: 'Sagesse colorée',
+    de: 'Bunte Weisheit',
+    es: 'Sabiduría colorida',
+    ru: 'Красочная мудрость',
+    ar: 'حكمة ملونة',
+    hi: 'रंगीन ज्ञान'
   },
   hanjaBreakdown: {
     characters: [
@@ -2524,14 +2524,14 @@ createName({
     meaning: {
       en: 'Summer and talented',
       ko: '여름과 재능',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '夏と才能',
+      zh: '夏天和才华',
+      fr: 'Été et talentueux',
+      de: 'Sommer und talentiert',
+      es: 'Verano y talentoso',
+      ru: 'Лето и талантливый',
+      ar: 'الصيف والموهوب',
+      hi: 'गर्मी और प्रतिभाशाली'
     },
     hanjaBreakdown: {
       characters: [
@@ -2618,14 +2618,14 @@ createName({
     meaning: {
       en: 'Beginning rain',
       ko: '처음 비',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '始まりの雨',
+      zh: '初雨',
+      fr: 'Pluie du début',
+      de: 'Anfang des Regens',
+      es: 'Lluvia inicial',
+      ru: 'Начальный дождь',
+      ar: 'المطر الأول',
+      hi: 'पहली बारिश'
     },
     hanjaBreakdown: {
       characters: [
@@ -2713,14 +2713,14 @@ createName({
     meaning: {
       en: 'Moral and prosperous',
       ko: '도덕적이고 번영하는',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '道徳的で繁栄している',
+      zh: '道德与繁荣',
+      fr: 'Moral et prospère',
+      de: 'Moralisch und wohlhabend',
+      es: 'Moral y próspero',
+      ru: 'Моральный и процветающий',
+      ar: 'أخلاقي ومزدهر',
+      hi: 'नैतिक और समृद्ध'
     },
     hanjaBreakdown: {
       characters: [
@@ -2809,14 +2809,14 @@ createName({
     meaning: {
       en: 'Great and quick',
       ko: '크고 민첩한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '偉大で素早い',
+      zh: '伟大而敏捷',
+      fr: 'Grand et rapide',
+      de: 'Groß und schnell',
+      es: 'Grande y rápido',
+      ru: 'Великий и быстрый',
+      ar: 'عظيم وسريع',
+      hi: 'महान और तेज'
     },
     hanjaBreakdown: {
       characters: [
@@ -2904,14 +2904,14 @@ createName({
     meaning: {
       en: 'Righteous and excellent',
       ko: '올바르고 뛰어난',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '義にかなって優れた',
+      zh: '正直卓越',
+      fr: 'Juste et excellent',
+      de: 'Gerecht und ausgezeichnet',
+      es: 'Justo y excelente',
+      ru: 'Праведный и превосходный',
+      ar: 'صالح وممتاز',
+      hi: 'धर्मी और उत्कृष्ट'
     },
     hanjaBreakdown: {
       characters: [
@@ -2999,14 +2999,14 @@ createName({
   meaning: {
     en: 'Eastern virtue',
     ko: '동방의 덕',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '東の徳',
+    zh: '东方之德',
+    fr: 'Vertu orientale',
+    de: 'Östliche Tugend',
+    es: 'Virtud oriental',
+    ru: 'Восточная добродетель',
+    ar: 'فضيلة شرقية',
+    hi: 'पूर्वी गुण'
   },
   hanjaBreakdown: {
     characters: [
@@ -3094,14 +3094,14 @@ createName({
   meaning: {
     en: 'Wise and bright',
     ko: '지혜롭고 밝은',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '賢くて明るい',
+    zh: '智慧光明',
+    fr: 'Sage et brillant',
+    de: 'Weise und hell',
+    es: 'Sabio y brillante',
+    ru: 'Мудрый и яркий',
+    ar: 'حكيم ومشرق',
+    hi: 'बुद्धिमान और उज्ज्वल'
   },
   hanjaBreakdown: {
     characters: [
@@ -3188,14 +3188,14 @@ createName({
   meaning: {
     en: 'Great and talented',
     ko: '크고 재능있는',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '偉大で才能のある',
+    zh: '伟大而有才华',
+    fr: 'Grand et talentueux',
+    de: 'Groß und talentiert',
+    es: 'Grande y talentoso',
+    ru: 'Великий и талантливый',
+    ar: 'عظيم وموهوب',
+    hi: 'महान और प्रतिभाशाली'
   },
   hanjaBreakdown: {
     characters: [
@@ -3282,14 +3282,14 @@ createName({
   meaning: {
     en: 'Victory and excellent',
     ko: '승리와 탁월함',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '勝利と卓越',
+    zh: '胜利与卓越',
+    fr: 'Victoire et excellent',
+    de: 'Sieg und ausgezeichnet',
+    es: 'Victoria y excelente',
+    ru: 'Победа и превосходство',
+    ar: 'النصر والتميز',
+    hi: 'विजय और उत्कृष्टता'
   },
   hanjaBreakdown: {
     characters: [
@@ -3376,14 +3376,14 @@ createName({
   meaning: {
     en: 'Eastern quick',
     ko: '동방의 민첩함',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '東の素早さ',
+    zh: '东方敏捷',
+    fr: 'Agilité orientale',
+    de: 'Östliche Schnelligkeit',
+    es: 'Agilidad oriental',
+    ru: 'Восточная быстрота',
+    ar: 'رشاقة شرقية',
+    hi: 'पूर्वी फुर्ती'
   },
   hanjaBreakdown: {
     characters: [
@@ -3470,14 +3470,14 @@ createName({
   meaning: {
     en: 'Great and excellent',
     ko: '크고 뛰어난',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '偉大で優れた',
+    zh: '伟大而出色',
+    fr: 'Grand et excellent',
+    de: 'Groß und ausgezeichnet',
+    es: 'Grande y excelente',
+    ru: 'Великий и превосходный',
+    ar: 'عظيم وممتاز',
+    hi: 'महान और उत्कृष्ट'
   },
   hanjaBreakdown: {
     characters: [
@@ -3566,14 +3566,14 @@ createName({
   meaning: {
     en: 'Righteous country',
     ko: '의로운 나라',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '義の国',
+    zh: '正义之国',
+    fr: 'Pays juste',
+    de: 'Gerechtes Land',
+    es: 'País justo',
+    ru: 'Праведная страна',
+    ar: 'بلد صالح',
+    hi: 'धर्मी देश'
   },
   hanjaBreakdown: {
     characters: [
@@ -3661,14 +3661,14 @@ createName({
   meaning: {
     en: 'Great stone',
     ko: '큰 돌',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '大きな石',
+    zh: '大石头',
+    fr: 'Grande pierre',
+    de: 'Großer Stein',
+    es: 'Gran piedra',
+    ru: 'Большой камень',
+    ar: 'حجر عظيم',
+    hi: 'बड़ा पत्थर'
   },
   hanjaBreakdown: {
     characters: [
@@ -3759,14 +3759,14 @@ createName({
   meaning: {
     en: 'Western prosperity',
     ko: '서쪽의 번영',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '西の繁栄',
+    zh: '西方繁荣',
+    fr: 'Prospérité occidentale',
+    de: 'Westlicher Wohlstand',
+    es: 'Prosperidad occidental',
+    ru: 'Западное процветание',
+    ar: 'الازدهار الغربي',
+    hi: 'पश्चिमी समृद्धि'
   },
   hanjaBreakdown: {
     characters: [
@@ -3853,14 +3853,14 @@ createName({
   meaning: {
     en: 'Beautiful and wise',
     ko: '아름답고 지혜로운',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '美しく賢い',
+    zh: '美丽而智慧',
+    fr: 'Belle et sage',
+    de: 'Schön und weise',
+    es: 'Hermosa y sabia',
+    ru: 'Красивая и мудрая',
+    ar: 'جميلة وحكيمة',
+    hi: 'सुंदर और बुद्धिमान'
   },
   hanjaBreakdown: {
     characters: [
@@ -3947,14 +3947,14 @@ createName({
   meaning: {
     en: 'Wise and beautiful',
     ko: '지혜롭고 아름다운',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '賢くて美しい',
+    zh: '智慧美丽',
+    fr: 'Sage et belle',
+    de: 'Weise und schön',
+    es: 'Sabia y hermosa',
+    ru: 'Мудрая и красивая',
+    ar: 'حكيمة وجميلة',
+    hi: 'बुद्धिमान और सुंदर'
   },
   hanjaBreakdown: {
     characters: [
@@ -4041,14 +4041,14 @@ createName({
   meaning: {
     en: 'Small lotus',
     ko: '작은 연꽃',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '小さな蓮',
+    zh: '小莲花',
+    fr: 'Petit lotus',
+    de: 'Kleine Lotusblume',
+    es: 'Pequeño loto',
+    ru: 'Маленький лотос',
+    ar: 'زهرة اللوتس الصغيرة',
+    hi: 'छोटा कमल'
   },
   hanjaBreakdown: {
     characters: [
@@ -4135,14 +4135,14 @@ createName({
   meaning: {
     en: 'Beautiful me',
     ko: '아름다운 나',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '美しい私',
+    zh: '美丽的我',
+    fr: 'Belle moi',
+    de: 'Schönes Ich',
+    es: 'Hermosa yo',
+    ru: 'Красивая я',
+    ar: 'أنا جميلة',
+    hi: 'सुंदर मैं'
   },
   hanjaBreakdown: {
     characters: [
@@ -4229,14 +4229,14 @@ createName({
   meaning: {
     en: 'Many graces',
     ko: '많은 은혜',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '多くの恵み',
+    zh: '许多恩典',
+    fr: 'Nombreuses grâces',
+    de: 'Viele Gnaden',
+    es: 'Muchas bendiciones',
+    ru: 'Много милостей',
+    ar: 'نعم كثيرة',
+    hi: 'कई कृपा'
   },
   hanjaBreakdown: {
     characters: [
@@ -4323,14 +4323,14 @@ createName({
   meaning: {
     en: 'Auspicious virtue',
     ko: '길조의 덕',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '吉祥の徳',
+    zh: '吉祥的德行',
+    fr: 'Vertu auspicieuse',
+    de: 'Glückverheißende Tugend',
+    es: 'Virtud auspiciosa',
+    ru: 'Благоприятная добродетель',
+    ar: 'فضيلة ميمونة',
+    hi: 'शुभ गुण'
   },
   hanjaBreakdown: {
     characters: [
@@ -4417,14 +4417,14 @@ createName({
   meaning: {
     en: 'Wise and virtuous',
     ko: '지혜롭고 덕이 있는',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '賢くて高潔な',
+    zh: '智慧与贤德',
+    fr: 'Sage et vertueux',
+    de: 'Weise und tugendhaft',
+    es: 'Sabio y virtuoso',
+    ru: 'Мудрый и добродетельный',
+    ar: 'حكيم وفاضل',
+    hi: 'बुद्धिमान और गुणी'
   },
   hanjaBreakdown: {
     characters: [
@@ -4511,14 +4511,14 @@ createName({
   meaning: {
     en: 'Beautiful source',
     ko: '아름다운 근원',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '美しい源',
+    zh: '美丽的源泉',
+    fr: 'Belle source',
+    de: 'Schöne Quelle',
+    es: 'Hermosa fuente',
+    ru: 'Красивый источник',
+    ar: 'مصدر جميل',
+    hi: 'सुंदर स्रोत'
   },
   hanjaBreakdown: {
     characters: [
@@ -4605,14 +4605,14 @@ createName({
   meaning: {
     en: 'Pure and bright joy',
     ko: '순수하고 밝은 기쁨',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '純粋で明るい喜び',
+    zh: '纯粹而灿烂的喜悦',
+    fr: 'Joie pure et éclatante',
+    de: 'Reine und strahlende Freude',
+    es: 'Alegría pura y brillante',
+    ru: 'Чистая и светлая радость',
+    ar: 'فرح نقي ومشرق',
+    hi: 'शुद्ध और उज्ज्वल आनंद'
   },
   story: {
     en: 'Like a cheerful flame that brings joy to small moments, this name represents happiness found in life\'s simple pleasures.',
@@ -4652,14 +4652,14 @@ createName({
   meaning: {
     en: 'Wise source',
     ko: '지혜로운 근원',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '賢い源',
+    zh: '智慧的源泉',
+    fr: 'Source de sagesse',
+    de: 'Weise Quelle',
+    es: 'Fuente de sabiduría',
+    ru: 'Источник мудрости',
+    ar: 'مصدر الحكمة',
+    hi: 'बुद्धिमान स्रोत'
   },
   story: {
     en: 'Like the wise fire that becomes a source of warmth for others, this name represents knowledge that nurtures community.',
@@ -4698,14 +4698,14 @@ createName({
   meaning: {
     en: 'Beautiful precious',
     ko: '아름답고 소중한',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '美しく貴重な',
+    zh: '美丽珍贵',
+    fr: 'Belle et précieuse',
+    de: 'Schön und kostbar',
+    es: 'Hermosa y preciosa',
+    ru: 'Красивая и драгоценная',
+    ar: 'جميلة وثمينة',
+    hi: 'सुंदर और कीमती'
   },
   story: {
     en: 'This name glows like precious fire that reveals inner beauty, representing value that comes from authentic self-expression.',
@@ -4745,14 +4745,14 @@ createName({
   meaning: {
     en: 'Beautiful source',
     ko: '아름다운 근원',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '美しい源',
+    zh: '美丽的源泉',
+    fr: 'Belle source',
+    de: 'Schöne Quelle',
+    es: 'Hermosa fuente',
+    ru: 'Красивый источник',
+    ar: 'مصدر جميل',
+    hi: 'सुंदर स्रोत'
   },
   story: {
     en: 'This name flows like beautiful fire from its source, representing inner beauty that radiates outward naturally.',
@@ -4791,14 +4791,14 @@ createName({
     meaning: {
       en: 'Pure and bright joy',
       ko: '순수하고 밝은 기쁨',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '純粋で明るい喜び',
+      zh: '纯粹而灿烂的喜悦',
+      fr: 'Joie pure et éclatante',
+      de: 'Reine und strahlende Freude',
+      es: 'Alegría pura y brillante',
+      ru: 'Чистая и светлая радость',
+      ar: 'فرح نقي ومشرق',
+      hi: 'शुद्ध और उज्ज्वल आनंद'
     },
     hanjaBreakdown: {
       characters: [
@@ -4886,14 +4886,14 @@ createName({
     meaning: {
       en: 'Wise source',
       ko: '지혜로운 근원',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢い源',
+      zh: '智慧的源泉',
+      fr: 'Source de sagesse',
+      de: 'Weise Quelle',
+      es: 'Fuente de sabiduría',
+      ru: 'Источник мудрости',
+      ar: 'مصدر الحكمة',
+      hi: 'बुद्धिमान स्रोत'
     },
     hanjaBreakdown: {
       characters: [
@@ -4980,14 +4980,14 @@ createName({
     meaning: {
       en: 'Beautiful precious',
       ko: '아름답고 소중한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '美しく貴重な',
+      zh: '美丽珍贵',
+      fr: 'Belle et précieuse',
+      de: 'Schön und kostbar',
+      es: 'Hermosa y preciosa',
+      ru: 'Красивая и драгоценная',
+      ar: 'جميلة وثمينة',
+      hi: 'सुंदर और कीमती'
     },
     hanjaBreakdown: {
       characters: [
@@ -5074,14 +5074,14 @@ createName({
   meaning: {
     en: 'Great prosperity',
     ko: '큰 번영',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '大いなる繁栄',
+    zh: '伟大的繁荣',
+    fr: 'Grande prospérité',
+    de: 'Großer Wohlstand',
+    es: 'Gran prosperidad',
+    ru: 'Великое процветание',
+    ar: 'ازدهار عظيم',
+    hi: 'महान समृद्धि'
   },
   hanjaBreakdown: {
     characters: [
@@ -5170,14 +5170,14 @@ createName({
   meaning: {
     en: 'My connection',
     ko: '나의 연결',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '私のつながり',
+    zh: '我的联系',
+    fr: 'Ma connexion',
+    de: 'Meine Verbindung',
+    es: 'Mi conexión',
+    ru: 'Моя связь',
+    ar: 'اتصالي',
+    hi: 'मेरा कनेक्शन'
   },
   hanjaBreakdown: {
     characters: [
@@ -5265,14 +5265,14 @@ createName({
   meaning: {
     en: 'Righteous connection',
     ko: '의로운 연결',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '正義のつながり',
+    zh: '正义的联系',
+    fr: 'Connexion juste',
+    de: 'Rechtschaffene Verbindung',
+    es: 'Conexión justa',
+    ru: 'Праведная связь',
+    ar: 'اتصال صالح',
+    hi: 'धर्मी संबंध'
   },
   hanjaBreakdown: {
     characters: [
@@ -5362,14 +5362,14 @@ createName({
   meaning: {
     en: 'Second talented',
     ko: '둘째 재능',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '第二の才能',
+    zh: '第二才子',
+    fr: 'Deuxième talentueux',
+    de: 'Zweiter Talentierter',
+    es: 'Segundo talentoso',
+    ru: 'Второй талантливый',
+    ar: 'الموهوب الثاني',
+    hi: 'दूसरा प्रतिभाशाली'
   },
   hanjaBreakdown: {
     characters: [
@@ -5456,14 +5456,14 @@ createName({
   meaning: {
     en: 'Main source',
     ko: '주요 원천',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '主な源',
+    zh: '主要来源',
+    fr: 'Source principale',
+    de: 'Hauptquelle',
+    es: 'Fuente principal',
+    ru: 'Основной источник',
+    ar: 'المصدر الرئيسي',
+    hi: 'मुख्य स्रोत'
   },
   hanjaBreakdown: {
     characters: [
@@ -5550,14 +5550,14 @@ createName({
   meaning: {
     en: 'Rain and truth',
     ko: '비와 진실',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '雨と真実',
+    zh: '雨与真理',
+    fr: 'Pluie et vérité',
+    de: 'Regen und Wahrheit',
+    es: 'Lluvia y verdad',
+    ru: 'Дождь и истина',
+    ar: 'المطر والحقيقة',
+    hi: 'वर्षा और सत्य'
   },
   hanjaBreakdown: {
     characters: [
@@ -5644,14 +5644,14 @@ createName({
   meaning: {
     en: 'Polite and talented',
     ko: '예의바르고 재능있는',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '礼儀正しく才能がある',
+    zh: '礼貌且有才华',
+    fr: 'Poli et talentueux',
+    de: 'Höflich und talentiert',
+    es: 'Educado y talentoso',
+    ru: 'Вежливый и талантливый',
+    ar: 'مهذب وموهوب',
+    hi: 'विनम्र और प्रतिभाशाली'
   },
   hanjaBreakdown: {
     characters: [
@@ -5738,14 +5738,14 @@ createName({
   meaning: {
     en: 'Holy virtue',
     ko: '거룩한 덕',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '聖なる徳',
+    zh: '神圣美德',
+    fr: 'Vertu sacrée',
+    de: 'Heilige Tugend',
+    es: 'Virtud sagrada',
+    ru: 'Священная добродетель',
+    ar: 'فضيلة مقدسة',
+    hi: 'पवित्र गुण'
   },
   hanjaBreakdown: {
     characters: [
@@ -5832,14 +5832,14 @@ createName({
   meaning: {
     en: 'Talented and prosperous',
     ko: '재능있고 번영하는',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '才能豊かで繁栄している',
+    zh: '才华横溢且繁荣',
+    fr: 'Talentueux et prospère',
+    de: 'Talentiert und wohlhabend',
+    es: 'Talentoso y próspero',
+    ru: 'Талантливый и процветающий',
+    ar: 'موهوب ومزدهر',
+    hi: 'प्रतिभाशाली और समृद्ध'
   },
   hanjaBreakdown: {
     characters: [
@@ -5926,14 +5926,14 @@ createName({
   meaning: {
     en: 'Prosperous excellence',
     ko: '번영하는 탁월함',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '繁栄する卓越性',
+    zh: '繁荣卓越',
+    fr: 'Excellence prospère',
+    de: 'Blühende Exzellenz',
+    es: 'Excelencia próspera',
+    ru: 'Процветающее превосходство',
+    ar: 'التميز المزدهر',
+    hi: 'समृद्ध उत्कृष्टता'
   },
   hanjaBreakdown: {
     characters: [
@@ -6020,14 +6020,14 @@ createName({
   meaning: {
     en: 'Mutual excellence',
     ko: '상호 탁월함',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '相互の卓越性',
+    zh: '相互卓越',
+    fr: 'Excellence mutuelle',
+    de: 'Gegenseitige Exzellenz',
+    es: 'Excelencia mutua',
+    ru: 'Взаимное превосходство',
+    ar: 'التميز المتبادل',
+    hi: 'आपसी उत्कृष्टता'
   },
   hanjaBreakdown: {
     characters: [
@@ -6114,14 +6114,14 @@ createName({
   meaning: {
     en: 'Precious excellence',
     ko: '소중한 탁월함',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '貴重な卓越性',
+    zh: '珍贵卓越',
+    fr: 'Excellence précieuse',
+    de: 'Kostbare Exzellenz',
+    es: 'Excelencia preciosa',
+    ru: 'Драгоценное превосходство',
+    ar: 'التميز الثمين',
+    hi: 'अनमोल उत्कृष्टता'
   },
   hanjaBreakdown: {
     characters: [
@@ -6208,14 +6208,14 @@ createName({
   meaning: {
     en: 'Holy precious',
     ko: '거룩하고 소중한',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '聖なる貴重な',
+    zh: '神圣珍贵',
+    fr: 'Saint précieux',
+    de: 'Heiliges Kostbares',
+    es: 'Santo precioso',
+    ru: 'Священное драгоценное',
+    ar: 'مقدس ثمين',
+    hi: 'पवित्र अनमोल'
   },
   hanjaBreakdown: {
     characters: [
@@ -6302,14 +6302,14 @@ createName({
   meaning: {
     en: 'Talented auspicious',
     ko: '재능있고 길조로운',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '才能ある縁起の良い',
+    zh: '才华吉祥',
+    fr: 'Talentueux et propice',
+    de: 'Talentiert und vielversprechend',
+    es: 'Talentoso y auspicioso',
+    ru: 'Талантливый благоприятный',
+    ar: 'موهوب وميمون',
+    hi: 'प्रतिभाशाली शुभ'
   },
   hanjaBreakdown: {
     characters: [
@@ -6396,14 +6396,14 @@ createName({
   meaning: {
     en: 'Quick talent',
     ko: '민첩한 재능',
-    ja: '',
-    zh: '',
-    fr: '',
-    de: '',
-    es: '',
-    ru: '',
-    ar: '',
-    hi: ''
+    ja: '素早い才能',
+    zh: '敏捷才华',
+    fr: 'Talent rapide',
+    de: 'Schnelles Talent',
+    es: 'Talento rápido',
+    ru: 'Быстрый талант',
+    ar: 'موهبة سريعة',
+    hi: 'तीव्र प्रतिभा'
   },
   story: {
     en: 'This name grows like quick earth that immediately supports new talent, representing responsive nurturing of emerging gifts.',
@@ -6442,14 +6442,14 @@ createName({
     meaning: {
       en: 'Prosperous great',
       ko: '번영하고 위대한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '繁栄する偉大な',
+      zh: '繁荣伟大',
+      fr: 'Prospère et grand',
+      de: 'Wohlhabend und großartig',
+      es: 'Próspero y grande',
+      ru: 'Процветающий великий',
+      ar: 'عظيم مزدهر',
+      hi: 'समृद्ध महान'
     },
     hanjaBreakdown: {
       characters: [
@@ -6536,14 +6536,14 @@ createName({
     meaning: {
       en: 'Mutual quick',
       ko: '상호 민첩함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '相互に素早い',
+      zh: '相互敏捷',
+      fr: 'Rapide mutuel',
+      de: 'Gegenseitig schnell',
+      es: 'Rápido mutuo',
+      ru: 'Взаимно быстрый',
+      ar: 'سريع متبادل',
+      hi: 'आपसी तीव्र'
     },
     hanjaBreakdown: {
       characters: [
@@ -6630,14 +6630,14 @@ createName({
     meaning: {
       en: 'Holy excellence',
       ko: '거룩한 탁월함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '聖なる卓越性',
+      zh: '神圣卓越',
+      fr: 'Excellence sacrée',
+      de: 'Heilige Exzellenz',
+      es: 'Excelencia sagrada',
+    ru: 'Священное превосходство',
+      ar: 'التميز المقدس',
+      hi: 'पवित्र उत्कृष्टता'
     },
     hanjaBreakdown: {
       characters: [
@@ -6725,14 +6725,14 @@ createName({
     meaning: {
       en: 'Victory and quick',
       ko: '승리와 민첩함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '勝利と素早さ',
+      zh: '胜利与敏捷',
+      fr: 'Victoire et rapidité',
+      de: 'Sieg und schnell',
+      es: 'Victoria y rápido',
+      ru: 'Победа и быстрый',
+      ar: 'النصر والسريع',
+      hi: 'विजय और तीव्र'
     },
     hanjaBreakdown: {
       characters: [
@@ -6820,14 +6820,14 @@ createName({
     meaning: {
       en: 'Virtuous precious',
       ko: '덕이 있고 소중한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '徳高く貴重な',
+      zh: '贤德珍贵',
+      fr: 'Vertueux précieux',
+      de: 'Tugendhaft kostbar',
+      es: 'Virtuoso precioso',
+      ru: 'Добродетельный драгоценный',
+      ar: 'فاضل ثمين',
+      hi: 'गुणी अनमोल'
     },
     hanjaBreakdown: {
       characters: [
@@ -6915,14 +6915,14 @@ createName({
     meaning: {
       en: 'Great and vast',
       ko: '크고 광대한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '偉大で広大な',
+      zh: '伟大而广阔',
+      fr: 'Grand et vaste',
+      de: 'Groß und weit',
+      es: 'Grande y vasto',
+      ru: 'Великий и обширный',
+      ar: 'عظيم وواسع',
+      hi: 'महान और विशाल'
     },
     hanjaBreakdown: {
       characters: [
@@ -6996,14 +6996,14 @@ createName({
     meaning: {
       en: 'Second auspicious',
       ko: '둘째 길조',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '第二の吉兆',
+      zh: '第二吉祥',
+      fr: 'Deuxième propice',
+      de: 'Zweiter Glückverheißender',
+      es: 'Segundo auspicioso',
+      ru: 'Второе благоприятное',
+      ar: 'الثاني الميمون',
+      hi: 'दूसरा शुभ'
     },
     hanjaBreakdown: {
       characters: [
@@ -7090,14 +7090,14 @@ createName({
     meaning: {
       en: 'Beautiful like water',
       ko: '물처럼 아름다운',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '水のように美しい',
+      zh: '美丽如水',
+      fr: 'Belle comme l\'eau',
+      de: 'Schön wie Wasser',
+      es: 'Hermosa como el agua',
+      ru: 'Красивая как вода',
+      ar: 'جميلة كالماء',
+      hi: 'पानी की तरह सुंदर'
     },
     hanjaBreakdown: {
       characters: [
@@ -7186,14 +7186,14 @@ createName({
     meaning: {
       en: 'Small and rhythmic',
       ko: '작고 운율적인',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '小さく律動的な',
+      zh: '小而有节奏',
+      fr: 'Petit et rythmique',
+      de: 'Klein und rhythmisch',
+      es: 'Pequeño y rítmico',
+      ru: 'Маленький и ритмичный',
+      ar: 'صغير وإيقاعي',
+      hi: 'छोटा और लयबद्ध'
     },
     hanjaBreakdown: {
       characters: [
@@ -7281,14 +7281,14 @@ createName({
     meaning: {
       en: 'Auspicious beautiful',
       ko: '길조롭고 아름다운',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '縁起の良い美しい',
+      zh: '吉祥美丽',
+      fr: 'Auspicieux et beau',
+      de: 'Glückverheißend schön',
+      es: 'Auspicioso y hermoso',
+      ru: 'Благоприятный красивый',
+      ar: 'ميمون جميل',
+      hi: 'शुभ सुंदर'
     },
     hanjaBreakdown: {
       characters: [
@@ -7375,14 +7375,14 @@ createName({
     meaning: {
       en: 'Abundant me',
       ko: '풍부한 나',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '豊かな私',
+      zh: '丰富的我',
+      fr: 'Moi abondant',
+      de: 'Reichlich ich',
+      es: 'Yo abundante',
+      ru: 'Обильная я',
+      ar: 'أنا وفيرة',
+      hi: 'प्रचुर मैं'
     },
     hanjaBreakdown: {
       characters: [
@@ -7469,14 +7469,14 @@ createName({
     meaning: {
       en: 'Colorful prosperity',
       ko: '다채로운 번영',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '色彩豊かな繁栄',
+      zh: '多彩繁荣',
+      fr: 'Prospérité colorée',
+      de: 'Farbenfroher Wohlstand',
+      es: 'Prosperidad colorida',
+      ru: 'Красочное процветание',
+      ar: 'ازدهار ملون',
+      hi: 'रंगीन समृद्धि'
     },
     hanjaBreakdown: {
       characters: [
@@ -7563,14 +7563,14 @@ createName({
     meaning: {
       en: 'Beautiful connection',
       ko: '아름다운 연결',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '美しいつながり',
+      zh: '美丽的连接',
+      fr: 'Belle connexion',
+      de: 'Schöne Verbindung',
+      es: 'Hermosa conexión',
+      ru: 'Красивая связь',
+      ar: 'اتصال جميل',
+      hi: 'सुंदर कनेक्शन'
     },
     hanjaBreakdown: {
       characters: [
@@ -7657,14 +7657,14 @@ createName({
     meaning: {
       en: 'Kindness auspicious',
       ko: '친절함과 길조로운',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '親切で縁起の良い',
+      zh: '善良吉祥',
+      fr: 'Gentillesse propice',
+      de: 'Freundlichkeit verheißungsvoll',
+      es: 'Amabilidad auspiciosa',
+      ru: 'Доброта благоприятная',
+      ar: 'لطف ميمون',
+      hi: 'दयालु शुभ'
     },
     hanjaBreakdown: {
       characters: [
@@ -7751,14 +7751,14 @@ createName({
     meaning: {
       en: 'Beautiful auspicious',
       ko: '아름답고 길조로운',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '美しく縁起の良い',
+      zh: '美丽吉祥',
+      fr: 'Belle et propice',
+      de: 'Schön und glückverheißend',
+      es: 'Hermosa y auspiciosa',
+      ru: 'Красивая благоприятная',
+      ar: 'جميلة وميمونة',
+      hi: 'सुंदर शुभ'
     },
     hanjaBreakdown: {
       characters: [
@@ -7845,14 +7845,14 @@ createName({
     meaning: {
       en: 'Beautiful quick',
       ko: '아름답고 민첩한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '美しく素早い',
+      zh: '美丽敏捷',
+      fr: 'Belle et rapide',
+      de: 'Schön und schnell',
+      es: 'Hermosa y rápida',
+      ru: 'Красивая и быстрая',
+      ar: 'جميلة وسريعة',
+      hi: 'सुंदर और तीव्र'
     },
     hanjaBreakdown: {
       characters: [
@@ -7939,14 +7939,14 @@ createName({
     meaning: {
       en: 'Wise connection',
       ko: '지혜로운 연결',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢い繋がり',
+      zh: '智慧的连接',
+      fr: 'Connexion sage',
+      de: 'Weise Verbindung',
+      es: 'Conexión sabia',
+      ru: 'Мудрая связь',
+      ar: 'اتصال حكيم',
+      hi: 'बुद्धिमान कनेक्शन'
     },
     hanjaBreakdown: {
       characters: [
@@ -8033,14 +8033,14 @@ createName({
     meaning: {
       en: 'Abundant precious',
       ko: '풍부하고 소중한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '豊かで貴重な',
+      zh: '丰富珍贵',
+      fr: 'Abondant et précieux',
+      de: 'Reichlich kostbar',
+      es: 'Abundante y precioso',
+      ru: 'Обильный драгоценный',
+      ar: 'وفير وثمين',
+      hi: 'प्रचुर अनमोल'
     },
     hanjaBreakdown: {
       characters: [
@@ -8127,14 +8127,14 @@ createName({
     meaning: {
       en: 'Colorful grace',
       ko: '다채로운 은혜',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '色彩豊かな恵み',
+      zh: '多彩恩典',
+      fr: 'Grâce colorée',
+      de: 'Farbenfrohe Gnade',
+      es: 'Gracia colorida',
+      ru: 'Красочная благодать',
+      ar: 'نعمة ملونة',
+      hi: 'रंगीन कृपा'
     },
     hanjaBreakdown: {
       characters: [
@@ -8221,14 +8221,14 @@ createName({
     meaning: {
       en: 'Beautiful virtue',
       ko: '아름다운 덕',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '美しい徳',
+      zh: '美德',
+      fr: 'Belle vertu',
+      de: 'Schöne Tugend',
+      es: 'Hermosa virtud',
+      ru: 'Красивая добродетель',
+      ar: 'فضيلة جميلة',
+      hi: 'सुंदर गुण'
     },
     hanjaBreakdown: {
       characters: [
@@ -8315,14 +8315,14 @@ createName({
     meaning: {
       en: 'Kindness wisdom',
       ko: '친절함과 지혜',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '親切な知恵',
+      zh: '善良智慧',
+      fr: 'Sagesse de la gentillesse',
+      de: 'Freundliche Weisheit',
+      es: 'Sabiduría de la bondad',
+      ru: 'Доброта мудрость',
+      ar: 'حكمة اللطف',
+      hi: 'दयालुता ज्ञान'
     },
     hanjaBreakdown: {
       characters: [
@@ -8409,14 +8409,14 @@ createName({
     meaning: {
       en: 'Beautiful grace',
       ko: '아름다운 은혜',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '美しい恵み',
+      zh: '美丽恩典',
+      fr: 'Belle grâce',
+      de: 'Schöne Gnade',
+      es: 'Hermosa gracia',
+      ru: 'Красивая благодать',
+      ar: 'نعمة جميلة',
+      hi: 'सुंदर कृपा'
     },
     hanjaBreakdown: {
       characters: [
@@ -8504,14 +8504,14 @@ createName({
     meaning: {
       en: 'Beautiful me',
       ko: '아름다운 나',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '美しい私',
+      zh: '美丽的我',
+      fr: 'Belle moi',
+      de: 'Schönes Ich',
+      es: 'Hermosa yo',
+      ru: 'Красивая я',
+      ar: 'أنا جميلة',
+      hi: 'सुंदर मैं'
     },
     hanjaBreakdown: {
       characters: [
@@ -8600,14 +8600,14 @@ createName({
     meaning: {
       en: 'Wise filial piety',
       ko: '지혜로운 효',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢い孝行',
+      zh: '智慧孝顺',
+      fr: 'Piété filiale sage',
+      de: 'Weise kindliche Frömmigkeit',
+      es: 'Sabia piedad filial',
+      ru: 'Мудрое сыновнее благочестие',
+      ar: 'بر الوالدين الحكيم',
+      hi: 'बुद्धिमान पितृभक्ति'
     },
     hanjaBreakdown: {
       characters: [
@@ -8697,14 +8697,14 @@ createName({
     meaning: {
       en: 'Western talent',
       ko: '서쪽의 재능',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '西の才能',
+      zh: '西方才华',
+      fr: 'Talent occidental',
+      de: 'Westliches Talent',
+      es: 'Talento occidental',
+      ru: 'Западный талант',
+      ar: 'موهبة غربية',
+      hi: 'पश्चिमी प्रतिभा'
     },
     hanjaBreakdown: {
       characters: [
@@ -8792,14 +8792,14 @@ createName({
     meaning: {
       en: 'Great prosperity',
       ko: '큰 번영',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '大いなる繁栄',
+      zh: '伟大繁荣',
+      fr: 'Grande prospérité',
+      de: 'Großer Wohlstand',
+      es: 'Gran prosperidad',
+      ru: 'Великое процветание',
+      ar: 'ازدهار عظيم',
+      hi: 'महान समृद्धि'
     },
     hanjaBreakdown: {
       characters: [
@@ -8886,14 +8886,14 @@ createName({
     meaning: {
       en: 'Wise and excellent',
       ko: '지혜롭고 뛰어난',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢明で優れた',
+      zh: '贤明卓越',
+      fr: 'Sage et excellent',
+      de: 'Weise und ausgezeichnet',
+      es: 'Sabio y excelente',
+      ru: 'Мудрый и превосходный',
+      ar: 'حكيم وممتاز',
+      hi: 'बुद्धिमान और उत्कृष्ट'
     },
     hanjaBreakdown: {
       characters: [
@@ -8981,14 +8981,14 @@ createName({
     meaning: {
       en: 'Righteous great',
       ko: '의롭고 위대한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '正義の偉大な',
+      zh: '正义伟大',
+      fr: 'Juste et grand',
+      de: 'Rechtschaffen groß',
+      es: 'Justo y grande',
+      ru: 'Праведный великий',
+      ar: 'عظيم صالح',
+      hi: 'धर्मी महान'
     },
     hanjaBreakdown: {
       characters: [
@@ -9075,14 +9075,14 @@ createName({
     meaning: {
       en: 'Quick iron',
       ko: '빠른 철',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '素早い鉄',
+      zh: '敏捷铁',
+      fr: 'Fer rapide',
+      de: 'Schnelles Eisen',
+      es: 'Hierro rápido',
+      ru: 'Быстрое железо',
+      ar: 'حديد سريع',
+      hi: 'तीव्र लोहा'
     },
     hanjaBreakdown: {
       characters: [
@@ -9169,14 +9169,14 @@ createName({
     meaning: {
       en: 'Talented iron',
       ko: '재능있는 철',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '才能ある鉄',
+      zh: '才华铁',
+      fr: 'Fer talentueux',
+      de: 'Talentiertes Eisen',
+      es: 'Hierro talentoso',
+      ru: 'Талантливое железо',
+      ar: 'حديد موهوب',
+      hi: 'प्रतिभाशाली लोहा'
     },
     hanjaBreakdown: {
       characters: [
@@ -9263,14 +9263,14 @@ createName({
     meaning: {
       en: 'Holy great',
       ko: '거룩하고 위대한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '聖なる偉大な',
+      zh: '神圣伟大',
+      fr: 'Saint grand',
+      de: 'Heiliger Großer',
+      es: 'Santo grande',
+      ru: 'Священный великий',
+      ar: 'عظيم مقدس',
+      hi: 'पवित्र महान'
     },
     hanjaBreakdown: {
       characters: [
@@ -9357,14 +9357,14 @@ createName({
     meaning: {
       en: 'Precious stone',
       ko: '소중한 돌',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '貴重な石',
+      zh: '珍贵石头',
+      fr: 'Pierre précieuse',
+      de: 'Kostbarer Stein',
+      es: 'Piedra preciosa',
+      ru: 'Драгоценный камень',
+      ar: 'حجر كريم',
+      hi: 'अनमोल पत्थर'
     },
     hanjaBreakdown: {
       characters: [
@@ -9451,14 +9451,14 @@ createName({
     meaning: {
       en: 'Iron quick',
       ko: '철의 민첩함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '鉄の素早さ',
+      zh: '铁敏捷',
+      fr: 'Fer rapide',
+      de: 'Schnelles Eisen',
+      es: 'Hierro rápido',
+      ru: 'Быстрое железо',
+      ar: 'حديد سريع',
+      hi: 'तीव्र लोहा'
     },
     hanjaBreakdown: {
       characters: [
@@ -9545,14 +9545,14 @@ createName({
     meaning: {
       en: 'Victory talent',
       ko: '승리의 재능',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '勝利の才能',
+      zh: '胜利才华',
+      fr: 'Talent de victoire',
+      de: 'Siegstalent',
+      es: 'Talento de victoria',
+      ru: 'Талант победы',
+      ar: 'موهبة النصر',
+      hi: 'विजय प्रतिभा'
     },
     hanjaBreakdown: {
       characters: [
@@ -9639,14 +9639,14 @@ createName({
     meaning: {
       en: 'Righteous quick',
       ko: '의롭고 민첩한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '正義の素早い',
+      zh: '正义敏捷',
+      fr: 'Juste et rapide',
+      de: 'Rechtschaffen schnell',
+      es: 'Justo y rápido',
+      ru: 'Праведный быстрый',
+      ar: 'سريع صالح',
+      hi: 'धर्मी तीव्र'
     },
     hanjaBreakdown: {
       characters: [
@@ -9733,14 +9733,14 @@ createName({
     meaning: {
       en: 'Virtuous iron',
       ko: '덕이 있는 철',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢い鉄',
+      zh: '贤铁',
+      fr: 'Fer vertueux',
+      de: 'Tugendhaftes Eisen',
+      es: 'Hierro virtuoso',
+      ru: 'Добродетельное железо',
+      ar: 'حديد فاضل',
+      hi: 'गुणी लोहा'
     },
     hanjaBreakdown: {
       characters: [
@@ -9827,14 +9827,14 @@ createName({
     meaning: {
       en: 'Victory iron',
       ko: '승리의 철',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '勝利の鉄',
+      zh: '胜利铁',
+      fr: 'Fer de victoire',
+      de: 'Siegeseisen',
+      es: 'Hierro de victoria',
+      ru: 'Железо победы',
+      ar: 'حديد النصر',
+      hi: 'विजय लोहा'
     },
     hanjaBreakdown: {
       characters: [
@@ -9921,14 +9921,14 @@ createName({
     meaning: {
       en: 'Righteous stone',
       ko: '의로운 돌',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '正義の石',
+      zh: '正义石',
+      fr: 'Pierre juste',
+      de: 'Rechtschaffener Stein',
+      es: 'Piedra justa',
+      ru: 'Праведный камень',
+      ar: 'حجر صالح',
+      hi: 'धर्मी पत्थर'
     },
     hanjaBreakdown: {
       characters: [
@@ -10015,14 +10015,14 @@ createName({
     meaning: {
       en: 'Precious great',
       ko: '소중하고 위대한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '貴重で偉大な',
+      zh: '珍贵伟大',
+      fr: 'Précieux et grand',
+      de: 'Kostbar groß',
+      es: 'Precioso y grande',
+      ru: 'Драгоценный великий',
+      ar: 'عظيم ثمين',
+      hi: 'अनमोल महान'
     },
     hanjaBreakdown: {
       characters: [
@@ -10110,14 +10110,14 @@ createName({
     meaning: {
       en: 'Room bright',
       ko: '방 밝은',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '部屋が明るい',
+      zh: '房间明亮',
+      fr: 'Chambre lumineuse',
+      de: 'Zimmer hell',
+      es: 'Habitación luminosa',
+      ru: 'Комната яркая',
+      ar: 'غرفة مشرقة',
+      hi: 'कमरा उज्ज्वल'
     },
     hanjaBreakdown: {
       characters: [
@@ -10205,14 +10205,14 @@ createName({
     meaning: {
       en: 'Spear refined',
       ko: '창 세련된',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '洗練された槍',
+      zh: '精炼矛',
+      fr: 'Lance raffinée',
+      de: 'Raffinierter Speer',
+      es: 'Lanza refinada',
+      ru: 'Изысканное копье',
+      ar: 'رمح مكرر',
+      hi: 'परिष्कृत भाला'
     },
     hanjaBreakdown: {
       characters: [
@@ -10300,14 +10300,14 @@ createName({
     meaning: {
       en: 'Good excellent',
       ko: '좋고 뛰어난',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '良い優れた',
+      zh: '良好卓越',
+      fr: 'Bon excellent',
+      de: 'Gut ausgezeichnet',
+      es: 'Bueno excelente',
+      ru: 'Хороший превосходный',
+      ar: 'جيد ممتاز',
+      hi: 'अच्छा उत्कृष्ट'
     },
     hanjaBreakdown: {
       characters: [
@@ -10397,14 +10397,14 @@ createName({
     meaning: {
       en: 'Beautiful sky',
       ko: '아름다운 하늘',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '美しい空',
+      zh: '美丽的天空',
+      fr: 'Beau ciel',
+      de: 'Schöner Himmel',
+      es: 'Hermoso cielo',
+      ru: 'Красивое небо',
+      ar: 'سماء جميلة',
+      hi: 'सुंदर आकाश'
     },
     hanjaBreakdown: {
       characters: [
@@ -10493,14 +10493,14 @@ createName({
     meaning: {
       en: 'Small prosperity',
       ko: '작은 번영',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '小さな繁栄',
+      zh: '小繁荣',
+      fr: 'Petite prospérité',
+      de: 'Kleiner Wohlstand',
+      es: 'Pequeña prosperidad',
+      ru: 'Малое процветание',
+      ar: 'ازدهار صغير',
+      hi: 'छोटी समृद्धि'
     },
     hanjaBreakdown: {
       characters: [
@@ -10587,14 +10587,14 @@ createName({
     meaning: {
       en: 'Righteous kindness',
       ko: '의로운 친절함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '正義の親切',
+      zh: '正义善良',
+      fr: 'Gentillesse juste',
+      de: 'Rechtschaffene Freundlichkeit',
+      es: 'Bondad justa',
+      ru: 'Праведная доброта',
+      ar: 'لطف صالح',
+      hi: 'धर्मी दयालुता'
     },
     hanjaBreakdown: {
       characters: [
@@ -10681,14 +10681,14 @@ createName({
     meaning: {
       en: 'Wise beautiful',
       ko: '지혜롭고 아름다운',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢く美しい',
+      zh: '智慧美丽',
+      fr: 'Sage et belle',
+      de: 'Weise schön',
+      es: 'Sabia y hermosa',
+      ru: 'Мудрая красивая',
+      ar: 'حكيمة جميلة',
+      hi: 'बुद्धिमान सुंदर'
     },
     hanjaBreakdown: {
       characters: [
@@ -10775,14 +10775,14 @@ createName({
     meaning: {
       en: 'Beautiful crystal',
       ko: '아름다운 수정',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '美しい水晶',
+      zh: '美丽水晶',
+      fr: 'Beau cristal',
+      de: 'Schöner Kristall',
+      es: 'Hermoso cristal',
+      ru: 'Красивый кристалл',
+      ar: 'بلورة جميلة',
+      hi: 'सुंदर क्रिस्टल'
     },
     hanjaBreakdown: {
       characters: [
@@ -10869,14 +10869,14 @@ createName({
     meaning: {
       en: 'Precious prosperity',
       ko: '소중한 번영',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '貴重な繁栄',
+      zh: '珍贵繁荣',
+      fr: 'Prospérité précieuse',
+      de: 'Kostbarer Wohlstand',
+      es: 'Prosperidad preciosa',
+      ru: 'Драгоценное процветание',
+      ar: 'ازدهار ثمين',
+      hi: 'अनमोल समृद्धि'
     },
     hanjaBreakdown: {
       characters: [
@@ -10964,14 +10964,14 @@ createName({
     meaning: {
       en: 'Righteous beautiful',
       ko: '의롭고 아름다운',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '正義の美しい',
+      zh: '正义美丽',
+      fr: 'Juste et belle',
+      de: 'Rechtschaffen schön',
+      es: 'Justa y hermosa',
+      ru: 'Праведная красивая',
+      ar: 'جميلة صالحة',
+      hi: 'धर्मी सुंदर'
     },
     hanjaBreakdown: {
       characters: [
@@ -11058,14 +11058,14 @@ createName({
     meaning: {
       en: 'Small crystal',
       ko: '작은 수정',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '小さな水晶',
+      zh: '小水晶',
+      fr: 'Petit cristal',
+      de: 'Kleiner Kristall',
+      es: 'Pequeño cristal',
+      ru: 'Маленький кристалл',
+      ar: 'بلورة صغيرة',
+      hi: 'छोटा क्रिस्टल'
     },
     hanjaBreakdown: {
       characters: [
@@ -11152,14 +11152,14 @@ createName({
     meaning: {
       en: 'Wise precious',
       ko: '지혜롭고 소중한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢く貴重な',
+      zh: '智慧珍贵',
+      fr: 'Sage et précieuse',
+      de: 'Weise und kostbar',
+      es: 'Sabia y preciosa',
+      ru: 'Мудрая драгоценная',
+      ar: 'حكيمة ثمينة',
+      hi: 'बुद्धिमान अनमोल'
     },
     hanjaBreakdown: {
       characters: [
@@ -11246,14 +11246,14 @@ createName({
     meaning: {
       en: 'Beautiful precious',
       ko: '아름답고 소중한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '美しく貴重な',
+      zh: '美丽珍贵',
+      fr: 'Belle et précieuse',
+      de: 'Schön und kostbar',
+      es: 'Hermosa y preciosa',
+      ru: 'Красивая и драгоценная',
+      ar: 'جميلة وثمينة',
+      hi: 'सुंदर और कीमती'
     },
     hanjaBreakdown: {
       characters: [
@@ -11434,14 +11434,14 @@ createName({
     meaning: {
       en: 'Righteous virtue',
       ko: '의로운 덕',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '正義の徳',
+      zh: '正义美德',
+      fr: 'Vertu juste',
+      de: 'Rechtschaffene Tugend',
+      es: 'Virtud justa',
+      ru: 'Праведная добродетель',
+      ar: 'فضيلة صالحة',
+      hi: 'धर्मी गुण'
     },
     hanjaBreakdown: {
       characters: [
@@ -11528,14 +11528,14 @@ createName({
     meaning: {
       en: 'Small precious',
       ko: '작고 소중한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '小さな貴重な',
+      zh: '小珍贵',
+      fr: 'Petite précieuse',
+      de: 'Klein kostbar',
+      es: 'Pequeña preciosa',
+      ru: 'Маленькая драгоценность',
+      ar: 'ثمين صغير',
+      hi: 'छोटा अनमोल'
     },
     hanjaBreakdown: {
       characters: [
@@ -11622,14 +11622,14 @@ createName({
     meaning: {
       en: 'Wise prosperity',
       ko: '지혜로운 번영',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢い繁栄',
+      zh: '智慧繁荣',
+      fr: 'Prospérité sage',
+      de: 'Weise Wohlstand',
+      es: 'Prosperidad sabia',
+      ru: 'Мудрое процветание',
+      ar: 'ازدهار حكيم',
+      hi: 'बुद्धिमान समृद्धि'
     },
     hanjaBreakdown: {
       characters: [
@@ -11718,14 +11718,14 @@ createName({
     meaning: {
       en: 'Dragon precious',
       ko: '용 소중한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '龍の貴重な',
+      zh: '龙珍贵',
+      fr: 'Dragon précieux',
+      de: 'Drachenkostbar',
+      es: 'Dragón precioso',
+      ru: 'Драгоценный дракон',
+      ar: 'تنين ثمين',
+      hi: 'ड्रैगन अनमोल'
     },
     hanjaBreakdown: {
       characters: [
@@ -11816,14 +11816,14 @@ createName({
     meaning: {
       en: 'Kindness and excellence',
       ko: '친절함과 탁월함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '親切と卓越性',
+      zh: '善良与卓越',
+      fr: 'Gentillesse et excellence',
+      de: 'Freundlichkeit und Exzellenz',
+      es: 'Amabilidad y excelencia',
+      ru: 'Доброта и превосходство',
+      ar: 'اللطف والتميز',
+      hi: 'दयालुता और उत्कृष्टता'
     },
     hanjaBreakdown: {
       characters: [
@@ -11910,14 +11910,14 @@ createName({
     meaning: {
       en: 'Talented and great',
       ko: '재능있고 위대한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '才能豊かで偉大な',
+      zh: '才华横溢且伟大',
+      fr: 'Talentueux et grand',
+      de: 'Talentiert und großartig',
+      es: 'Talentoso y grande',
+      ru: 'Талантливый и великий',
+      ar: 'موهوب وعظيم',
+      hi: 'प्रतिभाशाली और महान'
     },
     hanjaBreakdown: {
       characters: [
@@ -12004,14 +12004,14 @@ createName({
     meaning: {
       en: 'Quick and great',
       ko: '민첩하고 위대한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '素早く偉大な',
+      zh: '敏捷伟大',
+      fr: 'Rapide et grand',
+      de: 'Schnell und großartig',
+      es: 'Rápido y grande',
+      ru: 'Быстрый и великий',
+      ar: 'سريع وعظيم',
+      hi: 'तीव्र और महान'
     },
     hanjaBreakdown: {
       characters: [
@@ -12100,14 +12100,14 @@ createName({
     meaning: {
       en: 'Quick excellence',
       ko: '빠른 탁월함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '素早い卓越性',
+      zh: '敏捷卓越',
+      fr: 'Excellence rapide',
+      de: 'Schnelle Exzellenz',
+      es: 'Rápida excelencia',
+      ru: 'Быстрое превосходство',
+      ar: 'التميز السريع',
+      hi: 'तीव्र उत्कृष्टता'
     },
     hanjaBreakdown: {
       characters: [
@@ -12194,14 +12194,14 @@ createName({
     meaning: {
       en: 'Talented excellence',
       ko: '재능있는 탁월함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '才能ある卓越性',
+      zh: '才华卓越',
+      fr: 'Excellence talentueuse',
+      de: 'Talentierte Exzellenz',
+      es: 'Excelencia talentosa',
+      ru: 'Талантливое превосходство',
+      ar: 'التميز الموهوب',
+      hi: 'प्रतिभाशाली उत्कृष्टता'
     },
     hanjaBreakdown: {
       characters: [
@@ -12288,14 +12288,14 @@ createName({
     meaning: {
       en: 'Righteous excellence',
       ko: '의로운 탁월함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '正義の卓越性',
+      zh: '正义卓越',
+      fr: 'Excellence juste',
+      de: 'Rechtschaffene Exzellenz',
+      es: 'Excelencia justa',
+      ru: 'Праведное превосходство',
+      ar: 'التميز الصالح',
+      hi: 'धर्मी उत्कृष्टता'
     },
     hanjaBreakdown: {
       characters: [
@@ -12382,14 +12382,14 @@ createName({
     meaning: {
       en: 'Virtuous great',
       ko: '덕이 있고 위대한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢明で偉大な',
+      zh: '贤明伟大',
+      fr: 'Vertueux et grand',
+      de: 'Tugendhaft groß',
+      es: 'Virtuoso y grande',
+      ru: 'Добродетельный великий',
+      ar: 'عظيم فاضل',
+      hi: 'गुणी महान'
     },
     hanjaBreakdown: {
       characters: [
@@ -12476,14 +12476,14 @@ createName({
     meaning: {
       en: 'Victory excellence',
       ko: '승리의 탁월함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '勝利の卓越性',
+      zh: '胜利卓越',
+      fr: 'Excellence de la victoire',
+      de: 'Siegesexzellenz',
+      es: 'Excelencia de la victoria',
+      ru: 'Превосходство победы',
+      ar: 'تميز النصر',
+      hi: 'विजय उत्कृष्टता'
     },
     hanjaBreakdown: {
       characters: [
@@ -12570,14 +12570,14 @@ createName({
     meaning: {
       en: 'Precious excellence',
       ko: '소중한 탁월함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '貴重な卓越性',
+      zh: '珍贵卓越',
+      fr: 'Excellence précieuse',
+      de: 'Kostbare Exzellenz',
+      es: 'Excelencia preciosa',
+      ru: 'Драгоценное превосходство',
+      ar: 'التميز الثمين',
+      hi: 'अनमोल उत्कृष्टता'
     },
     hanjaBreakdown: {
       characters: [
@@ -12664,14 +12664,14 @@ createName({
     meaning: {
       en: 'Eastern excellence',
       ko: '동방의 탁월함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '東洋の卓越性',
+      zh: '东方卓越',
+      fr: 'Excellence orientale',
+      de: 'Östliche Exzellenz',
+      es: 'Excelencia oriental',
+      ru: 'Восточное превосходство',
+      ar: 'التميز الشرقي',
+      hi: 'पूर्वी उत्कृष्टता'
     },
     hanjaBreakdown: {
       characters: [
@@ -12758,14 +12758,14 @@ createName({
     meaning: {
       en: 'Quick innovation',
       ko: '빠른 혁신',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '素早い革新',
+      zh: '敏捷创新',
+      fr: 'Innovation rapide',
+      de: 'Schnelle Innovation',
+      es: 'Innovación rápida',
+      ru: 'Быстрая инновация',
+      ar: 'ابتكار سريع',
+      hi: 'तीव्र नवाचार'
     },
     hanjaBreakdown: {
       characters: [
@@ -12852,14 +12852,14 @@ createName({
     meaning: {
       en: 'Talented innovation',
       ko: '재능있는 혁신',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '才能ある革新',
+      zh: '才华创新',
+      fr: 'Innovation talentueuse',
+      de: 'Talentierte Innovation',
+      es: 'Innovación talentosa',
+      ru: 'Талантливая инновация',
+      ar: 'ابتكار موهوب',
+      hi: 'प्रतिभाशाली नवाचार'
     },
     hanjaBreakdown: {
       characters: [
@@ -12946,14 +12946,14 @@ createName({
     meaning: {
       en: 'Virtuous talent',
       ko: '덕이 있는 재능',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢明な才能',
+      zh: '贤德才华',
+      fr: 'Talent vertueux',
+      de: 'Tugendhaftes Talent',
+      es: 'Talento virtuoso',
+      ru: 'Добродетельный талант',
+      ar: 'موهبة فاضلة',
+      hi: 'गुणी प्रतिभा'
     },
     hanjaBreakdown: {
       characters: [
@@ -13040,14 +13040,14 @@ createName({
     meaning: {
       en: 'Victory great',
       ko: '승리와 위대함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '勝利の偉大な',
+      zh: '胜利伟大',
+      fr: 'Victoire et grand',
+      de: 'Sieg groß',
+      es: 'Victoria grande',
+      ru: 'Победа великая',
+      ar: 'عظيم النصر',
+      hi: 'विजय महान'
     },
     hanjaBreakdown: {
       characters: [
@@ -13135,14 +13135,14 @@ createName({
     meaning: {
       en: 'Precious and genuine',
       ko: '소중하고 진정한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '貴重で本物の',
+      zh: '珍贵真诚',
+      fr: 'Précieux et authentique',
+      de: 'Kostbar und echt',
+      es: 'Precioso y genuino',
+      ru: 'Драгоценный и подлинный',
+      ar: 'ثمين وأصلي',
+      hi: 'अनमोल और वास्तविक'
     },
     hanjaBreakdown: {
       characters: [
@@ -13214,14 +13214,14 @@ createName({
     meaning: {
       en: 'Quick innovation',
       ko: '빠른 혁신',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '素早い革新',
+      zh: '敏捷创新',
+      fr: 'Innovation rapide',
+      de: 'Schnelle Innovation',
+      es: 'Innovación rápida',
+      ru: 'Быстрая инновация',
+      ar: 'ابتكار سريع',
+      hi: 'तीव्र नवाचार'
     },
     hanjaBreakdown: {
       characters: [
@@ -13309,14 +13309,14 @@ createName({
     meaning: {
       en: 'Source excellent',
       ko: '근원의 탁월함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '源の卓越性',
+      zh: '源头卓越',
+      fr: 'Source excellente',
+      de: 'Ausgezeichnete Quelle',
+      es: 'Fuente excelente',
+      ru: 'Превосходный источник',
+      ar: 'مصدر ممتاز',
+      hi: 'उत्कृष्ट स्रोत'
     },
     hanjaBreakdown: {
       characters: [
@@ -13406,14 +13406,14 @@ createName({
     meaning: {
       en: 'Prosperous kindness',
       ko: '번영하는 친절함',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '繁栄する親切',
+      zh: '繁荣善良',
+      fr: 'Gentillesse prospère',
+      de: 'Wohlhabende Freundlichkeit',
+      es: 'Bondad próspera',
+      ru: 'Процветающая доброта',
+      ar: 'لطف مزدهر',
+      hi: 'समृद्ध दयालुता'
     },
     hanjaBreakdown: {
       characters: [
@@ -13500,14 +13500,14 @@ createName({
     meaning: {
       en: 'excellence, longevity',
       ko: '우수함, 장수',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '卓越、長寿',
+      zh: '卓越，长寿',
+      fr: 'Excellence, longévité',
+      de: 'Exzellenz, Langlebigkeit',
+      es: 'Excelencia, longevidad',
+      ru: 'Превосходство, долголетие',
+      ar: 'التميز، طول العمر',
+      hi: 'उत्कृष्टता, दीर्घायु'
     },
     hanjaBreakdown: {
       characters: [
@@ -13594,14 +13594,14 @@ createName({
     meaning: {
       en: 'refined, elegant',
       ko: '세련된, 우아한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '洗練された、優雅な',
+      zh: '精致，优雅',
+      fr: 'Raffiné, élégant',
+      de: 'Raffiniert, elegant',
+      es: 'Refinado, elegante',
+      ru: 'Изысканный, элегантный',
+      ar: 'راقي، أنيق',
+      hi: 'परिष्कृत, सुरुचिपूर्ण'
     },
     hanjaBreakdown: {
       characters: [
@@ -13673,14 +13673,14 @@ createName({
     meaning: {
       en: 'Virtuous auspicious',
       ko: '덕이 있고 길조로운',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢明で縁起の良い',
+      zh: '贤德吉祥',
+      fr: 'Vertueux et propice',
+      de: 'Tugendhaft und glückverheißend',
+      es: 'Virtuoso y auspicioso',
+      ru: 'Добродетельный благоприятный',
+      ar: 'فاضل ميمون',
+      hi: 'गुणी शुभ'
     },
     hanjaBreakdown: {
       characters: [
@@ -13768,14 +13768,14 @@ createName({
     meaning: {
       en: 'Quick pure',
       ko: '빠르고 순수한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '素早く純粋な',
+      zh: '敏捷纯洁',
+      fr: 'Rapide et pur',
+      de: 'Schnell rein',
+      es: 'Rápido y puro',
+      ru: 'Быстрый чистый',
+      ar: 'سريع نقي',
+      hi: 'तीव्र शुद्ध'
     },
     hanjaBreakdown: {
       characters: [
@@ -13865,14 +13865,14 @@ createName({
     meaning: {
       en: 'Virtuous pure',
       ko: '덕이 있고 순수한',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢明で純粋な',
+      zh: '贤德纯洁',
+      fr: 'Vertueux et pur',
+      de: 'Tugendhaft rein',
+      es: 'Virtuoso y puro',
+      ru: 'Добродетельный чистый',
+      ar: 'فاضل نقي',
+      hi: 'गुणी शुद्ध'
     },
     hanjaBreakdown: {
       characters: [
@@ -13961,14 +13961,14 @@ createName({
     meaning: {
       en: 'Wise beautiful',
       ko: '지혜롭고 아름다운',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢く美しい',
+      zh: '智慧美丽',
+      fr: 'Sage et belle',
+      de: 'Weise schön',
+      es: 'Sabia y hermosa',
+      ru: 'Мудрая красивая',
+      ar: 'حكيمة جميلة',
+      hi: 'बुद्धिमान सुंदर'
     },
     hanjaBreakdown: {
       characters: [
@@ -14055,14 +14055,14 @@ createName({
     meaning: {
       en: 'Virtuous jewel',
       ko: '덕이 있는 보석',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢明な宝石',
+      zh: '贤德珠宝',
+      fr: 'Joyau vertueux',
+      de: 'Tugendhaftes Juwel',
+      es: 'Joya virtuosa',
+      ru: 'Добродетельная жемчужина',
+      ar: 'جوهرة فاضلة',
+      hi: 'गुणी गहना'
     },
     hanjaBreakdown: {
       characters: [
@@ -14149,14 +14149,14 @@ createName({
     meaning: {
       en: 'Quick jewel',
       ko: '빠른 보석',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '素早い宝石',
+      zh: '敏捷珠宝',
+      fr: 'Joyau rapide',
+      de: 'Schnelles Juwel',
+      es: 'Joya rápida',
+      ru: 'Быстрая жемчужина',
+      ar: 'جوهرة سريعة',
+      hi: 'तीव्र गहना'
     },
     hanjaBreakdown: {
       characters: [
@@ -14243,14 +14243,14 @@ createName({
     meaning: {
       en: 'Wise prosperity',
       ko: '지혜로운 번영',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '賢い繁栄',
+      zh: '智慧繁荣',
+      fr: 'Prospérité sage',
+      de: 'Weise Wohlstand',
+      es: 'Prosperidad sabia',
+      ru: 'Мудрое процветание',
+      ar: 'ازدهار حكيم',
+      hi: 'बुद्धिमान समृद्धि'
     },
     hanjaBreakdown: {
       characters: [
@@ -14338,14 +14338,14 @@ createName({
     meaning: {
       en: 'Ocean beautiful',
       ko: '바다 아름다운',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '海の美しさ',
+      zh: '海洋之美',
+      fr: 'Belle océan',
+      de: 'Ozean schön',
+      es: 'Océano hermoso',
+      ru: 'Красивый океан',
+      ar: 'محيط جميل',
+      hi: 'सुंदर समुद्र'
     },
     hanjaBreakdown: {
       characters: [
@@ -14433,14 +14433,14 @@ createName({
     meaning: {
       en: 'Quick wisdom',
       ko: '빠른 지혜',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '素早い知恵',
+      zh: '快速的智慧',
+      fr: 'Sagesse rapide',
+      de: 'Schnelle Weisheit',
+      es: 'Sabiduría rápida',
+      ru: 'Быстрая мудрость',
+      ar: 'حكمة سريعة',
+      hi: 'तेज़ बुद्धि'
     },
     hanjaBreakdown: {
       characters: [
@@ -14528,14 +14528,14 @@ createName({
     meaning: {
       en: 'Source prosperity',
       ko: '근원의 번영',
-      ja: '',
-      zh: '',
-      fr: '',
-      de: '',
-      es: '',
-      ru: '',
-      ar: '',
-      hi: ''
+      ja: '源の繁栄',
+      zh: '源泉繁荣',
+      fr: 'Prospérité de la source',
+      de: 'Quelle des Wohlstands',
+      es: 'Prosperidad de la fuente',
+      ru: 'Процветание истока',
+      ar: 'ازدهار المصدر',
+      hi: 'स्रोत की समृद्धि'
     },
     hanjaBreakdown: {
       characters: [
