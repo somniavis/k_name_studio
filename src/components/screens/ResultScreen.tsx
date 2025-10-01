@@ -81,7 +81,7 @@ export const ResultScreen: React.FC = () => {
       console.log('Name generation completed successfully!');
     } catch (error) {
       console.error('Name generation failed:', error);
-      console.error('Error stack:', error.stack);
+      console.error('Error stack:', (error as Error).stack);
     } finally {
       console.log('Cleaning up generation state...');
       setIsGenerating(false);

@@ -1,6 +1,8 @@
 // Korean Name Generator with Saju Analysis
 import { calculateSaju, SajuResult } from './sajuCalculator';
 import { KOREAN_NAMES, KoreanName, getNamesByElement, getNamesByGender, searchNamesByPronunciation } from '../data/koreanNames';
+import { getStoryById, getStoriesByKoreanName } from '../data/nameStories';
+import { getHarmonyById, getHarmoniesByKoreanName } from '../data/nameHarmonies';
 import { NameResult, UserData } from '@/store/useAppStore';
 
 interface NameGenerationOptions {
@@ -22,8 +24,8 @@ function convertToNameResult(koreanName: KoreanName, sajuResult: SajuResult, loc
     pronunciation: koreanName.pronunciation,
     fortune: sajuResult.fortune[locale]?.overall || sajuResult.fortune.en?.overall || 'Positive energy surrounds this name',
     compatibility: calculateNameCompatibility(koreanName, sajuResult),
-    cultural: koreanName.story[locale] || koreanName.story.en,
-    story: koreanName.story[locale] || koreanName.story.en,
+    cultural: getStoryById(koreanName.id)?.story[locale] || getStoryById(koreanName.id)?.story.en || '',
+    story: getStoryById(koreanName.id)?.story[locale] || getStoryById(koreanName.id)?.story.en || '',
     similar: findSimilarNames(koreanName, 3),
     romanization: koreanName.romanization,
     hanjaBreakdown: koreanName.hanjaBreakdown ? {
@@ -35,7 +37,7 @@ function convertToNameResult(koreanName: KoreanName, sajuResult: SajuResult, loc
       traditionalMeaning: koreanName.hanjaBreakdown.traditionalMeaning[locale] || koreanName.hanjaBreakdown.traditionalMeaning.en
     } : undefined,
     pronunciationMatch: koreanName.pronunciationMatch,
-    harmony: koreanName.harmony?.[locale] || koreanName.harmony?.en,
+    harmony: getHarmonyById(koreanName.id)?.harmony[locale] || getHarmonyById(koreanName.id)?.harmony.en || '',
     kpopMember: koreanName.kpopMember,
     soundMatch: soundMatch,
     soundMatchGrade: soundMatchGrade
@@ -484,9 +486,9 @@ export function getSajuAnalysis(birthDate: Date, birthTime?: string, locale: str
 
   // Safe fallback structure since calculateSaju might return different format
   return {
-    pillars: saju.pillars || ["갑자", "정묘", "무신", "기유"],
-    dayMaster: "木 (Strong)", // Simplified fallback
-    elements: saju.elements || { wood: 3, fire: 2, earth: 2, metal: 1, water: 0 },
+    pillars: [saju.year.name, saju.month.name, saju.day.name, saju.time.name],
+    dayMaster: `${saju.dayMaster.element} (${saju.dayMaster.strength})`,
+    elements: saju.elementBalance,
     fortune: {
       overall: (saju.fortune?.[locale]?.overall || saju.fortune?.en?.overall || "Positive energy and good fortune await you"),
       career: "Excellent prospects for growth",
