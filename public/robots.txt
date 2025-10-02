@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Priority pages for SEO
+Allow: /en/
+Allow: /ko/
+Allow: /ja/
+Allow: /zh/
+Allow: /fr/
+Allow: /de/
+Allow: /es/
+Allow: /ru/
+Allow: /ar/
+Allow: /hi/
+
+# Important landing pages
+Allow: /korean-names-299-deal
+Allow: /premium
+Allow: /free-generator
+Allow: /k-pop-names
+
+# Block sensitive or non-public paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://koreannamestudio.com/sitemap.xml
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1

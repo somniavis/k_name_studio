@@ -410,29 +410,6 @@ Discover your Korean name at ${serviceUrl}`;
                 <div className="saju-analysis">
                   <h4>{t('sajuAnalysis') || 'Saju Analysis'}</h4>
 
-                  {sajuAnalysis && Array.isArray(sajuAnalysis.pillars) && (
-                    <div className="four-pillars">
-                      <h5>{t('fourPillars') || 'Four Pillars'}</h5>
-                      <div className="pillars-grid">
-                        <div className="pillar-item">
-                          <span className="pillar-label">{t('yearPillar') || 'Year'}</span>
-                          <span className="pillar-value">{sajuAnalysis.pillars[0] || '갑자'}</span>
-                        </div>
-                        <div className="pillar-item">
-                          <span className="pillar-label">{t('monthPillar') || 'Month'}</span>
-                          <span className="pillar-value">{sajuAnalysis.pillars[1] || '정묘'}</span>
-                        </div>
-                        <div className="pillar-item">
-                          <span className="pillar-label">{t('dayPillar') || 'Day'}</span>
-                          <span className="pillar-value">{sajuAnalysis.pillars[2] || '무신'}</span>
-                        </div>
-                        <div className="pillar-item">
-                          <span className="pillar-label">{t('timePillar') || 'Time'}</span>
-                          <span className="pillar-value">{sajuAnalysis.pillars[3] || '기유'}</span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
 
                   {sajuAnalysis && sajuAnalysis.elements && (
                     <div className="elements-analysis">
@@ -574,29 +551,6 @@ Discover your Korean name at ${serviceUrl}`;
                       <div className="saju-analysis">
                         <h4>{t('sajuAnalysis') || 'Saju Analysis'}</h4>
 
-                        {sajuAnalysis && Array.isArray(sajuAnalysis.pillars) && (
-                          <div className="four-pillars">
-                            <h5>{t('fourPillars') || 'Four Pillars'}</h5>
-                            <div className="pillars-grid">
-                              <div className="pillar-item">
-                                <span className="pillar-label">{t('yearPillar') || 'Year'}</span>
-                                <span className="pillar-value">{sajuAnalysis.pillars[0] || '갑자'}</span>
-                              </div>
-                              <div className="pillar-item">
-                                <span className="pillar-label">{t('monthPillar') || 'Month'}</span>
-                                <span className="pillar-value">{sajuAnalysis.pillars[1] || '정묘'}</span>
-                              </div>
-                              <div className="pillar-item">
-                                <span className="pillar-label">{t('dayPillar') || 'Day'}</span>
-                                <span className="pillar-value">{sajuAnalysis.pillars[2] || '무신'}</span>
-                              </div>
-                              <div className="pillar-item">
-                                <span className="pillar-label">{t('timePillar') || 'Time'}</span>
-                                <span className="pillar-value">{sajuAnalysis.pillars[3] || '기유'}</span>
-                              </div>
-                            </div>
-                          </div>
-                        )}
 
                         <div className="fortune-summary">
                           <h5>{t('destinyReading')}</h5>
