@@ -47,8 +47,17 @@ export async function POST(request: Request) {
 
     if (!tokenResponse.ok) {
       const errorText = await tokenResponse.text();
-      console.error('[PayPal] Token request failed:', errorText);
-      return NextResponse.json({ error: 'Failed to get PayPal access token' }, { status: 500 });
+      console.error('[PayPal] Token request failed:', {
+        status: tokenResponse.status,
+        statusText: tokenResponse.statusText,
+        error: errorText,
+        environment: isPayPalLive ? 'Live' : 'Sandbox',
+        baseURL
+      });
+      return NextResponse.json({
+        error: 'Failed to get PayPal access token',
+        details: `Status: ${tokenResponse.status}, Environment: ${isPayPalLive ? 'Live' : 'Sandbox'}`
+      }, { status: 500 });
     }
 
     const { access_token } = await tokenResponse.json();
@@ -84,8 +93,17 @@ export async function POST(request: Request) {
 
     if (!orderResponse.ok) {
       const errorText = await orderResponse.text();
-      console.error('[PayPal] Order creation failed:', errorText);
-      return NextResponse.json({ error: 'Failed to create PayPal order' }, { status: 500 });
+      console.error('[PayPal] Order creation failed:', {
+        status: orderResponse.status,
+        statusText: orderResponse.statusText,
+        error: errorText,
+        environment: isPayPalLive ? 'Live' : 'Sandbox',
+        baseURL
+      });
+      return NextResponse.json({
+        error: 'Failed to create PayPal order',
+        details: `Status: ${orderResponse.status}, Environment: ${isPayPalLive ? 'Live' : 'Sandbox'}`
+      }, { status: 500 });
     }
 
     const orderData = await orderResponse.json();

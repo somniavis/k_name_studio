@@ -53,8 +53,17 @@ export async function POST(request: Request) {
 
     if (!tokenResponse.ok) {
       const errorText = await tokenResponse.text();
-      console.error('[PayPal] Token request failed during capture:', errorText);
-      return NextResponse.json({ error: 'Failed to get PayPal access token' }, { status: 500 });
+      console.error('[PayPal] Token request failed during capture:', {
+        status: tokenResponse.status,
+        statusText: tokenResponse.statusText,
+        error: errorText,
+        environment: isPayPalLive ? 'Live' : 'Sandbox',
+        baseURL
+      });
+      return NextResponse.json({
+        error: 'Failed to get PayPal access token',
+        details: `Status: ${tokenResponse.status}, Environment: ${isPayPalLive ? 'Live' : 'Sandbox'}`
+      }, { status: 500 });
     }
 
     const { access_token } = await tokenResponse.json();
@@ -70,8 +79,17 @@ export async function POST(request: Request) {
 
     if (!captureResponse.ok) {
       const errorText = await captureResponse.text();
-      console.error('[PayPal] Order capture failed:', errorText);
-      return NextResponse.json({ error: 'Failed to capture PayPal order' }, { status: 500 });
+      console.error('[PayPal] Order capture failed:', {
+        status: captureResponse.status,
+        statusText: captureResponse.statusText,
+        error: errorText,
+        environment: isPayPalLive ? 'Live' : 'Sandbox',
+        orderID
+      });
+      return NextResponse.json({
+        error: 'Failed to capture PayPal order',
+        details: `Status: ${captureResponse.status}, Environment: ${isPayPalLive ? 'Live' : 'Sandbox'}`
+      }, { status: 500 });
     }
 
     const captureData = await captureResponse.json();
