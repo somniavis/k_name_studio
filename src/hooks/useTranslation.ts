@@ -5,6 +5,7 @@ export interface TranslationHook {
   t: (key: string) => string;
   locale: string;
   changeLanguage: (locale: string) => Promise<void>;
+  isLoading: boolean;
 }
 
 // Load translations from JSON files
@@ -28,19 +29,23 @@ export const useTranslation = (namespace: string = 'common'): TranslationHook =>
   const locale = useAppStore((state) => state.locale);
   const setLocale = useAppStore((state) => state.setLocale);
   const [translations, setTranslations] = useState<Record<string, unknown>>({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadNamespaceTranslations = async () => {
+      setIsLoading(true);
       const cacheKey = `${locale}-${namespace}`;
 
       if (translationCache[cacheKey]) {
         setTranslations(translationCache[cacheKey]);
+        setIsLoading(false);
         return;
       }
 
       const data = await loadTranslations(locale, namespace);
       translationCache[cacheKey] = data;
       setTranslations(data);
+      setIsLoading(false);
     };
 
     loadNamespaceTranslations();
@@ -69,5 +74,6 @@ export const useTranslation = (namespace: string = 'common'): TranslationHook =>
     t,
     locale,
     changeLanguage,
+    isLoading,
   };
 };

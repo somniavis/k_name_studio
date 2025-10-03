@@ -1,6 +1,7 @@
 'use client';
 
 import { WelcomeScreen, NameInputScreen, ResultScreen } from '@/components/screens';
+import { TranslationProvider } from '@/components/TranslationProvider';
 import { useAppStore } from '@/store/useAppStore';
 
 export default function Home() {
@@ -25,5 +26,9 @@ export default function Home() {
     }
   };
 
-  return renderScreen();
+  return (
+    <TranslationProvider>
+      {renderScreen()}
+    </TranslationProvider>
+  );
 }
