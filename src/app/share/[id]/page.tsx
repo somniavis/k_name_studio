@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { NameResult, UserData } from '@/store/useAppStore';
-import '@/components/screens/ResultScreen.css'; // Re-use styles
+import '@/components/screens/ResultScreen.css'; // Re-use base styles
+import styles from './page.module.css'; // Enhanced share page styles
 
 // Define a comprehensive type for the shared data
 interface SharedData {
@@ -86,80 +87,82 @@ export default function SharePage() {
 
   // Enhanced render logic with full premium features
   return (
-    <div className="screen result-screen">
-      <div className="screen-content">
-        <div className="result-header">
-          <div className="celebration-emoji">🎉</div>
-          <h1>Your Premium Korean Names</h1>
-          <p>Based on &quot;{data.userData.firstName}&quot; with complete Saju analysis</p>
+    <div className={styles.shareContainer}>
+      <div className={styles.shareContent}>
+        <div className={styles.headerSection}>
+          <div className={styles.celebrationEmoji}>🎉</div>
+          <h1 className={styles.shareTitle}>Your Premium Korean Names</h1>
+          <p className={styles.shareSubtitle}>Based on &quot;{data.userData.firstName}&quot; with complete Saju analysis</p>
           {data.isPremiumUnlocked && (
-            <div className="premium-badge-container">
-              <div className="premium-badge">⭐ PREMIUM RESULTS</div>
+            <div className={styles.premiumBadgeContainer}>
+              <div className={styles.premiumBadge}>⭐ PREMIUM RESULTS</div>
             </div>
           )}
         </div>
 
         {/* Data Deletion Notice */}
-        <div className="cultural-note" style={{ textAlign: 'center', margin: '0 20px 30px', justifyContent: 'center' }}>
-          <div className="note-icon">🔒</div>
-          <p>For your privacy, this result page is temporary and will be automatically deleted 15 days after creation.</p>
+        <div className={styles.privacyNotice}>
+          <div className={styles.privacyIcon}>🔒</div>
+          <p className={styles.privacyText}>For your privacy, this result page is temporary and will be automatically deleted 15 days after creation.</p>
         </div>
 
         {/* Free Names Section */}
         {data.freeNames && data.freeNames.length > 0 && (
-          <div className="names-section">
-            <h2>Your Korean Names</h2>
-            <div className="names-container">
+          <div className={styles.sectionContainer}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>Your Korean Names</h2>
+            </div>
+            <div className={styles.namesGrid}>
               {data.freeNames.map((nameData, index) => (
-                <div key={index} className="name-card">
-                  <div className="name-header">
-                    <div className="name-title-section">
-                      <div className="korean-name">{nameData.korean}</div>
-                      <div className="romanization">{nameData.pronunciation}</div>
+                <div key={index} className={styles.nameCard}>
+                  <div className={styles.nameHeader}>
+                    <div className={styles.nameTitleSection}>
+                      <div className={styles.koreanName}>{nameData.korean}</div>
+                      <div className={styles.romanization}>{nameData.pronunciation}</div>
                     </div>
                     {nameData.compatibility && (
-                      <div className={`compatibility-badge ${getCompatibilityClass(nameData.compatibility)}`}>
+                      <div className={`${styles.compatibilityBadge} ${styles[getCompatibilityClass(nameData.compatibility)]}`}>
                         {getCompatibilityText(nameData.compatibility)}
                       </div>
                     )}
                   </div>
-                  <div className="name-meaning">
-                    <h4>Meaning</h4>
-                    <p>{nameData.meaning}</p>
+                  <div className={styles.nameSection}>
+                    <h4 className={styles.nameSectionTitle}>💎 Meaning</h4>
+                    <p className={styles.nameSectionText}>{nameData.meaning}</p>
                   </div>
                   {nameData.story && (
-                    <div className="name-story">
-                      <h4>Cultural Story</h4>
-                      <p>{nameData.story}</p>
+                    <div className={styles.nameSection}>
+                      <h4 className={styles.nameSectionTitle}>📚 Cultural Story</h4>
+                      <p className={styles.nameSectionText}>{nameData.story}</p>
                     </div>
                   )}
                   {nameData.harmony && (
-                    <div className="name-harmony">
-                      <h4>Saju Harmony</h4>
-                      <p>{nameData.harmony}</p>
+                    <div className={styles.nameSection}>
+                      <h4 className={styles.nameSectionTitle}>🔮 Saju Harmony</h4>
+                      <p className={styles.nameSectionText}>{nameData.harmony}</p>
                     </div>
                   )}
                   {nameData.hanjaBreakdown && (
-                    <div className="hanja-breakdown">
-                      <h4>Hanja Breakdown</h4>
-                      <div className="hanja-characters">
+                    <div className={`${styles.nameSection} ${styles.hanjaBreakdown}`}>
+                      <h4 className={styles.nameSectionTitle}>🈯 Hanja Breakdown</h4>
+                      <div className={styles.hanjaCharacters}>
                         {nameData.hanjaBreakdown.characters.map((char, charIndex) => (
-                          <div key={charIndex} className="hanja-char">
-                            <span className="hanja">{char.hanja}</span>
-                            <span className="korean">{char.korean}</span>
-                            <span className="meaning">{char.meaning}</span>
+                          <div key={charIndex} className={styles.hanjaChar}>
+                            <span className={styles.hanja}>{char.hanja}</span>
+                            <span className={styles.korean}>{char.korean}</span>
+                            <span className={styles.meaning}>{char.meaning}</span>
                           </div>
                         ))}
                       </div>
                       {nameData.hanjaBreakdown.traditionalMeaning && (
-                        <p className="traditional-meaning">{nameData.hanjaBreakdown.traditionalMeaning}</p>
+                        <p className={styles.traditionalMeaning}>{nameData.hanjaBreakdown.traditionalMeaning}</p>
                       )}
                     </div>
                   )}
                   {nameData.kpopMember && (
-                    <div className="kpop-connection">
-                      <h4>K-Pop Connection</h4>
-                      <p>✨ Shares name with {nameData.kpopMember.memberName} from {nameData.kpopMember.group}</p>
+                    <div className={`${styles.nameSection} ${styles.kpopConnection}`}>
+                      <h4 className={styles.nameSectionTitle}>🎤 K-Pop Connection</h4>
+                      <p className={styles.nameSectionText}>✨ Shares name with {nameData.kpopMember.memberName} from {nameData.kpopMember.group}</p>
                     </div>
                   )}
                 </div>
@@ -170,63 +173,63 @@ export default function SharePage() {
 
         {/* Premium Names Section */}
         {data.premiumNames && data.premiumNames.length > 0 && (
-          <div className="premium-names-section">
-            <div className="premium-header">
-              <div className="premium-badge">⭐ PREMIUM</div>
-              <h2>Premium Recommended Names</h2>
-              <p>These names have been specially selected based on your complete Saju analysis</p>
+          <div className={styles.sectionContainer}>
+            <div className={`${styles.sectionHeader} ${styles.premiumHeader}`}>
+              <div className={styles.premiumBadge}>⭐ PREMIUM</div>
+              <h2 className={styles.sectionTitle}>Premium Recommended Names</h2>
+              <p className={styles.sectionDescription}>These names have been specially selected based on your complete Saju analysis</p>
             </div>
-            <div className="names-container">
+            <div className={styles.namesGrid}>
               {data.premiumNames.map((nameData, index) => (
-                <div key={`premium-${index}`} className="name-card premium">
-                  <div className="name-header">
-                    <div className="name-title-section">
-                      <div className="korean-name">{nameData.korean}</div>
-                      <div className="romanization">{nameData.pronunciation}</div>
+                <div key={`premium-${index}`} className={`${styles.nameCard} ${styles.premium}`}>
+                  <div className={styles.nameHeader}>
+                    <div className={styles.nameTitleSection}>
+                      <div className={styles.koreanName}>{nameData.korean}</div>
+                      <div className={styles.romanization}>{nameData.pronunciation}</div>
                     </div>
                     {nameData.compatibility && (
-                      <div className={`compatibility-badge ${getCompatibilityClass(nameData.compatibility)}`}>
+                      <div className={`${styles.compatibilityBadge} ${styles[getCompatibilityClass(nameData.compatibility)]}`}>
                         {getCompatibilityText(nameData.compatibility)}
                       </div>
                     )}
                   </div>
-                  <div className="name-meaning">
-                    <h4>Meaning</h4>
-                    <p>{nameData.meaning}</p>
+                  <div className={styles.nameSection}>
+                    <h4 className={styles.nameSectionTitle}>💎 Meaning</h4>
+                    <p className={styles.nameSectionText}>{nameData.meaning}</p>
                   </div>
                   {nameData.story && (
-                    <div className="name-story">
-                      <h4>Cultural Story</h4>
-                      <p>{nameData.story}</p>
+                    <div className={styles.nameSection}>
+                      <h4 className={styles.nameSectionTitle}>📚 Cultural Story</h4>
+                      <p className={styles.nameSectionText}>{nameData.story}</p>
                     </div>
                   )}
                   {nameData.harmony && (
-                    <div className="name-harmony">
-                      <h4>Saju Harmony</h4>
-                      <p>{nameData.harmony}</p>
+                    <div className={styles.nameSection}>
+                      <h4 className={styles.nameSectionTitle}>🔮 Saju Harmony</h4>
+                      <p className={styles.nameSectionText}>{nameData.harmony}</p>
                     </div>
                   )}
                   {nameData.hanjaBreakdown && (
-                    <div className="hanja-breakdown">
-                      <h4>Hanja Breakdown</h4>
-                      <div className="hanja-characters">
+                    <div className={`${styles.nameSection} ${styles.hanjaBreakdown}`}>
+                      <h4 className={styles.nameSectionTitle}>🈯 Hanja Breakdown</h4>
+                      <div className={styles.hanjaCharacters}>
                         {nameData.hanjaBreakdown.characters.map((char, charIndex) => (
-                          <div key={charIndex} className="hanja-char">
-                            <span className="hanja">{char.hanja}</span>
-                            <span className="korean">{char.korean}</span>
-                            <span className="meaning">{char.meaning}</span>
+                          <div key={charIndex} className={styles.hanjaChar}>
+                            <span className={styles.hanja}>{char.hanja}</span>
+                            <span className={styles.korean}>{char.korean}</span>
+                            <span className={styles.meaning}>{char.meaning}</span>
                           </div>
                         ))}
                       </div>
                       {nameData.hanjaBreakdown.traditionalMeaning && (
-                        <p className="traditional-meaning">{nameData.hanjaBreakdown.traditionalMeaning}</p>
+                        <p className={styles.traditionalMeaning}>{nameData.hanjaBreakdown.traditionalMeaning}</p>
                       )}
                     </div>
                   )}
                   {nameData.kpopMember && (
-                    <div className="kpop-connection">
-                      <h4>K-Pop Connection</h4>
-                      <p>✨ Shares name with {nameData.kpopMember.memberName} from {nameData.kpopMember.group}</p>
+                    <div className={`${styles.nameSection} ${styles.kpopConnection}`}>
+                      <h4 className={styles.nameSectionTitle}>🎤 K-Pop Connection</h4>
+                      <p className={styles.nameSectionText}>✨ Shares name with {nameData.kpopMember.memberName} from {nameData.kpopMember.group}</p>
                     </div>
                   )}
                 </div>
@@ -237,40 +240,40 @@ export default function SharePage() {
 
         {/* Perfect Partner Names Section */}
         {data.oppositeGenderNames && data.oppositeGenderNames.length > 0 && (
-          <div className="partner-names-section">
-            <div className="partner-header">
-              <div className="premium-badge">💕 PERFECT PARTNERS</div>
-              <h2>Perfect Partner Names</h2>
-              <p>Names that harmonize perfectly with your selected Korean name</p>
+          <div className={styles.sectionContainer}>
+            <div className={`${styles.sectionHeader} ${styles.partnerHeader}`}>
+              <div className={styles.premiumBadge}>💕 PERFECT PARTNERS</div>
+              <h2 className={styles.sectionTitle}>Perfect Partner Names</h2>
+              <p className={styles.sectionDescription}>Names that harmonize perfectly with your selected Korean name</p>
             </div>
-            <div className="names-container">
+            <div className={styles.namesGrid}>
               {data.oppositeGenderNames.map((nameData, index) => (
-                <div key={`partner-${index}`} className="name-card partner">
-                  <div className="name-header">
-                    <div className="name-title-section">
-                      <div className="korean-name">{nameData.korean}</div>
-                      <div className="romanization">{nameData.pronunciation}</div>
+                <div key={`partner-${index}`} className={`${styles.nameCard} ${styles.partner}`}>
+                  <div className={styles.nameHeader}>
+                    <div className={styles.nameTitleSection}>
+                      <div className={styles.koreanName}>{nameData.korean}</div>
+                      <div className={styles.romanization}>{nameData.pronunciation}</div>
                     </div>
                     {nameData.compatibility && (
-                      <div className={`compatibility-badge ${getCompatibilityClass(nameData.compatibility)}`}>
+                      <div className={`${styles.compatibilityBadge} ${styles[getCompatibilityClass(nameData.compatibility)]}`}>
                         {getCompatibilityText(nameData.compatibility)}
                       </div>
                     )}
                   </div>
-                  <div className="name-meaning">
-                    <h4>Meaning</h4>
-                    <p>{nameData.meaning}</p>
+                  <div className={styles.nameSection}>
+                    <h4 className={styles.nameSectionTitle}>💎 Meaning</h4>
+                    <p className={styles.nameSectionText}>{nameData.meaning}</p>
                   </div>
                   {nameData.story && (
-                    <div className="name-story">
-                      <h4>Cultural Story</h4>
-                      <p>{nameData.story}</p>
+                    <div className={styles.nameSection}>
+                      <h4 className={styles.nameSectionTitle}>📚 Cultural Story</h4>
+                      <p className={styles.nameSectionText}>{nameData.story}</p>
                     </div>
                   )}
                   {nameData.harmony && (
-                    <div className="name-harmony">
-                      <h4>Partner Harmony</h4>
-                      <p>{nameData.harmony}</p>
+                    <div className={styles.nameSection}>
+                      <h4 className={styles.nameSectionTitle}>💕 Partner Harmony</h4>
+                      <p className={styles.nameSectionText}>{nameData.harmony}</p>
                     </div>
                   )}
                 </div>
@@ -281,36 +284,29 @@ export default function SharePage() {
 
         {/* Saju Analysis Section */}
         {data.sajuAnalysis && (
-          <div className="saju-analysis-section">
-            <div className="analysis-header">
-              <div className="premium-badge">🔮 SAJU ANALYSIS</div>
-              <h2>Your Complete Four Pillars Analysis</h2>
+          <div className={styles.sectionContainer}>
+            <div className={`${styles.sectionHeader} ${styles.sajuHeader}`}>
+              <div className={`${styles.premiumBadge} ${styles.sajuBadge}`}>🔮 SAJU ANALYSIS</div>
+              <h2 className={styles.sectionTitle}>Your Life Fortune Analysis</h2>
+              <p className={`${styles.sectionDescription} ${styles.analysisSubtitle}`}>Based on your birth details and Korean metaphysics</p>
             </div>
 
-            {data.sajuAnalysis.pillars && data.sajuAnalysis.pillars.length > 0 && (
-              <div className="pillars-section">
-                <h3>Your Four Pillars</h3>
-                <div className="pillars-grid">
-                  {data.sajuAnalysis.pillars.map((pillar, index) => (
-                    <div key={index} className="pillar-item">
-                      <div className="pillar-label">
-                        {index === 0 ? 'Year' : index === 1 ? 'Month' : index === 2 ? 'Day' : 'Hour'}
-                      </div>
-                      <div className="pillar-value">{pillar}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {data.sajuAnalysis.elements && (
-              <div className="elements-section">
-                <h3>Elemental Balance</h3>
-                <div className="elements-grid">
+              <div className={styles.sectionContainer}>
+                <h3 className={styles.sectionTitle}>📊 Elemental Balance</h3>
+                <div className={styles.elementsGrid}>
                   {Object.entries(data.sajuAnalysis.elements).map(([element, count]) => (
-                    <div key={element} className="element-item">
-                      <div className="element-name">{element}</div>
-                      <div className="element-count">{count}</div>
+                    <div key={element} className={styles.elementItem}>
+                      <div className={styles.elementIcon}>
+                        {element === 'wood' ? '🌲' :
+                         element === 'fire' ? '🔥' :
+                         element === 'earth' ? '⛰️' :
+                         element === 'metal' ? '⚡' : '💧'}
+                      </div>
+                      <div className={styles.elementDetails}>
+                        <div className={styles.elementName}>{element.charAt(0).toUpperCase() + element.slice(1)}</div>
+                        <div className={styles.elementCount}>{count}</div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -318,30 +314,36 @@ export default function SharePage() {
             )}
 
             {data.sajuAnalysis.fortune && (
-              <div className="fortune-section">
-                <h3>Life Fortune Analysis</h3>
-                <div className="fortune-grid">
-                  <div className="fortune-item">
+              <div className={styles.sectionContainer}>
+                <h3 className={styles.sectionTitle}>🌟 Life Aspects</h3>
+                <div className={styles.fortuneGrid}>
+                  <div className={styles.fortuneItem}>
+                    <div className={styles.fortuneIcon}>🎯</div>
                     <h4>Overall</h4>
                     <p>{data.sajuAnalysis.fortune.overall}</p>
                   </div>
-                  <div className="fortune-item">
+                  <div className={styles.fortuneItem}>
+                    <div className={styles.fortuneIcon}>💼</div>
                     <h4>Career</h4>
                     <p>{data.sajuAnalysis.fortune.career}</p>
                   </div>
-                  <div className="fortune-item">
+                  <div className={styles.fortuneItem}>
+                    <div className={styles.fortuneIcon}>💕</div>
                     <h4>Love</h4>
                     <p>{data.sajuAnalysis.fortune.love}</p>
                   </div>
-                  <div className="fortune-item">
+                  <div className={styles.fortuneItem}>
+                    <div className={styles.fortuneIcon}>🌿</div>
                     <h4>Health</h4>
                     <p>{data.sajuAnalysis.fortune.health}</p>
                   </div>
-                  <div className="fortune-item">
+                  <div className={styles.fortuneItem}>
+                    <div className={styles.fortuneIcon}>💰</div>
                     <h4>Wealth</h4>
                     <p>{data.sajuAnalysis.fortune.wealth}</p>
                   </div>
-                  <div className="fortune-item advice">
+                  <div className={`${styles.fortuneItem} ${styles.advice}`}>
+                    <div className={styles.fortuneIcon}>💡</div>
                     <h4>Life Advice</h4>
                     <p>{data.sajuAnalysis.fortune.advice}</p>
                   </div>
@@ -351,7 +353,7 @@ export default function SharePage() {
           </div>
         )}
 
-        <footer className="app-footer">
+        <footer className={styles.footer}>
           <p>Copyright ⓒ K-Name-Studio. All rights reserved</p>
         </footer>
       </div>
