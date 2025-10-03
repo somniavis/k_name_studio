@@ -1,0 +1,57 @@
+{
+  "modal": {
+    "title": "Buka Kunci Nama Premium ✨",
+    "subtitle": "Dapatkan analisis nama Korea tingkat lanjut dan fitur eksklusif"
+  },
+  "package": {
+    "title": "Paket Premium"
+  },
+  "features": {
+    "premiumNames": "3 Nama Korea Premium",
+    "kpopMatching": "Pencocokan Nama Bintang K-pop",
+    "soulmate": "2 Nama Belahan Jiwa Sempurna",
+    "shareLink": "Tautan Berbagi 15 hari"
+  },
+  "benefits": {
+    "title": "Apa yang akan Anda dapatkan:",
+    "list": {
+      "premium": "5+ Nama Korea Premium",
+      "hanja": "Analisis Karakter Hanja Terperinci",
+      "saju": "Pembacaan Ramalan Saju Lengkap",
+      "pronunciation": "Panduan Pengucapan Audio",
+      "cultural": "Latar Belakang Budaya & Sejarah",
+      "kpop": "Pencocokan Nama Bintang K-pop",
+      "sharing": "Kartu Berbagi yang Indah"
+    }
+  },
+  "pricing": {
+    "price": "$2.99",
+    "description": "Pembayaran sekali • Tanpa berlangganan",
+    "secure": "Pembayaran PayPal Aman",
+    "testMode": "MODE UJI: Pembayaran PayPal Sandbox",
+    "testNote": "Gunakan kartu kredit uji apa pun - Tanpa biaya nyata",
+    "guarantee": "Jaminan uang kembali 30 hari"
+  },
+  "status": {
+    "processing": "Memproses pembayaran Anda...",
+    "success": "Pembayaran berhasil! Menghasilkan nama premium Anda...",
+    "error": "Pembayaran gagal. Silakan coba lagi.",
+    "cancelled": "Pembayaran dibatalkan."
+  },
+  "errors": {
+    "paypalLoad": "PayPal gagal dimuat. Silakan refresh halaman.",
+    "networkError": "Kesalahan jaringan. Silakan periksa koneksi Anda.",
+    "serverError": "Kesalahan server. Silakan coba lagi nanti.",
+    "invalidAmount": "Jumlah pembayaran tidak valid.",
+    "verificationFailed": "Verifikasi pembayaran gagal. Hubungi dukungan."
+  },
+  "buttons": {
+    "payNow": "Bayar Sekarang",
+    "tryAgain": "Coba Lagi",
+    "cancel": "Batal",
+    "close": "Tutup"
+  },
+  "processing": "Memproses pembayaran...",
+  "configError": "Sistem pembayaran tidak dikonfigurasi",
+  "security": "Pembayaran aman didukung oleh PayPal. Informasi pembayaran Anda tidak pernah disimpan di server kami."
+}

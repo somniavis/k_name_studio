@@ -1,0 +1,57 @@
+{
+  "modal": {
+    "title": "Débloquez les Noms Premium ✨",
+    "subtitle": "Obtenez une analyse avancée des noms coréens et des fonctionnalités exclusives"
+  },
+  "package": {
+    "title": "Pack Premium"
+  },
+  "features": {
+    "premiumNames": "3 Noms Coréens Premium",
+    "kpopMatching": "Correspondance avec des Stars K-pop",
+    "soulmate": "2 Noms d'Âme Sœur Parfaits",
+    "shareLink": "Lien Partageable de 15 jours"
+  },
+  "benefits": {
+    "title": "Ce que vous obtiendrez :",
+    "list": {
+      "premium": "5+ Noms Coréens Premium",
+      "hanja": "Analyse Détaillée des Caractères Hanja",
+      "saju": "Lecture Complète de Fortune Saju",
+      "pronunciation": "Guide de Prononciation Audio",
+      "cultural": "Contexte Culturel et Histoire",
+      "kpop": "Correspondances de Noms de Stars K-pop",
+      "sharing": "Belles Cartes de Partage"
+    }
+  },
+  "pricing": {
+    "price": "$2.99",
+    "description": "Paiement unique • Pas d'abonnement",
+    "secure": "Paiement PayPal Sécurisé",
+    "testMode": "MODE TEST : Paiement PayPal Sandbox",
+    "testNote": "Utilisez n'importe quelle carte de crédit de test - Aucun frais réel",
+    "guarantee": "Garantie de remboursement de 30 jours"
+  },
+  "status": {
+    "processing": "Traitement de votre paiement...",
+    "success": "Paiement réussi ! Génération de vos noms premium...",
+    "error": "Échec du paiement. Veuillez réessayer.",
+    "cancelled": "Le paiement a été annulé."
+  },
+  "errors": {
+    "paypalLoad": "Échec du chargement de PayPal. Veuillez actualiser la page.",
+    "networkError": "Erreur réseau. Veuillez vérifier votre connexion.",
+    "serverError": "Erreur serveur. Veuillez réessayer plus tard.",
+    "invalidAmount": "Montant de paiement invalide.",
+    "verificationFailed": "Échec de la vérification du paiement. Contactez le support."
+  },
+  "buttons": {
+    "payNow": "Payer Maintenant",
+    "tryAgain": "Réessayer",
+    "cancel": "Annuler",
+    "close": "Fermer"
+  },
+  "processing": "Traitement du paiement...",
+  "configError": "Le système de paiement n'est pas configuré",
+  "security": "Paiement sécurisé par PayPal. Vos informations de paiement ne sont jamais stockées sur nos serveurs."
+}

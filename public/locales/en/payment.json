@@ -3,6 +3,15 @@
     "title": "Unlock Premium Names ✨",
     "subtitle": "Get advanced Korean name analysis and exclusive features"
   },
+  "package": {
+    "title": "Premium Package"
+  },
+  "features": {
+    "premiumNames": "3 Premium Korean Names",
+    "kpopMatching": "K-pop Star Name Matching",
+    "soulmate": "2 Perfect Soulmate Names",
+    "shareLink": "15-day Shareable Link"
+  },
   "benefits": {
     "title": "What you'll get:",
     "list": {
@@ -41,5 +50,8 @@
     "tryAgain": "Try Again",
     "cancel": "Cancel",
     "close": "Close"
-  }
+  },
+  "processing": "Processing payment...",
+  "configError": "Payment system is not configured",
+  "security": "Secure payment powered by PayPal. Your payment information is never stored on our servers."
 }

@@ -1,0 +1,57 @@
+{
+  "modal": {
+    "title": "Sblocca Nomi Premium ✨",
+    "subtitle": "Ottieni analisi avanzate dei nomi coreani e funzionalità esclusive"
+  },
+  "package": {
+    "title": "Pacchetto Premium"
+  },
+  "features": {
+    "premiumNames": "3 Nomi Coreani Premium",
+    "kpopMatching": "Corrispondenza con Star K-pop",
+    "soulmate": "2 Nomi Anima Gemella Perfetti",
+    "shareLink": "Link Condivisibile di 15 giorni"
+  },
+  "benefits": {
+    "title": "Cosa otterrai:",
+    "list": {
+      "premium": "5+ Nomi Coreani Premium",
+      "hanja": "Analisi Dettagliata dei Caratteri Hanja",
+      "saju": "Lettura Completa della Fortuna Saju",
+      "pronunciation": "Guida Audio alla Pronuncia",
+      "cultural": "Background Culturale e Storia",
+      "kpop": "Corrispondenze Nomi Star K-pop",
+      "sharing": "Belle Carte da Condividere"
+    }
+  },
+  "pricing": {
+    "price": "$2.99",
+    "description": "Pagamento unico • Nessun abbonamento",
+    "secure": "Pagamento PayPal Sicuro",
+    "testMode": "MODALITÀ TEST: Pagamento PayPal Sandbox",
+    "testNote": "Usa qualsiasi carta di credito di test - Nessun addebito reale",
+    "guarantee": "Garanzia di rimborso di 30 giorni"
+  },
+  "status": {
+    "processing": "Elaborazione del tuo pagamento...",
+    "success": "Pagamento riuscito! Generazione dei tuoi nomi premium...",
+    "error": "Pagamento fallito. Riprova.",
+    "cancelled": "Il pagamento è stato annullato."
+  },
+  "errors": {
+    "paypalLoad": "Caricamento PayPal fallito. Aggiorna la pagina.",
+    "networkError": "Errore di rete. Controlla la tua connessione.",
+    "serverError": "Errore del server. Riprova più tardi.",
+    "invalidAmount": "Importo del pagamento non valido.",
+    "verificationFailed": "Verifica del pagamento fallita. Contatta il supporto."
+  },
+  "buttons": {
+    "payNow": "Paga Ora",
+    "tryAgain": "Riprova",
+    "cancel": "Annulla",
+    "close": "Chiudi"
+  },
+  "processing": "Elaborazione pagamento...",
+  "configError": "Il sistema di pagamento non è configurato",
+  "security": "Pagamento sicuro fornito da PayPal. Le tue informazioni di pagamento non vengono mai memorizzate sui nostri server."
+}
