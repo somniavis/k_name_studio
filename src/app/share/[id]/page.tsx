@@ -85,6 +85,20 @@ export default function SharePage() {
     }
   };
 
+  const playPronunciation = (korean: string, pronunciation: string) => {
+    // Use Web Speech API to pronounce the Korean name
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(korean);
+      utterance.lang = 'ko-KR';
+      utterance.rate = 0.8;
+      utterance.pitch = 1.0;
+      speechSynthesis.speak(utterance);
+    } else {
+      // Fallback: show pronunciation text
+      alert(`Pronunciation: ${pronunciation}`);
+    }
+  };
+
   // Enhanced render logic with full premium features
   return (
     <div className={styles.shareContainer}>
@@ -118,7 +132,16 @@ export default function SharePage() {
                   <div className={styles.nameHeader}>
                     <div className={styles.nameTitleSection}>
                       <div className={styles.koreanName}>{nameData.korean}</div>
-                      <div className={styles.romanization}>{nameData.pronunciation}</div>
+                      <div className={styles.romanization}>
+                        <span>{nameData.pronunciation}</span>
+                        <button
+                          className={styles.pronunciationButton}
+                          onClick={() => playPronunciation(nameData.korean, nameData.pronunciation)}
+                          title="Listen to pronunciation"
+                        >
+                          🔊
+                        </button>
+                      </div>
                     </div>
                     {nameData.compatibility && (
                       <div className={`${styles.compatibilityBadge} ${styles[getCompatibilityClass(nameData.compatibility)]}`}>
@@ -185,7 +208,16 @@ export default function SharePage() {
                   <div className={styles.nameHeader}>
                     <div className={styles.nameTitleSection}>
                       <div className={styles.koreanName}>{nameData.korean}</div>
-                      <div className={styles.romanization}>{nameData.pronunciation}</div>
+                      <div className={styles.romanization}>
+                        <span>{nameData.pronunciation}</span>
+                        <button
+                          className={styles.pronunciationButton}
+                          onClick={() => playPronunciation(nameData.korean, nameData.pronunciation)}
+                          title="Listen to pronunciation"
+                        >
+                          🔊
+                        </button>
+                      </div>
                     </div>
                     {nameData.compatibility && (
                       <div className={`${styles.compatibilityBadge} ${styles[getCompatibilityClass(nameData.compatibility)]}`}>
@@ -252,7 +284,16 @@ export default function SharePage() {
                   <div className={styles.nameHeader}>
                     <div className={styles.nameTitleSection}>
                       <div className={styles.koreanName}>{nameData.korean}</div>
-                      <div className={styles.romanization}>{nameData.pronunciation}</div>
+                      <div className={styles.romanization}>
+                        <span>{nameData.pronunciation}</span>
+                        <button
+                          className={styles.pronunciationButton}
+                          onClick={() => playPronunciation(nameData.korean, nameData.pronunciation)}
+                          title="Listen to pronunciation"
+                        >
+                          🔊
+                        </button>
+                      </div>
                     </div>
                     {nameData.compatibility && (
                       <div className={`${styles.compatibilityBadge} ${styles[getCompatibilityClass(nameData.compatibility)]}`}>
