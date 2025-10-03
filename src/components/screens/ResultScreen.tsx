@@ -380,12 +380,12 @@ Discover your Korean name at ${serviceUrl}`;
                 )}
               </div>
 
-<div className="name-story">
+{/* <div className="name-story">
                 <h5>{t('culturalStory')}</h5>
                 <p>
                   {nameData.story || 'Story not available'}
                 </p>
-              </div>
+              </div> */}
 
               <div className="pronunciation-match">
                 <h4>🎵 Sound Match</h4>
@@ -521,12 +521,12 @@ Discover your Korean name at ${serviceUrl}`;
                       )}
                     </div>
 
-                    {nameData.story && (
+                    {/* {nameData.story && (
                       <div className="name-story">
                         <h5>{t('culturalStory') || 'Cultural Story'}</h5>
                         <p>{nameData.story}</p>
                       </div>
-                    )}
+                    )} */}
 
                     <div className="pronunciation-match">
                       <h4>🎵 Sound Match</h4>
@@ -711,10 +711,10 @@ Discover your Korean name at ${serviceUrl}`;
                         )}
                       </div>
 
-                      <div className="cultural-story">
+                      {/* <div className="cultural-story">
                         <h4>{t('culturalStory') || 'Cultural Story'}</h4>
                         <p>{nameData.story}</p>
-                      </div>
+                      </div> */}
 
                       <div className="compatibility-section">
                         <div className="match-score">
