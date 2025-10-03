@@ -5,16 +5,19 @@ export async function POST(request: Request) {
   try {
     const { amount = '2.99', currency = 'USD' } = await request.json();
 
-    const isProduction = process.env.NODE_ENV === 'production';
-    const clientId = isProduction
+    // PayPal 환경 설정 - PAYPAL_ENVIRONMENT로 강제 제어 가능
+    const paypalEnv = process.env.PAYPAL_ENVIRONMENT || (process.env.NODE_ENV === 'production' ? 'live' : 'sandbox');
+    const isPayPalLive = paypalEnv === 'live';
+
+    const clientId = isPayPalLive
       ? process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID_LIVE
       : process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID_SANDBOX;
 
-    const clientSecret = isProduction
+    const clientSecret = isPayPalLive
       ? process.env.PAYPAL_CLIENT_SECRET_LIVE
       : process.env.PAYPAL_CLIENT_SECRET_SANDBOX;
 
-    const baseURL = isProduction
+    const baseURL = isPayPalLive
       ? 'https://api-m.paypal.com'
       : 'https://api-m.sandbox.paypal.com';
 
@@ -22,12 +25,13 @@ export async function POST(request: Request) {
       console.error('[PayPal] Missing credentials:', {
         hasClientId: !!clientId,
         hasClientSecret: !!clientSecret,
-        isProduction
+        paypalEnv,
+        isPayPalLive
       });
       return NextResponse.json({ error: 'PayPal credentials not configured' }, { status: 500 });
     }
 
-    console.log(`[PayPal] Creating order - Environment: ${isProduction ? 'Production' : 'Sandbox'}`);
+    console.log(`[PayPal] Creating order - Environment: ${isPayPalLive ? 'Live' : 'Sandbox'}`);
 
     // PayPal 액세스 토큰 요청
     const auth = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
