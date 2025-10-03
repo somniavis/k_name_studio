@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { devStorage } from '@/lib/storage';
 
 // 결제 세션 검증 API
-export async function POST(request: Request) {
+export async function POST(request: Request): Promise<NextResponse> {
   try {
     const { paymentSessionId } = await request.json();
 
@@ -23,7 +23,13 @@ export async function POST(request: Request) {
       }, { status: 404 });
     }
 
-    const payment = paymentData as any;
+    const payment = paymentData as {
+      status: string;
+      orderID: string;
+      amount: string;
+      currency: string;
+      timestamp: string;
+    };
 
     // 결제 상태 확인
     if (payment.status !== 'completed') {

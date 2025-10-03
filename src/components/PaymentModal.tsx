@@ -77,7 +77,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
     }
   };
 
-  const onApprove = async (data: any) => {
+  const onApprove = async (data: { orderID: string }) => {
     try {
       setLoading(true);
       setError(null);
@@ -115,7 +115,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
     }
   };
 
-  const onError = (err: any) => {
+  const onError = (err: unknown) => {
     console.error('[PaymentModal] PayPal error:', err);
     setError('Payment failed. Please try again.');
     setPaymentStatus('error');
@@ -140,7 +140,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
     <div className="payment-modal-overlay" onClick={handleClose}>
       <div className="payment-modal" onClick={(e) => e.stopPropagation()}>
         <div className="payment-modal-header">
-          <h2>{t('modal.title', 'Unlock Premium Features')}</h2>
+          <h2>{t('modal.title')}</h2>
           <button
             className="close-button"
             onClick={handleClose}
@@ -153,7 +153,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
         <div className="payment-modal-content">
           <div className="premium-package">
             <div className="package-icon">⭐</div>
-            <h3>{t('package.title', 'Premium Package')}</h3>
+            <h3>{t('package.title')}</h3>
             <div className="price">
               <span className="original-price">$9.99</span>
               <span className="sale-price">$2.99</span>
@@ -163,19 +163,19 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
             <div className="features-list">
               <div className="feature">
                 <span className="check">✓</span>
-                <span>{t('features.premiumNames', '3 Premium Korean Names')}</span>
+                <span>{t('features.premiumNames')}</span>
               </div>
               <div className="feature">
                 <span className="check">✓</span>
-                <span>{t('features.kpopMatching', 'K-pop Star Name Matching')}</span>
+                <span>{t('features.kpopMatching')}</span>
               </div>
               <div className="feature">
                 <span className="check">✓</span>
-                <span>{t('features.soulmate', '2 Perfect Soulmate Names')}</span>
+                <span>{t('features.soulmate')}</span>
               </div>
               <div className="feature">
                 <span className="check">✓</span>
-                <span>{t('features.shareLink', '15-day Shareable Link')}</span>
+                <span>{t('features.shareLink')}</span>
               </div>
             </div>
           </div>
@@ -190,7 +190,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
           {loading && (
             <div className="loading-message">
               <div className="loading-spinner"></div>
-              {t('processing', 'Processing payment...')}
+              {t('processing')}
             </div>
           )}
 
@@ -214,14 +214,14 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
             ) : (
               <div className="error-message">
                 <span className="error-icon">⚠️</span>
-                {t('configError', 'Payment system is not configured')}
+                {t('configError')}
               </div>
             )}
           </div>
 
           <div className="security-notice">
             <span className="security-icon">🔒</span>
-            <p>{t('security', 'Secure payment powered by PayPal. Your payment information is never stored on our servers.')}</p>
+            <p>{t('security')}</p>
           </div>
         </div>
       </div>
