@@ -58,9 +58,13 @@ export const TranslationProvider: React.FC<TranslationProviderProps> = ({ childr
               <div className="loading-skeleton" style={{width: '300px', height: '48px', margin: '0 auto'}}></div>
               <div className="sparkle-decoration">✨</div>
             </div>
-            <div className="loading-skeleton" style={{width: '400px', height: '24px', margin: '20px auto'}}></div>
+            <div className="loading-skeleton" style={{width: '280px', height: '24px', margin: '20px auto'}}></div>
           </div>
-          <div className="loading-skeleton" style={{width: '100%', height: '200px', margin: '40px auto'}}></div>
+          <div className="features-grid">
+            <div className="loading-skeleton" style={{width: '100%', height: '80px', borderRadius: '20px'}}></div>
+            <div className="loading-skeleton" style={{width: '100%', height: '80px', borderRadius: '20px'}}></div>
+            <div className="loading-skeleton" style={{width: '100%', height: '80px', borderRadius: '20px'}}></div>
+          </div>
         </div>
       </div>
     );

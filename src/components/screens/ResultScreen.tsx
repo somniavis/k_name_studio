@@ -284,6 +284,11 @@ Discover your Korean name at ${serviceUrl}`;
   if (isGenerating) {
     return (
       <div className="screen result-screen">
+        <div className="result-background">
+          <div className="floating-element cherry">🌸</div>
+          <div className="floating-element heart">💜</div>
+          <div className="floating-element star">✨</div>
+        </div>
         <div className="loading-container">
           <div className="loading-animation">
             <div className="loading-circle"></div>
@@ -313,7 +318,13 @@ Discover your Korean name at ${serviceUrl}`;
 
   return (
     <div className="screen result-screen">
-      <button className="back-button" onClick={() => setCurrentScreen('nameInput')}> 
+      <div className="result-background">
+        <div className="floating-element cherry">🌸</div>
+        <div className="floating-element heart">💜</div>
+        <div className="floating-element star">✨</div>
+      </div>
+
+      <button className="back-button" onClick={() => setCurrentScreen('nameInput')}>
         ←
       </button>
 
