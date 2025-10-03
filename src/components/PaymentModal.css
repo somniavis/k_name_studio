@@ -81,19 +81,6 @@
 
 .premium-package {
   text-align: center;
-  margin-bottom: 30px;
-}
-
-.package-icon {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.premium-package h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2d1b69;
   margin-bottom: 20px;
 }
 
@@ -102,7 +89,7 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
@@ -129,31 +116,32 @@
   letter-spacing: 0.5px;
 }
 
-.features-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 30px;
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-.feature {
+.feature-compact {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px;
+  gap: 6px;
+  padding: 8px 10px;
   background: #f8f9fa;
-  border-radius: 10px;
+  border-radius: 8px;
   text-align: left;
+  font-size: 0.85rem;
 }
 
 .check {
   color: #10b981;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1rem;
   flex-shrink: 0;
 }
 
-.feature span:last-child {
+.feature-compact span:last-child {
   color: #374151;
   font-weight: 500;
 }
@@ -204,30 +192,26 @@
 }
 
 .payment-section {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.security-notice {
+.security-notice-compact {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
   background: #f9fafb;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid #e5e7eb;
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: center;
 }
 
 .security-icon {
-  font-size: 1.2rem;
+  font-size: 1rem;
   flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.security-notice p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #6b7280;
-  line-height: 1.5;
 }
 
 /* PayPal Buttons Container Styling */
@@ -246,31 +230,43 @@
   }
 
   .payment-modal-header {
-    padding: 20px 20px 15px 20px;
+    padding: 15px 20px 10px 20px;
   }
 
   .payment-modal-header h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .payment-modal-content {
-    padding: 15px 20px 20px 20px;
+    padding: 10px 20px 15px 20px;
   }
 
   .price {
-    flex-direction: column;
+    margin-bottom: 15px;
     gap: 8px;
   }
 
   .sale-price {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
-  .features-list {
-    gap: 10px;
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin-bottom: 15px;
   }
 
-  .feature {
-    padding: 10px;
+  .feature-compact {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+
+  .payment-section {
+    margin-bottom: 15px;
+  }
+
+  .security-notice-compact {
+    padding: 8px;
+    font-size: 0.75rem;
   }
 }

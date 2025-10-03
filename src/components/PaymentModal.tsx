@@ -152,28 +152,26 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
 
         <div className="payment-modal-content">
           <div className="premium-package">
-            <div className="package-icon">⭐</div>
-            <h3>{t('package.title')}</h3>
             <div className="price">
               <span className="original-price">$9.99</span>
               <span className="sale-price">$2.99</span>
               <span className="discount">70% OFF!</span>
             </div>
 
-            <div className="features-list">
-              <div className="feature">
+            <div className="features-grid">
+              <div className="feature-compact">
                 <span className="check">✓</span>
                 <span>{t('features.premiumNames')}</span>
               </div>
-              <div className="feature">
+              <div className="feature-compact">
                 <span className="check">✓</span>
                 <span>{t('features.kpopMatching')}</span>
               </div>
-              <div className="feature">
+              <div className="feature-compact">
                 <span className="check">✓</span>
                 <span>{t('features.soulmate')}</span>
               </div>
-              <div className="feature">
+              <div className="feature-compact">
                 <span className="check">✓</span>
                 <span>{t('features.shareLink')}</span>
               </div>
@@ -219,9 +217,9 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
             )}
           </div>
 
-          <div className="security-notice">
+          <div className="security-notice-compact">
             <span className="security-icon">🔒</span>
-            <p>{t('security')}</p>
+            <span>{t('security')}</span>
           </div>
         </div>
       </div>
