@@ -1,0 +1,276 @@
+.payment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.payment-modal {
+  background: white;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: modalEnter 0.3s ease-out;
+}
+
+@keyframes modalEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.payment-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px 20px 30px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.payment-modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d1b69;
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.close-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.payment-modal-content {
+  padding: 20px 30px 30px 30px;
+}
+
+.premium-package {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.package-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.premium-package h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d1b69;
+  margin-bottom: 20px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.original-price {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.sale-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d1b69;
+}
+
+.discount {
+  background: linear-gradient(45deg, #ff6b9d, #c44cff);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.check {
+  color: #10b981;
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.feature span:last-child {
+  color: #374151;
+  font-weight: 500;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  color: #dc2626;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.error-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  background: #f0f9ff;
+  border-radius: 10px;
+  color: #0369a1;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e0f2fe;
+  border-top: 2px solid #0369a1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.payment-section {
+  margin-bottom: 30px;
+}
+
+.security-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 15px;
+  background: #f9fafb;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.security-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.security-notice p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* PayPal Buttons Container Styling */
+.payment-section [data-testid="paypal-buttons"] {
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .payment-modal-overlay {
+    padding: 10px;
+  }
+
+  .payment-modal {
+    max-height: 95vh;
+  }
+
+  .payment-modal-header {
+    padding: 20px 20px 15px 20px;
+  }
+
+  .payment-modal-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .payment-modal-content {
+    padding: 15px 20px 20px 20px;
+  }
+
+  .price {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .sale-price {
+    font-size: 1.8rem;
+  }
+
+  .features-list {
+    gap: 10px;
+  }
+
+  .feature {
+    padding: 10px;
+  }
+}

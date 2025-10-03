@@ -5,6 +5,7 @@ import { useAppStore } from '@/store/useAppStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { generateKoreanNames, getSajuAnalysis, generateAdditionalPremiumNames } from '@/utils/nameGenerator';
 import { NameResult, UserData } from '@/store/useAppStore';
+import { PaymentModal } from '@/components/PaymentModal';
 import './ResultScreen.css';
 
 export const ResultScreen: React.FC = () => {
@@ -21,6 +22,7 @@ export const ResultScreen: React.FC = () => {
   const setPremiumNames = useAppStore((state) => state.setPremiumNames);
   const setIsGenerating = useAppStore((state) => state.setIsGenerating);
   const setIsPaymentModalOpen = useAppStore((state) => state.setIsPaymentModalOpen);
+  const isPaymentModalOpen = useAppStore((state) => state.isPaymentModalOpen);
   const setCurrentScreen = useAppStore((state) => state.setCurrentScreen);
   const unlockPremium = useAppStore((state) => state.unlockPremium);
 
@@ -110,26 +112,56 @@ export const ResultScreen: React.FC = () => {
   }, [isGenerating]);
 
   const handleUnlockPremium = () => {
-    // Debug: Check current premium names
-    console.log('Premium names before unlock:', premiumNames);
-    console.log('Premium names length:', premiumNames.length);
+    console.log('[ResultScreen] Opening payment modal...');
+    setIsPaymentModalOpen(true);
+  };
 
-    // Immediately unlock premium for demo purposes
-    if (userData.birthDate && userData.firstName && userData.gender) {
-      // Generate only opposite gender names
-      const { oppositeGenderNames } = generateAdditionalPremiumNames({
-        userData: userData as UserData,
-        locale
+  const handlePaymentSuccess = async (paymentSessionId: string) => {
+    console.log('[ResultScreen] Payment successful, session ID:', paymentSessionId);
+
+    try {
+      // 결제 검증
+      const verifyResponse = await fetch('/api/payment/verify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ paymentSessionId }),
       });
 
-      console.log('Generated opposite gender names:', oppositeGenderNames);
+      if (!verifyResponse.ok) {
+        throw new Error('Payment verification failed');
+      }
 
-      // Unlock premium with only opposite gender names
-      unlockPremium(premiumNames, [], oppositeGenderNames);
-    } else {
-      // Fallback if userData is incomplete
-      unlockPremium(premiumNames);
+      const verifyResult = await verifyResponse.json();
+      console.log('[ResultScreen] Payment verified:', verifyResult);
+
+      // 프리미엄 콘텐츠 생성
+      if (userData.birthDate && userData.firstName && userData.gender) {
+        const { oppositeGenderNames } = generateAdditionalPremiumNames({
+          userData: userData as UserData,
+          locale
+        });
+        console.log('[ResultScreen] Generated premium content:', { oppositeGenderNames });
+
+        // 프리미엄 활성화
+        unlockPremium(premiumNames, [], oppositeGenderNames);
+      } else {
+        unlockPremium(premiumNames);
+      }
+
+      // 결제 모달 닫기
+      setIsPaymentModalOpen(false);
+
+    } catch (error) {
+      console.error('[ResultScreen] Payment verification failed:', error);
+      alert('결제 검증에 실패했습니다. 고객 서비스에 문의해주세요.');
     }
+  };
+
+  const handlePaymentClose = () => {
+    console.log('[ResultScreen] Payment modal closed');
+    setIsPaymentModalOpen(false);
   };
 
   const handleSelectName = (index: number) => {
@@ -820,6 +852,13 @@ Discover your Korean name at ${serviceUrl}`;
           <p>{t('footer')}</p>
         </footer>
       </div>
+
+      {/* Payment Modal */}
+      <PaymentModal
+        isOpen={isPaymentModalOpen}
+        onClose={handlePaymentClose}
+        onSuccess={handlePaymentSuccess}
+      />
     </div>
   );
 };
