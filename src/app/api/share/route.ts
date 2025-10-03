@@ -7,9 +7,14 @@ export async function POST(request: Request) {
   try {
     const data = await request.json();
 
-    // Basic validation
-    if (!data || !data.userData || !data.freeNames) {
+    // Enhanced validation for premium share data
+    if (!data || !data.userData) {
       return NextResponse.json({ error: 'Invalid data provided' }, { status: 400 });
+    }
+
+    // Ensure we have either free names or premium names
+    if (!data.freeNames && !data.premiumNames) {
+      return NextResponse.json({ error: 'No names provided' }, { status: 400 });
     }
 
     const id = nanoid(10); // Generate a 10-character unique ID
