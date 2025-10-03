@@ -32,6 +32,7 @@ export async function POST(request: Request) {
     }
 
     console.log(`[PayPal] Creating order - Environment: ${isPayPalLive ? 'Live' : 'Sandbox'}`);
+    console.log(`[PayPal] Request data:`, { amount, currency, baseURL });
 
     // PayPal 액세스 토큰 요청
     const auth = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
@@ -75,12 +76,14 @@ export async function POST(request: Request) {
         },
       ],
       application_context: {
-        return_url: `${process.env.VERCEL_URL || 'http://localhost:3000'}/api/payment/success`,
-        cancel_url: `${process.env.VERCEL_URL || 'http://localhost:3000'}/api/payment/cancel`,
+        return_url: `https://k-name-studio.vercel.app/api/payment/success`,
+        cancel_url: `https://k-name-studio.vercel.app/api/payment/cancel`,
         brand_name: 'Korean Name Studio',
         user_action: 'PAY_NOW',
       },
     };
+
+    console.log(`[PayPal] Sending order request:`, JSON.stringify(order, null, 2));
 
     const orderResponse = await fetch(`${baseURL}/v2/checkout/orders`, {
       method: 'POST',
