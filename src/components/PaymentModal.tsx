@@ -158,7 +158,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
               <span className="discount">70% OFF!</span>
             </div>
 
-            <div className="features-grid">
+            <div className="payment-features-grid">
               <div className="feature-compact">
                 <span className="check">✓</span>
                 <span>{t('features.premiumNames')}</span>
