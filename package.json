@@ -9,7 +9,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@paypal/react-paypal-js": "^8.9.2",
     "@vercel/kv": "^3.0.0",
     "autoprefixer": "^10.4.21",
     "i18next": "^25.5.2",

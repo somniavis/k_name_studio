@@ -5,7 +5,6 @@ import { useAppStore } from '@/store/useAppStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { generateKoreanNames, getSajuAnalysis, generateAdditionalPremiumNames } from '@/utils/nameGenerator';
 import { NameResult, UserData } from '@/store/useAppStore';
-import { PaymentModal } from '@/components/PaymentModal';
 import './ResultScreen.css';
 
 export const ResultScreen: React.FC = () => {
@@ -852,13 +851,6 @@ Discover your Korean name at ${serviceUrl}`;
           <p>{t('footer')}</p>
         </footer>
       </div>
-
-      {/* Payment Modal */}
-      <PaymentModal
-        isOpen={isPaymentModalOpen}
-        onClose={handlePaymentClose}
-        onSuccess={handlePaymentSuccess}
-      />
     </div>
   );
 };
