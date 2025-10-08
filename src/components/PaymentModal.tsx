@@ -24,19 +24,31 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // PayPal 환경 설정
-  const isProduction = process.env.NODE_ENV === 'production';
-  const clientId = isProduction
+  // PayPal 환경 설정 - API와 동일한 로직 사용
+  const paypalEnv = process.env.NEXT_PUBLIC_PAYPAL_ENVIRONMENT || (process.env.NODE_ENV === 'production' ? 'live' : 'sandbox');
+  const isPayPalLive = paypalEnv === 'live';
+  const clientId = isPayPalLive
     ? process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID_LIVE
     : process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID_SANDBOX;
 
   if (!isOpen) return null;
 
+  // 디버깅을 위한 로그
+  console.log('[PaymentModal] Environment:', {
+    paypalEnv,
+    isPayPalLive,
+    hasClientId: !!clientId,
+    clientId: clientId ? `${clientId.substring(0, 10)}...` : 'undefined'
+  });
+
   const initialOptions = {
     clientId: clientId || '',
     currency: 'USD',
     intent: 'capture',
+    'enable-funding': 'card,venmo,paylater',
+    'disable-funding': '',
     'data-client-token': undefined,
+    components: 'buttons,hosted-fields,funding-eligibility',
   };
 
   const createOrder = async () => {
@@ -194,25 +206,32 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
 
           <div className="payment-section">
             {clientId ? (
-              <PayPalScriptProvider options={initialOptions}>
+              <PayPalScriptProvider
+                options={initialOptions}
+                deferLoading={false}
+              >
+                {/* 통합 결제 버튼 - PayPal과 카드 모두 표시 */}
                 <PayPalButtons
                   createOrder={createOrder}
                   onApprove={onApprove}
                   onError={onError}
                   onCancel={onCancel}
                   disabled={loading || paymentStatus === 'processing'}
+                  forceReRender={[clientId, paymentStatus]}
                   style={{
                     layout: 'vertical',
                     color: 'gold',
                     shape: 'rect',
-                    label: 'paypal',
+                    label: 'pay',
+                    height: 50,
+                    tagline: false,
                   }}
                 />
               </PayPalScriptProvider>
             ) : (
               <div className="error-message">
                 <span className="error-icon">⚠️</span>
-                {t('configError')}
+                {t('configError')} (Environment: {paypalEnv}, Live: {isPayPalLive ? 'Yes' : 'No'})
               </div>
             )}
           </div>

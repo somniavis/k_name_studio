@@ -219,6 +219,17 @@
   margin: 0;
 }
 
+/* PayPal 버튼 비활성화 시 불투명도 조정 */
+.payment-section [data-testid="paypal-buttons"][disabled] {
+  opacity: 0.7 !important;
+  pointer-events: none;
+}
+
+/* PayPal 버튼 로딩 상태 개선 */
+.payment-section [data-testid="paypal-buttons"]:not([disabled]) {
+  opacity: 1 !important;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 480px) {
   .payment-modal-overlay {
