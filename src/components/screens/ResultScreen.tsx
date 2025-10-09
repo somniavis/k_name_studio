@@ -9,6 +9,7 @@ import './ResultScreen.css';
 import { fortuneMatrix, mapStrengthToMatrix } from '@/data/fortuneData';
 import type { SajuStrength } from '@/data/fortuneData';
 import type { SajuResult } from '@/utils/sajuCalculator';
+import TestLicenseInput from '@/components/TestLicenseInput';
 
 // DestinyReading Component - 4가지 주제(직업, 사랑, 건강, 재물)의 운세 표시
 interface DestinyReadingProps {
@@ -180,8 +181,73 @@ export const ResultScreen: React.FC = () => {
   }, [isGenerating]);
 
   const handleUnlockPremium = () => {
-    console.log('[ResultScreen] Opening payment modal...');
-    setIsPaymentModalOpen(true);
+    console.log('[ResultScreen] Opening Gumroad payment...');
+
+    // Get product URL from environment variable
+    const productUrl = process.env.NEXT_PUBLIC_GUMROAD_PRODUCT_URL;
+
+    if (!productUrl) {
+      console.error('[ResultScreen] Gumroad product URL not configured');
+      alert('결제 시스템을 구성 중입니다. 잠시 후 다시 시도해주세요.');
+      return;
+    }
+
+    // Open Gumroad Overlay
+    if (typeof window !== 'undefined' && (window as any).Gumroad) {
+      (window as any).Gumroad.open({
+        url: productUrl,
+        // Callback when purchase is successful
+        success: async (data: any) => {
+          console.log('[ResultScreen] Purchase successful:', data);
+
+          // Verify purchase with our API
+          try {
+            const response = await fetch('/api/gumroad/verify', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                licenseKey: data.license_key
+              }),
+            });
+
+            const result = await response.json();
+
+            if (result.valid) {
+              // Generate premium content
+              if (userData.birthDate && userData.firstName && userData.gender) {
+                const { oppositeGenderNames } = generateAdditionalPremiumNames({
+                  userData: userData as UserData,
+                  locale
+                });
+
+                // Unlock premium
+                unlockPremium(premiumNames || [], [], oppositeGenderNames);
+              } else {
+                unlockPremium(premiumNames || []);
+              }
+
+              alert('🎉 프리미엄 잠금 해제 완료! 프리미엄 이름을 확인해보세요.');
+            } else {
+              console.error('[ResultScreen] License verification failed');
+              alert('결제 확인에 실패했습니다. 고객 지원에 문의해주세요.');
+            }
+          } catch (error) {
+            console.error('[ResultScreen] Verification error:', error);
+            alert('결제 확인 중 오류가 발생했습니다.');
+          }
+        },
+        // Callback when overlay is closed without purchase
+        closed: () => {
+          console.log('[ResultScreen] Gumroad overlay closed');
+        }
+      });
+    } else {
+      // Fallback: Direct link if Gumroad script not loaded
+      console.warn('[ResultScreen] Gumroad script not loaded, using direct link');
+      window.open(productUrl, '_blank');
+    }
   };
 
   const handlePaymentSuccess = async (paymentSessionId: string) => {
@@ -571,7 +637,7 @@ Discover your Korean name at ${serviceUrl}`;
         
 
         {/* Premium Names Section */}
-        {isPremiumUnlocked && premiumNames.length > 0 && (
+        {isPremiumUnlocked && premiumNames && premiumNames.length > 0 && (
           <div className="premium-names-section">
             <div className="premium-header">
               <div className="premium-badge">{t('premium')}</div>
@@ -933,6 +999,24 @@ Discover your Korean name at ${serviceUrl}`;
         <footer className="app-footer">
           <p>{t('footer')}</p>
         </footer>
+
+        {/* Test License Input - Development Only */}
+        {process.env.NODE_ENV === 'development' && (
+          <TestLicenseInput
+            onVerify={(licenseKey) => {
+              // Generate premium content
+              if (userData.birthDate && userData.firstName && userData.gender) {
+                const { oppositeGenderNames } = generateAdditionalPremiumNames({
+                  userData: userData as UserData,
+                  locale
+                });
+                unlockPremium(premiumNames || [], [], oppositeGenderNames);
+              } else {
+                unlockPremium(premiumNames || []);
+              }
+            }}
+          />
+        )}
       </div>
     </div>
   );

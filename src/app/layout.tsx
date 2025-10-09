@@ -66,6 +66,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <StructuredData />
+        <script src="https://gumroad.com/js/gumroad.js" async />
       </head>
       <body
         className={`${inter.variable} ${notoSansKr.variable} font-english antialiased`}
