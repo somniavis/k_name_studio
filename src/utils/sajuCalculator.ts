@@ -25,7 +25,7 @@ export interface SajuResult {
     metal: number;
     water: number;
   };
-  fortune: {
+  fortune?: {
     [locale: string]: {
       overall: string;
       career: string;
