@@ -22,7 +22,7 @@ function convertToNameResult(koreanName: KoreanName, sajuResult: SajuResult, loc
     hanja: koreanName.hanja,
     meaning: koreanName.meaning[locale] || koreanName.meaning.en,
     pronunciation: koreanName.pronunciation,
-    fortune: sajuResult.fortune[locale]?.overall || sajuResult.fortune.en?.overall || 'Positive energy surrounds this name',
+    fortune: 'Positive energy surrounds this name',
     compatibility: calculateNameCompatibility(koreanName, sajuResult),
     cultural: getStoryById(koreanName.id)?.story[locale] || getStoryById(koreanName.id)?.story.en || '',
     story: getStoryById(koreanName.id)?.story[locale] || getStoryById(koreanName.id)?.story.en || '',
@@ -475,32 +475,7 @@ export function generateAdditionalPremiumNames(options: NameGenerationOptions): 
 }
 
 // Get detailed Saju analysis for display
-export function getSajuAnalysis(birthDate: Date, birthTime?: string, locale: string = 'en'): {
-  pillars: string[];
-  dayMaster: string;
-  elements: { [key: string]: number };
-  fortune: { overall: string; career: string; love: string; health: string; wealth: string; advice: string; };
-  recommendations: string[];
-} {
+export function getSajuAnalysis(birthDate: Date, birthTime?: string, locale: string = 'en'): SajuResult {
   const saju = calculateSaju(birthDate, birthTime);
-
-  // Safe fallback structure since calculateSaju might return different format
-  return {
-    pillars: [saju.year.name, saju.month.name, saju.day.name, saju.time.name],
-    dayMaster: `${saju.dayMaster.element} (${saju.dayMaster.strength})`,
-    elements: saju.elementBalance,
-    fortune: {
-      overall: (saju.fortune?.[locale]?.overall || saju.fortune?.en?.overall || "Positive energy and good fortune await you"),
-      career: "Excellent prospects for growth",
-      love: "Harmonious relationships ahead",
-      health: "Strong vitality and wellness",
-      wealth: "Financial stability and prosperity",
-      advice: "Trust your intuition and embrace new opportunities"
-    },
-    recommendations: [
-      `Consider names with ${saju.recommendedElement || 'wood'} element`,
-      'Focus on balanced energy in all aspects of life',
-      'Trust your natural instincts and talents'
-    ]
-  };
+  return saju;
 }

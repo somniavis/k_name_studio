@@ -6,6 +6,58 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { generateKoreanNames, getSajuAnalysis, generateAdditionalPremiumNames } from '@/utils/nameGenerator';
 import { NameResult, UserData } from '@/store/useAppStore';
 import './ResultScreen.css';
+import { fortuneMatrix, mapStrengthToMatrix } from '@/data/fortuneData';
+import type { SajuStrength } from '@/data/fortuneData';
+import type { SajuResult } from '@/utils/sajuCalculator';
+
+// DestinyReading Component - 4가지 주제(직업, 사랑, 건강, 재물)의 운세 표시
+interface DestinyReadingProps {
+  dayMasterElement: string;
+  dayMasterStrength: string;
+  locale: string;
+}
+
+const DestinyReading: React.FC<DestinyReadingProps> = ({ dayMasterElement, dayMasterStrength, locale }) => {
+  const topics: (keyof typeof fortuneMatrix)[] = ['career', 'love', 'health', 'wealth'];
+  const topicIcons: Record<keyof typeof fortuneMatrix, string> = {
+    career: '💼',
+    love: '💕',
+    health: '🌿',
+    wealth: '💰'
+  };
+
+  const topicTitles: Record<keyof typeof fortuneMatrix, string> = {
+    career: 'Career',
+    love: 'Love',
+    health: 'Health',
+    wealth: 'Wealth'
+  };
+
+  // 5단계 strength를 3단계로 매핑
+  const mappedStrength = mapStrengthToMatrix(dayMasterStrength as SajuStrength);
+
+  const getTranslatedText = (textObj: Partial<Record<string, string>> | undefined, lang: string) => {
+    if (!textObj) return 'Analysis not available.';
+    return textObj[lang] || textObj['en'] || 'Translation not available.';
+  };
+
+  return (
+    <div className="destiny-reading">
+      <h4>🔮 Your Life Fortune</h4>
+      <div className="fortune-grid">
+        {topics.map(topic => {
+          const fortuneText = fortuneMatrix[topic]?.[dayMasterElement as keyof typeof fortuneMatrix.career]?.[mappedStrength];
+          return (
+            <div key={topic} className="fortune-card">
+              <h5>{topicIcons[topic]} {topicTitles[topic]}</h5>
+              <p>{getTranslatedText(fortuneText, locale)}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 export const ResultScreen: React.FC = () => {
   const { t, locale } = useTranslation('results');
@@ -25,11 +77,7 @@ export const ResultScreen: React.FC = () => {
   const setCurrentScreen = useAppStore((state) => state.setCurrentScreen);
   const unlockPremium = useAppStore((state) => state.unlockPremium);
 
-  const [sajuAnalysis, setSajuAnalysis] = useState<{
-    pillars?: string[];
-    elements?: Record<string, number>;
-    fortune?: { overall: string; career: string; love: string; health: string; wealth: string; advice: string; };
-  } | null>(null);
+  const [sajuAnalysis, setSajuAnalysis] = useState<SajuResult | null>(null);
   const [selectedName, setSelectedName] = useState<number | null>(null);
   const [loadingStep, setLoadingStep] = useState(0);
   const [copiedToClipboard, setCopiedToClipboard] = useState(false);
@@ -453,30 +501,38 @@ Discover your Korean name at ${serviceUrl}`;
                   <h4>{t('sajuAnalysis') || 'Saju Analysis'}</h4>
 
 
-                  {sajuAnalysis && sajuAnalysis.elements && (
+                  {sajuAnalysis && sajuAnalysis.elementBalance && (
                     <div className="elements-analysis">
                       <h5>{t('elementsBalance')}</h5>
                       <div className="elements-chart">
-                        {Object.entries(sajuAnalysis.elements).map(([element, count]) => (
+                        {Object.entries(sajuAnalysis.elementBalance).map(([element, count]) => (
                           <div key={element} className="element-bar">
                             <span className="element-name">{element.charAt(0).toUpperCase() + element.slice(1)}</span>
                             <div className="element-progress">
                               <div
                                 className={`element-fill ${element}`}
-                                style={{ width: `${((count as number) / 8) * 100}%` }}
+                                style={{ width: `${(count / 8) * 100}%` }}
                               ></div>
                             </div>
-                            <span className="element-count">{count as number}</span>
+                            <span className="element-count">{count}</span>
                           </div>
                         ))}
                       </div>
                     </div>
                   )}
 
-                  <div className="fortune-summary">
-                    <h5>{t('destinyReading')}</h5>
-                    <p>{nameData.fortune || sajuAnalysis?.fortune?.overall || 'This name brings harmony and prosperity to your life path.'}</p>
-                  </div>
+                  {sajuAnalysis?.dayMaster?.element && sajuAnalysis?.dayMaster?.strength ? (
+                    <DestinyReading
+                      dayMasterElement={sajuAnalysis.dayMaster.element}
+                      dayMasterStrength={sajuAnalysis.dayMaster.strength}
+                      locale={locale}
+                    />
+                  ) : (
+                    <div className="fortune-summary">
+                      <h5>{t('destinyReading')}</h5>
+                      <p>{nameData.fortune || 'This name brings harmony and prosperity to your life path.'}</p>
+                    </div>
+                  )}
 
                   <div className="name-compatibility">
                     <h5>{t('nameHarmony') || 'Name Harmony'}</h5>
@@ -594,10 +650,18 @@ Discover your Korean name at ${serviceUrl}`;
                         <h4>{t('sajuAnalysis') || 'Saju Analysis'}</h4>
 
 
-                        <div className="fortune-summary">
-                          <h5>{t('destinyReading')}</h5>
-                          <p>{nameData.fortune || sajuAnalysis?.fortune?.overall || 'This premium name carries exceptional energy for success and harmony.'}</p>
-                        </div>
+                        {sajuAnalysis?.dayMaster?.element && sajuAnalysis?.dayMaster?.strength ? (
+                          <DestinyReading
+                            dayMasterElement={sajuAnalysis.dayMaster.element}
+                            dayMasterStrength={sajuAnalysis.dayMaster.strength}
+                            locale={locale}
+                          />
+                        ) : (
+                          <div className="fortune-summary">
+                            <h5>{t('destinyReading')}</h5>
+                            <p>{nameData.fortune || 'This premium name carries exceptional energy for success and harmony.'}</p>
+                          </div>
+                        )}
 
                         <div className="name-compatibility">
                           <h5>{t('nameHarmony') || 'Name Harmony'}</h5>

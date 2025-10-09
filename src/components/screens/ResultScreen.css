@@ -1620,3 +1620,74 @@
 .share-link-result button:hover {
   background: #d1d5db;
 }
+
+/* DestinyReading Component Styles */
+.destiny-reading {
+  margin: 20px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #fef3f7 0%, #f0f4ff 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 107, 157, 0.2);
+}
+
+.destiny-reading h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.fortune-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.fortune-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 107, 157, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fortune-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.2);
+}
+
+.fortune-card h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ff6b9d;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fortune-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .fortune-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .destiny-reading {
+    padding: 16px;
+  }
+
+  .fortune-card {
+    padding: 14px;
+  }
+}

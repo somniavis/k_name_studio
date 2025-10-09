@@ -1,8 +1,6 @@
 // Authentic Saju Calculator (Four Pillars of Destiny)
 // Based on traditional Korean/Chinese astrology algorithms
 
-import { fortuneData } from '../data/fortuneData';
-
 export interface SajuPillar {
   heavenlyStem: string;
   earthlyBranch: string;
@@ -197,116 +195,8 @@ function getRecommendedElement(dayMasterElement: 'wood' | 'fire' | 'earth' | 'me
   return weakestElement[0] as 'wood' | 'fire' | 'earth' | 'metal' | 'water';
 }
 
-function generateFortune(
-  dayMaster: 'wood' | 'fire' | 'earth' | 'metal' | 'water',
-  strength: string,
-  elementBalance: { wood: number; fire: number; earth: number; metal: number; water: number; },
-  birthMonth: number
-): { [locale: string]: { overall: string; career: string; love: string; health: string; wealth: string; advice: string; } } {
-
-  // Use imported fortune data (populated by Gemini)
-
-  // Determine season based on birth month
-  const getSeason = (month: number): 'spring' | 'summer' | 'autumn' | 'winter' => {
-    if (month >= 3 && month <= 5) return 'spring';
-    if (month >= 6 && month <= 8) return 'summer';
-    if (month >= 9 && month <= 11) return 'autumn';
-    return 'winter';
-  };
-
-  // Analyze element balance
-  const analyzeBalance = (balance: typeof elementBalance) => {
-    const total = Object.values(balance).reduce((sum, count) => sum + count, 0);
-    const percentages = Object.entries(balance).map(([element, count]) => ({
-      element: element as keyof typeof balance,
-      percentage: count / total
-    }));
-
-    const dominant = percentages.filter(p => p.percentage > 0.3);
-    const lacking = percentages.filter(p => p.percentage < 0.1);
-
-    return { dominant, lacking };
-  };
-
-  // Get base characteristics from day master element
-  const baseCharacteristics = fortuneData.elementCharacteristics[dayMaster];
-
-  // Get strength modifiers
-  const strengthMod = fortuneData.strengthModifiers[strength as keyof typeof fortuneData.strengthModifiers];
-
-  // Get seasonal influence
-  const season = getSeason(birthMonth);
-  const seasonalMod = fortuneData.seasonalInfluence[season];
-
-  // Analyze element balance
-  const { dominant, lacking } = analyzeBalance(elementBalance);
-
-  // Generate personalized fortune for each locale
-  const generateForLocale = (locale: 'en' | 'ko') => {
-    let overall = baseCharacteristics.personality[locale];
-    let career = baseCharacteristics.career[locale];
-    let love = baseCharacteristics.love[locale];
-    let health = baseCharacteristics.health[locale];
-    let wealth = baseCharacteristics.wealth[locale];
-    let advice = baseCharacteristics.advice[locale];
-
-    // Apply strength modifiers if available
-    if (strengthMod.overall[locale]) {
-      overall += " " + strengthMod.overall[locale];
-    }
-    if (strengthMod.career[locale]) {
-      career += " " + strengthMod.career[locale];
-    }
-    if (strengthMod.love[locale]) {
-      love += " " + strengthMod.love[locale];
-    }
-    if (strengthMod.health[locale]) {
-      health += " " + strengthMod.health[locale];
-    }
-    if (strengthMod.wealth[locale]) {
-      wealth += " " + strengthMod.wealth[locale];
-    }
-    if (strengthMod.advice[locale]) {
-      advice += " " + strengthMod.advice[locale];
-    }
-
-    // Add seasonal influence to advice
-    if (seasonalMod.advice[locale]) {
-      advice += " " + seasonalMod.advice[locale];
-    }
-
-    // Add element balance insights
-    if (dominant.length > 0) {
-      const dominantElement = dominant[0].element;
-      const balanceMsg = fortuneData.elementBalanceMessages[dominantElement]?.dominant[locale];
-      if (balanceMsg) {
-        advice += " " + balanceMsg;
-      }
-    }
-
-    if (lacking.length > 0) {
-      const lackingElement = lacking[0].element;
-      const balanceMsg = fortuneData.elementBalanceMessages[lackingElement]?.lacking[locale];
-      if (balanceMsg) {
-        advice += " " + balanceMsg;
-      }
-    }
-
-    return {
-      overall: overall || fortuneData.defaultTemplates.overall[locale] || "Your destiny brings positive energy and growth opportunities.",
-      career: career || fortuneData.defaultTemplates.career[locale] || "Professional success awaits through dedication and skill.",
-      love: love || fortuneData.defaultTemplates.love[locale] || "Emotional fulfillment comes through understanding and patience.",
-      health: health || fortuneData.defaultTemplates.health[locale] || "Balance in life leads to vitality and well-being.",
-      wealth: wealth || fortuneData.defaultTemplates.wealth[locale] || "Financial stability grows through wise decisions.",
-      advice: advice || fortuneData.defaultTemplates.advice[locale] || "Trust your inner wisdom and stay true to yourself."
-    };
-  };
-
-  return {
-    en: generateForLocale('en'),
-    ko: generateForLocale('ko')
-  };
-}
+// Note: Fortune generation has been moved to DestinyReading component using fortuneMatrix
+// This simplifies the code and provides better personalization
 
 export function calculateSaju(birthDate: Date, birthTime?: string): SajuResult {
   const year = birthDate.getFullYear();
@@ -371,7 +261,6 @@ export function calculateSaju(birthDate: Date, birthTime?: string): SajuResult {
       strength: dayMasterStrength
     },
     recommendedElement,
-    elementBalance,
-    fortune: generateFortune(dayMasterElement, dayMasterStrength, elementBalance, month)
+    elementBalance
   };
 }
