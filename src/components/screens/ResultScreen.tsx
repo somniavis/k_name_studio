@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { generateKoreanNames, getSajuAnalysis, generateAdditionalPremiumNames } from '@/utils/nameGenerator';
@@ -106,7 +106,7 @@ export const ResultScreen: React.FC = () => {
   const [isCreatingLink, setIsCreatingLink] = useState(false);
   const [shareableLink, setShareableLink] = useState<string | null>(null);
 
-  const generateNames = async () => {
+  const generateNames = useCallback(async () => {
     console.log('Generate names called with userData:', userData);
 
     if (!userData.birthDate || !userData.firstName || !userData.gender) {
@@ -158,7 +158,7 @@ export const ResultScreen: React.FC = () => {
       setIsGenerating(false);
       setLoadingStep(0);
     }
-  };
+  }, [userData, locale]);
 
   useEffect(() => {
     if (userData.birthDate && freeNames.length === 0 && !isGenerating) {
