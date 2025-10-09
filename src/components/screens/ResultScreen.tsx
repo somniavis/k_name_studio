@@ -197,7 +197,7 @@ export const ResultScreen: React.FC = () => {
       (window as any).Gumroad.open({
         url: productUrl,
         // Callback when purchase is successful
-        success: async (data: any) => {
+        success: async (data: { license_key: string }) => {
           console.log('[ResultScreen] Purchase successful:', data);
 
           // Verify purchase with our API
