@@ -26,11 +26,30 @@ const DestinyReading: React.FC<DestinyReadingProps> = ({ dayMasterElement, dayMa
     wealth: '💰'
   };
 
-  const topicTitles: Record<keyof typeof fortuneMatrix, string> = {
-    career: 'Career',
-    love: 'Love',
-    health: 'Health',
-    wealth: 'Wealth'
+  const topicTitles: Record<string, Record<keyof typeof fortuneMatrix, string>> = {
+    en: { career: 'Career', love: 'Love', health: 'Health', wealth: 'Wealth' },
+    ko: { career: '직업', love: '사랑', health: '건강', wealth: '재물' },
+    ja: { career: 'キャリア', love: '愛', health: '健康', wealth: '富' },
+    fr: { career: 'Carrière', love: 'Amour', health: 'Santé', wealth: 'Richesse' },
+    de: { career: 'Karriere', love: 'Liebe', health: 'Gesundheit', wealth: 'Wohlstand' },
+    it: { career: 'Carriera', love: 'Amore', health: 'Salute', wealth: 'Ricchezza' },
+    pt: { career: 'Carreira', love: 'Amor', health: 'Saúde', wealth: 'Riqueza' },
+    es: { career: 'Carrera', love: 'Amor', health: 'Salud', wealth: 'Riqueza' },
+    th: { career: 'อาชีพ', love: 'ความรัก', health: 'สุขภาพ', wealth: 'ความมั่งคั่ง' },
+    id: { career: 'Karier', love: 'Cinta', health: 'Kesehatan', wealth: 'Kekayaan' }
+  };
+
+  const mainTitles: Record<string, string> = {
+    en: '🔮 Your Life Fortune',
+    ko: '🔮 인생 운세',
+    ja: '🔮 人生の運勢',
+    fr: '🔮 Votre Fortune de Vie',
+    de: '🔮 Ihr Lebensglück',
+    it: '🔮 La Tua Fortuna di Vita',
+    pt: '🔮 Sua Fortuna de Vida',
+    es: '🔮 Tu Fortuna de Vida',
+    th: '🔮 โชคชะตาชีวิตของคุณ',
+    id: '🔮 Keberuntungan Hidup Anda'
   };
 
   // 5단계 strength를 3단계로 매핑
@@ -41,15 +60,17 @@ const DestinyReading: React.FC<DestinyReadingProps> = ({ dayMasterElement, dayMa
     return textObj[lang] || textObj['en'] || 'Translation not available.';
   };
 
+  const currentLocale = locale in topicTitles ? locale : 'en';
+
   return (
     <div className="destiny-reading">
-      <h4>🔮 Your Life Fortune</h4>
+      <h4>{mainTitles[currentLocale] || mainTitles.en}</h4>
       <div className="fortune-grid">
         {topics.map(topic => {
           const fortuneText = fortuneMatrix[topic]?.[dayMasterElement as keyof typeof fortuneMatrix.career]?.[mappedStrength];
           return (
             <div key={topic} className="fortune-card">
-              <h5>{topicIcons[topic]} {topicTitles[topic]}</h5>
+              <h5>{topicIcons[topic]} {topicTitles[currentLocale][topic]}</h5>
               <p>{getTranslatedText(fortuneText, locale)}</p>
             </div>
           );
@@ -478,7 +499,7 @@ Discover your Korean name at ${serviceUrl}`;
               </div> */}
 
               <div className="pronunciation-match">
-                <h4>🎵 Sound Match</h4>
+                <h4>🎵 Pronunciation Match</h4>
                 <div className="match-score">
                   <div className="score-bar">
                     <div
@@ -490,8 +511,7 @@ Discover your Korean name at ${serviceUrl}`;
                 </div>
                 <div className="score-description">
                   <span className="score-label">
-                    {nameData.soundMatchGrade || getScoreLevelText(nameData.pronunciationMatch || 50)} -
-                    {nameData.soundMatch ? ' Enhanced phonetic analysis' : getScoreDescription(nameData.pronunciationMatch || 50)}
+                    {nameData.soundMatchGrade || getScoreLevelText(nameData.pronunciationMatch || 50)} - Similarity between your name and Korean name pronunciation
                   </span>
                 </div>
               </div>
@@ -627,7 +647,7 @@ Discover your Korean name at ${serviceUrl}`;
                     )} */}
 
                     <div className="pronunciation-match">
-                      <h4>🎵 Sound Match</h4>
+                      <h4>🎵 Pronunciation Match</h4>
                       <div className="match-score">
                         <div className="score-bar">
                           <div
@@ -639,8 +659,7 @@ Discover your Korean name at ${serviceUrl}`;
                       </div>
                       <div className="score-description">
                         <span className="score-label">
-                          {nameData.soundMatchGrade || 'Excellent Match'} -
-                          {nameData.soundMatch ? ' Enhanced phonetic analysis' : ' Premium analysis'}
+                          {nameData.soundMatchGrade || 'Excellent Match'} - Similarity between your name and Korean name pronunciation
                         </span>
                       </div>
                     </div>
