@@ -15,8 +15,9 @@
     "title": "Informasi kelahiran",
     "subtitle": "Tanggal dan waktu kelahiran Anda akan mempengaruhi nama Korea Anda",
     "birthDate": "Tanggal lahir",
-    "birthTime": "Waktu lahir",
-    "culturalNote": "Dalam budaya Korea, waktu kelahiran sangat mempengaruhi kepribadian dan takdir"
+    "birthTime": "Waktu lahir (opsional)",
+    "culturalNote": "Dalam budaya Korea, waktu kelahiran sangat mempengaruhi kepribadian dan takdir",
+    "timeNote": "Memasukkan waktu kelahiran Anda memungkinkan analisis dan rekomendasi yang lebih akurat."
   },
   "step3": {
     "title": "Preferensi jenis kelamin",

@@ -15,8 +15,9 @@
     "title": "Informations de naissance",
     "subtitle": "Votre date et heure de naissance influenceront votre nom coréen",
     "birthDate": "Date de naissance",
-    "birthTime": "Heure de naissance",
-    "culturalNote": "En culture coréenne, le moment de la naissance influence grandement la personnalité et le destin"
+    "birthTime": "Heure de naissance (optionnel)",
+    "culturalNote": "En culture coréenne, le moment de la naissance influence grandement la personnalité et le destin",
+    "timeNote": "Entrer votre heure de naissance permet une analyse et des recommandations plus précises."
   },
   "step3": {
     "title": "Préférence de genre",

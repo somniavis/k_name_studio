@@ -15,8 +15,9 @@
     "title": "When were you born?",
     "subtitle": "We need this for traditional Saju fortune reading",
     "birthDate": "Birth Date",
-    "birthTime": "Birth Time",
-    "culturalNote": "Saju (사주팔자) uses your birth time to determine your life's fortune and perfect name elements"
+    "birthTime": "Birth Time (optional)",
+    "culturalNote": "Saju (사주팔자) uses your birth time to determine your life's fortune and perfect name elements",
+    "timeNote": "Entering your birth time enables more accurate analysis and recommendations."
   },
   "step3": {
     "title": "Gender preference?",

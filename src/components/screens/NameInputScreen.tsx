@@ -15,7 +15,7 @@ export const NameInputScreen: React.FC = () => {
   const [formData, setFormData] = useState({
     englishName: userData.firstName || '',
     birthDate: userData.birthDate ? userData.birthDate.toISOString().split('T')[0] : '',
-    birthTime: userData.birthTime || '',
+    birthTime: userData.birthTime || '12:00',
     gender: userData.gender || 'any'
   });
 
@@ -144,6 +144,10 @@ export const NameInputScreen: React.FC = () => {
             <div className="cultural-note">
               <div className="note-icon">🔮</div>
               <p>{t('step2.culturalNote')}</p>
+            </div>
+            <div className="cultural-note">
+              <div className="note-icon">💡</div>
+              <p>{t('step2.timeNote')}</p>
             </div>
           </div>
         )}
