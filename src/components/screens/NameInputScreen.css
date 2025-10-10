@@ -5,7 +5,7 @@
     #ecfdf5 100%
   );
   position: relative;
-  padding-bottom: 120px;
+  padding-bottom: 90px;
   width: 100%;
   max-width: 375px;
   margin: 0 auto;
@@ -314,7 +314,7 @@
 
 .input-screen .bottom-button {
   position: fixed !important;
-  bottom: max(50px, env(safe-area-inset-bottom, 50px)) !important;
+  bottom: max(20px, env(safe-area-inset-bottom, 20px)) !important;
   left: 20px !important;
   right: 20px !important;
   height: 54px !important;
