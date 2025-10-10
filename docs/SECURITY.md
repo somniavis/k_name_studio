@@ -81,18 +81,51 @@ const { gumroadLicenseKey } = serverEnv;
 
 ---
 
-## 🔜 Pending Security Measures (Phase 2: 4-6)
+## ✅ Implemented Security Measures (Phase 2: 4)
 
 ### 4. **License Key Reuse Prevention** (Vercel KV)
-**Status: ⏳ Pending**
+**Status: ✅ Implemented**
 
-**Plan**:
-- Store used license keys in Vercel KV
-- Check before verification
-- Expire keys after 24 hours
-- Prevent multiple uses of same key
+- **Location**: `src/lib/kv.ts`
+- **Configuration**:
+  - License keys stored in Vercel KV
+  - 24-hour expiration window
+  - Tracks usage count and timestamps
+  - Returns 403 Forbidden on reuse attempts
 
-### 5. **API Authentication (JWT)**
+**How it works**:
+```typescript
+// Before verification: Check if license key was already used
+const isReused = await isLicenseKeyReused(licenseKey);
+if (isReused) {
+  return 403 Forbidden; // Prevent reuse
+}
+
+// After successful verification: Store license key
+await storeLicenseKeyRecord(licenseKey);
+```
+
+**Data Structure**:
+```typescript
+interface LicenseKeyRecord {
+  licenseKey: string;
+  firstUsedAt: string;
+  usageCount: number;
+  lastUsedAt: string;
+}
+```
+
+**Graceful Fallback**: If Vercel KV is not configured, the system logs errors but allows requests to proceed (doesn't break functionality).
+
+**Updated Files**:
+- ✅ `src/lib/kv.ts` (NEW - KV utility functions)
+- ✅ `src/app/api/gumroad/verify/route.ts` (Added reuse prevention logic)
+
+---
+
+## 🔜 Pending Security Measures (Optional Future Enhancements)
+
+### 5. **API Authentication (JWT)** (Optional)
 **Status: ⏳ Pending**
 
 **Plan**:
@@ -101,7 +134,7 @@ const { gumroadLicenseKey } = serverEnv;
 - Short expiration time (1 hour)
 - Refresh token mechanism
 
-### 6. **Webhook Signature Verification**
+### 6. **Webhook Signature Verification** (Optional)
 **Status: ⏳ Pending**
 
 **Plan**:
@@ -160,6 +193,21 @@ curl -H "Origin: https://malicious-site.com" \
 # Should be blocked
 ```
 
+### 4. Test License Key Reuse Prevention
+```bash
+# First request with a license key (should succeed)
+curl -X POST http://localhost:3000/api/gumroad/verify \
+  -H "Content-Type: application/json" \
+  -d '{"licenseKey": "TEST-KEY-123"}'
+
+# Second request with same key (should return 403)
+curl -X POST http://localhost:3000/api/gumroad/verify \
+  -H "Content-Type: application/json" \
+  -d '{"licenseKey": "TEST-KEY-123"}'
+
+# Expected: Second request returns 403 Forbidden
+```
+
 ---
 
 ## 📊 Security Monitoring
@@ -206,5 +254,5 @@ If you discover a security vulnerability:
 ---
 
 **Last Updated**: 2025-10-10
-**Security Level**: Phase 1 Complete (1-3) ✅
-**Next Phase**: Pending (4-6) ⏳
+**Security Level**: Phase 1 Complete (1-3) ✅ | Phase 2 Measure 4 Complete ✅
+**Optional Enhancements**: Measures 5-6 (JWT Auth, Webhook Verification) ⏳
