@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { serverEnv } from '@/lib/env';
 
 // Gumroad webhook handler
 // This endpoint is called by Gumroad when a purchase is completed
@@ -25,9 +26,9 @@ export async function POST(request: NextRequest) {
       currency,
     });
 
-    // Verify it's for the correct product
-    const expectedProductPermalink = process.env.GUMROAD_PRODUCT_PERMALINK;
-    if (productPermalink !== expectedProductPermalink) {
+    // Verify it's for the correct product using server-only env
+    const { gumroadProductPermalink } = serverEnv;
+    if (productPermalink !== gumroadProductPermalink) {
       console.error('[Gumroad Webhook] Invalid product:', productPermalink);
       return NextResponse.json(
         { error: 'Invalid product' },

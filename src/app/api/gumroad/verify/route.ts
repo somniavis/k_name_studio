@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { serverEnv } from '@/lib/env';
 
 // Verify Gumroad license key
 // This endpoint verifies if a license key is valid using Gumroad's API
@@ -15,17 +16,8 @@ export async function POST(request: NextRequest) {
 
     console.log('[Gumroad Verify] Verifying license:', licenseKey);
 
-    // Call Gumroad License API
-    const gumroadLicenseKey = process.env.GUMROAD_LICENSE_KEY;
-    const productPermalink = process.env.GUMROAD_PRODUCT_PERMALINK;
-
-    if (!gumroadLicenseKey || !productPermalink) {
-      console.error('[Gumroad Verify] Missing environment variables');
-      return NextResponse.json(
-        { error: 'Server configuration error' },
-        { status: 500 }
-      );
-    }
+    // Use server-only environment variables
+    const { gumroadLicenseKey, gumroadProductPermalink } = serverEnv;
 
     // Verify with Gumroad API
     const response = await fetch('https://api.gumroad.com/v2/licenses/verify', {
@@ -34,7 +26,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
-        product_permalink: productPermalink,
+        product_permalink: gumroadProductPermalink,
         license_key: licenseKey,
       }),
     });
