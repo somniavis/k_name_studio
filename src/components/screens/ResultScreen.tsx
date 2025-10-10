@@ -11,6 +11,19 @@ import type { SajuStrength } from '@/data/fortuneData';
 import type { SajuResult } from '@/utils/sajuCalculator';
 import TestLicenseInput from '@/components/TestLicenseInput';
 
+// Gumroad type definition
+interface GumroadWindow extends Window {
+  Gumroad?: {
+    open: (options: {
+      url: string;
+      success?: (data: { license_key: string }) => void;
+      closed?: () => void;
+    }) => void;
+  };
+}
+
+declare const window: GumroadWindow;
+
 // DestinyReading Component - 4가지 주제(직업, 사랑, 건강, 재물)의 운세 표시
 interface DestinyReadingProps {
   dayMasterElement: string;
@@ -193,8 +206,8 @@ export const ResultScreen: React.FC = () => {
     }
 
     // Open Gumroad Overlay
-    if (typeof window !== 'undefined' && (window as any).Gumroad) {
-      (window as any).Gumroad.open({
+    if (typeof window !== 'undefined' && window.Gumroad) {
+      window.Gumroad.open({
         url: productUrl,
         // Callback when purchase is successful
         success: async (data: { license_key: string }) => {
