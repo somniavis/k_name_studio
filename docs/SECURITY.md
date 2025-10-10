@@ -172,16 +172,42 @@ interface JWTPayload {
 
 ---
 
-## 🔜 Pending Security Measures (Optional Future Enhancements)
+## ✅ Implemented Security Measures (Phase 2: 6)
 
-### 6. **Webhook Signature Verification** (Optional)
-**Status: ⏳ Pending**
+### 6. **Webhook Signature Verification**
+**Status: ✅ Implemented**
 
-**Plan**:
-- Verify Gumroad webhook signatures
-- Use HMAC-SHA256 validation
-- Reject unsigned/invalid webhooks
-- Prevent webhook spoofing
+- **Location**: `src/lib/webhookSignature.ts`, `src/app/api/gumroad/webhook/route.ts`
+- **Configuration**:
+  - HMAC-SHA256 signature verification
+  - Timing-safe comparison to prevent timing attacks
+  - Optional webhook secret (graceful fallback if not configured)
+  - Returns 401 Unauthorized for invalid signatures
+
+**How it works**:
+```typescript
+// Server verifies webhook signature before processing
+const signature = extractSignature(request.headers);
+const isValid = verifyGumroadSignature(rawBody, signature, webhookSecret);
+
+if (!isValid) {
+  return 401 Unauthorized; // Reject spoofed webhooks
+}
+```
+
+**Security Features**:
+- HMAC-SHA256 cryptographic signing
+- Timing-safe signature comparison
+- Raw body verification (prevents tampering)
+- Automatic signature extraction from headers
+- Logs spoofing attempts for monitoring
+
+**Graceful Fallback**: If `GUMROAD_WEBHOOK_SECRET` is not configured, signature verification is skipped with a warning (allows testing without webhook secret).
+
+**Updated Files**:
+- ✅ `src/lib/webhookSignature.ts` (NEW - Signature verification utility)
+- ✅ `src/app/api/gumroad/webhook/route.ts` (Added signature verification)
+- ✅ `src/lib/env.ts` (Added GUMROAD_WEBHOOK_SECRET)
 
 ---
 
@@ -197,6 +223,7 @@ GUMROAD_PRODUCT_PERMALINK=pay
 KV_REST_API_URL=your_kv_url (when KV is setup)
 KV_REST_API_TOKEN=your_kv_token (when KV is setup)
 JWT_SECRET=your_random_secure_secret (or use NEXTAUTH_SECRET)
+GUMROAD_WEBHOOK_SECRET=your_webhook_secret (from Gumroad settings)
 ```
 
 **Client-Safe (Can start with NEXT_PUBLIC_)**:
@@ -295,5 +322,5 @@ If you discover a security vulnerability:
 ---
 
 **Last Updated**: 2025-10-10
-**Security Level**: Phase 1 Complete (1-3) ✅ | Phase 2 Complete (4-5) ✅
-**Optional Enhancements**: Measure 6 (Webhook Verification) ⏳
+**Security Level**: Phase 1 Complete (1-3) ✅ | Phase 2 Complete (4-6) ✅
+**All Security Measures**: Fully Implemented 🎉

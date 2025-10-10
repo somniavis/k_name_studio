@@ -24,9 +24,12 @@ export const serverEnv = {
   gumroadProductPermalink: process.env.GUMROAD_PRODUCT_PERMALINK!,
   nodeEnv: process.env.NODE_ENV || 'development',
 
-  // Vercel KV (when implemented)
+  // Vercel KV (optional)
   kvRestApiUrl: process.env.KV_REST_API_URL,
   kvRestApiToken: process.env.KV_REST_API_TOKEN,
+
+  // Gumroad Webhook Secret (optional, for signature verification)
+  gumroadWebhookSecret: process.env.GUMROAD_WEBHOOK_SECRET,
 } as const;
 
 // Client-safe environment variables (can be exposed to browser)

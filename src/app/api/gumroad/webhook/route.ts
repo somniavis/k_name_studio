@@ -1,20 +1,48 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { serverEnv } from '@/lib/env';
+import {
+  verifyGumroadSignature,
+  extractSignature,
+} from '@/lib/webhookSignature';
 
 // Gumroad webhook handler
 // This endpoint is called by Gumroad when a purchase is completed
+// Implements webhook signature verification for security
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.formData();
+    // Get raw body for signature verification
+    const rawBody = await request.text();
+
+    // 🔒 Security Check: Verify webhook signature (if webhook secret is configured)
+    const { gumroadWebhookSecret } = serverEnv;
+    if (gumroadWebhookSecret) {
+      const signature = extractSignature(request.headers);
+      const isValid = verifyGumroadSignature(rawBody, signature, gumroadWebhookSecret);
+
+      if (!isValid) {
+        console.error('[Gumroad Webhook] Invalid signature - possible spoofing attempt');
+        return NextResponse.json(
+          { error: 'Invalid webhook signature' },
+          { status: 401 }
+        );
+      }
+
+      console.log('[Gumroad Webhook] ✅ Signature verified');
+    } else {
+      console.warn('[Gumroad Webhook] ⚠️ Webhook secret not configured - signature verification skipped');
+    }
+
+    // Parse form data from raw body
+    const formData = new URLSearchParams(rawBody);
 
     // Extract Gumroad data
-    const saleId = body.get('sale_id') as string;
-    const email = body.get('email') as string;
-    const productPermalink = body.get('product_permalink') as string;
-    const licenseKey = body.get('license_key') as string;
-    const purchaserName = body.get('purchaser_name') as string;
-    const price = body.get('price') as string;
-    const currency = body.get('currency') as string;
+    const saleId = formData.get('sale_id') as string;
+    const email = formData.get('email') as string;
+    const productPermalink = formData.get('product_permalink') as string;
+    const licenseKey = formData.get('license_key') as string;
+    const purchaserName = formData.get('purchaser_name') as string;
+    const price = formData.get('price') as string;
+    const currency = formData.get('currency') as string;
 
     console.log('[Gumroad Webhook] Purchase received:', {
       saleId,
