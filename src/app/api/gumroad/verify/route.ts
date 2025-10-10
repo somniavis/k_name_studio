@@ -1,11 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { serverEnv } from '@/lib/env';
 import { isLicenseKeyReused, storeLicenseKeyRecord } from '@/lib/kv';
+import { requireAuth, getSessionId } from '@/lib/authMiddleware';
 
 // Verify Gumroad license key
 // This endpoint verifies if a license key is valid using Gumroad's API
 // Implements license key reuse prevention using Vercel KV
+// Requires JWT authentication
 export async function POST(request: NextRequest) {
+  // 🔒 Security Check: Require JWT authentication
+  const authError = requireAuth(request);
+  if (authError) {
+    return authError;
+  }
+
+  const sessionId = getSessionId(request);
+  console.log('[Gumroad Verify] Authenticated request from session:', sessionId);
+
   try {
     const { licenseKey } = await request.json();
 

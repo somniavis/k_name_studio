@@ -9,13 +9,15 @@ const LICENSE_KEY_PREFIX = 'license:';
 const LICENSE_EXPIRY_SECONDS = 24 * 60 * 60; // 24 hours
 
 // Lazy load KV only when needed and configured
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let kvInstance: any = null;
 function getKV() {
   if (kvInstance === null && process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
     try {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       const { kv } = require('@vercel/kv');
       kvInstance = kv;
-    } catch (error) {
+    } catch {
       console.warn('[KV] @vercel/kv not available, KV features disabled');
       kvInstance = undefined;
     }
@@ -46,7 +48,7 @@ export async function getLicenseKeyRecord(
 
   try {
     const key = `${LICENSE_KEY_PREFIX}${licenseKey}`;
-    const record = await kv.get<LicenseKeyRecord>(key);
+    const record = await kv.get(key) as LicenseKeyRecord | null;
     return record;
   } catch (error) {
     console.error('[KV] Error getting license key record:', error);

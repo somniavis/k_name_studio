@@ -10,6 +10,7 @@ import { fortuneMatrix, mapStrengthToMatrix } from '@/data/fortuneData';
 import type { SajuStrength } from '@/data/fortuneData';
 import type { SajuResult } from '@/utils/sajuCalculator';
 import TestLicenseInput from '@/components/TestLicenseInput';
+import { verifyGumroadLicense } from '@/lib/apiClient';
 
 // Gumroad type definition
 interface GumroadWindow extends Window {
@@ -213,19 +214,9 @@ export const ResultScreen: React.FC = () => {
         success: async (data: { license_key: string }) => {
           console.log('[ResultScreen] Purchase successful:', data);
 
-          // Verify purchase with our API
+          // Verify purchase with our API (using authenticated request)
           try {
-            const response = await fetch('/api/gumroad/verify', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                licenseKey: data.license_key
-              }),
-            });
-
-            const result = await response.json();
+            const result = await verifyGumroadLicense(data.license_key);
 
             if (result.valid) {
               // Generate premium content
