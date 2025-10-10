@@ -11,6 +11,8 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 100px;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 .result-background {
@@ -1337,6 +1339,12 @@
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+  .result-screen {
+    padding-bottom: 40px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
   .korean-name {
     font-size: 24px;
   }
