@@ -213,12 +213,19 @@ export const ResultScreen: React.FC = () => {
         // Callback when purchase is successful
         success: async (data: { license_key: string }) => {
           console.log('[ResultScreen] Purchase successful:', data);
+          console.log('[ResultScreen] Starting license verification...');
+
+          // Show loading state immediately
+          alert('결제가 완료되었습니다! 잠시만 기다려주세요...');
 
           // Verify purchase with our API (using authenticated request)
           try {
             const result = await verifyGumroadLicense(data.license_key);
+            console.log('[ResultScreen] Verification result:', result);
 
             if (result.valid) {
+              console.log('[ResultScreen] License valid, unlocking premium...');
+
               // Generate premium content
               if (userData.birthDate && userData.firstName && userData.gender) {
                 const { oppositeGenderNames } = generateAdditionalPremiumNames({
@@ -228,18 +235,24 @@ export const ResultScreen: React.FC = () => {
 
                 // Unlock premium
                 unlockPremium(premiumNames || [], [], oppositeGenderNames);
+                console.log('[ResultScreen] Premium unlocked with additional names');
               } else {
                 unlockPremium(premiumNames || []);
+                console.log('[ResultScreen] Premium unlocked');
               }
 
-              alert('🎉 프리미엄 잠금 해제 완료! 프리미엄 이름을 확인해보세요.');
+              // Success alert after unlocking
+              setTimeout(() => {
+                alert('🎉 프리미엄 잠금 해제 완료! 아래로 스크롤하여 프리미엄 이름을 확인해보세요.');
+              }, 100);
             } else {
-              console.error('[ResultScreen] License verification failed');
-              alert('결제 확인에 실패했습니다. 고객 지원에 문의해주세요.');
+              console.error('[ResultScreen] License verification failed:', result);
+              alert('❌ 결제 확인에 실패했습니다.\n\n라이센스 키: ' + data.license_key + '\n\n이 정보와 함께 고객 지원에 문의해주세요.');
             }
           } catch (error) {
             console.error('[ResultScreen] Verification error:', error);
-            alert('결제 확인 중 오류가 발생했습니다.');
+            const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+            alert('❌ 결제 확인 중 오류가 발생했습니다.\n\n오류: ' + errorMessage + '\n\n페이지를 새로고침하거나 고객 지원에 문의해주세요.');
           }
         },
         // Callback when overlay is closed without purchase
