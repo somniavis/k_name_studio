@@ -14,10 +14,6 @@
   touch-action: pan-y;
 }
 
-.result-screen:not(:has(.loading-container)) {
-  padding-bottom: 100px;
-}
-
 .result-background {
   position: absolute;
   top: 0;
@@ -1711,5 +1707,14 @@
 
   .fortune-card {
     padding: 14px;
+  }
+}
+
+/* Mobile Responsive - Match input-screen behavior */
+@media (max-width: 480px) {
+  .result-screen {
+    overflow-x: hidden;
+    width: 100vw;
+    max-width: 100vw;
   }
 }
