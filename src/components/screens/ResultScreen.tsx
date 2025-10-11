@@ -119,6 +119,7 @@ export const ResultScreen: React.FC = () => {
   const [copiedToClipboard, setCopiedToClipboard] = useState(false);
   const [isCreatingLink, setIsCreatingLink] = useState(false);
   const [shareableLink, setShareableLink] = useState<string | null>(null);
+  const [isVerifyingLicense, setIsVerifyingLicense] = useState(false);
 
   const generateNames = useCallback(async () => {
     console.log('Generate names called with userData:', userData);
@@ -174,6 +175,61 @@ export const ResultScreen: React.FC = () => {
     }
   }, [userData, locale]);
 
+  // Check URL params for license key (from Gumroad redirect)
+  useEffect(() => {
+    const checkLicenseFromUrl = async () => {
+      if (typeof window === 'undefined' || isPremiumUnlocked || isVerifyingLicense) return;
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const licenseKey = urlParams.get('license_key');
+
+      if (licenseKey) {
+        console.log('[ResultScreen] License key found in URL:', licenseKey);
+        setIsVerifyingLicense(true);
+
+        try {
+          // Verify the license
+          const result = await verifyGumroadLicense(licenseKey);
+          console.log('[ResultScreen] License verification result:', result);
+
+          if (result.valid) {
+            // Generate premium content
+            if (userData.birthDate && userData.firstName && userData.gender) {
+              const { oppositeGenderNames } = generateAdditionalPremiumNames({
+                userData: userData as UserData,
+                locale
+              });
+
+              unlockPremium(premiumNames || [], [], oppositeGenderNames);
+              console.log('[ResultScreen] Premium unlocked from URL license');
+            } else {
+              unlockPremium(premiumNames || []);
+              console.log('[ResultScreen] Premium unlocked from URL license (no additional names)');
+            }
+
+            // Remove license key from URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+
+            // Show success message
+            setTimeout(() => {
+              alert('🎉 결제 완료! 프리미엄 콘텐츠가 잠금 해제되었습니다.');
+            }, 500);
+          } else {
+            console.error('[ResultScreen] License verification failed from URL');
+            alert('❌ 결제 확인에 실패했습니다. 고객 지원에 문의해주세요.');
+          }
+        } catch (error) {
+          console.error('[ResultScreen] Error verifying license from URL:', error);
+          alert('❌ 결제 확인 중 오류가 발생했습니다.');
+        } finally {
+          setIsVerifyingLicense(false);
+        }
+      }
+    };
+
+    checkLicenseFromUrl();
+  }, [isPremiumUnlocked, isVerifyingLicense, userData, locale, premiumNames, unlockPremium]);
+
   useEffect(() => {
     if (userData.birthDate && freeNames.length === 0 && !isGenerating) {
       generateNames();
@@ -206,65 +262,17 @@ export const ResultScreen: React.FC = () => {
       return;
     }
 
-    // Open Gumroad Overlay
-    if (typeof window !== 'undefined' && window.Gumroad) {
-      window.Gumroad.open({
-        url: productUrl,
-        // Callback when purchase is successful
-        success: async (data: { license_key: string }) => {
-          console.log('[ResultScreen] Purchase successful:', data);
-          console.log('[ResultScreen] Starting license verification...');
+    // Create redirect URL with license_key parameter
+    const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://k-name-studio.vercel.app';
+    const redirectUrl = encodeURIComponent(`${baseUrl}/?license_key={license_key}`);
 
-          // Show loading state immediately
-          alert('결제가 완료되었습니다! 잠시만 기다려주세요...');
+    // Add redirect parameter to Gumroad URL
+    const gumroadUrl = `${productUrl}?wanted=true&redirect=${redirectUrl}`;
 
-          // Verify purchase with our API (using authenticated request)
-          try {
-            const result = await verifyGumroadLicense(data.license_key);
-            console.log('[ResultScreen] Verification result:', result);
+    console.log('[ResultScreen] Opening Gumroad with redirect:', gumroadUrl);
 
-            if (result.valid) {
-              console.log('[ResultScreen] License valid, unlocking premium...');
-
-              // Generate premium content
-              if (userData.birthDate && userData.firstName && userData.gender) {
-                const { oppositeGenderNames } = generateAdditionalPremiumNames({
-                  userData: userData as UserData,
-                  locale
-                });
-
-                // Unlock premium
-                unlockPremium(premiumNames || [], [], oppositeGenderNames);
-                console.log('[ResultScreen] Premium unlocked with additional names');
-              } else {
-                unlockPremium(premiumNames || []);
-                console.log('[ResultScreen] Premium unlocked');
-              }
-
-              // Success alert after unlocking
-              setTimeout(() => {
-                alert('🎉 프리미엄 잠금 해제 완료! 아래로 스크롤하여 프리미엄 이름을 확인해보세요.');
-              }, 100);
-            } else {
-              console.error('[ResultScreen] License verification failed:', result);
-              alert('❌ 결제 확인에 실패했습니다.\n\n라이센스 키: ' + data.license_key + '\n\n이 정보와 함께 고객 지원에 문의해주세요.');
-            }
-          } catch (error) {
-            console.error('[ResultScreen] Verification error:', error);
-            const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-            alert('❌ 결제 확인 중 오류가 발생했습니다.\n\n오류: ' + errorMessage + '\n\n페이지를 새로고침하거나 고객 지원에 문의해주세요.');
-          }
-        },
-        // Callback when overlay is closed without purchase
-        closed: () => {
-          console.log('[ResultScreen] Gumroad overlay closed');
-        }
-      });
-    } else {
-      // Fallback: Direct link if Gumroad script not loaded
-      console.warn('[ResultScreen] Gumroad script not loaded, using direct link');
-      window.open(productUrl, '_blank');
-    }
+    // Open Gumroad payment page (will redirect back after purchase)
+    window.location.href = gumroadUrl;
   };
 
   const handlePaymentSuccess = async (paymentSessionId: string) => {
