@@ -281,97 +281,92 @@ export const ResultScreen: React.FC = () => {
       // Build Gumroad URL with session_id pre-filled
       const gumroadUrl = `${productUrl}?wanted=true&session_id=${sessionId}`;
 
-      console.log('[ResultScreen] Opening Gumroad overlay with session:', gumroadUrl);
+      console.log('[ResultScreen] Opening Gumroad payment popup with session:', gumroadUrl);
 
-      // Wait for Gumroad script to load (if not already loaded)
-      const waitForGumroad = async () => {
-        if (typeof window !== 'undefined' && window.Gumroad) {
-          return true;
-        }
+      // Open Gumroad in centered popup window
+      const width = 800;
+      const height = 900;
+      const left = (window.screen.width - width) / 2;
+      const top = (window.screen.height - height) / 2;
 
-        // Wait up to 5 seconds for script to load
-        for (let i = 0; i < 50; i++) {
-          await new Promise(resolve => setTimeout(resolve, 100));
-          if (typeof window !== 'undefined' && window.Gumroad) {
-            return true;
-          }
-        }
-        return false;
-      };
+      const paymentWindow = window.open(
+        gumroadUrl,
+        'gumroad_payment',
+        `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+      );
 
-      const gumroadReady = await waitForGumroad();
-
-      // Open Gumroad Overlay
-      if (gumroadReady && window.Gumroad) {
-        console.log('[ResultScreen] ✅ Gumroad script loaded, opening overlay');
-        window.Gumroad.open({
-          url: gumroadUrl,
-          // Callback when overlay is closed (purchase completed or cancelled)
-          closed: async () => {
-            console.log('[ResultScreen] Gumroad overlay closed');
-
-            // Start polling for payment status
-            console.log('[ResultScreen] Starting payment verification...');
-
-            let attempts = 0;
-            const maxAttempts = 60; // 60 attempts × 2 seconds = 2 minutes
-
-            const pollInterval = setInterval(async () => {
-              try {
-                const response = await fetch(`/api/payment/session?sessionId=${sessionId}`);
-
-                if (!response.ok) {
-                  console.error('[ResultScreen] Failed to check session status');
-                  return;
-                }
-
-                const data = await response.json();
-                console.log('[ResultScreen] Session status:', data);
-
-                if (data.status === 'completed' && data.licenseKey) {
-                  console.log('[ResultScreen] ✅ Payment completed!', data.licenseKey);
-                  clearInterval(pollInterval);
-                  setIsVerifyingLicense(false);
-
-                  // Generate premium content
-                  if (userData.birthDate && userData.firstName && userData.gender) {
-                    const { oppositeGenderNames } = generateAdditionalPremiumNames({
-                      userData: userData as UserData,
-                      locale
-                    });
-
-                    unlockPremium(premiumNames || [], [], oppositeGenderNames);
-                    console.log('[ResultScreen] Premium unlocked with additional names');
-                  } else {
-                    unlockPremium(premiumNames || []);
-                    console.log('[ResultScreen] Premium unlocked');
-                  }
-
-                  // Show success message
-                  alert('🎉 결제 완료! 프리미엄 콘텐츠가 잠금 해제되었습니다.');
-                  return;
-                }
-
-                attempts++;
-
-                // Timeout after max attempts
-                if (attempts >= maxAttempts) {
-                  console.warn('[ResultScreen] ⚠️ Payment verification timeout');
-                  clearInterval(pollInterval);
-                  setIsVerifyingLicense(false);
-                  alert('결제 확인에 시간이 초과되었습니다.\n결제가 완료되었다면 잠시 후 페이지를 새로고침해주세요.');
-                }
-              } catch (error) {
-                console.error('[ResultScreen] Error checking payment status:', error);
-              }
-            }, 2000);
-          }
-        });
-      } else {
-        // Fallback: Direct link if Gumroad script not loaded
-        console.warn('[ResultScreen] Gumroad script not loaded, redirecting to processing page');
-        window.location.href = `/payment/processing?sessionId=${sessionId}`;
+      if (!paymentWindow) {
+        console.error('[ResultScreen] Popup blocked');
+        alert('팝업이 차단되었습니다. 팝업을 허용하고 다시 시도해주세요.');
+        setIsVerifyingLicense(false);
+        return;
       }
+
+      console.log('[ResultScreen] ✅ Payment popup opened');
+
+      // Monitor popup window and start polling when it closes
+      const checkWindowClosed = setInterval(() => {
+        if (paymentWindow.closed) {
+          console.log('[ResultScreen] Payment popup closed');
+          clearInterval(checkWindowClosed);
+
+          // Start polling for payment status
+          console.log('[ResultScreen] Starting payment verification...');
+
+          let attempts = 0;
+          const maxAttempts = 60; // 60 attempts × 2 seconds = 2 minutes
+
+          const pollInterval = setInterval(async () => {
+            try {
+              const response = await fetch(`/api/payment/session?sessionId=${sessionId}`);
+
+              if (!response.ok) {
+                console.error('[ResultScreen] Failed to check session status');
+                return;
+              }
+
+              const data = await response.json();
+              console.log('[ResultScreen] Session status:', data);
+
+              if (data.status === 'completed' && data.licenseKey) {
+                console.log('[ResultScreen] ✅ Payment completed!', data.licenseKey);
+                clearInterval(pollInterval);
+                setIsVerifyingLicense(false);
+
+                // Generate premium content
+                if (userData.birthDate && userData.firstName && userData.gender) {
+                  const { oppositeGenderNames } = generateAdditionalPremiumNames({
+                    userData: userData as UserData,
+                    locale
+                  });
+
+                  unlockPremium(premiumNames || [], [], oppositeGenderNames);
+                  console.log('[ResultScreen] Premium unlocked with additional names');
+                } else {
+                  unlockPremium(premiumNames || []);
+                  console.log('[ResultScreen] Premium unlocked');
+                }
+
+                // Show success message
+                alert('🎉 결제 완료! 프리미엄 콘텐츠가 잠금 해제되었습니다.');
+                return;
+              }
+
+              attempts++;
+
+              // Timeout after max attempts
+              if (attempts >= maxAttempts) {
+                console.warn('[ResultScreen] ⚠️ Payment verification timeout');
+                clearInterval(pollInterval);
+                setIsVerifyingLicense(false);
+                alert('결제 확인에 시간이 초과되었습니다.\n결제가 완료되었다면 잠시 후 페이지를 새로고침해주세요.');
+              }
+            } catch (error) {
+              console.error('[ResultScreen] Error checking payment status:', error);
+            }
+          }, 2000);
+        }
+      }, 500); // Check every 500ms if popup is closed
 
     } catch (error) {
       console.error('[ResultScreen] Error creating payment session:', error);
