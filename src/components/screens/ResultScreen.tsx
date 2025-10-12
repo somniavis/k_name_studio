@@ -275,27 +275,89 @@ export const ResultScreen: React.FC = () => {
       const { sessionId } = await sessionResponse.json();
       console.log('[ResultScreen] Payment session created:', sessionId);
 
+      // Store session ID in state for polling
+      setIsVerifyingLicense(true);
+
       // Build Gumroad URL with session_id pre-filled
       const gumroadUrl = `${productUrl}?wanted=true&session_id=${sessionId}`;
 
-      console.log('[ResultScreen] Opening Gumroad with session:', gumroadUrl);
+      console.log('[ResultScreen] Opening Gumroad overlay with session:', gumroadUrl);
 
-      // Open Gumroad in new window/tab (keeps user on our site)
-      const paymentWindow = window.open(gumroadUrl, '_blank', 'width=800,height=900');
+      // Open Gumroad Overlay
+      if (typeof window !== 'undefined' && window.Gumroad) {
+        window.Gumroad.open({
+          url: gumroadUrl,
+          // Callback when overlay is closed (purchase completed or cancelled)
+          closed: async () => {
+            console.log('[ResultScreen] Gumroad overlay closed');
 
-      if (!paymentWindow) {
-        // Fallback if popup blocked
-        alert('팝업이 차단되었습니다. 팝업을 허용하고 다시 시도해주세요.');
-        window.location.href = gumroadUrl;
-        return;
+            // Start polling for payment status
+            console.log('[ResultScreen] Starting payment verification...');
+
+            let attempts = 0;
+            const maxAttempts = 60; // 60 attempts × 2 seconds = 2 minutes
+
+            const pollInterval = setInterval(async () => {
+              try {
+                const response = await fetch(`/api/payment/session?sessionId=${sessionId}`);
+
+                if (!response.ok) {
+                  console.error('[ResultScreen] Failed to check session status');
+                  return;
+                }
+
+                const data = await response.json();
+                console.log('[ResultScreen] Session status:', data);
+
+                if (data.status === 'completed' && data.licenseKey) {
+                  console.log('[ResultScreen] ✅ Payment completed!', data.licenseKey);
+                  clearInterval(pollInterval);
+                  setIsVerifyingLicense(false);
+
+                  // Generate premium content
+                  if (userData.birthDate && userData.firstName && userData.gender) {
+                    const { oppositeGenderNames } = generateAdditionalPremiumNames({
+                      userData: userData as UserData,
+                      locale
+                    });
+
+                    unlockPremium(premiumNames || [], [], oppositeGenderNames);
+                    console.log('[ResultScreen] Premium unlocked with additional names');
+                  } else {
+                    unlockPremium(premiumNames || []);
+                    console.log('[ResultScreen] Premium unlocked');
+                  }
+
+                  // Show success message
+                  alert('🎉 결제 완료! 프리미엄 콘텐츠가 잠금 해제되었습니다.');
+                  return;
+                }
+
+                attempts++;
+
+                // Timeout after max attempts
+                if (attempts >= maxAttempts) {
+                  console.warn('[ResultScreen] ⚠️ Payment verification timeout');
+                  clearInterval(pollInterval);
+                  setIsVerifyingLicense(false);
+                  alert('결제 확인에 시간이 초과되었습니다.\n결제가 완료되었다면 잠시 후 페이지를 새로고침해주세요.');
+                }
+              } catch (error) {
+                console.error('[ResultScreen] Error checking payment status:', error);
+              }
+            }, 2000);
+          }
+        });
+      } else {
+        // Fallback: Direct link if Gumroad script not loaded
+        console.warn('[ResultScreen] Gumroad script not loaded, redirecting to processing page');
+        window.location.href = `/payment/processing?sessionId=${sessionId}`;
       }
-
-      // Redirect to processing page
-      window.location.href = `/payment/processing?sessionId=${sessionId}`;
 
     } catch (error) {
       console.error('[ResultScreen] Error creating payment session:', error);
       alert('결제 세션 생성에 실패했습니다. 다시 시도해주세요.');
+      setIsVerifyingLicense(false);
     }
   };
 
