@@ -314,7 +314,7 @@ export const ResultScreen: React.FC = () => {
           console.log('[ResultScreen] Starting payment verification...');
 
           let attempts = 0;
-          const maxAttempts = 60; // 60 attempts × 2 seconds = 2 minutes
+          const maxAttempts = 5; // 5 attempts × 2 seconds = 10 seconds
 
           const pollInterval = setInterval(async () => {
             try {
@@ -354,12 +354,13 @@ export const ResultScreen: React.FC = () => {
 
               attempts++;
 
-              // Timeout after max attempts
+              // Timeout after max attempts (10 seconds)
               if (attempts >= maxAttempts) {
-                console.warn('[ResultScreen] ⚠️ Payment verification timeout');
+                console.warn('[ResultScreen] ⚠️ Payment verification timeout after 10 seconds');
                 clearInterval(pollInterval);
                 setIsVerifyingLicense(false);
-                alert('결제 확인에 시간이 초과되었습니다.\n결제가 완료되었다면 잠시 후 페이지를 새로고침해주세요.');
+                alert('❌ 결제 확인에 실패했습니다.\n결제가 정상적으로 처리되지 않았을 수 있습니다.\n\n문제가 지속되면 고객 지원에 문의해주세요.');
+                // Stay on results page - no redirect needed
               }
             } catch (error) {
               console.error('[ResultScreen] Error checking payment status:', error);
