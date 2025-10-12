@@ -283,8 +283,27 @@ export const ResultScreen: React.FC = () => {
 
       console.log('[ResultScreen] Opening Gumroad overlay with session:', gumroadUrl);
 
+      // Wait for Gumroad script to load (if not already loaded)
+      const waitForGumroad = async () => {
+        if (typeof window !== 'undefined' && window.Gumroad) {
+          return true;
+        }
+
+        // Wait up to 5 seconds for script to load
+        for (let i = 0; i < 50; i++) {
+          await new Promise(resolve => setTimeout(resolve, 100));
+          if (typeof window !== 'undefined' && window.Gumroad) {
+            return true;
+          }
+        }
+        return false;
+      };
+
+      const gumroadReady = await waitForGumroad();
+
       // Open Gumroad Overlay
-      if (typeof window !== 'undefined' && window.Gumroad) {
+      if (gumroadReady && window.Gumroad) {
+        console.log('[ResultScreen] ✅ Gumroad script loaded, opening overlay');
         window.Gumroad.open({
           url: gumroadUrl,
           // Callback when overlay is closed (purchase completed or cancelled)
