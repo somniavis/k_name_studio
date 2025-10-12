@@ -391,13 +391,15 @@ body {
   background: transparent;
 }
 
-.welcome-screen .app-footer div {
-  color: rgba(107, 114, 128, 0.7);
+.welcome-screen .app-footer div,
+.input-screen .app-footer div {
+  color: #cacaca;
   font-size: 11px;
   font-weight: 400;
 }
 
-.welcome-screen .app-footer div a {
+.welcome-screen .app-footer div a,
+.input-screen .app-footer div a {
   color: inherit;
 }
 
@@ -684,15 +686,7 @@ body {
   background: transparent;
 }
 
-.input-screen .app-footer div {
-  color: rgba(107, 114, 128, 0.7);
-  font-size: 11px;
-  font-weight: 400;
-}
 
-.input-screen .app-footer div a {
-  color: inherit;
-}
 
 @media (max-width: 480px) {
   .input-screen {
@@ -1279,6 +1273,19 @@ body {
 }
 
 .language-selector-option:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.language-selector-option-selected {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.language-selector-option-selected:hover {
+  background: #2563eb;
+}
+ {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
