@@ -77,7 +77,10 @@ export const WelcomeScreen: React.FC = () => {
 
         {/* Footer */}
         <footer className="app-footer">
-          <p>{t('footer')}</p>
+          <div>{t('footer')}</div>
+          <div>
+            <a href="/terms" className="underline">Terms of Service</a> | <a href="/privacy" className="underline">Privacy Policy</a>
+          </div>
         </footer>
       </div>
     </div>
