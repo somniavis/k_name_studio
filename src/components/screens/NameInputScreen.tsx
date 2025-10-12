@@ -195,9 +195,11 @@ export const NameInputScreen: React.FC = () => {
           <span>{currentStep === 3 ? '🌟' : '→'}</span>
         </button>
 
-        {/* Footer */}
         <footer className="app-footer">
-          <p>{t('footer')}</p>
+          <div>{t('footer')}</div>
+          <div>
+            <a href="/terms" className="underline">Terms of Service</a> | <a href="/privacy" className="underline">Privacy Policy</a>
+          </div>
         </footer>
       </div>
     </div>
