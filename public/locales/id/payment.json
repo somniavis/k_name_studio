@@ -1,57 +1,29 @@
 {
-  "modal": {
-    "title": "Buka Kunci Nama Premium ✨",
-    "subtitle": "Dapatkan analisis nama Korea tingkat lanjut dan fitur eksklusif"
+  "title": "Pembayaran",
+  "close": "Tutup",
+  "subtitle": "Pembayaran Premium",
+  "description": {
+    "line1": "Anda akan diarahkan ke halaman pembayaran Gumroad yang aman.",
+    "line2": "Fitur premium akan diaktifkan secara otomatis setelah pembayaran selesai."
   },
-  "package": {
-    "title": "Paket Premium"
-  },
+  "payOnGumroad": "Bayar di Gumroad",
+  "checking": "Memeriksa...",
+  "checkPayment": "✓ Verifikasi Pembayaran",
   "features": {
-    "premiumNames": "3 Nama Korea Premium",
-    "kpopMatching": "Pencocokan Nama Bintang K-pop",
-    "soulmate": "2 Nama Belahan Jiwa Sempurna",
-    "shareLink": "Tautan Berbagi 15 hari"
+    "cards": "Kartu Kredit, PayPal didukung",
+    "secure": "Pembayaran Aman (SSL)",
+    "autoCheck": "Pemeriksaan otomatis (6 kali selama 1 menit)"
   },
-  "benefits": {
-    "title": "Apa yang akan Anda dapatkan:",
-    "list": {
-      "premium": "5+ Nama Korea Premium",
-      "hanja": "Analisis Karakter Hanja Terperinci",
-      "saju": "Pembacaan Ramalan Saju Lengkap",
-      "pronunciation": "Panduan Pengucapan Audio",
-      "cultural": "Latar Belakang Budaya & Sejarah",
-      "kpop": "Pencocokan Nama Bintang K-pop",
-      "sharing": "Kartu Berbagi yang Indah"
+  "note": "Ini akan diperiksa secara otomatis setelah pembayaran. Atau klik tombol \"Verifikasi Pembayaran\".",
+  "autoChecking": "Pemeriksaan otomatis... ({{count}}/6)",
+  "alert": {
+    "checkStatus": {
+      "fail": "Tidak dapat memeriksa status pembayaran. Silakan coba lagi sebentar.",
+      "notCompleted": "Pembayaran belum dikonfirmasi.\nHarap selesaikan pembayaran lalu periksa lagi.",
+      "error": "Terjadi kesalahan saat memeriksa pembayaran."
     }
   },
-  "pricing": {
-    "price": "$2.99",
-    "description": "Pembayaran sekali • Tanpa berlangganan",
-    "secure": "Pembayaran PayPal Aman",
-    "testMode": "MODE UJI: Pembayaran PayPal Sandbox",
-    "testNote": "Gunakan kartu kredit uji apa pun - Tanpa biaya nyata",
-    "guarantee": "Jaminan uang kembali 30 hari"
-  },
-  "status": {
-    "processing": "Memproses pembayaran Anda...",
-    "success": "Pembayaran berhasil! Menghasilkan nama premium Anda...",
-    "error": "Pembayaran gagal. Silakan coba lagi.",
-    "cancelled": "Pembayaran dibatalkan."
-  },
-  "errors": {
-    "paypalLoad": "PayPal gagal dimuat. Silakan refresh halaman.",
-    "networkError": "Kesalahan jaringan. Silakan periksa koneksi Anda.",
-    "serverError": "Kesalahan server. Silakan coba lagi nanti.",
-    "invalidAmount": "Jumlah pembayaran tidak valid.",
-    "verificationFailed": "Verifikasi pembayaran gagal. Hubungi dukungan."
-  },
-  "buttons": {
-    "payNow": "Bayar Sekarang",
-    "tryAgain": "Coba Lagi",
-    "cancel": "Batal",
-    "close": "Tutup"
-  },
-  "processing": "Memproses pembayaran...",
-  "configError": "Sistem pembayaran tidak dikonfigurasi",
-  "security": "Pembayaran aman didukung oleh PayPal. Informasi pembayaran Anda tidak pernah disimpan di server kami."
+  "confirm": {
+    "close": "Apakah Anda yakin ingin menutup jendela pembayaran?\n\nJika pembayaran selesai, klik tombol \"Verifikasi Pembayaran\" atau tunggu sebentar untuk aktivasi otomatis."
+  }
 }

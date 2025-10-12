@@ -1,57 +1,29 @@
 {
-  "modal": {
-    "title": "Premium-Namen freischalten ✨",
-    "subtitle": "Erhalten Sie erweiterte koreanische Namenanalyse und exklusive Funktionen"
+  "title": "Zahlung",
+  "close": "Schließen",
+  "subtitle": "Premium-Zahlung",
+  "description": {
+    "line1": "Sie werden zur sicheren Gumroad-Zahlungsseite weitergeleitet.",
+    "line2": "Premium-Funktionen werden nach Abschluss der Zahlung automatisch aktiviert."
   },
-  "package": {
-    "title": "Premium-Paket"
-  },
+  "payOnGumroad": "Auf Gumroad bezahlen",
+  "checking": "Überprüfung...",
+  "checkPayment": "✓ Zahlung überprüfen",
   "features": {
-    "premiumNames": "3 Premium koreanische Namen",
-    "kpopMatching": "K-pop-Star-Name-Matching",
-    "soulmate": "2 perfekte Seelenverwandte Namen",
-    "shareLink": "15-Tage teilbarer Link"
+    "cards": "Kreditkarte, PayPal unterstützt",
+    "secure": "Sichere Zahlung (SSL)",
+    "autoCheck": "Automatische Überprüfung (6 Mal für 1 Min.)"
   },
-  "benefits": {
-    "title": "Was Sie erhalten:",
-    "list": {
-      "premium": "5+ Premium koreanische Namen",
-      "hanja": "Detaillierte Hanja-Zeichenanalyse",
-      "saju": "Vollständige Saju-Wahrsagung",
-      "pronunciation": "Audio-Ausspracheführer",
-      "cultural": "Kultureller Hintergrund & Geschichte",
-      "kpop": "K-pop-Star-Namen-Übereinstimmungen",
-      "sharing": "Schöne Sharing-Karten"
+  "note": "Die Überprüfung erfolgt automatisch nach der Zahlung. Oder klicken Sie auf die Schaltfläche \"Zahlung überprüfen\".",
+  "autoChecking": "Automatische Überprüfung... ({{count}}/6)",
+  "alert": {
+    "checkStatus": {
+      "fail": "Zahlungsstatus konnte nicht überprüft werden. Bitte versuchen Sie es in einem Moment erneut.",
+      "notCompleted": "Die Zahlung wurde noch nicht bestätigt.\nBitte schließen Sie die Zahlung ab und überprüfen Sie es dann erneut.",
+      "error": "Bei der Überprüfung der Zahlung ist ein Fehler aufgetreten."
     }
   },
-  "pricing": {
-    "price": "$2.99",
-    "description": "Einmalige Zahlung • Kein Abonnement",
-    "secure": "Sichere PayPal-Zahlung",
-    "testMode": "TESTMODUS: PayPal Sandbox-Zahlung",
-    "testNote": "Verwenden Sie jede Test-Kreditkarte - Keine echten Gebühren",
-    "guarantee": "30-Tage-Geld-zurück-Garantie"
-  },
-  "status": {
-    "processing": "Ihre Zahlung wird bearbeitet...",
-    "success": "Zahlung erfolgreich! Generierung Ihrer Premium-Namen...",
-    "error": "Zahlung fehlgeschlagen. Bitte versuchen Sie es erneut.",
-    "cancelled": "Die Zahlung wurde storniert."
-  },
-  "errors": {
-    "paypalLoad": "PayPal konnte nicht geladen werden. Bitte aktualisieren Sie die Seite.",
-    "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung.",
-    "serverError": "Serverfehler. Bitte versuchen Sie es später erneut.",
-    "invalidAmount": "Ungültiger Zahlungsbetrag.",
-    "verificationFailed": "Zahlungsverifizierung fehlgeschlagen. Kontaktieren Sie den Support."
-  },
-  "buttons": {
-    "payNow": "Jetzt bezahlen",
-    "tryAgain": "Erneut versuchen",
-    "cancel": "Abbrechen",
-    "close": "Schließen"
-  },
-  "processing": "Zahlung wird bearbeitet...",
-  "configError": "Das Zahlungssystem ist nicht konfiguriert",
-  "security": "Sichere Zahlung durch PayPal. Ihre Zahlungsinformationen werden niemals auf unseren Servern gespeichert."
+  "confirm": {
+    "close": "Möchten Sie das Zahlungsfenster wirklich schließen?\n\nWenn die Zahlung abgeschlossen ist, klicken Sie auf die Schaltfläche \"Zahlung überprüfen\" oder warten Sie einen Moment auf die automatische Aktivierung."
+  }
 }

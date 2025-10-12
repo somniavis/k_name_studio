@@ -1,57 +1,29 @@
 {
-  "modal": {
-    "title": "Unlock Premium Names ✨",
-    "subtitle": "Get advanced Korean name analysis and exclusive features"
+  "title": "Payment",
+  "close": "Close",
+  "subtitle": "Premium Payment",
+  "description": {
+    "line1": "You will be redirected to the secure Gumroad payment page.",
+    "line2": "Premium features will be activated automatically after payment is complete."
   },
-  "package": {
-    "title": "Premium Package"
-  },
+  "payOnGumroad": "Pay on Gumroad",
+  "checking": "Checking...",
+  "checkPayment": "✓ Verify Payment",
   "features": {
-    "premiumNames": "3 Premium Korean Names",
-    "kpopMatching": "K-pop Star Name Matching",
-    "soulmate": "2 Perfect Soulmate Names",
-    "shareLink": "15-day Shareable Link"
+    "cards": "Credit Card, PayPal supported",
+    "secure": "Secure Payment (SSL)",
+    "autoCheck": "Auto-check (6 times for 1 min)"
   },
-  "benefits": {
-    "title": "What you'll get:",
-    "list": {
-      "premium": "5+ Premium Korean Names",
-      "hanja": "Detailed Hanja Character Analysis",
-      "saju": "Complete Saju Fortune Reading",
-      "pronunciation": "Audio Pronunciation Guide",
-      "cultural": "Cultural Background & History",
-      "kpop": "K-pop Star Name Matches",
-      "sharing": "Beautiful Sharing Cards"
+  "note": "It will be checked automatically after payment. Or click the \"Verify Payment\" button.",
+  "autoChecking": "Auto-checking... ({{count}}/6)",
+  "alert": {
+    "checkStatus": {
+      "fail": "Could not check payment status. Please try again in a moment.",
+      "notCompleted": "Payment has not been confirmed yet.\nPlease complete the payment and then check again.",
+      "error": "An error occurred while checking the payment."
     }
   },
-  "pricing": {
-    "price": "$2.99",
-    "description": "One-time payment • No subscription",
-    "secure": "Secure PayPal Payment",
-    "testMode": "TEST MODE: PayPal Sandbox Payment",
-    "testNote": "Use any test credit card - No real charges",
-    "guarantee": "30-day money-back guarantee"
-  },
-  "status": {
-    "processing": "Processing your payment...",
-    "success": "Payment successful! Generating your premium names...",
-    "error": "Payment failed. Please try again.",
-    "cancelled": "Payment was cancelled."
-  },
-  "errors": {
-    "paypalLoad": "PayPal failed to load. Please refresh the page.",
-    "networkError": "Network error. Please check your connection.",
-    "serverError": "Server error. Please try again later.",
-    "invalidAmount": "Invalid payment amount.",
-    "verificationFailed": "Payment verification failed. Contact support."
-  },
-  "buttons": {
-    "payNow": "Pay Now",
-    "tryAgain": "Try Again",
-    "cancel": "Cancel",
-    "close": "Close"
-  },
-  "processing": "Processing payment...",
-  "configError": "Payment system is not configured",
-  "security": "Secure payment powered by PayPal. Your payment information is never stored on our servers."
+  "confirm": {
+    "close": "Are you sure you want to close the payment window?\n\nIf the payment is complete, click the \"Verify Payment\" button or wait a moment for automatic activation."
+  }
 }

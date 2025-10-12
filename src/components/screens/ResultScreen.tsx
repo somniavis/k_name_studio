@@ -11,19 +11,7 @@ import type { SajuStrength } from '@/data/fortuneData';
 import type { SajuResult } from '@/utils/sajuCalculator';
 import TestLicenseInput from '@/components/TestLicenseInput';
 import { verifyGumroadLicense } from '@/lib/apiClient';
-
-// Gumroad type definition
-interface GumroadWindow extends Window {
-  Gumroad?: {
-    open: (options: {
-      url: string;
-      success?: (data: { license_key: string }) => void;
-      closed?: () => void;
-    }) => void;
-  };
-}
-
-declare const window: GumroadWindow;
+import { GumroadPaymentModal } from '@/components/GumroadPaymentModal';
 
 // DestinyReading Component - 4가지 주제(직업, 사랑, 건강, 재물)의 운세 표시
 interface DestinyReadingProps {
@@ -120,6 +108,7 @@ export const ResultScreen: React.FC = () => {
   const [isCreatingLink, setIsCreatingLink] = useState(false);
   const [shareableLink, setShareableLink] = useState<string | null>(null);
   const [isVerifyingLicense, setIsVerifyingLicense] = useState(false);
+  const [paymentSessionId, setPaymentSessionId] = useState<string | null>(null);
 
   const generateNames = useCallback(async () => {
     console.log('Generate names called with userData:', userData);
@@ -251,7 +240,7 @@ export const ResultScreen: React.FC = () => {
   }, [isGenerating]);
 
   const handleUnlockPremium = async () => {
-    console.log('[ResultScreen] Opening Gumroad payment...');
+    console.log('[ResultScreen] Opening Gumroad payment modal...');
 
     // Get product URL from environment variable
     const productUrl = process.env.NEXT_PUBLIC_GUMROAD_PRODUCT_URL;
@@ -275,153 +264,46 @@ export const ResultScreen: React.FC = () => {
       const { sessionId } = await sessionResponse.json();
       console.log('[ResultScreen] Payment session created:', sessionId);
 
-      // Store session ID in state for polling
-      setIsVerifyingLicense(true);
-
-      // Build Gumroad URL with session_id pre-filled
-      const gumroadUrl = `${productUrl}?session_id=${sessionId}`;
-
-      console.log('[ResultScreen] Opening Gumroad payment popup with session:', gumroadUrl);
-
-      // Open Gumroad in centered popup window
-      const width = 800;
-      const height = 900;
-      const left = (window.screen.width - width) / 2;
-      const top = (window.screen.height - height) / 2;
-
-      const paymentWindow = window.open(
-        gumroadUrl,
-        'gumroad_payment',
-        `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
-      );
-
-      if (!paymentWindow) {
-        console.error('[ResultScreen] Popup blocked');
-        alert('팝업이 차단되었습니다. 팝업을 허용하고 다시 시도해주세요.');
-        setIsVerifyingLicense(false);
-        return;
-      }
-
-      console.log('[ResultScreen] ✅ Payment popup opened');
-
-      // Monitor popup window and start polling when it closes
-      const checkWindowClosed = setInterval(() => {
-        if (paymentWindow.closed) {
-          console.log('[ResultScreen] Payment popup closed');
-          clearInterval(checkWindowClosed);
-
-          // Start polling for payment status
-          console.log('[ResultScreen] Starting payment verification...');
-
-          let attempts = 0;
-          const maxAttempts = 5; // 5 attempts × 2 seconds = 10 seconds
-
-          const pollInterval = setInterval(async () => {
-            try {
-              const response = await fetch(`/api/payment/session?sessionId=${sessionId}`);
-
-              if (!response.ok) {
-                console.error('[ResultScreen] Failed to check session status');
-                return;
-              }
-
-              const data = await response.json();
-              console.log('[ResultScreen] Session status:', data);
-
-              if (data.status === 'completed' && data.licenseKey) {
-                console.log('[ResultScreen] ✅ Payment completed!', data.licenseKey);
-                clearInterval(pollInterval);
-                setIsVerifyingLicense(false);
-
-                // Generate premium content
-                if (userData.birthDate && userData.firstName && userData.gender) {
-                  const { oppositeGenderNames } = generateAdditionalPremiumNames({
-                    userData: userData as UserData,
-                    locale
-                  });
-
-                  unlockPremium(premiumNames || [], [], oppositeGenderNames);
-                  console.log('[ResultScreen] Premium unlocked with additional names');
-                } else {
-                  unlockPremium(premiumNames || []);
-                  console.log('[ResultScreen] Premium unlocked');
-                }
-
-                // Show success message
-                alert('🎉 결제 완료! 프리미엄 콘텐츠가 잠금 해제되었습니다.');
-                return;
-              }
-
-              attempts++;
-
-              // Timeout after max attempts (10 seconds)
-              if (attempts >= maxAttempts) {
-                console.warn('[ResultScreen] ⚠️ Payment verification timeout after 10 seconds');
-                clearInterval(pollInterval);
-                setIsVerifyingLicense(false);
-                alert('❌ 결제 확인에 실패했습니다.\n결제가 정상적으로 처리되지 않았을 수 있습니다.\n\n문제가 지속되면 고객 지원에 문의해주세요.');
-                // Stay on results page - no redirect needed
-              }
-            } catch (error) {
-              console.error('[ResultScreen] Error checking payment status:', error);
-            }
-          }, 2000);
-        }
-      }, 500); // Check every 500ms if popup is closed
+      // Open payment modal
+      setPaymentSessionId(sessionId);
+      setIsPaymentModalOpen(true);
 
     } catch (error) {
       console.error('[ResultScreen] Error creating payment session:', error);
       alert('결제 세션 생성에 실패했습니다. 다시 시도해주세요.');
-      setIsVerifyingLicense(false);
     }
   };
 
-  const handlePaymentSuccess = async (paymentSessionId: string) => {
-    console.log('[ResultScreen] Payment successful, session ID:', paymentSessionId);
+  const handlePaymentComplete = () => {
+    console.log('[ResultScreen] Payment completed!');
 
-    try {
-      // 결제 검증
-      const verifyResponse = await fetch('/api/payment/verify', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ paymentSessionId }),
+    // Generate premium content
+    if (userData.birthDate && userData.firstName && userData.gender) {
+      const { oppositeGenderNames } = generateAdditionalPremiumNames({
+        userData: userData as UserData,
+        locale
       });
 
-      if (!verifyResponse.ok) {
-        throw new Error('Payment verification failed');
-      }
-
-      const verifyResult = await verifyResponse.json();
-      console.log('[ResultScreen] Payment verified:', verifyResult);
-
-      // 프리미엄 콘텐츠 생성
-      if (userData.birthDate && userData.firstName && userData.gender) {
-        const { oppositeGenderNames } = generateAdditionalPremiumNames({
-          userData: userData as UserData,
-          locale
-        });
-        console.log('[ResultScreen] Generated premium content:', { oppositeGenderNames });
-
-        // 프리미엄 활성화
-        unlockPremium(premiumNames, [], oppositeGenderNames);
-      } else {
-        unlockPremium(premiumNames);
-      }
-
-      // 결제 모달 닫기
-      setIsPaymentModalOpen(false);
-
-    } catch (error) {
-      console.error('[ResultScreen] Payment verification failed:', error);
-      alert('결제 검증에 실패했습니다. 고객 서비스에 문의해주세요.');
+      unlockPremium(premiumNames || [], [], oppositeGenderNames);
+      console.log('[ResultScreen] Premium unlocked with additional names');
+    } else {
+      unlockPremium(premiumNames || []);
+      console.log('[ResultScreen] Premium unlocked');
     }
+
+    // Close payment modal
+    setIsPaymentModalOpen(false);
+
+    // Show success message
+    setTimeout(() => {
+      alert('🎉 결제 완료! 프리미엄 콘텐츠가 잠금 해제되었습니다.');
+    }, 300);
   };
 
   const handlePaymentClose = () => {
     console.log('[ResultScreen] Payment modal closed');
     setIsPaymentModalOpen(false);
+    setPaymentSessionId(null);
   };
 
   const handleSelectName = (index: number) => {
@@ -1144,6 +1026,17 @@ Discover your Korean name at ${serviceUrl}`;
           />
         )}
       </div>
+
+      {/* Gumroad Payment Modal */}
+      {isPaymentModalOpen && paymentSessionId && (
+        <GumroadPaymentModal
+          isOpen={isPaymentModalOpen}
+          onClose={handlePaymentClose}
+          sessionId={paymentSessionId}
+          productUrl={process.env.NEXT_PUBLIC_GUMROAD_PRODUCT_URL || ''}
+          onPaymentComplete={handlePaymentComplete}
+        />
+      )}
     </div>
   );
 };

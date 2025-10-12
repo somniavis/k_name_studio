@@ -14,7 +14,11 @@ export const NameInputScreen: React.FC = () => {
 
   const [formData, setFormData] = useState({
     englishName: userData.firstName || '',
-    birthDate: userData.birthDate ? userData.birthDate.toISOString().split('T')[0] : '',
+    birthDate: userData.birthDate
+      ? (userData.birthDate instanceof Date
+          ? userData.birthDate.toISOString().split('T')[0]
+          : new Date(userData.birthDate).toISOString().split('T')[0])
+      : '',
     birthTime: userData.birthTime || '12:00',
     gender: userData.gender || 'any'
   });

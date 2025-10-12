@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
+import { devtools, persist } from 'zustand/middleware';
 
 export interface NameResult {
   korean: string;
@@ -118,67 +118,95 @@ const initialState: AppState = {
 
 export const useAppStore = create<AppState & AppActions>()(
   devtools(
-    (set) => ({
-      ...initialState,
+    persist(
+      (set) => ({
+        ...initialState,
 
-      // Navigation
-      setCurrentScreen: (screen) => set({ currentScreen: screen }),
-      setInputStep: (step) => set({ inputStep: step }),
-      nextInputStep: () => set((state) => ({
-        inputStep: Math.min(3, state.inputStep + 1) as 1 | 2 | 3
-      })),
-      prevInputStep: () => set((state) => ({
-        inputStep: Math.max(1, state.inputStep - 1) as 1 | 2 | 3
-      })),
+        // Navigation
+        setCurrentScreen: (screen) => set({ currentScreen: screen }),
+        setInputStep: (step) => set({ inputStep: step }),
+        nextInputStep: () => set((state) => ({
+          inputStep: Math.min(3, state.inputStep + 1) as 1 | 2 | 3
+        })),
+        prevInputStep: () => set((state) => ({
+          inputStep: Math.max(1, state.inputStep - 1) as 1 | 2 | 3
+        })),
 
-      // User data
-      updateUserData: (data) => set((state) => ({
-        userData: { ...state.userData, ...data }
-      })),
-      resetUserData: () => set({ userData: {} }),
+        // User data
+        updateUserData: (data) => set((state) => ({
+          userData: { ...state.userData, ...data }
+        })),
+        resetUserData: () => set({ userData: {} }),
 
-      // Name generation
-      setFreeNames: (names) => set({ freeNames: names }),
-      setPremiumNames: (names) => set({ premiumNames: names }),
-      setAdditionalPremiumNames: (names) => set({ additionalPremiumNames: names }),
-      setOppositeGenderNames: (names) => set({ oppositeGenderNames: names }),
-      setIsGenerating: (isGenerating) => set({ isGenerating }),
+        // Name generation
+        setFreeNames: (names) => set({ freeNames: names }),
+        setPremiumNames: (names) => set({ premiumNames: names }),
+        setAdditionalPremiumNames: (names) => set({ additionalPremiumNames: names }),
+        setOppositeGenderNames: (names) => set({ oppositeGenderNames: names }),
+        setIsGenerating: (isGenerating) => set({ isGenerating }),
 
-      // Payment
-      setIsPremiumUnlocked: (unlocked) => set({ isPremiumUnlocked: unlocked }),
-      setPaymentStatus: (status) => set({ paymentStatus: status }),
+        // Payment
+        setIsPremiumUnlocked: (unlocked) => set({ isPremiumUnlocked: unlocked }),
+        setPaymentStatus: (status) => set({ paymentStatus: status }),
 
-      // UI State
-      setIsPaymentModalOpen: (open) => set({ isPaymentModalOpen: open }),
+        // UI State
+        setIsPaymentModalOpen: (open) => set({ isPaymentModalOpen: open }),
 
-      // Locale
-      setLocale: (locale) => set({ locale }),
+        // Locale
+        setLocale: (locale) => set({ locale }),
 
-      // Combined actions
-      startNameGeneration: () => set({
-        isGenerating: true,
-        currentScreen: 'results',
-        freeNames: [],
-        premiumNames: [],
-        additionalPremiumNames: [],
-        oppositeGenderNames: [],
+        // Combined actions
+        startNameGeneration: () => set({
+          isGenerating: true,
+          currentScreen: 'results',
+          freeNames: [],
+          premiumNames: [],
+          additionalPremiumNames: [],
+          oppositeGenderNames: [],
+        }),
+
+        completeNameGeneration: (freeNames, premiumNames = []) => set({
+          isGenerating: false,
+          freeNames,
+          premiumNames,
+        }),
+
+        unlockPremium: (premiumNames, additionalPremiumNames = [], oppositeGenderNames = []) => set({
+          isPremiumUnlocked: true,
+          premiumNames,
+          additionalPremiumNames,
+          oppositeGenderNames,
+          paymentStatus: 'success',
+          isPaymentModalOpen: false,
+        }),
       }),
-
-      completeNameGeneration: (freeNames, premiumNames = []) => set({
-        isGenerating: false,
-        freeNames,
-        premiumNames,
-      }),
-
-      unlockPremium: (premiumNames, additionalPremiumNames = [], oppositeGenderNames = []) => set({
-        isPremiumUnlocked: true,
-        premiumNames,
-        additionalPremiumNames,
-        oppositeGenderNames,
-        paymentStatus: 'success',
-        isPaymentModalOpen: false,
-      }),
-    }),
+      {
+        name: 'korean-name-studio-storage',
+        // Custom serializer to handle Date objects
+        storage: {
+          getItem: (name) => {
+            const str = localStorage.getItem(name);
+            if (!str) return null;
+            const data = JSON.parse(str);
+            // Convert birthDate string back to Date object
+            if (data.state?.userData?.birthDate) {
+              data.state.userData.birthDate = new Date(data.state.userData.birthDate);
+            }
+            // Always start on welcome screen (URL will override if needed)
+            if (data.state) {
+              data.state.currentScreen = 'welcome';
+            }
+            return data;
+          },
+          setItem: (name, value) => {
+            localStorage.setItem(name, JSON.stringify(value));
+          },
+          removeItem: (name) => {
+            localStorage.removeItem(name);
+          },
+        },
+      }
+    ),
     {
       name: 'korean-name-studio',
     }

@@ -1,57 +1,29 @@
 {
-  "modal": {
-    "title": "Desbloquear Nombres Premium ✨",
-    "subtitle": "Obtén análisis avanzado de nombres coreanos y características exclusivas"
+  "title": "Pago",
+  "close": "Cerrar",
+  "subtitle": "Pago Premium",
+  "description": {
+    "line1": "Será redirigido a la página de pago segura de Gumroad.",
+    "line2": "Las funciones Premium se activarán automáticamente después de completar el pago."
   },
-  "package": {
-    "title": "Paquete Premium"
-  },
+  "payOnGumroad": "Pagar en Gumroad",
+  "checking": "Comprobando...",
+  "checkPayment": "✓ Verificar pago",
   "features": {
-    "premiumNames": "3 Nombres Coreanos Premium",
-    "kpopMatching": "Coincidencia con Estrellas K-pop",
-    "soulmate": "2 Nombres de Alma Gemela Perfectos",
-    "shareLink": "Enlace Compartible de 15 días"
+    "cards": "Tarjeta de crédito, PayPal compatibles",
+    "secure": "Pago seguro (SSL)",
+    "autoCheck": "Comprobación automática (6 veces durante 1 min)"
   },
-  "benefits": {
-    "title": "Lo que obtendrás:",
-    "list": {
-      "premium": "5+ Nombres Coreanos Premium",
-      "hanja": "Análisis Detallado de Caracteres Hanja",
-      "saju": "Lectura Completa de Fortuna Saju",
-      "pronunciation": "Guía de Pronunciación en Audio",
-      "cultural": "Trasfondo Cultural e Historia",
-      "kpop": "Coincidencias de Nombres de Estrellas K-pop",
-      "sharing": "Hermosas Tarjetas para Compartir"
+  "note": "Se comprobará automáticamente después del pago. O haga clic en el botón \"Verificar pago\".",
+  "autoChecking": "Comprobando automáticamente... ({{count}}/6)",
+  "alert": {
+    "checkStatus": {
+      "fail": "No se pudo comprobar el estado del pago. Por favor, inténtelo de nuevo en un momento.",
+      "notCompleted": "El pago aún no ha sido confirmado.\nPor favor, complete el pago y vuelva a comprobarlo.",
+      "error": "Se ha producido un error al comprobar el pago."
     }
   },
-  "pricing": {
-    "price": "$2.99",
-    "description": "Pago único • Sin suscripción",
-    "secure": "Pago Seguro con PayPal",
-    "testMode": "MODO PRUEBA: Pago PayPal Sandbox",
-    "testNote": "Usa cualquier tarjeta de crédito de prueba - Sin cargos reales",
-    "guarantee": "Garantía de devolución de dinero de 30 días"
-  },
-  "status": {
-    "processing": "Procesando tu pago...",
-    "success": "¡Pago exitoso! Generando tus nombres premium...",
-    "error": "El pago falló. Inténtalo de nuevo.",
-    "cancelled": "El pago fue cancelado."
-  },
-  "errors": {
-    "paypalLoad": "PayPal falló al cargar. Actualiza la página.",
-    "networkError": "Error de red. Verifica tu conexión.",
-    "serverError": "Error del servidor. Inténtalo más tarde.",
-    "invalidAmount": "Monto de pago inválido.",
-    "verificationFailed": "La verificación del pago falló. Contacta soporte."
-  },
-  "buttons": {
-    "payNow": "Pagar Ahora",
-    "tryAgain": "Intentar de Nuevo",
-    "cancel": "Cancelar",
-    "close": "Cerrar"
-  },
-  "processing": "Procesando pago...",
-  "configError": "El sistema de pago no está configurado",
-  "security": "Pago seguro proporcionado por PayPal. Tu información de pago nunca se almacena en nuestros servidores."
+  "confirm": {
+    "close": "¿Está seguro de que quiere cerrar la ventana de pago?\n\nSi el pago se ha completado, haga clic en el botón \"Verificar pago\" o espere un momento para la activación automática."
+  }
 }

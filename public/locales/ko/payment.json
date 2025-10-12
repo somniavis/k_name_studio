@@ -1,57 +1,29 @@
 {
-  "modal": {
-    "title": "프리미엄 이름 잠금해제 ✨",
-    "subtitle": "고급 한국 이름 분석과 독점 기능을 이용하세요"
+  "title": "결제하기",
+  "close": "닫기",
+  "subtitle": "프리미엄 결제",
+  "description": {
+    "line1": "안전한 Gumroad 결제 페이지로 이동합니다.",
+    "line2": "결제가 완료되면 자동으로 프리미엄이 활성화됩니다."
   },
-  "package": {
-    "title": "프리미엄 패키지"
-  },
+  "payOnGumroad": "Gumroad에서 결제하기",
+  "checking": "확인 중...",
+  "checkPayment": "✓ 결제 완료 확인",
   "features": {
-    "premiumNames": "3개의 프리미엄 한국 이름",
-    "kpopMatching": "K-pop 스타 이름 매칭",
-    "soulmate": "2개의 완벽한 소울메이트 이름",
-    "shareLink": "15일 공유 가능한 링크"
+    "cards": "신용카드, PayPal 지원",
+    "secure": "안전한 결제 (SSL 암호화)",
+    "autoCheck": "자동 확인 (1분간 6회)"
   },
-  "benefits": {
-    "title": "무엇을 받게 될까요:",
-    "list": {
-      "premium": "3개의 프리미엄 한국 이름",
-      "hanja": "상세한 한자 문자 분석",
-      "saju": "완전한 사주 운세 해석",
-      "pronunciation": "음성 발음 가이드",
-      "cultural": "문화적 배경 및 역사",
-      "kpop": "K-pop 스타 이름 매칭",
-      "sharing": "아름다운 공유 카드"
+  "note": "결제 완료 후 자동으로 확인됩니다. 또는 \"결제 완료 확인\" 버튼을 클릭하세요.",
+  "autoChecking": "자동 확인 중... ({{count}}/6)",
+  "alert": {
+    "checkStatus": {
+      "fail": "결제 상태를 확인할 수 없습니다. 잠시 후 다시 시도해주세요.",
+      "notCompleted": "아직 결제가 확인되지 않았습니다.\n결제를 완료하신 후 다시 확인해주세요.",
+      "error": "결제 확인 중 오류가 발생했습니다."
     }
   },
-  "pricing": {
-    "price": "$2.99",
-    "description": "일회성 결제 • 구독 없음",
-    "secure": "안전한 PayPal 결제",
-    "testMode": "테스트 모드: PayPal 샌드박스 결제",
-    "testNote": "테스트 신용카드 사용 가능 - 실제 결제 없음",
-    "guarantee": "30일 환불 보장"
-  },
-  "status": {
-    "processing": "결제를 처리하고 있습니다...",
-    "success": "결제가 완료되었습니다! 프리미엄 이름을 생성하고 있습니다...",
-    "error": "결제에 실패했습니다. 다시 시도해 주세요.",
-    "cancelled": "결제가 취소되었습니다."
-  },
-  "errors": {
-    "paypalLoad": "PayPal 로드에 실패했습니다. 페이지를 새로고침해 주세요.",
-    "networkError": "네트워크 오류입니다. 연결 상태를 확인해 주세요.",
-    "serverError": "서버 오류입니다. 나중에 다시 시도해 주세요.",
-    "invalidAmount": "잘못된 결제 금액입니다.",
-    "verificationFailed": "결제 확인에 실패했습니다. 고객 지원에 문의하세요."
-  },
-  "buttons": {
-    "payNow": "지금 결제",
-    "tryAgain": "다시 시도",
-    "cancel": "취소",
-    "close": "닫기"
-  },
-  "processing": "결제 처리 중...",
-  "configError": "결제 시스템이 설정되지 않았습니다",
-  "security": "PayPal로 안전하게 보호되는 결제입니다. 결제 정보는 저희 서버에 저장되지 않습니다."
+  "confirm": {
+    "close": "결제 창을 닫으시겠습니까?\n\n결제가 완료되었다면 \"결제 확인\" 버튼을 클릭하거나\n잠시 기다리시면 자동으로 활성화됩니다."
+  }
 }

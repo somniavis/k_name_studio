@@ -1,57 +1,32 @@
 {
-  "modal": {
-    "title": "プレミアム名前のロック解除 ✨",
-    "subtitle": "高度な韓国名の分析と独占機能を取得"
+  "title": "支払い",
+  "close": "閉じる",
+  "subtitle": "プレミアム決済",
+  "description": {
+    "line1": "安全なGumroadの決済ページにリダイレクトされます。",
+    "line2": "支払いが完了すると、プレミアム機能が自動的に有効になります。"
   },
-  "package": {
-    "title": "プレミアムパッケージ"
-  },
+  "payOnGumroad": "Gumroadで支払う",
+  "checking": "確認中...",
+  "checkPayment": "✓ 支払いを確認",
   "features": {
-    "premiumNames": "3つのプレミアム韓国名",
-    "kpopMatching": "K-popスターの名前マッチング",
-    "soulmate": "2つの完璧なソウルメイト名",
-    "shareLink": "15日間共有可能リンク"
+    "cards": "クレジットカード、PayPal対応",
+    "secure": "安全な決済（SSL）",
+    "autoCheck": "自動確認（1分間に6回）"
   },
-  "benefits": {
-    "title": "あなたが得るもの：",
-    "list": {
-      "premium": "5つ以上のプレミアム韓国名",
-      "hanja": "詳細な漢字文字分析",
-      "saju": "完全な四柱推命占い",
-      "pronunciation": "音声発音ガイド",
-      "cultural": "文化的背景と歴史",
-      "kpop": "K-popスター名のマッチング",
-      "sharing": "美しい共有カード"
+  "note": "支払い完了後、自動的に確認されます。または、「支払いを確認」ボタンをクリックしてください。",
+  "autoChecking": "自動確認中... ({{count}}/6)",
+  "alert": {
+    "checkStatus": {
+      "fail": "支払い状況を確認できませんでした。しばらくしてからもう一度お試しください。",
+      "notCompleted": "支払いがまだ確認されていません。
+支払いを完了してから、もう一度確認してください。",
+      "error": "支払いの確認中にエラーが発生しました。"
     }
   },
-  "pricing": {
-    "price": "$2.99",
-    "description": "一回限りの支払い • サブスクリプションなし",
-    "secure": "安全なPayPal決済",
-    "testMode": "テストモード：PayPalサンドボックス決済",
-    "testNote": "任意のテストクレジットカードを使用 - 実際の請求なし",
-    "guarantee": "30日間の返金保証"
-  },
-  "status": {
-    "processing": "お支払いを処理中...",
-    "success": "支払い成功！プレミアム名を生成中...",
-    "error": "支払いに失敗しました。再試行してください。",
-    "cancelled": "支払いがキャンセルされました。"
-  },
-  "errors": {
-    "paypalLoad": "PayPalの読み込みに失敗しました。ページを更新してください。",
-    "networkError": "ネットワークエラー。接続を確認してください。",
-    "serverError": "サーバーエラー。後で再試行してください。",
-    "invalidAmount": "無効な支払い金額。",
-    "verificationFailed": "支払い確認に失敗しました。サポートにお問い合わせください。"
-  },
-  "buttons": {
-    "payNow": "今すぐ支払う",
-    "tryAgain": "再試行",
-    "cancel": "キャンセル",
-    "close": "閉じる"
-  },
-  "processing": "支払い処理中...",
-  "configError": "支払いシステムが設定されていません",
-  "security": "PayPalによる安全な支払い。お客様の支払い情報は当社のサーバーに保存されることはありません。"
+  "confirm": {
+    "close": "決済ウィンドウを閉じますか？
+
+支払いが完了した場合は、「支払いを確認」ボタンをクリックするか、しばらく待つと自動的に有効になります。"
+  }
 }
