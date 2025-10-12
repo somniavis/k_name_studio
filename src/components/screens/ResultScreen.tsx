@@ -279,7 +279,7 @@ export const ResultScreen: React.FC = () => {
       setIsVerifyingLicense(true);
 
       // Build Gumroad URL with session_id pre-filled
-      const gumroadUrl = `${productUrl}?wanted=true&session_id=${sessionId}`;
+      const gumroadUrl = `${productUrl}?session_id=${sessionId}`;
 
       console.log('[ResultScreen] Opening Gumroad payment popup with session:', gumroadUrl);
 
