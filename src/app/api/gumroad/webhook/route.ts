@@ -44,6 +44,9 @@ export async function POST(request: NextRequest) {
     const price = formData.get('price') as string;
     const currency = formData.get('currency') as string;
 
+    // Extract custom field - session_id
+    const sessionId = formData.get('session_id') as string;
+
     console.log('[Gumroad Webhook] Purchase received:', {
       saleId,
       email,
@@ -52,6 +55,7 @@ export async function POST(request: NextRequest) {
       purchaserName,
       price,
       currency,
+      sessionId,
     });
 
     // Verify it's for the correct product using server-only env
@@ -64,8 +68,35 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Store purchase data (you can add database logic here)
-    // For now, we'll just log it and return success
+    // Update payment session if session_id is provided
+    if (sessionId) {
+      try {
+        const updateResponse = await fetch(
+          `${request.nextUrl.origin}/api/payment/session`,
+          {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              sessionId,
+              status: 'completed',
+              licenseKey,
+            }),
+          }
+        );
+
+        if (updateResponse.ok) {
+          console.log('[Gumroad Webhook] ✅ Payment session updated:', sessionId);
+        } else {
+          console.warn('[Gumroad Webhook] ⚠️ Failed to update payment session:', sessionId);
+        }
+      } catch (error) {
+        console.error('[Gumroad Webhook] Error updating payment session:', error);
+      }
+    } else {
+      console.warn('[Gumroad Webhook] ⚠️ No session_id provided in webhook data');
+    }
 
     // Return success to Gumroad
     return NextResponse.json(

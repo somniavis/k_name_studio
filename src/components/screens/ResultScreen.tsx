@@ -250,7 +250,7 @@ export const ResultScreen: React.FC = () => {
     }
   }, [isGenerating]);
 
-  const handleUnlockPremium = () => {
+  const handleUnlockPremium = async () => {
     console.log('[ResultScreen] Opening Gumroad payment...');
 
     // Get product URL from environment variable
@@ -262,17 +262,41 @@ export const ResultScreen: React.FC = () => {
       return;
     }
 
-    // Create redirect URL with license_key parameter
-    const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://k-name-studio.vercel.app';
-    const redirectUrl = encodeURIComponent(`${baseUrl}/?license_key={license_key}`);
+    try {
+      // Create payment session
+      const sessionResponse = await fetch('/api/payment/session', {
+        method: 'POST',
+      });
 
-    // Add redirect parameter to Gumroad URL
-    const gumroadUrl = `${productUrl}?wanted=true&redirect=${redirectUrl}`;
+      if (!sessionResponse.ok) {
+        throw new Error('Failed to create payment session');
+      }
 
-    console.log('[ResultScreen] Opening Gumroad with redirect:', gumroadUrl);
+      const { sessionId } = await sessionResponse.json();
+      console.log('[ResultScreen] Payment session created:', sessionId);
 
-    // Open Gumroad payment page (will redirect back after purchase)
-    window.location.href = gumroadUrl;
+      // Build Gumroad URL with session_id pre-filled
+      const gumroadUrl = `${productUrl}?wanted=true&session_id=${sessionId}`;
+
+      console.log('[ResultScreen] Opening Gumroad with session:', gumroadUrl);
+
+      // Open Gumroad in new window/tab (keeps user on our site)
+      const paymentWindow = window.open(gumroadUrl, '_blank', 'width=800,height=900');
+
+      if (!paymentWindow) {
+        // Fallback if popup blocked
+        alert('팝업이 차단되었습니다. 팝업을 허용하고 다시 시도해주세요.');
+        window.location.href = gumroadUrl;
+        return;
+      }
+
+      // Redirect to processing page
+      window.location.href = `/payment/processing?sessionId=${sessionId}`;
+
+    } catch (error) {
+      console.error('[ResultScreen] Error creating payment session:', error);
+      alert('결제 세션 생성에 실패했습니다. 다시 시도해주세요.');
+    }
   };
 
   const handlePaymentSuccess = async (paymentSessionId: string) => {
