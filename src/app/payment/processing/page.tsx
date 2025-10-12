@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useAppStore } from '@/store/useAppStore';
 import { generateAdditionalPremiumNames } from '@/utils/nameGenerator';
 import type { UserData } from '@/store/useAppStore';
 import './processing.css';
 
-export default function PaymentProcessingPage() {
+function PaymentProcessingContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const sessionId = searchParams?.get('sessionId');
@@ -146,5 +146,22 @@ export default function PaymentProcessingPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function PaymentProcessingPage() {
+  return (
+    <Suspense fallback={
+      <div className="processing-container">
+        <div className="processing-content">
+          <div className="loading-spinner">
+            <div className="spinner"></div>
+          </div>
+          <h1>로딩 중...</h1>
+        </div>
+      </div>
+    }>
+      <PaymentProcessingContent />
+    </Suspense>
   );
 }
