@@ -192,9 +192,15 @@ export const useAppStore = create<AppState & AppActions>()(
             if (data.state?.userData?.birthDate) {
               data.state.userData.birthDate = new Date(data.state.userData.birthDate);
             }
-            // Always start on welcome screen (URL will override if needed)
+            // Only reset to welcome if no names exist
+            // If we have names, preserve the current screen (results can be revisited)
             if (data.state) {
-              data.state.currentScreen = 'welcome';
+              const hasNames = data.state.freeNames && data.state.freeNames.length > 0;
+              if (!hasNames && data.state.currentScreen === 'results') {
+                // No names but on results screen? Reset to welcome
+                data.state.currentScreen = 'welcome';
+              }
+              // Otherwise preserve the screen state
             }
             return data;
           },
