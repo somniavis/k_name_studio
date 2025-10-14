@@ -31,3 +31,8 @@ export async function GET(
     }
 
     return NextResponse.json(data, { status: 200 });
+  } catch (error) {
+    console.error('[Share API GET] Failed to retrieve share data:', error);
+    return NextResponse.json({ error: 'Failed to retrieve data' }, { status: 500 });
+  }
+}

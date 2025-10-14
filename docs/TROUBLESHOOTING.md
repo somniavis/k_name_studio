@@ -268,13 +268,24 @@ if (Date.now() - session.createdAt > 3600000) {
 }
 ```
 
-**B. Server Restarted**
-```typescript
-// In-memory Map cleared on restart
+#### B. Ephemeral Serverless State (FIXED)
 
-// Fix: Migrate to persistent storage (Redis)
-// Or: Use Vercel KV for sessions
-```
+**Symptom:** Polling fails in production but works locally.
+**Cause:** This was previously caused by using an in-memory `Map` for session storage, which is not persistent across different serverless function invocations on Vercel.
+**Solution:** The application has been migrated to use **Vercel KV (Redis)** for session storage. This provides a persistent, shared data store, resolving this issue.
+
+---
+
+#### C. Vercel KV Not Connected
+
+**Symptom:** Polling fails in production with 404 or 500 errors on the `/api/payment/session` route.
+**Cause:** The Vercel KV database has not been created or connected to the project in the Vercel dashboard. The application code cannot find the `UPSTASH_REDIS_REST_URL` environment variables.
+**Solution:**
+1. Go to your project's dashboard on Vercel.
+2. Navigate to the **Settings -> Storage** tab.
+3. Create a new **KV (Durable Redis)** database via the **Upstash** integration.
+4. Connect the new database to all environments (Production, Preview, Development).
+5. This will automatically set the required environment variables and trigger a new deployment.
 
 **C. sessionId Mismatch**
 ```typescript

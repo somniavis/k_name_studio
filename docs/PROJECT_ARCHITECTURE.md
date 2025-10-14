@@ -8,6 +8,7 @@ Korean Name Studio is a Next.js 15.5.4 application that generates Korean names b
 - **Framework:** Next.js 15.5.4 (App Router)
 - **Language:** TypeScript
 - **State Management:** Zustand with persist middleware
+- **Data Storage:** Vercel KV (Upstash Redis)
 - **Payment:** Gumroad integration with webhooks
 - **Deployment:** Vercel (Free tier optimized)
 - **Styling:** CSS + Tailwind CSS
@@ -192,7 +193,7 @@ This structure replaces the previous query parameter-based system (`/?screen=...
 #### `POST /api/payment/session`
 - Creates new payment session
 - Returns `sessionId` for tracking
-- **Storage:** In-memory Map (1-hour cleanup)
+- **Storage:** Vercel KV (Redis) with 1-hour TTL
 
 #### `GET /api/payment/session?sessionId=xxx`
 - Checks payment status
@@ -397,12 +398,12 @@ git push origin main  # Auto-deploy to production
 - Works offline (after initial load)
 - Scales infinitely
 
-### Why In-Memory Payment Sessions?
+### Why Vercel KV for Payment Sessions?
 
-- MVP simplicity
-- Vercel free tier has no DB
-- Sessions expire in 1 hour (acceptable)
-- Can migrate to Redis/DB later if needed
+- **Serverless-Friendly:** Vercel KV (built on Upstash Redis) provides a persistent data store that is accessible across all serverless function invocations. This solves the critical issue of losing state, which is inherent with in-memory storage in a serverless architecture.
+- **Ease of Use:** Seamless integration with Vercel projects, including automatic environment variable management.
+- **No Cold Starts:** As a Redis-based solution, it offers low-latency reads and writes.
+- **Cost-Effective:** Includes a generous free tier that is sufficient for this application's needs.
 
 ### Why URL-Based Routing?
 
