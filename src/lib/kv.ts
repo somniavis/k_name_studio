@@ -5,24 +5,22 @@
  * Keys expire after 24 hours to allow legitimate re-verification
  */
 
+import { Redis } from '@upstash/redis';
+
 const LICENSE_KEY_PREFIX = 'license:';
 const LICENSE_EXPIRY_SECONDS = 24 * 60 * 60; // 24 hours
 
-// Lazy load KV only when needed and configured
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-let kvInstance: any = null;
-function getKV() {
-  if (kvInstance === null && process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
+// Lazy load Redis only when needed and configured
+let redis: Redis | null = null;
+function getRedisClient() {
+  if (redis === null && process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const { kv } = require('@vercel/kv');
-      kvInstance = kv;
-    } catch {
-      console.warn('[KV] @vercel/kv not available, KV features disabled');
-      kvInstance = undefined;
+      redis = Redis.fromEnv();
+    } catch (error) {
+      console.error('[Redis] Failed to initialize Redis client:', error);
     }
   }
-  return kvInstance;
+  return redis;
 }
 
 export interface LicenseKeyRecord {
@@ -40,15 +38,15 @@ export interface LicenseKeyRecord {
 export async function getLicenseKeyRecord(
   licenseKey: string
 ): Promise<LicenseKeyRecord | null> {
-  const kv = getKV();
-  if (!kv) {
-    // KV not configured, return null (allow the request)
+  const redis = getRedisClient();
+  if (!redis) {
+    // Redis not configured, return null (allow the request)
     return null;
   }
 
   try {
     const key = `${LICENSE_KEY_PREFIX}${licenseKey}`;
-    const record = await kv.get(key) as LicenseKeyRecord | null;
+    const record = await redis.get<LicenseKeyRecord>(key);
     return record;
   } catch (error) {
     console.error('[KV] Error getting license key record:', error);
@@ -65,11 +63,11 @@ export async function getLicenseKeyRecord(
 export async function storeLicenseKeyRecord(
   licenseKey: string
 ): Promise<LicenseKeyRecord> {
-  const kv = getKV();
+  const redis = getRedisClient();
   const now = new Date().toISOString();
 
-  if (!kv) {
-    // KV not configured, return a mock record
+  if (!redis) {
+    // Redis not configured, return a mock record
     return {
       licenseKey,
       firstUsedAt: now,
@@ -98,9 +96,9 @@ export async function storeLicenseKeyRecord(
         };
 
     // Store with expiration
-    await kv.set(key, record, { ex: LICENSE_EXPIRY_SECONDS });
+    await redis.set(key, record, { ex: LICENSE_EXPIRY_SECONDS });
 
-    console.log(`[KV] Stored license key record: ${licenseKey} (usage: ${record.usageCount})`);
+    console.log(`[Redis] Stored license key record: ${licenseKey} (usage: ${record.usageCount})`);
     return record;
   } catch (error) {
     console.error('[KV] Error storing license key record:', error);
@@ -142,17 +140,17 @@ export async function isLicenseKeyReused(licenseKey: string): Promise<boolean> {
  * @param licenseKey - The license key to delete
  */
 export async function deleteLicenseKeyRecord(licenseKey: string): Promise<void> {
-  const kv = getKV();
-  if (!kv) {
-    console.warn('[KV] KV not configured, cannot delete license key record');
+  const redis = getRedisClient();
+  if (!redis) {
+    console.warn('[Redis] Redis not configured, cannot delete license key record');
     return;
   }
 
   try {
     const key = `${LICENSE_KEY_PREFIX}${licenseKey}`;
-    await kv.del(key);
-    console.log(`[KV] Deleted license key record: ${licenseKey}`);
+    await redis.del(key);
+    console.log(`[Redis] Deleted license key record: ${licenseKey}`);
   } catch (error) {
-    console.error('[KV] Error deleting license key record:', error);
+    console.error('[Redis] Error deleting license key record:', error);
   }
 }
