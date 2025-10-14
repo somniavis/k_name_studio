@@ -3,7 +3,7 @@ import { storageClient } from '@/lib/storage';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params } // Let TypeScript infer the type
 ) {
   try {
     const id = params.id;
