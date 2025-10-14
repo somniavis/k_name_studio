@@ -122,3 +122,12 @@ export async function PUT(request: NextRequest) {
       sessionId,
       status,
     });
+
+  } catch (error) {
+    console.error('[Payment Session] Error updating session:', error);
+    return NextResponse.json(
+      { error: 'Failed to update payment session' },
+      { status: 500 }
+    );
+  }
+}
