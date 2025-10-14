@@ -10,9 +10,9 @@ interface StorageClient {
 let storageClient: StorageClient;
 
 // Check if the Upstash Redis environment variables are set.
-// These are automatically set when connecting an Upstash database on Vercel.
+// These should be manually set in Vercel dashboard for production.
 if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
-  console.log('[Storage] Initializing Upstash Redis client for production.');
+  console.log('[Storage] Initializing Upstash Redis client from environment variables.');
   const redis = Redis.fromEnv();
   
   storageClient = {
@@ -20,7 +20,6 @@ if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) 
       return redis.get<T>(key);
     },
     set: async (key: string, value: any, options?: { ex: number }): Promise<any> => {
-      // Ensure value is a string for Redis.
       const stringValue = typeof value === 'string' ? value : JSON.stringify(value);
       return redis.set(key, stringValue, options);
     },
@@ -37,11 +36,10 @@ if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) 
     get: async <T>(key: string): Promise<T | null> => {
       const value = devStorage.get(key);
       if (value) {
-        // In-memory storage doesn't have TTL, but we parse just in case.
         try {
           return JSON.parse(value) as T;
         } catch {
-          return value as T; // Return as is if not JSON
+          return value as T;
         }
       }
       return null;
