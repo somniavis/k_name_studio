@@ -352,14 +352,7 @@ export const GumroadPaymentModal: React.FC<GumroadPaymentModalProps> = ({
           <div className="payment-instruction">
             <div className="payment-icon">💳</div>
             <h3>{t('premiumPayment')}</h3>
-            <p className="description">
-              {t('description').split('\n').map((line, i) => (
-                <React.Fragment key={i}>
-                  {line}
-                  {i === 0 && <br />}
-                </React.Fragment>
-              ))}
-            </p>
+
 
             <button className="payment-button" onClick={() => window.open(gumroadUrl, '_blank')}>
               <span className="button-icon">🔒</span>
