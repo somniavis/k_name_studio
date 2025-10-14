@@ -1,11 +1,11 @@
 import { Redis } from '@upstash/redis';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { devStorage } from '@/lib/storage';
 
 const redis = Redis.fromEnv();
 
 export async function GET(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
