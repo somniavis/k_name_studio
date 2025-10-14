@@ -270,13 +270,7 @@ export const GumroadPaymentModal: React.FC<GumroadPaymentModalProps> = ({
     }
   };
 
-  // Build Gumroad URL with session_id pre-filled
-  const gumroadUrl = `${productUrl}?session_id=${sessionId}`;
 
-  // Manual check function for button click
-  const handleCheckPayment = async () => {
-
-  if (!isOpen) return null;
 
   return (
     <div className="gumroad-modal-overlay" onClick={handleClose}>
