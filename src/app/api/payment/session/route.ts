@@ -1,23 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { nanoid } from 'nanoid';
+import { kv } from '@vercel/kv';
 
-// In-memory storage for payment sessions (in production, use Redis/Database)
-const paymentSessions = new Map<string, {
+// Define the session data structure
+interface PaymentSession {
   sessionId: string;
   status: 'pending' | 'completed' | 'failed';
   licenseKey?: string;
   createdAt: number;
-}>();
-
-// Clean up old sessions (older than 1 hour)
-setInterval(() => {
-  const oneHourAgo = Date.now() - 60 * 60 * 1000;
-  for (const [sessionId, session] of paymentSessions.entries()) {
-    if (session.createdAt < oneHourAgo) {
-      paymentSessions.delete(sessionId);
-    }
-  }
-}, 5 * 60 * 1000); // Clean every 5 minutes
+}
 
 /**
  * POST /api/payment/session
@@ -26,12 +17,13 @@ setInterval(() => {
 export async function POST(request: NextRequest) {
   try {
     const sessionId = nanoid(32);
-
-    paymentSessions.set(sessionId, {
+    const session: PaymentSession = {
       sessionId,
       status: 'pending',
       createdAt: Date.now(),
-    });
+    };
+
+    await kv.set(sessionId, JSON.stringify(session), { ex: 3600 }); // 1-hour expiry
 
     console.log('[Payment Session] Created session:', sessionId);
 
@@ -64,7 +56,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const session = paymentSessions.get(sessionId);
+    const session = await kv.get<PaymentSession>(sessionId);
 
     if (!session) {
       return NextResponse.json(
@@ -105,7 +97,7 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    const session = paymentSessions.get(sessionId);
+    const session = await kv.get<PaymentSession>(sessionId);
 
     if (!session) {
       return NextResponse.json(
@@ -115,11 +107,13 @@ export async function PUT(request: NextRequest) {
     }
 
     // Update session
-    paymentSessions.set(sessionId, {
+    const updatedSession: PaymentSession = {
       ...session,
       status,
       licenseKey,
-    });
+    };
+
+    await kv.set(sessionId, JSON.stringify(updatedSession), { ex: 3600 }); // Persist with expiry
 
     console.log('[Payment Session] Updated session:', sessionId, status);
 
@@ -128,15 +122,3 @@ export async function PUT(request: NextRequest) {
       sessionId,
       status,
     });
-
-  } catch (error) {
-    console.error('[Payment Session] Error updating session:', error);
-    return NextResponse.json(
-      { error: 'Failed to update payment session' },
-      { status: 500 }
-    );
-  }
-}
-
-// Export the sessions map for webhook access
-export { paymentSessions };

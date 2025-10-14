@@ -378,8 +378,7 @@ body {
   max-width: 375px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   z-index: 100;
