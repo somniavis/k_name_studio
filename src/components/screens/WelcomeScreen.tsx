@@ -1,16 +1,19 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { useAppStore } from '@/store/useAppStore';
 import { LanguageSelector } from '@/components/ui';
 import { useTranslation } from '@/hooks/useTranslation';
 
 export const WelcomeScreen: React.FC = () => {
   const { t } = useTranslation('welcome');
-  const setCurrentScreen = useAppStore((state) => state.setCurrentScreen);
+  const router = useRouter();
+  const resetForNewName = useAppStore((state) => state.resetForNewName);
 
   const handleNext = () => {
-    setCurrentScreen('nameInput');
+    resetForNewName();
+    router.push('/generate');
   };
 
   return (

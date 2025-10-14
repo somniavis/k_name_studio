@@ -207,6 +207,24 @@ export const GumroadPaymentModal: React.FC<GumroadPaymentModalProps> = ({
   const [checkCount, setCheckCount] = useState(0);
   const locale = useAppStore((state) => state.locale);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://gumroad.com/js/gumroad.js';
+    script.async = true;
+    script.id = 'gumroad-script';
+
+    document.body.appendChild(script);
+
+    return () => {
+      const existingScript = document.getElementById('gumroad-script');
+      if (existingScript && document.body.contains(existingScript)) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, [isOpen]);
+
   // Translation helper
   const t = (key: string, params?: Record<string, any>) => {
     let text = translations[key]?.[locale] || translations[key]?.['en'] || key;

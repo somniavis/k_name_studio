@@ -1,21 +1,21 @@
 'use client';
 
 import { Suspense } from 'react';
-import { WelcomeScreen } from '@/components/screens';
+import { NameInputScreen } from '@/components/screens';
 import { TranslationProvider } from '@/components/TranslationProvider';
 
-function HomeContent() {
+function GeneratePage() {
   return (
     <TranslationProvider>
-      <WelcomeScreen />
+      <NameInputScreen />
     </TranslationProvider>
   );
 }
 
-export default function Home() {
+export default function Page() {
   return (
     <Suspense fallback={<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>Loading...</div>}>
-      <HomeContent />
+      <GeneratePage />
     </Suspense>
   );
 }

@@ -99,6 +99,7 @@ export interface AppActions {
   startNameGeneration: () => void;
   completeNameGeneration: (freeNames: NameResult[], premiumNames?: NameResult[]) => void;
   unlockPremium: (premiumNames: NameResult[], additionalPremiumNames?: NameResult[], oppositeGenderNames?: NameResult[]) => void;
+  resetForNewName: () => void;
 }
 
 const initialState: AppState = {
@@ -179,6 +180,17 @@ export const useAppStore = create<AppState & AppActions>()(
           paymentStatus: 'success',
           isPaymentModalOpen: false,
         }),
+
+        resetForNewName: () => set({
+          userData: {},
+          freeNames: [],
+          premiumNames: [],
+          additionalPremiumNames: [],
+          oppositeGenderNames: [],
+          isGenerating: false,
+          isPremiumUnlocked: false,
+          paymentStatus: 'idle',
+        }),
       }),
       {
         name: 'korean-name-studio-storage',
@@ -191,16 +203,6 @@ export const useAppStore = create<AppState & AppActions>()(
             // Convert birthDate string back to Date object
             if (data.state?.userData?.birthDate) {
               data.state.userData.birthDate = new Date(data.state.userData.birthDate);
-            }
-            // Only reset to welcome if no names exist
-            // If we have names, preserve the current screen (results can be revisited)
-            if (data.state) {
-              const hasNames = data.state.freeNames && data.state.freeNames.length > 0;
-              if (!hasNames && data.state.currentScreen === 'results') {
-                // No names but on results screen? Reset to welcome
-                data.state.currentScreen = 'welcome';
-              }
-              // Otherwise preserve the screen state
             }
             return data;
           },

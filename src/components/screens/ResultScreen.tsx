@@ -13,6 +13,8 @@ import TestLicenseInput from '@/components/TestLicenseInput';
 import { verifyGumroadLicense } from '@/lib/apiClient';
 import { GumroadPaymentModal } from '@/components/GumroadPaymentModal';
 
+import { useRouter } from 'next/navigation';
+
 // DestinyReading Component - 4가지 주제(직업, 사랑, 건강, 재물)의 운세 표시
 interface DestinyReadingProps {
   dayMasterElement: string;
@@ -109,6 +111,19 @@ export const ResultScreen: React.FC = () => {
   const [shareableLink, setShareableLink] = useState<string | null>(null);
   const [isVerifyingLicense, setIsVerifyingLicense] = useState(false);
   const [paymentSessionId, setPaymentSessionId] = useState<string | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    // Don't redirect while names are being generated, or if the user has paid (premium might be coming)
+    if (isGenerating || isPremiumUnlocked) {
+      return;
+    }
+    // If generation is finished and there are no names, redirect to home.
+    if (freeNames.length === 0) {
+      console.log('[ResultScreen] No names found, redirecting to home.');
+      router.replace('/');
+    }
+  }, [freeNames, isGenerating, isPremiumUnlocked, router]);
 
   const generateNames = useCallback(async () => {
     console.log('Generate names called with userData:', userData);
@@ -220,10 +235,12 @@ export const ResultScreen: React.FC = () => {
   }, [isPremiumUnlocked, isVerifyingLicense, userData, locale, premiumNames, unlockPremium]);
 
   useEffect(() => {
-    if (userData.birthDate && freeNames.length === 0 && !isGenerating) {
+    // If we are in the 'generating' state but have no names yet, 
+    // it means we just came from the input screen and need to start the generation process.
+    if (isGenerating && freeNames.length === 0) {
       generateNames();
     }
-  }, [userData, freeNames.length, isGenerating, generateNames]);
+  }, [isGenerating, freeNames.length, generateNames]);
 
   useEffect(() => {
     if (isGenerating) {

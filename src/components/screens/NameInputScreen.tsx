@@ -4,13 +4,15 @@ import React, { useState } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useAppStore } from '@/store/useAppStore';
 import { DatePicker, TimePicker } from '@/components/ui';
+import { useRouter } from 'next/navigation';
 import './NameInputScreen.css';
 
 export const NameInputScreen: React.FC = () => {
   const { t } = useTranslation('nameInput');
-  const setCurrentScreen = useAppStore((state) => state.setCurrentScreen);
+  const router = useRouter();
   const updateUserData = useAppStore((state) => state.updateUserData);
   const userData = useAppStore((state) => state.userData);
+  const setIsGenerating = useAppStore((state) => state.setIsGenerating);
 
   const [formData, setFormData] = useState({
     englishName: userData.firstName || '',
@@ -41,7 +43,8 @@ export const NameInputScreen: React.FC = () => {
       setCurrentStep(3);
     } else if (currentStep === 3) {
       updateUserData({ gender: formData.gender as 'male' | 'female' | 'neutral' });
-      setCurrentScreen('results');
+      setIsGenerating(true);
+      router.push('/result');
     }
   };
 
@@ -49,7 +52,7 @@ export const NameInputScreen: React.FC = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
     } else {
-      setCurrentScreen('welcome');
+      router.push('/');
     }
   };
 

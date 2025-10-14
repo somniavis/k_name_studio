@@ -25,8 +25,10 @@ korean-name-studio/
 │   │   │   ├── payment/         # Payment session management
 │   │   │   ├── gumroad/         # Gumroad webhook & verification
 │   │   │   └── share/           # Share functionality
+│   │   ├── generate/            # Name Input Page
+│   │   ├── result/              # Result Page
 │   │   ├── layout.tsx           # Root layout with metadata
-│   │   ├── page.tsx             # Home page with URL routing
+│   │   ├── page.tsx             # Welcome/Home page
 │   │   ├── privacy/             # Privacy Policy page
 │   │   └── terms/               # Terms of Service page
 │   │
@@ -86,22 +88,20 @@ korean-name-studio/
 
 ## 🔄 Application Flow
 
-### 1. **Welcome Screen** (`WelcomeScreen.tsx`)
-- Entry point with language selection
-- SEO structured data injection
-- User chooses to start name generation
+### 1. **Welcome Screen** (`/`)
+- Renders `WelcomeScreen.tsx`.
+- Entry point with language selection.
+- When the user decides to start, they are navigated to `/generate`.
 
-### 2. **Name Input Screen** (`NameInputScreen.tsx`)
-- **Step 1:** Basic Info (First Name, Birth Date/Time)
-- **Step 2:** Personal Preferences (Gender, Style)
-- **Step 3:** Desired Meaning
-- ProgressBar shows current step (1/3, 2/3, 3/3)
+### 2. **Name Input Screen** (`/generate`)
+- Renders `NameInputScreen.tsx`.
+- This component manages its own internal steps for collecting user data (Name, Birth Info, Gender).
+- On completion, the user is navigated to `/result`.
 
-### 3. **Results Screen** (`ResultScreen.tsx`)
-- Displays 3 free names (with full details)
-- Shows 2 blurred premium names
-- "Unlock Premium" button opens payment modal
-- After payment: All premium names revealed + additional features
+### 3. **Results Screen** (`/result`)
+- Renders `ResultScreen.tsx`.
+- Displays free and premium names based on the data provided in the previous step.
+- Handles the premium unlock flow via the Gumroad payment modal.
 
 ### 4. **Payment Flow** (`GumroadPaymentModal.tsx`)
 - Full-screen modal with Gumroad iframe
@@ -121,10 +121,6 @@ korean-name-studio/
 
 ```typescript
 interface AppState {
-  // Navigation
-  currentScreen: 'welcome' | 'nameInput' | 'results' | 'payment' | 'shared';
-  inputStep: 1 | 2 | 3;
-
   // User data
   userData: Partial<UserData>;
 
@@ -149,44 +145,30 @@ interface AppState {
 
 ### Key Actions
 
-- `setCurrentScreen(screen)` - Navigate between screens
 - `updateUserData(data)` - Update user input
 - `startNameGeneration()` - Begin name generation
 - `completeNameGeneration(freeNames, premiumNames)` - Finish generation
 - `unlockPremium(names)` - Unlock premium content after payment
 - `setLocale(locale)` - Change language
+- `resetForNewName()` - Clears user data and results for a new session
 
 ### Persistence
 
 - **Storage:** LocalStorage via Zustand persist middleware
 - **Key:** `korean-name-studio-storage`
 - **Date Handling:** Custom serializer converts Date objects to/from strings
-- **Navigation:** Always starts on `welcome` screen on load (URL params override)
 
 ---
 
 ## 🌐 URL Routing
 
-**File:** `src/app/page.tsx`
+The application has been refactored to use a path-based routing system, which is more conventional for Next.js and provides clearer navigation.
 
-The application uses URL search parameters for navigation state:
+- `/` - The welcome screen (`WelcomeScreen`)
+- `/generate` - The multi-step name input screen (`NameInputScreen`)
+- `/result` - The results screen (`ResultScreen`)
 
-```
-/ or /?screen=welcome     → WelcomeScreen
-/?screen=input            → NameInputScreen
-/?screen=result           → ResultScreen
-```
-
-### Implementation
-
-Two-way synchronization:
-1. **URL → State:** On mount, read `?screen` param and update currentScreen
-2. **State → URL:** When currentScreen changes, update URL with `router.replace()`
-
-**Benefits:**
-- Users can refresh on results page without losing data
-- Share-able URLs (e.g., for payment return)
-- Browser back/forward support
+This structure replaces the previous query parameter-based system (`/?screen=...`). It improves SEO, link sharing, and provides a more robust user experience.
 
 ---
 

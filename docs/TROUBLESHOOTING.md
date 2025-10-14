@@ -328,6 +328,34 @@ localStorage.removeItem('korean-name-studio-storage');
 
 ---
 
+### 4. Gumroad Shows "Test Purchase" Message
+
+#### Symptoms
+- When trying to pay, the Gumroad modal shows the message: "This will be a test purchase as you are the creator of at least one of the products."
+- The payment form does not ask for real payment details.
+
+#### Cause
+
+This is a standard feature of Gumroad and not a bug in the application. It occurs when the browser you are using is logged into the same Gumroad account that owns the product being sold.
+
+#### Solutions
+
+To see the real payment flow as a customer would, you must not be logged in as the product creator. 
+
+**A. Use Incognito/Private Mode (Recommended)**
+   - Open a new Incognito (Chrome) or Private (Safari/Firefox) window.
+   - Navigate to the site and try the purchase flow.
+
+**B. Use a Different Browser**
+   - Use a completely different web browser where you are not logged into your Gumroad account.
+
+**C. Log Out of Gumroad**
+   - Go to `gumroad.com` in your current browser.
+   - Log out of your account.
+   - Return to the application and try the purchase again.
+
+---
+
 ## 🌍 Internationalization Issues
 
 ### 1. Translations Not Loading
