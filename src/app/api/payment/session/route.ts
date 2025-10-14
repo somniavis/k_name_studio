@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { nanoid } from 'nanoid';
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+
+// Initialize Redis from environment variables
+const redis = Redis.fromEnv();
 
 // Define the session data structure
 interface PaymentSession {
@@ -23,7 +26,7 @@ export async function POST(request: NextRequest) {
       createdAt: Date.now(),
     };
 
-    await kv.set(sessionId, JSON.stringify(session), { ex: 3600 }); // 1-hour expiry
+    await redis.set(sessionId, JSON.stringify(session), { ex: 3600 }); // 1-hour expiry
 
     console.log('[Payment Session] Created session:', sessionId);
 
@@ -56,7 +59,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const session = await kv.get<PaymentSession>(sessionId);
+    const session = await redis.get<PaymentSession>(sessionId);
 
     if (!session) {
       return NextResponse.json(
@@ -97,7 +100,7 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    const session = await kv.get<PaymentSession>(sessionId);
+    const session = await redis.get<PaymentSession>(sessionId);
 
     if (!session) {
       return NextResponse.json(
@@ -113,7 +116,7 @@ export async function PUT(request: NextRequest) {
       licenseKey,
     };
 
-    await kv.set(sessionId, JSON.stringify(updatedSession), { ex: 3600 }); // Persist with expiry
+    await redis.set(sessionId, JSON.stringify(updatedSession), { ex: 3600 }); // Persist with expiry
 
     console.log('[Payment Session] Updated session:', sessionId, status);
 
