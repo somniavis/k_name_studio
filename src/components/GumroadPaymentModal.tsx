@@ -123,28 +123,16 @@ const translations: Record<string, Record<string, string>> = {
     id: 'Pemeriksaan otomatis (6 kali dalam 1 menit)',
   },
   note: {
-    en: '💡 Payment will be automatically detected. Or click "Confirm Payment" button.',
-    ko: '💡 결제 완료 후 자동으로 확인됩니다. 또는 "결제 완료 확인" 버튼을 클릭하세요.',
-    ja: '💡 決済完了後、自動的に確認されます。または「決済確認」ボタンをクリックしてください。',
-    fr: '💡 Le paiement sera automatiquement détecté. Ou cliquez sur le bouton "Confirmer le paiement".',
-    de: '💡 Die Zahlung wird automatisch erkannt. Oder klicken Sie auf die Schaltfläche "Zahlung bestätigen".',
-    es: '💡 El pago se detectará automáticamente. O haga clic en el botón "Confirmar pago".',
-    pt: '💡 O pagamento será detectado automaticamente. Ou clique no botão "Confirmar pagamento".',
-    it: '💡 Il pagamento verrà rilevato automaticamente. Oppure fai clic sul pulsante "Conferma pagamento".',
-    th: '💡 การชำระเงินจะถูกตรวจพบโดยอัตโนมัติ หรือคลิกปุ่ม "ยืนยันการชำระเงิน"',
-    id: '💡 Pembayaran akan terdeteksi secara otomatis. Atau klik tombol "Konfirmasi Pembayaran".',
-  },
-  autoChecking: {
-    en: 'Auto-checking... ({{count}}/6)',
-    ko: '자동 확인 중... ({{count}}/6)',
-    ja: '自動確認中... ({{count}}/6)',
-    fr: 'Vérification auto... ({{count}}/6)',
-    de: 'Auto-Prüfung... ({{count}}/6)',
-    es: 'Verificación automática... ({{count}}/6)',
-    pt: 'Verificação automática... ({{count}}/6)',
-    it: 'Controllo automatico... ({{count}}/6)',
-    th: 'ตรวจสอบอัตโนมัติ... ({{count}}/6)',
-    id: 'Pemeriksaan otomatis... ({{count}}/6)',
+    en: '💡 Please click "Confirm Payment" button after completing the payment.',
+    ko: '💡 결제 완료 후 "결제 완료 확인" 버튼을 클릭해주세요.',
+    ja: '💡 決済完了後、「決済確認」ボタンをクリックしてください。',
+    fr: '💡 Veuillez cliquer sur le bouton "Confirmer le paiement" après avoir terminé le paiement.',
+    de: '💡 Bitte klicken Sie nach Abschluss der Zahlung auf die Schaltfläche "Zahlung bestätigen".',
+    es: '💡 Haga clic en el botón "Confirmar pago" después de completar el pago.',
+    pt: '💡 Por favor, clique no botão "Confirmar pagamento" após concluir o pagamento.',
+    it: '💡 Fai clic sul pulsante "Conferma pagamento" dopo aver completato il pagamento.',
+    th: '💡 กรุณาคลิกปุ่ม "ยืนยันการชำระเงิน" หลังจากชำระเงินเสร็จสิ้น',
+    id: '💡 Silakan klik tombol "Konfirmasi Pembayaran" setelah menyelesaikan pembayaran.',
   },
   closeConfirm: {
     en: 'Close payment window?\n\nIf payment is complete, click "Confirm Payment" or\nwait a moment for automatic activation.',
@@ -183,17 +171,28 @@ const translations: Record<string, Record<string, string>> = {
     id: 'Pembayaran belum dikonfirmasi.\nSilakan selesaikan pembayaran dan coba lagi.',
   },
   checkError: {
-    en: 'An error occurred while checking payment.',
     ko: '결제 확인 중 오류가 발생했습니다.',
     ja: '決済確認中にエラーが発生しました。',
-    fr: 'Une erreur s\'est produite lors de la vérification du paiement.',
+    fr: "Une erreur s\'est produite lors de la vérification du paiement.",
     de: 'Bei der Überprüfung der Zahlung ist ein Fehler aufgetreten.',
     es: 'Se produjo un error al verificar el pago.',
     pt: 'Ocorreu um erro ao verificar o pagamento.',
-    it: 'Si è verificato un errore durante il controllo del pagamento.',
+    it: "Si è verificato un errore durante il controllo del pagamento.",
     th: 'เกิดข้อผิดพลาดระหว่างการตรวจสอบการชำระเงิน',
     id: 'Terjadi kesalahan saat memeriksa pembayaran.',
   },
+  confirmationPending: {
+    en: 'Payment is still processing. Please wait about 10 seconds and try again. It is usually confirmed automatically within 1 minute.',
+    ko: '결제 정보를 처리하는 중입니다. 약 10초 후에 다시 시도해 주세요. 보통 1분 안에 자동으로 확인됩니다.',
+    ja: '決済情報を処理中です。約10秒後にもう一度お試しください。通常1分以内に自動的に確認されます。',
+    fr: 'Le paiement est en cours de traitement. Veuillez patienter environ 10 secondes et réessayer. La confirmation est généralement automatique en moins d\'une minute.',
+    de: 'Zahlung wird noch bearbeitet. Bitte warten Sie ca. 10 Sekunden und versuchen Sie es erneut. Die Bestätigung erfolgt in der Regel automatisch innerhalb von 1 Minute.',
+    es: 'El pago aún se está procesando. Espere unos 10 segundos y vuelva a intentarlo. Generalmente se confirma automáticamente en 1 minuto.',
+    pt: 'O pagamento ainda está a ser processado. Aguarde cerca de 10 segundos e tente novamente. Geralmente, é confirmado automaticamente dentro de 1 minuto.',
+    it: 'Il pagamento è ancora in fase di elaborazione. Attendi circa 10 secondi e riprova. Di solito viene confermato automaticamente entro 1 minuto.',
+    th: 'กำลังดำเนินการชำระเงิน กรุณารอประมาณ 10 วินาทีแล้วลองอีกครั้ง โดยปกติจะได้รับการยืนยันโดยอัตโนมัติภายใน 1 นาที',
+    id: 'Pembayaran masih diproses. Harap tunggu sekitar 10 detik dan coba lagi. Biasanya dikonfirmasi secara otomatis dalam 1 menit.',
+  }
 };
 
 export const GumroadPaymentModal: React.FC<GumroadPaymentModalProps> = ({
@@ -204,7 +203,6 @@ export const GumroadPaymentModal: React.FC<GumroadPaymentModalProps> = ({
   onPaymentComplete,
 }) => {
   const [isChecking, setIsChecking] = useState(false);
-  const [checkCount, setCheckCount] = useState(0);
   const locale = useAppStore((state) => state.locale);
 
   useEffect(() => {
@@ -258,79 +256,25 @@ export const GumroadPaymentModal: React.FC<GumroadPaymentModalProps> = ({
         console.log('[GumroadModal] ✅ Payment completed!', data.licenseKey);
         onPaymentComplete();
       } else {
-        alert(t('notConfirmed'));
+        alert(t('confirmationPending'));
+        // Temporarily disable button to prevent spamming
+        setTimeout(() => setIsChecking(false), 5000); // Re-enable after 5 seconds
+        return;
       }
     } catch (error) {
       console.error('[GumroadModal] Error checking payment status:', error);
       alert(t('checkError'));
     } finally {
-      setIsChecking(false);
+      // Only re-enable if not already re-enabled by timeout
+      if (isChecking) setIsChecking(false);
     }
   };
 
-  // Minimal auto-polling: only 6 times over 1 minute
-  useEffect(() => {
-    if (!isOpen || !sessionId) return;
+  // Build Gumroad URL with session_id pre-filled
+  const gumroadUrl = `${productUrl}?session_id=${sessionId}`;
 
-    console.log('[GumroadModal] Modal opened');
-    console.log('[GumroadModal] Gumroad URL:', gumroadUrl);
-    console.log('[GumroadModal] Session ID:', sessionId);
-    console.log('[GumroadModal] Minimal auto-check enabled (10s intervals, max 6 times)');
-
-    let isMounted = true;
-    let currentCheck = 0;
-    const maxChecks = 6; // Only 6 checks
-    const checkInterval = 10000; // 10 seconds
-    let pollTimeout: NodeJS.Timeout;
-
-    const autoCheck = async () => {
-      if (!isMounted) return;
-
-      currentCheck++;
-      setCheckCount(currentCheck);
-
-      try {
-        const response = await fetch(`/api/payment/session?sessionId=${sessionId}`);
-
-        if (response.ok) {
-          const data = await response.json();
-          console.log('[GumroadModal] Auto-check:', data.status, `(${currentCheck}/${maxChecks})`);
-
-          if (data.status === 'completed' && data.licenseKey) {
-            console.log('[GumroadModal] ✅ Payment auto-detected!');
-            if (isMounted) {
-              onPaymentComplete();
-            }
-            return;
-          }
-        }
-      } catch (error) {
-        console.error('[GumroadModal] Auto-check error:', error);
-      }
-
-      // Schedule next check if under limit
-      if (currentCheck < maxChecks && isMounted) {
-        pollTimeout = setTimeout(autoCheck, checkInterval);
-      } else if (currentCheck >= maxChecks) {
-        console.log('[GumroadModal] Auto-check completed. Waiting for webhook or manual check.');
-      }
-    };
-
-    // Start first check after 10 seconds
-    pollTimeout = setTimeout(autoCheck, checkInterval);
-
-    return () => {
-      console.log('[GumroadModal] Cleaning up auto-check');
-      isMounted = false;
-      if (pollTimeout) clearTimeout(pollTimeout);
-    };
-  }, [isOpen, sessionId, onPaymentComplete, gumroadUrl]);
-
-  const handleClose = () => {
-    const confirmClose = window.confirm(t('closeConfirm'));
-    if (!confirmClose) return;
-    onClose();
-  };
+  // Manual check function for button click
+  const handleCheckPayment = async () => {
 
   if (!isOpen) return null;
 
@@ -387,15 +331,6 @@ export const GumroadPaymentModal: React.FC<GumroadPaymentModalProps> = ({
             </p>
           </div>
         </div>
-
-        {checkCount > 0 && checkCount < 6 && (
-          <div className="gumroad-modal-status">
-            <div className="status-indicator">
-              <div className="spinner-small"></div>
-              <span>{t('autoChecking', { count: checkCount })}</span>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
