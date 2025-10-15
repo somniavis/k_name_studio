@@ -270,6 +270,14 @@ export const GumroadPaymentModal: React.FC<GumroadPaymentModalProps> = ({
     }
   };
 
+  const handleClose = () => {
+    const confirmClose = window.confirm(t('closeConfirm'));
+    if (!confirmClose) return;
+    onClose();
+  };
+
+  if (!isOpen) return null;
+
 
 
   return (
