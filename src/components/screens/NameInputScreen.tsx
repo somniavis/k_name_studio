@@ -149,12 +149,11 @@ export const NameInputScreen: React.FC = () => {
             </div>
 
             <div className="cultural-note">
-              <div className="note-icon">🔮</div>
-              <p>{t('step2.culturalNote')}</p>
-            </div>
-            <div className="cultural-note">
               <div className="note-icon">💡</div>
-              <p>{t('step2.timeNote')}</p>
+              <p>{t('step1.culturalNote')}</p>
+            </div>
+            <div className="name-note">
+              <p>{t('step1.nameNote')}</p>
             </div>
           </div>
         )}
@@ -185,8 +184,11 @@ export const NameInputScreen: React.FC = () => {
             </div>
 
             <div className="cultural-note">
-              <div className="note-icon">🌸</div>
-              <p>{t('step3.culturalNote')}</p>
+              <div className="note-icon">💡</div>
+              <p>{t('step1.culturalNote')}</p>
+            </div>
+            <div className="name-note">
+              <p>{t('step1.nameNote')}</p>
             </div>
           </div>
         )}
@@ -198,8 +200,8 @@ export const NameInputScreen: React.FC = () => {
           onClick={handleNext}
           disabled={!isCurrentStepValid()}
         >
-          <span>{currentStep === 3 ? t('generateName') : t('continue')}</span>
-          <span>{currentStep === 3 ? '🌟' : '→'}</span>
+          <span>{t('continue')}</span>
+          <span>{'→'}</span>
         </button>
 
         <footer className="app-footer">

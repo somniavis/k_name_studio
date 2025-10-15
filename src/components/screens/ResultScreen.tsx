@@ -257,6 +257,21 @@ export const ResultScreen: React.FC = () => {
   }, [isGenerating]);
 
   const handleUnlockPremium = async () => {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[ResultScreen] Bypassing payment for development...');
+      // Directly unlock premium content
+      if (userData.birthDate && userData.firstName && userData.gender) {
+        const { oppositeGenderNames } = generateAdditionalPremiumNames({
+          userData: userData as UserData,
+          locale
+        });
+        unlockPremium(premiumNames || [], [], oppositeGenderNames);
+      } else {
+        unlockPremium(premiumNames || []);
+      }
+      return;
+    }
+
     console.log('[ResultScreen] Opening Gumroad payment modal...');
 
     // Get product URL from environment variable
