@@ -1,1 +1,8 @@
-{"months":{"january":"Januari","february":"Februari","march":"Maret","april":"April","may":"Mei","june":"Juni","july":"Juli","august":"Agustus","september":"September","october":"Oktober","november":"November","december":"Desember"},"days":{"sunday":"Mi","monday":"Se","tuesday":"Se","wednesday":"Ra","thursday":"Ka","friday":"Ju","saturday":"Sa"},"time":{"selectTime":"Pilih Waktu","hour":"Jam","minute":"Menit","now":"Sekarang"}}
+  },
+  "expired": {
+    "title": "Tautan Berbagi Telah Kedaluwarsa",
+    "message": "Tautan berbagi ini tidak lagi tersedia.",
+    "info": "Tautan berbagi berlaku selama 15 hari sejak pembuatan untuk melindungi privasi Anda. Silakan buat nama Korea baru untuk menghasilkan tautan berbagi yang baru.",
+    "backToHome": "Kembali ke Beranda"
+  }
+}

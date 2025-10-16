@@ -1,6 +1,6 @@
 import { storageClient } from '@/lib/storage';
 import { ShareResult } from './ShareResult';
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import type { NameResult, UserData } from '@/store/useAppStore';
 
 // Define the type for the data we expect from storage
@@ -20,12 +20,13 @@ async function getSharedData(id: string): Promise<SharedData | null> {
   return data;
 }
 
-export default async function SharePage({ params }: { params: { id: string } }) {
-  const data = await getSharedData(params.id);
+export default async function SharePage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const data = await getSharedData(id);
 
   if (!data) {
-    // Use Next.js notFound() to render a standard 404 page
-    notFound();
+    // Redirect to expired page instead of 404
+    redirect('/share/expired');
   }
 
   return <ShareResult data={data} />;

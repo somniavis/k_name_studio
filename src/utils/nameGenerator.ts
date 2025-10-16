@@ -4,6 +4,7 @@ import { KOREAN_NAMES, KoreanName, getNamesByElement, getNamesByGender, searchNa
 import { getStoryById, getStoriesByKoreanName } from '../data/nameStories';
 import { getHarmonyById, getHarmoniesByKoreanName } from '../data/nameHarmonies';
 import { NameResult, UserData } from '@/store/useAppStore';
+import { fortuneMatrix, mapStrengthToMatrix, SajuStrength, Element } from '../data/fortuneData';
 
 interface NameGenerationOptions {
   userData: UserData;
@@ -17,12 +18,28 @@ function convertToNameResult(koreanName: KoreanName, sajuResult: SajuResult, loc
   const soundMatch = userData ? calculateSoundMatch(userData.firstName, koreanName.pronunciation) : undefined;
   const soundMatchGrade = soundMatch ? getSoundMatchGrade(soundMatch) : undefined;
 
+  // Get fortune text from fortuneData based on Saju analysis
+  let fortuneText = 'Positive energy surrounds this name';
+  if (sajuResult.dayMaster?.element && sajuResult.dayMaster?.strength) {
+    const mappedStrength = mapStrengthToMatrix(sajuResult.dayMaster.strength as SajuStrength);
+    const element = sajuResult.dayMaster.element as Element;
+
+    // Get a random topic for fortune (career, love, health, or wealth)
+    const topics: (keyof typeof fortuneMatrix)[] = ['career', 'love', 'health', 'wealth'];
+    const randomTopic = topics[Math.floor(Math.random() * topics.length)];
+
+    const fortuneData = fortuneMatrix[randomTopic]?.[element]?.[mappedStrength];
+    if (fortuneData) {
+      fortuneText = fortuneData[locale as keyof typeof fortuneData] || fortuneData.en || fortuneText;
+    }
+  }
+
   return {
     korean: koreanName.korean,
     hanja: koreanName.hanja,
     meaning: koreanName.meaning[locale] || koreanName.meaning.en,
     pronunciation: koreanName.pronunciation,
-    fortune: 'Positive energy surrounds this name',
+    fortune: fortuneText,
     compatibility: calculateNameCompatibility(koreanName, sajuResult),
     cultural: getStoryById(koreanName.id)?.story[locale] || getStoryById(koreanName.id)?.story.en || '',
     story: getStoryById(koreanName.id)?.story[locale] || getStoryById(koreanName.id)?.story.en || '',

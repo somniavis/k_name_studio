@@ -1,1 +1,8 @@
-{"months":{"january":"Enero","february":"Febrero","march":"Marzo","april":"Abril","may":"Mayo","june":"Junio","july":"Julio","august":"Agosto","september":"Septiembre","october":"Octubre","november":"Noviembre","december":"Diciembre"},"days":{"sunday":"Do","monday":"Lu","tuesday":"Ma","wednesday":"Mi","thursday":"Ju","friday":"Vi","saturday":"Sa"},"time":{"selectTime":"Seleccionar Hora","hour":"Hora","minute":"Min","now":"Ahora"}}
+  },
+  "expired": {
+    "title": "El enlace para compartir ha expirado",
+    "message": "Este enlace para compartir ya no está disponible.",
+    "info": "Los enlaces para compartir son válidos por 15 días desde su creación para proteger tu privacidad. Crea un nuevo nombre coreano para generar un nuevo enlace para compartir.",
+    "backToHome": "Ir a la página de inicio"
+  }
+}

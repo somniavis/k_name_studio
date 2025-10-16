@@ -27,5 +27,11 @@
     "hour": "Hour",
     "minute": "Min",
     "now": "Now"
+  },
+  "expired": {
+    "title": "Share Link Has Expired",
+    "message": "This share link is no longer available.",
+    "info": "Share links are valid for 15 days from creation to protect your privacy. Please create a new Korean name to generate a fresh share link.",
+    "backToHome": "Go to Home"
   }
 }

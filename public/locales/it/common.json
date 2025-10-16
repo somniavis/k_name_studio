@@ -1,1 +1,8 @@
-{"months":{"january":"Gennaio","february":"Febbraio","march":"Marzo","april":"Aprile","may":"Maggio","june":"Giugno","july":"Luglio","august":"Agosto","september":"Settembre","october":"Ottobre","november":"Novembre","december":"Dicembre"},"days":{"sunday":"Do","monday":"Lu","tuesday":"Ma","wednesday":"Me","thursday":"Gi","friday":"Ve","saturday":"Sa"},"time":{"selectTime":"Seleziona Ora","hour":"Ora","minute":"Min","now":"Adesso"}}
+  },
+  "expired": {
+    "title": "Il link di condivisione è scaduto",
+    "message": "Questo link di condivisione non è più disponibile.",
+    "info": "I link di condivisione sono validi per 15 giorni dalla creazione per proteggere la tua privacy. Crea un nuovo nome coreano per generare un nuovo link di condivisione.",
+    "backToHome": "Vai alla Home"
+  }
+}

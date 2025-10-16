@@ -23,7 +23,7 @@ interface DestinyReadingProps {
 }
 
 const DestinyReading: React.FC<DestinyReadingProps> = ({ dayMasterElement, dayMasterStrength, locale }) => {
-  const topics: (keyof typeof fortuneMatrix)[] = ['career', 'love', 'health', 'wealth'];
+  const topics: (keyof typeof fortuneMatrix)[] = ['career', 'health', 'love', 'wealth'];
   const topicIcons: Record<keyof typeof fortuneMatrix, string> = {
     career: '💼',
     love: '💕',

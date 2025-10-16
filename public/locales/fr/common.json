@@ -1,31 +1,8 @@
-{
-  "months": {
-    "january": "Janvier",
-    "february": "Février",
-    "march": "Mars",
-    "april": "Avril",
-    "may": "Mai",
-    "june": "Juin",
-    "july": "Juillet",
-    "august": "Août",
-    "september": "Septembre",
-    "october": "Octobre",
-    "november": "Novembre",
-    "december": "Décembre"
   },
-  "days": {
-    "sunday": "Di",
-    "monday": "Lu",
-    "tuesday": "Ma",
-    "wednesday": "Me",
-    "thursday": "Je",
-    "friday": "Ve",
-    "saturday": "Sa"
-  },
-  "time": {
-    "selectTime": "Sélectionner l'heure",
-    "hour": "Heure",
-    "minute": "Min",
-    "now": "Maintenant"
+  "expired": {
+    "title": "Le lien de partage a expiré",
+    "message": "Ce lien de partage n'est plus disponible.",
+    "info": "Les liens de partage sont valables 15 jours à partir de leur création pour protéger votre vie privée. Veuillez créer un nouveau nom coréen pour générer un nouveau lien de partage.",
+    "backToHome": "Retour à l'accueil"
   }
 }
