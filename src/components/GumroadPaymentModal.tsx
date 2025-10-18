@@ -322,10 +322,6 @@ export const GumroadPaymentModal: React.FC<GumroadPaymentModalProps> = ({
                 <span className="feature-icon">🔒</span>
                 <span>{t('securePayment')}</span>
               </div>
-              <div className="feature-item">
-                <span className="feature-icon">⚡</span>
-                <span>{t('autoCheck')}</span>
-              </div>
             </div>
 
             <p className="payment-note">
