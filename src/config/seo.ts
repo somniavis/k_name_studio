@@ -3,7 +3,7 @@ export const seoConfig = {
 
   languages: {
     en: {
-      title: 'Korean Name Generator | What is My Korean Name? Free Converter',
+      title: 'Korean Name Generator | Find Your Perfect Korean Name Free',
       description: 'Find what your Korean name is! AI-powered Korean name generator converts your name to Korean, Hangul writing included. Get beautiful Korean names with meanings, K-pop idol style names, and traditional Saju astrology. Perfect for finding your Korean character name.',
       keywords: 'korean name generator, what is my korean name, korean name converter, my name in korean, convert name to korean, write name in hangul, english to korean name converter, korean character name generator, random korean name generator, kpop name generator, korean idol name generator, korean name meaning, translate name to korean, hangul name converter, how to write my name in korean, korean baby name generator, korean girl name generator, korean boy name generator, beautiful korean names, pretty korean names, unique korean names, korean stage name generator, what would my kpop name be, korean celebrity names, korean alphabet name, find your korean name, get your korean name, korean surname generator, korean first name generator, popular korean names, traditional korean names, modern korean names, k-drama character name, korean male names, korean female names',
       ogTitle: 'Korean Name Generator | Convert Your Name to Korean & Hangul',
@@ -11,7 +11,7 @@ export const seoConfig = {
       twitterTitle: 'Korean Name Generator | What Would My Name Be in Korean?',
     },
     ko: {
-      title: '한국 이름 생성기 | 내 한국 이름은? 무료 변환기',
+      title: '한국 이름 생성기 | 완벽한 한국 이름 무료 찾기',
       description: '내 한국 이름 찾기! AI 기반 한국 이름 생성기로 내 이름을 한글로 변환. 예쁜 한국 이름, K-pop 아이돌 스타일 이름, 전통 사주 작명까지. 한국 이름 의미와 한글 표기 포함.',
       keywords: '한국 이름 생성기, 내 한국 이름, 이름 한글 변환, 한국 이름 짓기, 예쁜 한국 이름, 케이팝 이름 생성기, 한국 아이돌 이름, 한국 이름 의미, 한글 이름 짓기, 사주 작명, 한국 성씨, 한국 여자 이름, 한국 남자 이름, 전통 한국 이름, 현대 한국 이름, 인기 한국 이름, 독특한 한국 이름, 한국 예명 생성기, 한국 드라마 캐릭터 이름, 한국 이름 추천, 무료 작명, 아기 이름 짓기',
       ogTitle: 'Korean Name Studio | 한국 이름 생성 & 한글 변환기',
@@ -19,7 +19,7 @@ export const seoConfig = {
       twitterTitle: '한국 이름 생성기 | 내 이름을 한글로 변환',
     },
     ja: {
-      title: '韓国名前ジェネレーター | 私の韓国名は？無料変換ツール',
+      title: '韓国名前ジェネレーター | 完璧な韓国名を無料で検索',
       description: '私の韓国名を見つけよう！AI搭載の韓国名前ジェネレーターで名前をハングルに変換。美しい韓国名、K-POPアイドル風の名前、伝統的な四柱推命まで。韓国名の意味とハングル表記付き。',
       keywords: '韓国名前ジェネレーター, 私の韓国名, 韓国名前変換, 名前をハングルで, 韓国名前作成, 美しい韓国名, K-POP名前ジェネレーター, 韓国アイドル名前, 韓国名前の意味, ハングル名前変換, 四柱推命 名前, 韓国名字, 韓国女性名, 韓国男性名, 伝統的な韓国名, 現代韓国名, 人気韓国名, ユニークな韓国名, 韓国芸名ジェネレーター, 韓国ドラマキャラクター名, かわいい韓国名, かっこいい韓国名, 韓国赤ちゃん名前, ランダム韓国名',
       ogTitle: 'Korean Name Studio | 韓国名前生成＆ハングル変換',
@@ -27,7 +27,7 @@ export const seoConfig = {
       twitterTitle: '韓国名前ジェネレーター | 名前を韓国語に変換',
     },
     de: {
-      title: 'Koreanischer Namensgenerator | Wie lautet mein koreanischer Name?',
+      title: 'Koreanischer Namensgenerator | Finden Sie Ihren perfekten koreanischen Namen',
       description: 'Finden Sie Ihren koreanischen Namen! KI-Namensgenerator konvertiert Namen ins Koreanische mit Hangul. Schöne koreanische Namen, K-Pop-Idol-Namen, traditionelle Saju-Astrologie. Mit Bedeutung und Hangul-Schreibweise.',
       keywords: 'koreanischer namensgenerator, mein koreanischer name, name auf koreanisch, koreanischer name konverter, name in hangul schreiben, k-pop namensgenerator, koreanische idol namen, koreanischer name bedeutung, hangul name konverter, koreanische mädchennamen, koreanische jungennamen, schöne koreanische namen, beliebte koreanische namen, traditionelle koreanische namen, koreanischer künstlername, k-drama charakternamen, koreanische vornamen, koreanische nachnamen',
       ogTitle: 'Korean Name Studio | Koreanischer Namen & Hangul Konverter',
@@ -35,7 +35,7 @@ export const seoConfig = {
       twitterTitle: 'Koreanischer Namensgenerator | Namen ins Koreanische konvertieren',
     },
     es: {
-      title: 'Generador de Nombres Coreanos | ¿Cuál es mi Nombre Coreano?',
+      title: 'Generador de Nombres Coreanos | Encuentra tu Nombre Coreano Perfecto',
       description: '¡Encuentra tu nombre coreano! Generador con IA convierte tu nombre al coreano con escritura Hangul. Hermosos nombres coreanos, nombres de idols K-pop, astrología Saju tradicional. Con significado y escritura Hangul.',
       keywords: 'generador de nombres coreanos, cual es mi nombre coreano, mi nombre en coreano, convertir nombre a coreano, escribir nombre en hangul, generador nombre k-pop, nombres idol coreano, significado nombre coreano, convertidor hangul, nombres coreanos bonitos, nombres coreanas para niñas, nombres coreanos para niños, nombres coreanos hermosos, nombres coreanos populares, nombres coreanos tradicionales, nombre artístico coreano, personajes k-drama, apellidos coreanos, nombres coreanos únicos',
       ogTitle: 'Korean Name Studio | Generador Nombres Coreanos & Convertidor Hangul',
@@ -43,7 +43,7 @@ export const seoConfig = {
       twitterTitle: 'Generador de Nombres Coreanos | Convertir Nombre al Coreano',
     },
     fr: {
-      title: 'Générateur de Nom Coréen | Quel est Mon Nom Coréen?',
+      title: 'Générateur de Nom Coréen | Trouvez Votre Nom Coréen Parfait',
       description: 'Trouvez votre nom coréen! Générateur IA convertit votre nom en coréen avec écriture Hangul. Beaux noms coréens, noms idols K-pop, astrologie Saju traditionnelle. Avec signification et écriture Hangul.',
       keywords: 'générateur de nom coréen, quel est mon nom coréen, mon nom en coréen, convertir nom en coréen, écrire nom en hangul, générateur nom k-pop, noms idol coréen, signification nom coréen, convertisseur hangul, beaux noms coréens, prénoms coréens fille, prénoms coréens garçon, jolis noms coréens, noms coréens populaires, noms coréens traditionnels, nom artiste coréen, personnages k-drama, noms de famille coréens, noms coréens uniques',
       ogTitle: 'Korean Name Studio | Générateur Noms Coréens & Convertisseur Hangul',
@@ -51,7 +51,7 @@ export const seoConfig = {
       twitterTitle: 'Générateur de Nom Coréen | Convertir Nom en Coréen',
     },
     it: {
-      title: 'Generatore di Nomi Coreani | Qual è il Mio Nome Coreano?',
+      title: 'Generatore di Nomi Coreani | Trova il Tuo Nome Coreano Perfetto',
       description: 'Trova il tuo nome coreano! Generatore IA converte il nome in coreano con scrittura Hangul. Bellissimi nomi coreani, nomi idol K-pop, astrologia Saju tradizionale. Con significato e scrittura Hangul.',
       keywords: 'generatore di nomi coreani, qual è il mio nome coreano, il mio nome in coreano, convertire nome in coreano, scrivere nome in hangul, generatore nome k-pop, nomi idol coreano, significato nome coreano, convertitore hangul, bellissimi nomi coreani, nomi coreani femminili, nomi coreani maschili, bei nomi coreani, nomi coreani popolari, nomi coreani tradizionali, nome d\'arte coreano, personaggi k-drama, cognomi coreani, nomi coreani unici',
       ogTitle: 'Korean Name Studio | Generatore Nomi Coreani & Convertitore Hangul',
@@ -59,7 +59,7 @@ export const seoConfig = {
       twitterTitle: 'Generatore di Nomi Coreani | Convertire Nome in Coreano',
     },
     pt: {
-      title: 'Gerador de Nomes Coreanos | Qual é Meu Nome Coreano?',
+      title: 'Gerador de Nomes Coreanos | Encontre Seu Nome Coreano Perfeito',
       description: 'Encontre seu nome coreano! Gerador IA converte seu nome para coreano com escrita Hangul. Lindos nomes coreanos, nomes de idols K-pop, astrologia Saju tradicional. Com significado e escrita Hangul.',
       keywords: 'gerador de nomes coreanos, qual é meu nome coreano, meu nome em coreano, converter nome para coreano, escrever nome em hangul, gerador nome k-pop, nomes idol coreano, significado nome coreano, conversor hangul, lindos nomes coreanos, nomes coreanos femininos, nomes coreanos masculinos, bonitos nomes coreanos, nomes coreanos populares, nomes coreanos tradicionais, nome artístico coreano, personagens k-drama, sobrenomes coreanos, nomes coreanos únicos',
       ogTitle: 'Korean Name Studio | Gerador Nomes Coreanos & Conversor Hangul',
@@ -67,7 +67,7 @@ export const seoConfig = {
       twitterTitle: 'Gerador de Nomes Coreanos | Converter Nome para Coreano',
     },
     th: {
-      title: 'เครื่องสร้างชื่อเกาหลี | ชื่อเกาหลีของฉันคืออะไร?',
+      title: 'เครื่องสร้างชื่อเกาหลี | ค้นหาชื่อเกาหลีที่สมบูรณ์แบบของคุณ',
       description: 'ค้นหาชื่อเกาหลีของคุณ! เครื่องสร้าง AI แปลงชื่อเป็นภาษาเกาหลีพร้อมตัวอักษรฮันกึล ชื่อเกาหลีสวยๆ ชื่อไอดอล K-pop โหราศาสตร์ Saju แบบดั้งเดิม พร้อมความหมายและการเขียนฮันกึล',
       keywords: 'เครื่องสร้างชื่อเกาหลี, ชื่อเกาหลีของฉัน, ชื่อภาษาเกาหลี, แปลงชื่อเป็นเกาหลี, เขียนชื่อเป็นฮันกึล, เครื่องสร้างชื่อ k-pop, ชื่อไอดอลเกาหลี, ความหมายชื่อเกาหลี, ตัวแปลงฮันกึล, ชื่อเกาหลีสวย, ชื่อเกาหลีผู้หญิง, ชื่อเกาหลีผู้ชาย, ชื่อเกาหลียอดนิยม, ชื่อเกาหลีดั้งเดิม, ชื่อศิลปินเกาหลี, ตัวละคร k-drama, นามสกุลเกาหลี, ชื่อเกาหลีไม่ซ้ำ',
       ogTitle: 'Korean Name Studio | เครื่องสร้างชื่อเกาหลี & ตัวแปลงฮันกึล',
@@ -75,7 +75,7 @@ export const seoConfig = {
       twitterTitle: 'เครื่องสร้างชื่อเกาหลี | แปลงชื่อเป็นภาษาเกาหลี',
     },
     id: {
-      title: 'Generator Nama Korea | Apa Nama Korea Saya?',
+      title: 'Generator Nama Korea | Temukan Nama Korea Sempurna Anda',
       description: 'Temukan nama Korea Anda! Generator AI mengkonversi nama ke bahasa Korea dengan tulisan Hangul. Nama Korea cantik, nama idol K-pop, astrologi Saju tradisional. Dengan arti dan tulisan Hangul.',
       keywords: 'generator nama korea, apa nama korea saya, nama saya dalam bahasa korea, konversi nama ke korea, tulis nama dalam hangul, generator nama k-pop, nama idol korea, arti nama korea, konverter hangul, nama korea cantik, nama korea perempuan, nama korea laki-laki, nama korea bagus, nama korea populer, nama korea tradisional, nama panggung korea, karakter k-drama, nama keluarga korea, nama korea unik',
       ogTitle: 'Korean Name Studio | Generator Nama Korea & Konverter Hangul',
