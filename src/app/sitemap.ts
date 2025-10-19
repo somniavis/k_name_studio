@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://koreannamestudio.com'
+  const baseUrl = 'https://k-name-studio.vercel.app'
   const currentDate = new Date()
 
   // Main pages with high priority

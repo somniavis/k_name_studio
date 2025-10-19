@@ -26,7 +26,7 @@ Disallow: /_next/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://koreannamestudio.com/sitemap.xml
+Sitemap: https://k-name-studio.vercel.app/sitemap.xml
 
 # Crawl delay (optional, helps with server load)
 Crawl-delay: 1

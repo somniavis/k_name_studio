@@ -5,7 +5,7 @@ export default function StructuredData() {
     "@type": "WebApplication",
     "name": "Korean Name Studio",
     "description": "AI-powered Korean name generator with birth date compatibility",
-    "url": "https://koreannamestudio.com",
+    "url": "https://k-name-studio.vercel.app",
     "applicationCategory": "Lifestyle",
     "operatingSystem": "Web Browser"
   }
