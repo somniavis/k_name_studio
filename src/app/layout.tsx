@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import StructuredData from '@/components/StructuredData';
+import { seoConfig } from '@/config/seo';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,23 +15,26 @@ const notoSansKr = Noto_Sans_KR({
   weight: ["400", "500", "600", "700"],
 });
 
+const defaultSeo = seoConfig.languages.en;
+
 export const metadata: Metadata = {
-  title: "Free Korean Name Generator | Premium Names Only $2.99 (70% OFF!)",
-  description: "Get perfect Korean names FREE by birth date! Premium package: 3 exclusive names + K-pop star matches + 2 soulmate names - NOW $2.99 (was $9.99). Limited time!",
-  keywords: "free korean name generator, korean names $2.99, korean name discount, k-pop name matching, korean birth date names, affordable korean names, korean astrology, saju naming",
+  title: defaultSeo.title,
+  description: defaultSeo.description,
+  keywords: defaultSeo.keywords,
   verification: {
     google: "DffLH4e1lLEUZ7W8wuUR51NWVJbKuT5xHJ1SSRTaybM",
   },
   openGraph: {
-    title: "Korean Name Studio | Premium Names $2.99 (70% OFF)",
-    description: "FREE Korean names by birth date + Premium K-pop star matching for just $2.99!",
+    title: defaultSeo.ogTitle,
+    description: defaultSeo.ogDescription,
     type: "website",
     siteName: "Korean Name Studio",
+    url: seoConfig.baseUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Korean Names $2.99 | 70% OFF Premium Package",
-    description: "Get K-pop star name matching + soulmate names for just $2.99 (was $9.99)!",
+    title: defaultSeo.twitterTitle,
+    description: defaultSeo.description,
   },
   robots: {
     index: true,
@@ -44,18 +48,18 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://k-name-studio.vercel.app',
+    canonical: seoConfig.baseUrl,
     languages: {
-      'en': 'https://k-name-studio.vercel.app/en',
-      'ko': 'https://k-name-studio.vercel.app/ko',
-      'ja': 'https://k-name-studio.vercel.app/ja',
-      'zh': 'https://k-name-studio.vercel.app/zh',
-      'fr': 'https://k-name-studio.vercel.app/fr',
-      'de': 'https://k-name-studio.vercel.app/de',
-      'es': 'https://k-name-studio.vercel.app/es',
-      'ru': 'https://k-name-studio.vercel.app/ru',
-      'ar': 'https://k-name-studio.vercel.app/ar',
-      'hi': 'https://k-name-studio.vercel.app/hi',
+      'en': `${seoConfig.baseUrl}?lang=en`,
+      'ko': `${seoConfig.baseUrl}?lang=ko`,
+      'ja': `${seoConfig.baseUrl}?lang=ja`,
+      'de': `${seoConfig.baseUrl}?lang=de`,
+      'es': `${seoConfig.baseUrl}?lang=es`,
+      'fr': `${seoConfig.baseUrl}?lang=fr`,
+      'it': `${seoConfig.baseUrl}?lang=it`,
+      'pt': `${seoConfig.baseUrl}?lang=pt`,
+      'th': `${seoConfig.baseUrl}?lang=th`,
+      'id': `${seoConfig.baseUrl}?lang=id`,
     },
   },
 };

@@ -1,18 +1,25 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { getDealMetadata, seoConfig } from '@/config/seo'
+
+const dealSeo = getDealMetadata('en')
 
 export const metadata: Metadata = {
-  title: "Korean Names for $2.99 | 70% OFF Premium Package Deal",
-  description: "FLASH SALE: Premium Korean names normally $9.99, now just $2.99! Includes K-pop star matching, soulmate names, and birth date compatibility. Limited time offer!",
-  keywords: "korean names $2.99, korean name discount, korean name sale, premium korean names deal, k-pop name matching discount",
+  title: dealSeo.title,
+  description: dealSeo.description,
+  keywords: dealSeo.keywords,
   openGraph: {
-    title: "🔥 Korean Names $2.99 | 70% OFF Premium Deal",
-    description: "Get K-pop star matching + soulmate names for just $2.99 (was $9.99)!",
+    title: dealSeo.title,
+    description: dealSeo.description,
     type: "website",
+    url: `${seoConfig.baseUrl}/korean-names-299-deal`,
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: `${seoConfig.baseUrl}/korean-names-299-deal`,
   },
 }
 

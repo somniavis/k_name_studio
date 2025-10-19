@@ -19,3 +19,5 @@ export default function Page() {
     </Suspense>
   );
 }
+
+// Metadata is inherited from layout.tsx

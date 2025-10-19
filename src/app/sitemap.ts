@@ -4,6 +4,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://k-name-studio.vercel.app'
   const currentDate = new Date()
 
+  // Supported languages
+  const languages = ['en', 'ko', 'ja', 'de', 'es', 'fr', 'it', 'pt', 'th', 'id']
+
   // Main pages with high priority
   const mainPages = [
     {
@@ -13,84 +16,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/generate`,
+      lastModified: currentDate,
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/korean-names-299-deal`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/premium`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/free-generator`,
+  ]
+
+  // Language-specific pages for main routes
+  const languagePages: MetadataRoute.Sitemap = []
+  languages.forEach(lang => {
+    languagePages.push({
+      url: `${baseUrl}?lang=${lang}`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
-    },
-  ]
+    })
+    languagePages.push({
+      url: `${baseUrl}/generate?lang=${lang}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })
+  })
 
-  // Language-specific pages
-  const languages = ['en', 'ko', 'ja', 'zh', 'fr', 'de', 'es', 'ru', 'ar', 'hi']
-  const languagePages = languages.map(lang => ({
-    url: `${baseUrl}/${lang}`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }))
-
-  // SEO landing pages
-  const seoPages = [
+  // Static pages
+  const staticPages = [
     {
-      url: `${baseUrl}/korean-name-by-birth-date`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/k-pop-star-name-matching`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/korean-soulmate-names`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/cheap-korean-name-generator`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/korean-name-discount`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.6,
-    },
-  ]
-
-  // Blog/content pages
-  const contentPages = [
-    {
-      url: `${baseUrl}/blog/korean-name-meanings-guide`,
+      url: `${baseUrl}/terms`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/blog/k-pop-names-and-birth-dates`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/blog/korean-soulmate-astrology`,
+      url: `${baseUrl}/privacy`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.5,
@@ -100,7 +65,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...mainPages,
     ...languagePages,
-    ...seoPages,
-    ...contentPages,
+    ...staticPages,
   ]
 }

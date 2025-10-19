@@ -38,9 +38,9 @@ export const WelcomeScreen: React.FC = () => {
             <div className="sparkle-decoration">✨</div>
           </div>
 
-          <p className="app-subtitle">
+          <h2 className="app-subtitle">
             {t('hero.subtitle')}
-          </p>
+          </h2>
         </div>
 
         <div className="features-grid">
