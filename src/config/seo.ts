@@ -1,5 +1,5 @@
 export const seoConfig = {
-  baseUrl: 'https://k-name-studio.vercel.app',
+  baseUrl: 'https://k-name-studio.com',
 
   languages: {
     en: {

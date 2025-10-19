@@ -5,7 +5,7 @@ export default function StructuredData() {
     "@type": "WebApplication",
     "name": "Korean Name Studio",
     "description": "AI-powered Korean name generator with birth date compatibility",
-    "url": "https://k-name-studio.vercel.app",
+    "url": "https://k-name-studio.com",
     "applicationCategory": "Lifestyle",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -67,8 +67,8 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Korean Name Studio",
-    "url": "https://k-name-studio.vercel.app",
-    "logo": "https://k-name-studio.vercel.app/logo.png",
+    "url": "https://k-name-studio.com",
+    "logo": "https://k-name-studio.com/logo.png",
     "description": "AI-powered Korean name generator with traditional Saju astrology",
     "sameAs": []
   }

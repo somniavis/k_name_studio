@@ -8,7 +8,8 @@ const nextConfig: NextConfig = {
     const allowedOrigins = process.env.NEXT_PUBLIC_ALLOWED_ORIGINS
       ? process.env.NEXT_PUBLIC_ALLOWED_ORIGINS.split(',')
       : [
-          'https://k-name-studio.vercel.app',
+          'https://k-name-studio.com',
+          'https://www.k-name-studio.com',
           'https://*.vercel.app', // Allow preview deployments
           ...(process.env.NODE_ENV === 'development' ? ['http://localhost:3000'] : [])
         ];
