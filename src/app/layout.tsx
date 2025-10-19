@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: defaultSeo.description,
   keywords: defaultSeo.keywords,
   verification: {
-    google: "DffLH4e1lLEUZ7W8wuUR51NWVJbKuT5xHJ1SSRTaybM",
+    google: "_7XKmOAYc_xyFHSXS4xbmQRKx21iaNPGfWSkAIg1tMU",
   },
   openGraph: {
     title: defaultSeo.ogTitle,
