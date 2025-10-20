@@ -192,9 +192,9 @@ User completes payment on Gumroad
   ↓
 Webhook verifies payment
   ↓
-Auto-polling detects completion (6 checks over 1 min)
+User clicks "Confirm Payment" button
   ↓
-Premium content unlocked
+Premium content unlocked instantly
 ```
 
 **See:** [docs/PAYMENT_INTEGRATION.md](docs/PAYMENT_INTEGRATION.md) for details

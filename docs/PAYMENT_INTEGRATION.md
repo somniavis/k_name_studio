@@ -5,8 +5,8 @@
 Korean Name Studio uses Gumroad's Overlay License for premium feature payments with webhook verification.
 
 **Payment Method:** Overlay License (no redirect)
-**Verification:** Server-side webhook + client-side polling
-**Optimization:** Minimal API calls (6 max) for Vercel free tier
+**Verification:** Server-side webhook + manual user confirmation
+**Optimization:** User-triggered verification for minimal API calls
 
 ---
 
@@ -41,9 +41,9 @@ Korean Name Studio uses Gumroad's Overlay License for premium feature payments w
 │       licenseKey: "xxx-xxx-xxx"                                │
 │     })                                                          │
 │     ↓                                                            │
-│  8. Frontend auto-polls session status                          │
+│  8. User clicks "Confirm Payment" button                        │
 │     GET /api/payment/session?sessionId=uuid-1234               │
-│     Every 10 seconds, max 6 times (1 minute)                   │
+│     Manually triggered by user after completing payment        │
 │     ↓                                                            │
 │  9. On success: Premium names unlocked                          │
 │     Zustand store: setIsPremiumUnlocked(true)                  │
@@ -115,10 +115,10 @@ git push origin main  # Auto-deploys
 
 **Key Features:**
 - Full-screen responsive modal
-- Gumroad iframe embedding
-- Auto-polling (6 checks, 10s intervals)
-- Manual "Check Payment" button
+- Opens Gumroad payment in new tab/window
+- Manual "Confirm Payment" button for user-triggered verification
 - Multi-language support (10 languages)
+- Minimal API calls (user-controlled)
 
 **Props:**
 ```typescript
@@ -145,13 +145,11 @@ interface GumroadPaymentModalProps {
 />
 ```
 
-**Auto-Polling Logic:**
+**Manual Verification:**
 ```typescript
-const maxChecks = 6;              // Maximum 6 checks
-const checkInterval = 10000;      // 10 seconds per check
-
-// Total: 6 requests over 1 minute
-// Vercel free tier friendly!
+// User clicks "Confirm Payment" button after completing payment
+// Single API call per click - extremely Vercel free tier friendly!
+// Prevents unnecessary polling and reduces API usage
 ```
 
 ---
@@ -399,11 +397,11 @@ curl http://localhost:3000/api/payment/session?sessionId=xxx
 
 1. Click "Unlock Premium"
 2. Payment modal opens
-3. Click "Pay on Gumroad" → Opens Gumroad page
+3. Click "Pay on Gumroad" → Opens Gumroad page in new tab
 4. Complete test payment (use Gumroad test card)
 5. Webhook received → Session updated
-6. Auto-polling detects completion
-7. Premium names unlocked
+6. User clicks "Confirm Payment" button
+7. Premium names unlocked immediately
 
 **Expected Result:** All premium content visible
 
@@ -412,20 +410,20 @@ curl http://localhost:3000/api/payment/session?sessionId=xxx
 1. Click "Unlock Premium"
 2. Payment modal opens
 3. Close Gumroad payment page without completing
-4. Auto-polling times out after 1 minute
-5. Modal remains open
+4. User clicks "Confirm Payment" button
+5. Error message shown: "Payment not confirmed yet"
 
 **Expected Result:** Premium still locked, error message shown
 
-#### 3. Manual Check
+#### 3. Normal Payment Flow
 
 1. Click "Unlock Premium"
 2. Payment modal opens
 3. Complete payment in new tab
-4. Click "Confirm Payment" button (before auto-polling finds it)
-5. Immediate verification
+4. Click "Confirm Payment" button
+5. Immediate verification and unlock
 
-**Expected Result:** Premium unlocks immediately
+**Expected Result:** Premium unlocks immediately after clicking button
 
 ---
 
@@ -503,18 +501,17 @@ console.log('[Webhook] Available sessions:', Array.from(paymentSessions.keys()))
 
 ---
 
-#### 4. Polling Times Out
+#### 4. User Doesn't Click "Confirm Payment"
 
 **Symptoms:**
 - Payment completed
 - Webhook received successfully
-- Frontend doesn't detect it
+- Premium doesn't unlock
 
 **Solutions:**
-- ✅ Check polling interval (should be 10s)
-- ✅ Verify max checks (should be 6)
-- ✅ Ensure GET endpoint returns correct response
-- ✅ Check for CORS issues
+- ✅ Ensure clear instructions in payment modal
+- ✅ Add notification to click "Confirm Payment" button
+- ✅ Consider adding webhook-triggered notification (future enhancement)
 
 **Manual Test:**
 ```bash
@@ -537,7 +534,7 @@ curl "https://your-domain.vercel.app/api/payment/session?sessionId=xxx"
 - [ ] Check error handling (network failures, timeouts)
 - [ ] Verify premium content unlocking
 - [ ] Test on mobile devices
-- [ ] Confirm auto-polling stops after 6 checks
+- [ ] Verify "Confirm Payment" button works correctly
 
 ### Post-Launch Monitoring
 
@@ -555,37 +552,39 @@ curl "https://your-domain.vercel.app/api/payment/session?sessionId=xxx"
 ### Current Implementation
 
 ```
-Auto-polling:
-- Interval: 10 seconds
-- Max checks: 6
-- Total requests: 6 over 1 minute
+Manual User Verification:
+- User clicks "Confirm Payment" button after completing payment
+- Single API call per button click
+- Total requests: 1-3 average (extremely efficient)
 - Cost: Minimal (Vercel free tier friendly)
 ```
 
-### Why Not More Frequent?
+### Why Manual Instead of Auto-Polling?
 
-**Before (Inefficient):**
-```
-- Interval: 2 seconds
-- Max checks: 40
-- Total requests: 80 over 80 seconds
-- Cost: High (hits rate limits)
-```
-
-**After (Optimized):**
+**Auto-Polling (Previous Approach):**
 ```
 - Interval: 10 seconds
 - Max checks: 6
 - Total requests: 6 over 1 minute
-- Cost: Low (stays within limits)
+- Cost: Higher (6x more API calls)
+```
+
+**Manual Verification (Current):**
+```
+- User-triggered: Click button when ready
+- Average requests: 1-2 per payment
+- Total requests: ~1 per successful payment
+- Cost: Extremely low (minimal API usage)
 ```
 
 **Rationale:**
 - Gumroad webhook is typically fast (<5 seconds)
-- Most users complete payment within 30 seconds
-- 10s polling is acceptable UX (not too slow)
-- Manual check button available for impatient users
-- Vercel free tier has limited serverless invocations
+- Users know when they complete payment
+- Manual button gives users control
+- Eliminates unnecessary polling
+- Significantly reduces API calls
+- Better for Vercel free tier limits
+- Clearer UX - user knows exactly when to verify
 
 ---
 
