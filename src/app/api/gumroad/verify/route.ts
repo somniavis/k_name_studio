@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { serverEnv } from '@/lib/env';
+import { requireServerEnv } from '@/lib/env';
 import { isLicenseKeyReused, storeLicenseKeyRecord } from '@/lib/kv';
 import { requireAuth, getSessionId } from '@/lib/authMiddleware';
 
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Use server-only environment variables
-    const { gumroadProductPermalink } = serverEnv;
+    const gumroadProductPermalink = requireServerEnv('gumroadProductPermalink');
 
     // Verify with Gumroad API
     const response = await fetch('https://api.gumroad.com/v2/licenses/verify', {

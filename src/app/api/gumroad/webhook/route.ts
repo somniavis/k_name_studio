@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { serverEnv } from '@/lib/env';
+import { requireServerEnv, serverEnv } from '@/lib/env';
 import {
   verifyGumroadSignature,
   extractSignature,
@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Verify it's for the correct product using server-only env
-    const { gumroadProductPermalink } = serverEnv;
+    const gumroadProductPermalink = requireServerEnv('gumroadProductPermalink');
     if (productPermalink !== gumroadProductPermalink) {
       console.error('[Gumroad Webhook] Invalid product:', productPermalink);
       return NextResponse.json(

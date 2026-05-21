@@ -5,23 +5,10 @@
  * Never import this in client components or it will expose sensitive data
  */
 
-// Validate required environment variables at build time
-const requiredServerEnvVars = [
-  'GUMROAD_LICENSE_KEY',
-  'GUMROAD_PRODUCT_PERMALINK',
-] as const;
-
-// Validate each required variable
-requiredServerEnvVars.forEach((envVar) => {
-  if (!process.env[envVar]) {
-    throw new Error(`❌ Missing required server environment variable: ${envVar}`);
-  }
-});
-
 // Server-only environment variables (NEVER exposed to client)
 export const serverEnv = {
-  gumroadLicenseKey: process.env.GUMROAD_LICENSE_KEY!,
-  gumroadProductPermalink: process.env.GUMROAD_PRODUCT_PERMALINK!,
+  gumroadLicenseKey: process.env.GUMROAD_LICENSE_KEY,
+  gumroadProductPermalink: process.env.GUMROAD_PRODUCT_PERMALINK,
   nodeEnv: process.env.NODE_ENV || 'development',
 
   // Vercel KV (optional)
@@ -31,6 +18,24 @@ export const serverEnv = {
   // Gumroad Webhook Secret (optional, for signature verification)
   gumroadWebhookSecret: process.env.GUMROAD_WEBHOOK_SECRET,
 } as const;
+
+const serverEnvNames: Partial<Record<keyof typeof serverEnv, string>> = {
+  gumroadLicenseKey: 'GUMROAD_LICENSE_KEY',
+  gumroadProductPermalink: 'GUMROAD_PRODUCT_PERMALINK',
+};
+
+export function requireServerEnv<K extends keyof typeof serverEnv>(
+  key: K
+): NonNullable<(typeof serverEnv)[K]> {
+  const value = serverEnv[key];
+
+  if (!value) {
+    const envName = serverEnvNames[key] || key;
+    throw new Error(`Missing required server environment variable: ${envName}`);
+  }
+
+  return value as NonNullable<(typeof serverEnv)[K]>;
+}
 
 // Client-safe environment variables (can be exposed to browser)
 export const clientEnv = {
@@ -43,6 +48,6 @@ export type ClientEnv = typeof clientEnv;
 
 // Log environment status (only in development)
 if (serverEnv.nodeEnv === 'development') {
-  console.log('[ENV] ✅ Server environment variables loaded');
+  console.log('[ENV] Server environment variables loaded');
   console.log('[ENV] 📋 Available:', Object.keys(serverEnv).join(', '));
 }

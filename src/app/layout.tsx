@@ -1,19 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import StructuredData from '@/components/StructuredData';
 import { seoConfig } from '@/config/seo';
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const notoSansKr = Noto_Sans_KR({
-  variable: "--font-noto-sans-kr",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 const defaultSeo = seoConfig.languages.en;
 
@@ -74,9 +62,7 @@ export default function RootLayout({
       <head>
         <StructuredData />
       </head>
-      <body
-        className={`${inter.variable} ${notoSansKr.variable} font-english antialiased`}
-      >
+      <body>
         <div className="app-container">
           {children}
         </div>
