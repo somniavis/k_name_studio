@@ -100,7 +100,6 @@ export const ResultScreen: React.FC = () => {
   const setIsGenerating = useAppStore((state) => state.setIsGenerating);
   const setIsPaymentModalOpen = useAppStore((state) => state.setIsPaymentModalOpen);
   const isPaymentModalOpen = useAppStore((state) => state.isPaymentModalOpen);
-  const setCurrentScreen = useAppStore((state) => state.setCurrentScreen);
   const unlockPremium = useAppStore((state) => state.unlockPremium);
 
   const [sajuAnalysis, setSajuAnalysis] = useState<SajuResult | null>(null);
@@ -530,7 +529,7 @@ Discover your Korean name at ${serviceUrl}`;
         <div className="floating-element star">✨</div>
       </div>
 
-      <button className="back-button" onClick={() => setCurrentScreen('nameInput')}>
+      <button className="back-button" onClick={() => router.push('/')}>
         ←
       </button>
 
