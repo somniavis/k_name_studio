@@ -380,7 +380,7 @@ export const ResultScreen: React.FC = () => {
     const serviceUrl = window.location.origin;
 
     if (platform === 'service-link') {
-      navigator.clipboard.writeText(`✨ Discover your perfect Korean name!\n🎯 Traditional Saju analysis meets modern K-pop culture\n\n${serviceUrl}`).then(() => {
+      navigator.clipboard.writeText(serviceUrl).then(() => {
         setCopiedToClipboard(true);
         setTimeout(() => setCopiedToClipboard(false), 2000);
       });
